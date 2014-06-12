@@ -26,7 +26,7 @@ header {
 	float: left;
 	color: #3399ff;
 }
-.hdNav {
+nav {
 	position: relative;
 	font-color: #3399ff;
 	float: right;
@@ -36,11 +36,7 @@ header {
 	padding: 0px;
 	overflow: hidden;
 }
-	.hdNav li {
-		float: left;
-		list-style: none;
-	}
-		.hdNav li a {
+		nav a {
 			text-decoration: none;
 			font-size: 28px;
 			color: #999;
@@ -53,7 +49,7 @@ header {
 			overflow: hidden;
 			margin: auto 10px;
 		}
-			.hdNav li a:hover {
+			nav a:hover {
 				color: #3399ff;
 			}
 			#hdNavActive {
@@ -78,12 +74,12 @@ header.large #hdName {
 	height: 105px;
 	line-height: 105px;
 }
-header.large .hdNav {
+header.large nav {
 	width: 340px;
 	height: 105px;
 	line-height:105px;
 }
-header.large .hdNav li a {
+header.large nav a {
 		font-size: 28px;
 		margin-right: 20px;
 		margin: auto 10px;
@@ -109,13 +105,13 @@ header.small #hdName {
 	line-height: 50px;
 	margin-top: -4px;
 }
-header.small .hdNav {
+header.small nav {
 	width: 340px;
 	height: 50px;
 	line-height:50px;
 	padding-left: 80px;
 }
-header.small .hdNav li a {
+header.small nav a {
 		font-size: 26px;
 		margin-right: 10px;
 		margin: auto 5px;
