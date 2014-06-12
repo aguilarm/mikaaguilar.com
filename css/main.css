@@ -4,91 +4,7 @@ body {
 	margin: 0px;
     font-family: 'PT Sans Narrow', sans-serif;
 }
-/*full size header values*/
-header {
-	background-color: white;
-	display: block;
-	width: 100%;
-	height: 105px;
-}
-#hdWrap {
-	margin: auto;
-	width: 100%;
-	max-width: 960px;
-	min-width: 815px;
-	display: block;
-	background-color: #fff;
-}
-#hdLogo {
-	display: block;
-	width: 100px;
-	height: 106px;
-	float: left;
-	background-image: url(../logoshort2.png);
-	background-repeat:no-repeat;
-	background-size: 100% 100%;
-	margin-left: 0px;
-	z-index: 10;
-}
-#hdTxt {
-	display: block;
-	float: left;
-	margin-left: -10px;
-}
-#hdName {
-	font-size: 80px;
-    display: block;
-	width: auto;
-	float: left;
-	color: #3399ff;
-}
-.hdNav {
-	position: relative;
-	font-color: #3399ff;
-	float: right;
-	display: block;
-	width: 340px;
-	height: 50px;
-	margin-top: 42px;
-	overflow: hidden;
-}
-	.hdNav li {
-		float: left;
-		list-style: none;
-	}
-		.hdNav li a {
-			text-decoration: none;
-			font-size: 28px;
-			color: #999;
-			display: block;
-			margin-right: 20px;
-			text-align: center;
-			z-index: 10;
-			float: left;
-			position: relative;
-			overflow: hidden;
-			margin: auto 10px;
-		}
-			.hdNav li a:hover {
-				color: #3399ff;
-			}
-			#hdNavActive {
-				color: #3399ff;
-			}
-			#hdNavActive:hover {
-				color: #999;
-			}
-			.hdNav li.back {
-				border-bottom: 4px solid #999;
-				width: 9px; height: 35px;
-				z-index: 8;
-				position: absolute;
-			}
-				.hdNav li.back .left {
-					border-bottom: 4px solid #999;
-					height: 35px;
-					margin-right: 9px;
-				}
+
 #bdHdWrap {
 	width: 100%;
 	min-height: 400px;
@@ -128,7 +44,7 @@ header {
 			-moz-border-radius: 160px;
 			border-radius: 160px;
 			-webkit-border-radius:160px;
-			background-image: url(../myface.jpg);
+			background-image: url(../img/myface.jpg);
 			background-position: 70% 60%;
 			border: 4px solid #3399ff;
 			float: left;
@@ -155,7 +71,7 @@ header {
 		-moz-border-radius: 160px;
 		border-radius: 160px;
 		-webkit-border-radius:160px;
-		background-image: url(../myface.jpg);
+		background-image: url(img/myface.jpg);
 		background-position: 70% 60%;
 		border: 4px solid #3399ff;
 		float: left;

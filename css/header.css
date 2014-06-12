@@ -1,0 +1,122 @@
+/*static header values*/
+header {
+	background-color: #fff;
+	display: block;
+	width: 100%;
+}
+#hdWrap {
+	margin: auto;
+	width: 100%;
+	max-width: 960px;
+	min-width: 815px;
+	display: block;
+}
+#hdLogo {
+	display: block;
+	float: left;
+	background-image: url(../img/logoshort2.png);
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	margin-left: 0px;
+	z-index: 10;
+}
+#hdName {
+    display: block;
+	width: auto;
+	float: left;
+	color: #3399ff;
+}
+.hdNav {
+	position: relative;
+	font-color: #3399ff;
+	float: right;
+	display: block;
+	width: 340px;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+	.hdNav li {
+		float: left;
+		list-style: none;
+	}
+		.hdNav li a {
+			text-decoration: none;
+			font-size: 28px;
+			color: #999;
+			display: block;
+			margin-right: 20px;
+			text-align: center;
+			z-index: 10;
+			float: left;
+			position: relative;
+			overflow: hidden;
+			margin: auto 10px;
+		}
+			.hdNav li a:hover {
+				color: #3399ff;
+			}
+			#hdNavActive {
+				color: #3399ff;
+			}
+			#hdNavActive:hover {
+				color: #999;
+			}
+/*full size header values*/
+header.large {
+	height: 105px;
+}
+header.large #hdLogo {
+	width: 100px;
+	height: 106px;
+	float: left;
+}
+header.large #hdName {
+	font-size: 80px;
+	margin-left: -10px;
+	width: 341px;
+	height: 105px;
+	line-height: 105px;
+}
+header.large .hdNav {
+	width: 340px;
+	height: 105px;
+	line-height:105px;
+}
+header.large .hdNav li a {
+		font-size: 28px;
+		margin-right: 20px;
+		margin: auto 10px;
+}
+/*small header values*/
+header.small {
+	height: 50px;
+	position: fixed;
+}
+header.small #hdWrap {
+	max-width: 870px;
+}
+header.small #hdLogo {
+	width: 48px;
+	height: 51px;
+	float: left;
+}
+header.small #hdName {
+	font-size: 50px;
+	margin-left: -5px;
+	width: 341px;
+	height: 50px;
+	line-height: 50px;
+	margin-top: -4px;
+}
+header.small .hdNav {
+	width: 340px;
+	height: 50px;
+	line-height:50px;
+	padding-left: 80px;
+}
+header.small .hdNav li a {
+		font-size: 26px;
+		margin-right: 10px;
+		margin: auto 5px;
+}
