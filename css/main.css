@@ -1,0 +1,111 @@
+body {
+	background-image: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_5287d4367585d_1.JPG);
+    background-color: #fff;
+	margin: 0px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+a {
+	text-decoration: none;
+}
+#bdHdWrap {
+	width: 100%;
+	min-height: 400px;
+	display: block;
+	background-position: 20% 20%;
+}
+.bdHd {
+	width: 100%;
+	margin: auto;
+	padding-top: 120px;
+	display: block;
+	height: 100%;
+}
+	#bdHdContent {
+			margin: auto;
+			width: 60%;
+			min-width: 768px;
+	}
+		.bdHdTxt {
+			color: #FFF;
+			background-color: rgba(51,153,255,0.8);
+			margin-bottom: 10px;
+			margin-left: 30px;
+			padding-top: 10px;
+			margin-top: 13px;
+			font-size: 32px;
+			padding-top: 12px;
+			display: inline;
+			position: relative;
+			top: 20px;
+			z-index: -1;
+		}
+		#bdHdFace {
+			display: block;
+			width: 260px;
+			height: 260px;
+			-moz-border-radius: 160px;
+			border-radius: 160px;
+			-webkit-border-radius:160px;
+			background-image: url(../img/myface.jpg);
+			background-position: 70% 60%;
+			border: 4px solid #3399ff;
+			float: left;
+			margin-top: -38px;
+			margin-right: -38px;
+			z-index: 2;
+		}
+.bdChunk {
+    margin: auto;
+    width: 100%;
+	display: block;
+	background-color: rgba(255,255,255,0.8);
+	padding: 5px;
+	margin-top: 5px;
+}
+#about {
+	margin-top: 220px;
+	height: 300px;
+}
+#bdFace {
+		display: block;
+		width: 260px;
+		height: 260px;
+		-moz-border-radius: 160px;
+		border-radius: 160px;
+		-webkit-border-radius:160px;
+		background-image: url(img/myface.jpg);
+		background-position: 70% 60%;
+		border: 4px solid #3399ff;
+		float: left;
+		margin-right: 15px;
+		margin-left: 10px;
+		}
+h1 {
+	text-align: center;
+	color: #3399ff;
+}
+p {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+table {
+	margin: auto;
+}
+.centerText {
+	text-align: center;
+}
+#contact_form {
+	margin: auto;
+	display: block;
+	width: 600px;
+	padding-bottom: 40px;
+}
+#contact_form textarea {
+	width: 100%;
+	height: 150px;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+#contact_form input {
+	width: 100%;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
