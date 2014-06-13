@@ -7,7 +7,11 @@ body {
 a {
 	text-decoration: none;
 }
-#bdHdWrap {
+#wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+#content {
 	width: 100%;
 	min-height: 400px;
 	display: block;
