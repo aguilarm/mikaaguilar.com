@@ -4,7 +4,9 @@ body {
 	margin: 0px;
     font-family: 'PT Sans Narrow', sans-serif;
 }
-
+a {
+	text-decoration: none;
+}
 #bdHdWrap {
 	width: 100%;
 	min-height: 400px;

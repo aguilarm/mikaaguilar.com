@@ -1,53 +1,56 @@
 /*static header values*/
 header {
-	background-color: #fff;
-	display: block;
 	width: 100%;
+	height: 105px;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background-color: #fff;
+	-webkit-transition: height 0.4s;
+	transition: height 0.4s;
 }
 #hdWrap {
+	width: 80%;
 	margin: auto;
-	width: 100%;
-	max-width: 960px;
-	min-width: 815px;
-	display: block;
 }
-#hdLogo {
-	display: block;
+header #hdLogo {
+	display: inline-block;
+	width: 100px;
+	height: 106px;
 	float: left;
 	background-image: url(../img/logoshort2.png);
 	background-repeat:no-repeat;
 	background-size: 100% 100%;
 	margin-left: 0px;
-	z-index: 10;
+	z-index: 10;			
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
 }
-#hdName {
-    display: block;
+header #hdName {
+    display: inline-block;
+	height: 105px;
+	line-height: 105px;
+	font-size: 80px;
 	width: auto;
 	float: left;
 	color: #3399ff;
+	margin-top: -6px;			
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
 }
-nav {
-	position: relative;
-	font-color: #3399ff;
+header nav {
+	display: inline-block;
 	float: right;
-	display: block;
-	width: 340px;
-	margin: 0px;
-	padding: 0px;
-	overflow: hidden;
 }
-		nav a {
-			text-decoration: none;
-			font-size: 28px;
+		header nav a {
+			line-height: 105px;
+			margin-left: 20px;
 			color: #999;
-			display: block;
-			margin-right: 20px;
-			text-align: center;
-			z-index: 10;
-			float: left;
-			position: relative;
-			overflow: hidden;
-			margin: auto 10px;
+			font-size: 28px;			
+			-webkit-transition: all 0.4s;
+			transition: all 0.4s;
 		}
 			nav a:hover {
 				color: #3399ff;
@@ -58,71 +61,21 @@ nav {
 			#hdNavActive:hover {
 				color: #999;
 			}
-/*full size header values*/
-header.large {
-	height: 105px;
-}
-header.large #hdLogo {
-	width: 100px;
-	height: 106px;
-	float: left;
-}
-header.large #hdName {
-	font-size: 80px;
-	margin-left: -10px;
-	width: 341px;
-	height: 105px;
-	line-height: 105px;
-}
-header.large nav {
-	width: 340px;
-	height: 105px;
-	line-height:105px;
-}
-header.large nav a {
-		font-size: 28px;
-		margin-right: 20px;
-		margin: auto 10px;
-}
-/*small header values*/
+/* small header values */
 header.small {
-	height: 50px;
-	position: fixed;
-}
-header.small #hdWrap {
-	max-width: 870px;
+	height: 52px;
 }
 header.small #hdLogo {
-	width: 48px;
-	height: 51px;
-	float: left;
+	height: 52px;
+	width: 49px;
 }
 header.small #hdName {
-	font-size: 50px;
-	margin-left: -5px;
-	width: 341px;
-	height: 50px;
-	line-height: 50px;
-	margin-top: -4px;
-}
-header.small nav {
-	width: 340px;
-	height: 50px;
-	line-height:50px;
-	padding-left: 80px;
+	height: 52px;
+	line-height: 52px;
+	font-size: 40px;
+	margin-top: -3px;
 }
 header.small nav a {
-		font-size: 26px;
-		margin-right: 10px;
-		margin: auto 5px;
-}
-/*placeholder element*/
-.unblock {
-	display: none;
-	width: 100%;
-	height: 105px;
-	background-color:#fff;
-}
-.block {
-	display:block
+	line-height: 52px;
+	font-size: 28px;
 }
