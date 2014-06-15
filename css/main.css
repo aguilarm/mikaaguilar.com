@@ -41,6 +41,40 @@ main {
 }
 /* Slide 1 */
 #slide-1 .bcg {background-image:url('../img/bcg_slide-1.jpg')}
+#slide-1 #bdHdContent {
+	margin: auto;
+	width: 60%;
+	min-width: 790px;
+	margin-top: -20px;
+}
+#slide-1 .bdHdTxt {
+	text-align: left;
+	float: left;
+	color: #fff;
+	background-color: rgba(51,153,225,0.8);
+	width: auto;
+	margin-bottom: 8px;
+	margin-left: -3px;
+	margin-top: 10px;
+	font-size: 32px;
+	padding-top: 12px;
+	display: inline;
+	position: relative;
+	top: 20px;
+	z-index: -1;
+	}
+#slide-1 #bdHdFace {
+	width: 260px; 
+	height: 260px;
+	-moz-border-radius: 160px;
+	border-radius: 160px;
+	-webkit-border-radius: 160px;
+	background-image: url(../img/myface.jpg);
+	background-position: 70% 60%;
+	border: 4px solid #3399ff;
+	float: left;
+	z-index: 2;
+	}
 
 /* Slide 2 */
 #slide-2 .bcg {background: none; background-color: #010101; height: 310px; text-align: center}
@@ -76,7 +110,7 @@ main {
 	margin: -150px auto 0 auto;
 	display: table-cell;
 	vertical-align: middle;
-	color: #ebebeb;
+	color: #fff;
 	padding: 0 8%;
 	text-align: center
 }
