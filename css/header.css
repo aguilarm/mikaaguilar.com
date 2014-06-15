@@ -48,7 +48,8 @@ header nav {
 			line-height: 105px;
 			margin-left: 20px;
 			color: #999;
-			font-size: 28px;			
+			font-size: 28px;
+			text-decoration: none;			
 			-webkit-transition: all 0.4s;
 			transition: all 0.4s;
 		}

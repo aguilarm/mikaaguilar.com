@@ -1,109 +1,102 @@
-body {
-	background-image: url(http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_5287d4367585d_1.JPG);
-    background-color: #fff;
-	margin: 0px;
-    font-family: 'PT Sans Narrow', sans-serif;
+/* ==========================================================================
+   Parallax Scroll
+   ========================================================================== */
+body, html {
+	height: 100%;
+	min-height: 100%;
+	background-color: #000000;
+	font-family: 'PT Sans Narrow', sans-serif;
 }
-a {
-	text-decoration: none;
+.no-js {
+	padding-top: 106px;
+}
+h2 {
+	margin-top: 0;
+}
+.loading {
+	background: url('../img/ico_loading.gif') no-repeat center center;
+}
+section {
+	min-width: 960px;
+	opacity: 0;
+}
+.loaded section,
+.no-js section {
+	opacity: 1;
+	-webkit-transition: opacity 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out;
+	transition: opacity 300ms ease-out;
 }
 main {
-	width: 100%;
-	margin: 0 auto;
+	overflow-x: hidden;
 }
-.bdHd {
-	width: 100%;
-	margin: auto;
-	padding-top: 120px;
-	display: block;
+
+.bcg {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 	height: 100%;
+	width: 100%;
 }
-	#bdHdContent {
-			margin: auto;
-			width: 60%;
-			min-width: 768px;
+/* Slide 1 */
+#slide-1 .bcg {background-image:url('../img/bcg_slide-1.jpg')}
+
+/* Slide 2 */
+#slide-2 .bcg {background: none; background-color: #010101; height: 310px; text-align: center}
+
+/* Slide 3 */
+#slide-3 .bcg {background-image:url('../img/bcg_slide-3.jpg')}
+
+
+/* Slide 4 */
+.curtainContainer {width: 100%; height: 100%; position: relative;}
+.curtainContainer .curtain {width: 300%; height: 1px; background-color: #000000; position: absolute; top: 25%; left: 0; opacity: 0}
+.curtainContainer .copy {position: absolute; bottom: 30%; left: 0; width: 100%; text-align: center;}
+
+#slide-4 .bcg {background-image:url('../img/bcg_slide-4.jpg')}
+
+/* Slide 5 */
+#slide-5 {position: relative;}
+#slide-5 .bcg {background-image:url('../img/bcg_slide-5.jpg')}
+#slide-5 .bcg2 {background-image:url('../img/bcg_slide-5b.jpg'); position: fixed; bottom: 0; left: 0; opacity: 0; z-index: 1}
+#slide-5 .bcg3 {background: none; background-color: #010101; z-index: 2;  position: fixed; bottom: 0; left: 0; opacity: 0; z-index: 2}
+
+.hsContainer {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.hsContent {
+	max-width: 450px;
+	margin: -150px auto 0 auto;
+	display: table-cell;
+	vertical-align: middle;
+	color: #ebebeb;
+	padding: 0 8%;
+	text-align: center
+}
+	.hsContent h2,
+	.copy h2 {
+		color: #ffffff;
+		font-size: 45px;
+		line-height: 48px;
+		margin-bottom: 12px;
 	}
-		.bdHdTxt {
-			color: #FFF;
-			background-color: rgba(51,153,255,0.8);
-			margin-bottom: 10px;
-			margin-left: 30px;
-			padding-top: 10px;
-			margin-top: 13px;
-			font-size: 32px;
-			padding-top: 12px;
-			display: inline;
-			position: relative;
-			top: 20px;
-			z-index: -1;
-		}
-		#bdHdFace {
-			display: block;
-			width: 260px;
-			height: 260px;
-			-moz-border-radius: 160px;
-			border-radius: 160px;
-			-webkit-border-radius:160px;
-			background-image: url(../img/myface.jpg);
-			background-position: 70% 60%;
-			border: 4px solid #3399ff;
-			float: left;
-			margin-top: -38px;
-			margin-right: -38px;
-			z-index: 2;
-		}
-.bdChunk {
-    margin: auto;
-    width: 100%;
-	display: block;
-	background-color: rgba(255,255,255,0.8);
-	padding: 5px;
-	margin-top: 5px;
-}
-#about {
-	margin-top: 220px;
-	height: 300px;
-}
-#bdFace {
-		display: block;
-		width: 260px;
-		height: 260px;
-		-moz-border-radius: 160px;
-		border-radius: 160px;
-		-webkit-border-radius:160px;
-		background-image: url(img/myface.jpg);
-		background-position: 70% 60%;
-		border: 4px solid #3399ff;
-		float: left;
-		margin-right: 15px;
-		margin-left: 10px;
-		}
-h1 {
-	text-align: center;
-	color: #3399ff;
-}
-p {
-	padding-left: 10px;
-	padding-right: 10px;
-}
-table {
-	margin: auto;
-}
-.centerText {
-	text-align: center;
-}
-#contact_form {
-	margin: auto;
-	display: block;
-	width: 600px;
-	padding-bottom: 40px;
-}
-#contact_form textarea {
-	width: 100%;
-	height: 150px;
-	font-family: 'PT Sans Narrow', sans-serif;
-}
-#contact_form input {
-	width: 100%;
-	font-family: 'PT Sans Narrow', sans-serif;
-}
+	.hsContent p {
+		width: 400px;
+		margin: 0 auto;
+		color: #b2b2b2;
+	}
+	.hsContent a {
+		color: #b2b2b2;
+		text-decoration: underline;
+	}
+	.bgBlack {
+		background-color: rgba(0,0,0,0.75);
+		padding: 3px 10px;
+	}
