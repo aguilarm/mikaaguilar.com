@@ -27,9 +27,6 @@
 		      // Fade in sections
 			  $body.removeClass('loading').addClass('loaded');
 			  
-			  // Show load animation
-			  $loader.addClass('loaded0');
-			  
 		}, 800);
 	});
 	
