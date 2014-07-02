@@ -17,21 +17,13 @@
 	$slideTall2 = $('.homeSlideTall2');
 	$body = $('body');
 	
-    //FadeIn all sections   
-	$body.imagesLoaded( function() {
-		setTimeout(function() {
+	setTimeout(function() {
 		      
 		      // Resize sections
 		      adjustWindow();
-		      
-		      // Fade in sections
-			  $body.removeClass('loading').addClass('loaded');
+			  $body.addClass('loaded');
 			  
-			  // Show load animation
-			  $loader.addClass('loaded0');
-			  
-		}, 800);
-	});
+	}, 800);
 	
 	function adjustWindow(){
 		
