@@ -150,7 +150,8 @@ main {
 	color: #b2b2b2;
 	margin-top: -52px;
 	}
-#scrollDown {display: block; margin: auto; width: 140px; height: 20px; margin-top: -20px; background-color: white; color: #b2b2b2; text-align: center;}
+#scrollDown {display: block; margin: auto; width: 140px; height: 40px; margin-top: -40px; color: #3399ff; text-align: center; font-family: 'PT sans', sans-serif;}
+#scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
 
 
 /* Slide 2 */
