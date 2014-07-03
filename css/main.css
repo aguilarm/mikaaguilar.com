@@ -155,7 +155,7 @@ main {
 
 
 /* Slide 2 */
-#slide-2 .bcg {background: none; background-color: #010101; height: 310px; text-align: center}
+#slide-2 .bcg {background-image:url('../img/austinskyline.jpg'); height: 310px;}
 
 /* Slide 3 */
 #slide-3 .bcg {background-image:url('../img/bcg_slide-3.jpg')}

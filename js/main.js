@@ -53,5 +53,5 @@
 	    s.refresh($('.homeSlide'));
 	    
 	}
-		
+	
 } )( jQuery );
