@@ -128,7 +128,7 @@ main {
 	height: 100%;
 	width: 100%;
 }
-/* Slide 1 */
+/* Slide 1 - Intro/About */
 #slide-1 {background-color: #fff;}
 #slide-1 .hsContent {max-width: 800px;}
 #slide-1 #logoBig { 
@@ -154,12 +154,47 @@ main {
 #scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
 
 
-/* Slide 2 */
+/* Slide 2 - 3d Austin photo */
 #slide-2 .bcg {background-image:url('../img/austinskyline.jpg'); height: 310px;}
 
-/* Slide 3 */
-#slide-3 .bcg {background-image:url('../img/bcg_slide-3.jpg')}
-
+/* Slide 3 - Skills */
+#slide-3 {background-color: #fff; color: #b2b2b2;}
+.hsLeft {
+	display: table-cell;
+	vertical-align: middle;
+	color: #b2b2b2;
+	text-align: center;
+}
+	.hsLeft div.hsLeftTxt {
+		float: left;
+		width: 100%;
+		margin-top: -57px;
+	}
+	.hsLeft h2 {
+		text-align: center;
+	}
+	.hsLeft p {
+		padding: 0 8%;
+		text-align: justify;
+	}
+	
+.grid {
+	width: 100%;
+	height: 100%;
+	float: right;
+	padding-top: 20%;
+	padding-right: 2%;
+}
+	.grid div {
+		display: table-cell;
+		vertical-align: middle;
+		background-color: #666;
+		margin: 1%;
+		width: 23%;
+		height: 25%;
+		float: left;
+	}
+	
 
 /* Slide 4 */
 .curtainContainer {width: 100%; height: 100%; position: relative;}
@@ -182,30 +217,20 @@ main {
 	overflow: hidden;
 	position: relative;
 }
-
-.hsContent {
-	max-width: 450px;
-	margin: -150px auto 0 auto;
-	display: table-cell;
-	vertical-align: middle;
-	color: #fff;
-	padding: 0 8%;
-	text-align: center;
-}
-	.hsContent h2,
+	.hsContainer h2,
 	.copy h2 {
-		color: #ffffff;
+		color: #b2b2b2;
 		font-size: 45px;
 		line-height: 48px;
 		margin-bottom: 12px;
+		font-family: 'PT Sans', sans-serif;
 	}
-	.hsContent p {
-		width: 400px;
+	.hsContainer p {
 		margin: 0 auto;
 		color: #b2b2b2;
 		font-family: 'Droid Sans', sans-serif;
 	}
-	.hsContent a {
+	.hsContainer a {
 		color: #b2b2b2;
 		text-decoration: underline;
 	}
@@ -213,4 +238,16 @@ main {
 		background-color: rgba(0,0,0,0.75);
 		padding: 3px 10px;
 	}
-		
+	
+.hsContent {
+	max-width: 450px;
+	margin: -150px auto 0 auto;
+	display: table-cell;
+	vertical-align: middle;
+	color: #b2b2b2;
+	padding: 0 8%;
+	text-align: center;
+}
+	.hsContent p {
+		width: 400px;
+	}
