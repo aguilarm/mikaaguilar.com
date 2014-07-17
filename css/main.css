@@ -159,54 +159,54 @@ main {
 
 
 /* Slide 2 - 3d Austin photo */
-#slide-2 .bcg {background-image:url('../img/austinskyline.jpg'); height: 310px;}
+#slide-2 .bcg {background-image:url('../img/austinskyline.jpg');}
 
 /* Slide 3 - Skills */
 #slide-3 {background-color: #3399ff;}
 #hsLeft {
 	display: table-cell;
 	vertical-align: middle;
-	text-align: center;
 }
-	#hsLeft div.hsLeftTxt {
-		float: left;
-		width: 100%;
-		margin-top: -85px;
-	}
+	hsLeftTxt {margin-right:10px}
 	#hsLeft h2 {
-		text-align: center;
+		text-align: right;
 		color: #fff;
 		font-size: 45px;
 		line-height: 45px;
 		margin-bottom: 15px;
 	}
 	#hsLeft p {
-		padding: 0 2%;
-		text-align: justify;
+		text-align: right;
 		color: #fff;
 		max-width: 540px;
+		float:right;
 	}
-	
-.grid {
-	width: 100%;
-	height: 100%;
-	float: right;
-	padding-top: 3.5%;
+
+#hsRight {
+	display: table-cell;
+	vertical-align: middle;
 }
-	.grid div {
-		display: table-cell;
-		vertical-align: middle;
-		background-color: #fff;
-		margin: 1%;
-		width: 31%;
-		height: 28.5%;
-		float: left;
+.grid {
+	margin-top:60px;
+	margin-left:10px;
+}
+	#row1 {
+	}
+	#row3 {
+	}
+	.grid img {
+		display: inline-block;
+		width: 65px;
+		height: 65px;
+		border-radius: 3px;
+		margin: 3px;
 	}
 	
 /* Slide 4 - Blurred code */
-#slide-4 .bcg {background-image:url('../img/codeblur.jpg'); height: 310px; background-color: #1c1c1c;}
+#slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
 
 /* Slide 5 - Contact Me */
+#slide-5 {height:400px}
 #contactWrap {
 	width: 430px;
 	height: 60%;
@@ -215,9 +215,10 @@ main {
 #slide-5 h2 {
 	color: #3399ff;
 }
+#footer {background-color:#3399ff;width:100%;height:80px;margin-top:-80px;color:#fff;text-align:center;padding-top:40px;}
 
 /* Slide 6 - Footer */
-#slide-6 {background-color: #3399ff; padding: 10px; height: 40px;}
+#slide-6 {background-color: #3399ff; padding: 10px; height: 40px; top:-40px;}
 #slide-6 p, #slide-6 a {color: #fff;}
 
 /* Slide Constants */

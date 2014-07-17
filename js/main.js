@@ -14,6 +14,7 @@
 	$window = $(window);
 	$slide = $('.homeSlide');
 	$slideShort = $('.homeSlideShort');
+	$slidePhoto = $('.homeSlidePhoto');
 	$slideTall = $('.homeSlideTall');
 	$slideTall2 = $('.homeSlideTall2');
 	$body = $('body');
@@ -50,6 +51,7 @@
 		$slideShort.height(winH*0.75);
 	    $slideTall.height(winH*2);
 	    $slideTall2.height(winH*3);
+		$slidePhoto.height(winH*0.3);
 	    
 	    // Refresh Skrollr after resizing our sections
 	    s.refresh($('.homeSlide'));
