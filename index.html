@@ -5,13 +5,13 @@
     <title>Mika Aguilar - Home</title>
     
     <!-- Stylesheets -->
-    <link href="css/main.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
     
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 </head>
@@ -20,11 +20,10 @@
     	<div id="hdWrap">    
  	  		<a id="hdLogo" href="index.html"></a>
 			<div id="hdName">
-				mika aguilar
+				<a href="#">mika aguilar</a>
 			</div>
         	<nav>
-				<a href="#skills">SKILLS</a></li>
-				<a href="portfolio.html"></a>
+				<a href="#skills">SKILLS</a>
 				<a href="#contact">CONTACT</a>
 			</nav>
 		</div>
@@ -90,47 +89,37 @@
     	<section id="slide-5" class="homeSlide">
         	<div class="hsContainer">
             	<div class="hsContent">
-                	<h2>Contact Me</h2>
-                    <p>Fill this out to send me a short message</p>
+                	<h2>CONTACT ME</h2>
+                    <p>Find me on:</p>
+                    	<div>twitter</div>
+                    	<div>linkedIn</div>
+                        <div>github</div>
+                    <p>Or fill this out to send me a short message</p>
+                    <div id="contactWrap">
+                    	<form name="form" method="get" onsubmit="return validate();" action="form.php">
+							<input type="text" id="name" name="name" class="shortBox" placeholder="Name">
+                            <br/><br/>
+							<input type="text" id="email" name="email" class="shortBox" placeholder="Email">
+                            <br/><br/>
+                        	<textarea id="message" name="message" class="tallBox" rows="7" placeholder="Message"></textarea>
+                            <br/><br/>
+               				<button type="submit" id="submit" value="submit" >SUBMIT</button>
+						</form>
+                    </div>
                 </div>
             </div>
        	</section>
   	<!--end of slide 5-->
     	<section id="slide-6">
-        	<h2>Footer</h2>
-            <p>text in the footer</p>
+        	<div class="hsContainer">
+            	<div class="hsContent">
+            		<p>© 2014 Mika Aguilar Site Info <a href="#">Back to Top</a></p>
+                </div>
+          	</div>
         </section>
+    <!--end of slide 6-->
     </div>
-    <!--END OF SKROLLR-BODY-->   
-		<!--<section id="slide-a" class="homeSlide homeSlideTall">
-			<div class="bcg" 
-            	data-center="background-position: 50% 0px;" 
-                data-bottom-top="background-position: 50% 100px;" 
-                data-top-bottom="background-position: 50% -100px;" 
-                data-anchor-target="#slide-a"
-          	>
-				<div class="curtainContainer">
-					<div class="curtain" 
-                    	data-bottom-top="opacity: 0" 
-                        data-106-top="height: 1%; opacity: 0; top: -10%;" 
-                        data-center="height: 100%; opacity: 0.5; top: 0%;" 
-                        data-anchor-target="#slide-a"
-                   	>
-                    </div>
-					<div class="copy" 
-                    	data-bottom-top="opacity: 0" 
-                        data--100-bottom="opacity: 0" 
-                        data--280-bottom="opacity: 1;" 
-                        data-280-top="opacity: 1;" 
-                        data-106-top="opacity: 0;" 
-                        data-anchor-target="#slide-a .copy"
-                	>
-						<h2>Curtain effect while you scroll</h2>
-					</div>
-				</div>
-			</div>
-		</section>-->
-	<!--end of slide 4-->
+    <!--END OF SKROLLR-BODY-->
 		</main>
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/skrollr.js"></script>
