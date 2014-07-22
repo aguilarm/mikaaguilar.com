@@ -215,11 +215,11 @@ main {
 #slide-5 h2 {
 	color: #3399ff;
 }
-#footer {background-color:#3399ff;width:100%;height:80px;margin-top:-80px;color:#fff;text-align:center;padding-top:40px;}
+#footer {background-color:#3399ff;width:100%;height:5%;margin-top:-5.999%;color:#fff;text-align:center;padding-top:40px;}
 
 /* Slide 6 - Footer */
 #slide-6 {background-color: #3399ff; padding: 10px; height: 40px; top:-40px;}
-#slide-6 p, #slide-6 a {color: #fff;}
+#slide-6 div, #slide-6 a {color: #fff;}
 
 /* Slide Constants */
 .hsContainer {
@@ -268,6 +268,9 @@ input {
     box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+label {
+	display: none;
+}
 textarea {
 	margin: 0;
 	top: 0;
