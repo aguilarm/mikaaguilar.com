@@ -10,7 +10,7 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 999;
+	z-index: 998;
 	background-color:#fff;
 	-webkit-transition: height 0.4s;
 	transition: height 0.4s;
@@ -102,9 +102,7 @@ body, html {
 	background-color: #FFF;
 	font-family: 'PT Sans Narrow', sans-serif;
 }
-.no-js {
-	padding-top: 106px;
-}
+
 h2 {
 	margin-top: 0;
 	font-family: 'PT Sans Narrow', sans-serif;
@@ -140,9 +138,7 @@ main {
 	margin: auto;
 	margin-top: -10%; 
 	width: 200px; 
-	height: 219px; 
-	background-image: url(../img/logo200.png); 
-	background-size: 100% 100%;
+	height: 219px;
 	}
 #slide-1 h1 {font-family: 'PT Sans', sans-serif; font-size: 80px; color: #3399ff; margin-top: -12px;}
 #slide1text {
@@ -206,9 +202,9 @@ main {
 #slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
 
 /* Slide 5 - Contact Me */
-#slide-5 {height:400px}
+#slide-5 h2 {margin-bottom: 18px;}
 #contactWrap {
-	width: 430px;
+	width: 500px;
 	height: 60%;
 	margin: auto;
 }
@@ -230,8 +226,7 @@ main {
 	overflow: hidden;
 	position: relative;
 }
-	.hsContainer h2,
-	.copy h2 {
+	h2 {
 		color: #888;
 		font-size: 45px;
 		line-height: 48px;
@@ -317,3 +312,41 @@ button:hover {
     color:    #3399ff;
 	opacity:  0.5;
 }
+
+/* ==========================================================================
+   Lightbox
+   ========================================================================== */
+   
+   #lightbox {
+	   display: none;
+	   table-layout: fixed;
+	   position:fixed;
+	   top:0;
+	   left:0;
+	   width:100%;
+	   height:100%;
+	   background:rgba(51,153,255,.8);
+	   text-align:center;
+	   z-index: 999;
+   }
+   #lightbox>div {
+	   	display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		color:#fff;
+   }
+   #lbContent {
+		background-color:#fff;
+		width: 500px;
+		height: 400px;
+		margin:auto;
+		color:#3399ff;
+		padding:20px;
+		z-index:1000;
+   }
+   #lbContent a, #lbContent h2 {
+	   color:#3399ff
+   }
+   #lbContent p {
+	   text-align:justify;
+   }

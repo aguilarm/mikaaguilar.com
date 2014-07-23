@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <!--Open Graph Protocol Data-->
+    <meta property="og:title" content="Mika Aguilar" />
+    <meta property="og:image" content="http://mikaaguilar.com/img/logo200.png" />
+	<meta property="og:description"
+   	content="Mika Aguilar is a front-end web developer based near Austin, TX." />
+    <meta property="og:url" content="http://www.mikaaguilar.com/index.html" />
+    
     <title>Mika Aguilar - Home</title>
     
     <!-- Stylesheets -->
@@ -16,6 +23,24 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 </head>
 <body>
+	<div id="skrollr-body">
+	<!--used for site info, default hidden-->
+	<div id="lightbox">
+    	<div>
+        	<p>click anywhere to close</p>
+        	<div id="lbContent">
+    			<h2>Site Info</h2>
+        		<p>Besides what's listed below and a few smaller things, I handmade the entire site design using HTML5 and CSS3 wizardry and a fair chunk of Javascript/jQuery.  These great resources helped me along the way:<br><br>
+                The icons in the Skills section are from <a href="http://www.flaticon.com" title="Flaticon">Flaticon</a>, by Icomoon and Freepik.<br><br>
+                The photo of Austin is used with the <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 Generic License</a> and I found it on <a href="https://www.flickr.com/photos/ejmc/14359786095">Flickr</a> from Earl McGehee.<br><br>
+                I also had a lot of help using <a href="https://ihatetomatoes.net/">Petr Tichy's</a> great parallax lessons, and the whole parallax style works because of the <a href="https://github.com/Prinzhorn/skrollr">Skrollr</a> library, which is awesome and pretty easy to use.<br><br>
+                </p>
+                To them and many others, Thanks!
+           	</div>
+            <p>click anywhere to close</p>
+      	</div>
+    </div>
+    <!--end of site info popup-->
 	<header>
     	<div id="hdWrap">    
  	  		<a id="hdLogo" href="#slide-1"></a>
@@ -23,28 +48,26 @@
 				<a href="#slide-1">mika aguilar</a>
 			</div>
         	<nav>
-				<a href="#slide-3" data-center="color: rbg(51,153,255);" data-anchor-target="#slide-3">SKILLS</a>
-				<a href="#slide-5" data-center="color: rbg(51,153,255);" data-anchor-target="#slide-5 .hsContent h2">CONTACT</a>
+				<a href="#slide-3" data--50-top="color:rgb(153,153,153)" data-top="color: rgb(51,153,255);" data-bottom="color:rgb(153,153,153)" data-anchor-target="#slide-3">SKILLS</a>
+				<a href="#slide-5" data-bottom-top="color:rgb(153,153,153)" data-center="color: rgb(51,153,255);" data-end="color:rgb(153,153,153)" data-anchor-target="#slide-5">CONTACT</a>
 			</nav>
 		</div>
 	</header>
 	<!--end of header-->
 	<main>
     <!--begin body content-->
-	<div id="skrollr-body">
+
 		<section id="slide-1" class="homeSlide">
         	<div class="hsContainer">
             	<div class="hsContent" data-center="opacity: 1;" data-0-top="opacity: 0;" data-anchor-target="#slide1text">
-                	<div id="logoBig"></div>
+                	<img id="logoBig" src="img/logo200.png"></img>
                 	<h1>MIKA AGUILAR</h1>
 					<p id="slide1text">I am a web designer and and front-end developer with full-stack aspirations working near Austin, TX.
                		This June I moved from Michigan to Texas and am now taking on development full-time here. I'm incredibly excited for
-              	  	my future in this great city!  Follow me on <a href="github.com/aguilarm">github</a>, 
-                	<a href="codepen.io/aguilarm">codepen</a>, or <a href="http://stackoverflow.com/users/3741400/maguilar">stack exchange</a> 
-                	while I navigate the world of web development.</p>
+              	  	my future in this great city!
 				</div>
          	</div>
-           	<div id="scrollDown" data-100-bottom="opacity: 1;" data-200-top="opacity: 0;"><img src="img/down.png"></div>
+           	<div id="scrollDown" data-100-bottom="opacity: 1;" data-200-top="opacity: 0;"><img src="img/down.png" alt="down arrow"></div>
 		</section>
 	<!--end of slide 1-->
 		<section id="slide-2" class="homeSlidePhoto">
@@ -61,24 +84,24 @@
            		 	<div id="hsLeft">
            		     	<div class="hsLeftTxt">
             	    		<h2>WHAT I DO</h2>
-               		 		<p>I've been tinkering with computers since I was a kid, and have always been fascinated by the seemingly endless possiblity therein.  I've done a lot of small projects and been through quite a few classes, but until recently I had not devoted all of my time to development.<br /><br />I'm competent in all of the front-end languages I've encountered thus far, as well as most of the Adobe suite.  I've either handwritten or fully understand every technology used for this site.  On top of that I've done a bit of work with PhoneGap, Java, C#, ActionScript, C++, and a huge number of niche development programs.  Now that I'm very confident with my front-end skills, I'm setting my sights on learning data structures and the juicy bits of back-end.<br /><br />Currently, I'm looking for employment near Austin or San Antonio where I can get my hands dirty digging into cool projects and meeting all of you great people!</p>
+               		 		<p>I've been tinkering with computers since I was a kid, and have always been fascinated by the seemingly endless possiblity therein.  I've done a lot of small projects and been through quite a few classes, but until recently I had not devoted all of my time to development.<br /><br />I'm competent in all of the front-end languages I've encountered thus far, as well as most of the Adobe suite.  I've either handwritten or fully understand every technology used for this site.  On top of that I've done a bit of work with PhoneGap, Java, C#, ActionScript, C++, Ubuntu Server, and a huge number of niche development programs.  Now that I'm very confident with my front-end skills, I'm setting my sights on learning data structures and the juicy bits of back-end.<br /><br />Currently, I'm looking for employment near Austin or San Antonio where I can get my hands dirty digging into cool projects and meeting all of you great people!</p>
                			</div>
             		</div>
                	 	<div id="hsRight">
                			<div class="grid">
                     		<div id="row1">
-                   				<img src="img/html5.png">
-                   	 			<img src="img/css3.png">
+                   				<img src="img/html5.png" alt="htm5">
+                   	 			<img src="img/css3.png" alt="css3">
                         	</div>
                         	<div>
-               					<img src="img/dw.png">
-                    			<img src="img/flash.png">
-                    			<img src="img/adobeil.png">
-                    			<img src="img/ps.png">
+               					<img src="img/dw.png" alt="dreamweaver">
+                    			<img src="img/flash.png" alt="flash">
+                    			<img src="img/adobeil.png" alt="illustrator">
+                    			<img src="img/ps.png" alt="photoshop">
                         	</div>
                         	<div id="row3">
-                    			<img src="img/jquery.png">
-                    			<img src="img/php.png">
+                    			<img src="img/jquery.png" alt="jquery">
+                    			<img src="img/php.png" alt="php">
                         	</div>
                			</div>
                  	</div><!--right-->
@@ -94,18 +117,17 @@
         	<div class="hsContainer">
             	<div class="hsContent"  id="contact">
                 	<h2>CONTACT ME</h2>
-                    <p>Fill this out to send me a message</p>
                     <div id="contactWrap">
-                    	<form id="contactForm" action="mailer.php" method="POST">
-							<input type="text" name="name" class="shortBox" placeholder="Name">
+                    	<form id="contactform" method="post" action="mailer.php" >
+							<input type="text" id="name" name="name" class="shortBox" placeholder="Name">
                             <br/><br/>
-							<input type="text" name="email" class="shortBox" placeholder="Email">
+							<input type="email" id="email" name="email" class="shortBox" placeholder="Email">
                             <br/><br/>
-                        	<textarea name="message" class="tallBox" rows="7" placeholder="Message"></textarea>
+                        	<textarea id="message" name="message" class="tallBox" rows="7" placeholder="Message"></textarea>
                             <br/><br/>
-               				<button type="submit" id="submit" value="submit" >SUBMIT</button>
+               				<button type="submit" id="submit">SUBMIT</button>
 						</form>
-                        <div id="formMessage"></div>
+                        <div id="formmessages"></div>
                     </div>            
                 </div>            
             </div>  
@@ -114,20 +136,19 @@
     	<section id="slide-6">
         	<div class="hsContainer">
             	<div class="hsContent">
-                	<div>© 2014 Mika Aguilar  |  Site Info  |  <a href="#slide-1">Back to Top</a></div>
+                	<div>© 2014 Mika Aguilar  |  <a href="#" class="lightboxTrigger">Site Info</a>  |  <a href="#slide-1">Back to Top</a></div>
                 </div>
           	</div>
         </section>
     <!--end of slide 6-->
-    </div>
+
     <!--END OF SKROLLR-BODY-->
-		</main>
-<script src="js/jquery-1.11.1.min.js"></script>
+	</main>
+        </div>
+<script src="js/jquery-2.1.0.min.js"></script>
 <script src="js/skrollr.js"></script>
 <script src="js/skrollr.menu.min.js"></script>
-<!--<script src="js/imagesloaded.js"></script-->
 <script src="js/main.js"></script>
-<script src="js/navshrink.js"></script>
 <script src="js/form.js"></script>
 </body>
 </html>

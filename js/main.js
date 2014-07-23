@@ -84,3 +84,43 @@
 	}
 	
 } )( jQuery );
+
+/* ==========================================================================
+   Navigation Shrinker
+   ========================================================================== */
+
+$('document').ready(function($){
+	var header = $('header');
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 600) {
+			header.addClass("small");
+		} else {
+			header.removeClass("small");
+		}
+	});
+});
+
+/* ==========================================================================
+   Lightbox
+   ========================================================================== */
+
+$('document').ready(function($){
+	
+	var lightbox = $('#lightbox');
+	
+	$('.lightboxTrigger').click(function(e) {
+		e.preventDefault();
+		if (lightbox.css('display')=='none') {
+			lightbox.css('display','table');
+			console.log('LIGHT!');
+		} else {
+			lightbox.hide();
+			console.log('DARK!');
+		}
+	});
+	
+	lightbox.click(function() {
+		lightbox.hide();
+		console.log('WE CLICKED THE LIGHT OFF');
+	});
+});
