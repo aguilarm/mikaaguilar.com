@@ -131,16 +131,16 @@ main {
 	width: 100%;
 }
 /* Slide 1 - Intro/About */
-#slide-1 {background-color: #fff;}
-#slide-1 .hsContent {max-width: 800px;}
-#slide-1 #logoBig { 
+#top {background-color: #fff;}
+#top .hsContent {max-width: 800px;}
+#top #logoBig { 
 	display: block;
 	margin: auto;
 	margin-top: -10%; 
 	width: 200px; 
 	height: 219px;
 	}
-#slide-1 h1 {font-family: 'PT Sans', sans-serif; font-size: 80px; color: #3399ff; margin-top: -12px;}
+#top h1 {font-family: 'PT Sans', sans-serif; font-size: 80px; color: #3399ff; margin-top: -12px;}
 #slide1text {
 	text-align: justify; 
 	line-height: 35px;
@@ -150,7 +150,7 @@ main {
 	color: #b2b2b2;
 	margin-top: -52px;
 	}
-#scrollDown {display: block; margin: auto; width: 140px; height: 40px; margin-top: -40px; color: #3399ff; text-align: center; font-family: 'PT sans', sans-serif;}
+#scrollDown {display: block; margin: auto; width: 140px; height: 40px; margin-top: -22px; color: #3399ff; text-align: center; font-family: 'PT sans', sans-serif;}
 #scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
 
 
@@ -158,7 +158,7 @@ main {
 #slide-2 .bcg {background-image:url('../img/austinskyline.jpg');}
 
 /* Slide 3 - Skills */
-#slide-3 {background-color: #3399ff;}
+#skills {background-color: #3399ff;}
 #hsLeft {
 	display: table-cell;
 	vertical-align: middle;
@@ -202,20 +202,19 @@ main {
 #slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
 
 /* Slide 5 - Contact Me */
-#slide-5 h2 {margin-bottom: 18px;}
+#contact h2 {margin-bottom: 18px;}
 #contactWrap {
 	width: 500px;
 	height: 60%;
 	margin: auto;
 }
-#slide-5 h2 {
+#contact h2 {
 	color: #3399ff;
 }
-#footer {background-color:#3399ff;width:100%;height:5%;margin-top:-5.999%;color:#fff;text-align:center;padding-top:40px;}
 
 /* Slide 6 - Footer */
 #slide-6 {background-color: #3399ff; padding: 10px; height: 40px; top:-40px;}
-#slide-6 div, #slide-6 a {color: #fff;}
+#slide-6 div, #slide-6 a {color: #fff; font-family:'Droid Sans', sans-serif;}
 
 /* Slide Constants */
 .hsContainer {
@@ -334,6 +333,7 @@ button:hover {
 		vertical-align: middle;
 		text-align: center;
 		color:#fff;
+		font-family: 'Droid Sans', sans-serif;
    }
    #lbContent {
 		background-color:#fff;
@@ -349,4 +349,5 @@ button:hover {
    }
    #lbContent p {
 	   text-align:justify;
+	   font-family: 'Droid Sans', sans-serif;
    }

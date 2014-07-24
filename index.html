@@ -9,7 +9,7 @@
    	content="Mika Aguilar is a front-end web developer based near Austin, TX." />
     <meta property="og:url" content="http://www.mikaaguilar.com/index.html" />
     
-    <title>Mika Aguilar - Home</title>
+    <title>Mika Aguilar</title>
     
     <!-- Stylesheets -->
     <link href="css/normalize.css" rel="stylesheet">
@@ -20,7 +20,7 @@
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
 </head>
 <body>
 	<div id="skrollr-body">
@@ -43,13 +43,13 @@
     <!--end of site info popup-->
 	<header>
     	<div id="hdWrap">    
- 	  		<a id="hdLogo" href="#slide-1"></a>
+ 	  		<a id="hdLogo" href="#top"></a>
 			<div id="hdName">
-				<a href="#slide-1">mika aguilar</a>
+				<a href="#top">mika aguilar</a>
 			</div>
         	<nav>
-				<a href="#slide-3" data--50-top="color:rgb(153,153,153)" data-top="color: rgb(51,153,255);" data-bottom="color:rgb(153,153,153)" data-anchor-target="#slide-3">SKILLS</a>
-				<a href="#slide-5" data-bottom-top="color:rgb(153,153,153)" data-center="color: rgb(51,153,255);" data-end="color:rgb(153,153,153)" data-anchor-target="#slide-5">CONTACT</a>
+				<a href="#skills" data--50-top="color:rgb(153,153,153)" data-top="color: rgb(51,153,255);" data-bottom="color:rgb(153,153,153)" data-anchor-target="#skills">SKILLS</a>
+				<a href="#contact" data-bottom-top="color:rgb(153,153,153)" data-center="color: rgb(51,153,255);" data-end="color:rgb(153,153,153)" data-anchor-target="#contact">CONTACT</a>
 			</nav>
 		</div>
 	</header>
@@ -57,17 +57,17 @@
 	<main>
     <!--begin body content-->
 
-		<section id="slide-1" class="homeSlide">
+		<section id="top" class="homeSlide">
         	<div class="hsContainer">
             	<div class="hsContent" data-center="opacity: 1;" data-0-top="opacity: 0;" data-anchor-target="#slide1text">
-                	<img id="logoBig" src="img/logo200.png"></img>
+                	<img id="logoBig" src="img/logo200.png" alt="Logo"></img>
                 	<h1>MIKA AGUILAR</h1>
 					<p id="slide1text">I am a web designer and and front-end developer with full-stack aspirations working near Austin, TX.
                		This June I moved from Michigan to Texas and am now taking on development full-time here. I'm incredibly excited for
               	  	my future in this great city!
 				</div>
          	</div>
-           	<div id="scrollDown" data-100-bottom="opacity: 1;" data-200-top="opacity: 0;"><img src="img/down.png" alt="down arrow"></div>
+           	<div id="scrollDown" data-100-bottom="opacity: 1;" data-200-top="opacity: 0;"><img id="downarrow" src="img/down.png" alt="down arrow"></div>
 		</section>
 	<!--end of slide 1-->
 		<section id="slide-2" class="homeSlidePhoto">
@@ -79,7 +79,7 @@
 		    </div>
 		</section>
 	<!--end of slide 2-->
-        <section id="slide-3" class="homeSlideShort">
+        <section id="skills" class="homeSlideShort">
         	<div class="hsContainer">
            		 	<div id="hsLeft">
            		     	<div class="hsLeftTxt">
@@ -113,9 +113,9 @@
 		    </div>
       	</section>
   	<!--end of slide 4-->
-    	<section id="slide-5" class="homeSlide">
+    	<section id="contact" class="homeSlide">
         	<div class="hsContainer">
-            	<div class="hsContent"  id="contact">
+            	<div class="hsContent">
                 	<h2>CONTACT ME</h2>
                     <div id="contactWrap">
                     	<form id="contactform" method="post" action="mailer.php" >
@@ -136,7 +136,7 @@
     	<section id="slide-6">
         	<div class="hsContainer">
             	<div class="hsContent">
-                	<div>© 2014 Mika Aguilar  |  <a href="#" class="lightboxTrigger">Site Info</a>  |  <a href="#slide-1">Back to Top</a></div>
+                	<div>© 2014 Mika Aguilar  |  <a href="#" class="lightboxTrigger">Site Info</a>  |  <a href="#top">Back to Top</a></div>
                 </div>
           	</div>
         </section>

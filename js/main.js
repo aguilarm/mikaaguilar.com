@@ -124,3 +124,19 @@ $('document').ready(function($){
 		console.log('WE CLICKED THE LIGHT OFF');
 	});
 });
+
+/* ==========================================================================
+   Bounce
+   ========================================================================== */
+   
+$('document').ready(function($){
+	
+	setInterval(function() {
+		var element = $('#scrollDown');
+		var distance = '28px';
+		var speed = 800;
+			
+		element.animate({marginTop: '-='+distance},speed)
+        	.animate({marginTop: '+='+distance},speed);
+	}, 300)
+});
