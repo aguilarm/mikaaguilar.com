@@ -101,26 +101,27 @@ $('document').ready(function($){
 });
 
 /* ==========================================================================
-   Lightbox
+   Site Info Pull
    ========================================================================== */
 
 $('document').ready(function($){
 	
-	var lightbox = $('#lightbox');
+	var info = $('#siteInfo');
 	
-	$('.lightboxTrigger').click(function(e) {
+	$('.infoTrigger').click(function(e) {
 		e.preventDefault();
-		if (lightbox.css('display')=='none') {
-			lightbox.css('display','table');
+		if (info.css('display')=='none') {
+			info.show(300);
+			$('html, body').animate({scrollTop: info.offset().top}, 'slow');
 			console.log('LIGHT!');
 		} else {
-			lightbox.hide();
+			info.hide(300);
 			console.log('DARK!');
 		}
 	});
 	
-	lightbox.click(function() {
-		lightbox.hide();
+	info.click(function() {
+		info.hide(300);
 		console.log('WE CLICKED THE LIGHT OFF');
 	});
 });

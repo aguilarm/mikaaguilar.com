@@ -215,7 +215,6 @@ main {
 #contact h2 {margin-bottom: 18px;}
 #contactWrap {
 	width: 500px;
-	height: 60%;
 	margin: auto;
 }
 #contact h2 {
@@ -225,6 +224,11 @@ main {
 /* Slide 6 - Footer */
 #slide-6 {background-color: #3399ff; padding: 10px; height: 40px; top:-40px;}
 #slide-6 div, #slide-6 a {color: #fff; font-family:'Droid Sans', sans-serif;}
+
+/* Site Info */
+#siteInfo {display:none; padding: 20px;padding-bottom: 40px;}
+#siteInfo p {max-width: 800px; text-align:justify;}
+#siteInfo h2, #siteInfo a {color:#3399ff}
 
 /* Slide Constants */
 .hsContainer {
@@ -258,7 +262,6 @@ main {
 	padding: 0 8%;
 	text-align: center;
 }
-	.hsContent p {width: 400px;}
 	
 /* ==========================================================================
    Form Rules
@@ -321,43 +324,3 @@ button:hover {
     color:    #3399ff;
 	opacity:  0.5;
 }
-
-/* ==========================================================================
-   Lightbox
-   ========================================================================== */
-   
-   #lightbox {
-	   display: none;
-	   table-layout: fixed;
-	   position:fixed;
-	   top:0;
-	   left:0;
-	   width:100%;
-	   height:100%;
-	   background:rgba(51,153,255,.8);
-	   text-align:center;
-	   z-index: 999;
-   }
-   #lightbox>div {
-	   	display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-		color:#fff;
-		font-family: 'Droid Sans', sans-serif;
-   }
-   #lbContent {
-		background-color:#fff;
-		width: 500px;
-		height: 400px;
-		margin:auto;
-		color:#3399ff;
-		padding:20px;
-		z-index:1000;
-   }
-   #lbContent a, #lbContent h2 {
-	   color:#3399ff
-   }
-   #lbContent p {
-	   text-align:justify;
-	   font-family: 'Droid Sans', sans-serif;
-   }
