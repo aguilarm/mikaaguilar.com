@@ -174,16 +174,26 @@ main {
 	#hsLeft p {
 		text-align: right;
 		color: #fff;
-		max-width: 540px;
+		width: 480px;
 		float:right;
 	}
-
+#separator{background-color:#fff;float:right;height: 307px;width:3px;margin-left:13px;}
+#hsLeftInner{width:500px;display:block;margin-left:auto;}
 #hsRight {
 	display: table-cell;
 	vertical-align: middle;
 }
+#hsRight h2 {
+	text-align:left;
+	color:#fff;
+	font-size:45px;
+	line-height:45px;
+	margin-bottom:15px;
+	margin-left: 13px;
+	margin-top: -8px;
+}
 .grid {
-	margin-top:60px;
+	margin-top: 29px;
 	margin-left:10px;
 }
 	#row1 {
