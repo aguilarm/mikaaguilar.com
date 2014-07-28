@@ -21,7 +21,7 @@
         $recipient = "mika.aguilar@gmail.com";
 
         // Set the email subject.
-        $subject = "New contact from $name";
+        $subject = "$name is contacting you from your Portfolio site!";
 
         // Build the email content.
         $email_content = "Name: $name\n";
@@ -30,7 +30,6 @@
 
         // Build the email headers.
         $email_headers = "From: $name <$email>";
-		mail($recipient, $subject, $email_content, $email_headers);
         // Send the email.
         if (mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.

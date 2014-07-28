@@ -7,10 +7,9 @@
  * URL: www.ihatetomatoes.net
  * Article URL: http://ihatetomatoes.net/how-to-create-a-parallax-scrolling-website/
  */
-
 ( function( $ ) {
 	
-	// Setup variables
+	//Setup Variables
 	$window = $(window);
 	$slide = $('.homeSlide');
 	$slideShort = $('.homeSlideShort');
@@ -19,71 +18,116 @@
 	$slideTall2 = $('.homeSlideTall2');
 	$body = $('body');
 	
-	setTimeout(function() {
+    //FadeIn all sections   
+	function loaded() {
+		setTimeout(function() {
 		      
 		      // Resize sections
 		      adjustWindow();
-			  $body.addClass('loaded');
+		      
+		      // Fade in sections
+			  $body.removeClass('loading').addClass('loaded');
 			  
-	}, 800);
-	
-	function adjustWindow(){
-		
-		// Init Skrollr
-		var s = skrollr.init({
-		    render: function(data) {
-		    
-		        //Debugging - Log the current scroll position.
-		        //console.log(data.curTop);
-		    }
-		});
-		
-		// Get window size
-	    winH = $window.height();
-	    
-	    // Keep minimum height 550
-	    if(winH <= 550) {
-			winH = 550;
-		} 
-	    
-	    // Resize our slides
-	    $slide.height(winH);
-		$slideShort.height(winH*0.75);
-	    $slideTall.height(winH*2);
-	    $slideTall2.height(winH*3);
-		$slidePhoto.height(winH*0.3);
-	    
-	    // Refresh Skrollr after resizing our sections
-	    s.refresh($('.homeSlide'));
-	    
-		skrollr.menu.init(s, {
-    //skrollr will smoothly animate to the new position using `animateTo`.
-    animate: true,
-
-    //The easing function to use.
-    easing: 'sqrt',
-
-    //Multiply your data-[offset] values so they match those set in skrollr.init
-    scale: 2,
-
-    //How long the animation should take in ms.
-    duration: function(currentTop, targetTop) {
-        //By default, the duration is hardcoded at 500ms.
-        return 800;
-
-        //But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
-        //return Math.abs(currentTop - targetTop) * 200;
-    },
-
-    //If you pass a handleLink function you'll disable `data-menu-top` and `data-menu-offset`.
-    //You are in control where skrollr will scroll to. You get the clicked link as a parameter and are expected to return a number.
-    //handleLink: function(link) {
-    //    return 400;//Hardcoding 400 doesn't make much sense.
-    //}
-});
+		}, 800);
 	}
 	
+	loaded();
+	
+	function adjustWindow(){
+
+	    // Get window size
+	    winH = $window.height();
+	    winW = $window.width();
+
+	    // Keep minimum height 550
+	    if(winH <= 550) {
+	        winH = 550;
+	    }
+
+	    // Init Skrollr for 768 and up
+	    if( winW >= 768) {
+
+	        // Init Skrollr
+	        var s = skrollr.init({
+	            forceHeight: false
+	        });
+
+	        // Resize our slides
+	        $slide.height(winH);
+			$slideShort.height(winH*0.75);
+	    	$slideTall.height(winH*2);
+	    	$slideTall2.height(winH*3);
+			$slidePhoto.height(winH*0.3);
+			
+	        s.refresh($('.homeSlide'));
+
+	    } else {
+
+	        // Init Skrollr
+	        var s = skrollr.init();
+	        s.destroy();
+	    }
+	
+		// Check for touch
+	   	if(Modernizr.touch) {
+
+			// Init Skrollr
+			var s = skrollr.init();
+			s.destroy();
+	   	}
+
+	}
+	
+	function initAdjustWindow() {
+	    return {
+	        match : function() {
+	            adjustWindow();
+	        },
+	        unmatch : function() {
+	            adjustWindow();
+	        }
+	    };
+	}
+
+	enquire.register("screen and (min-width : 768px)", initAdjustWindow(), false);
+		
 } )( jQuery );
+		/*//Init Skrollr for 768+
+		if( winW >= 768) {
+
+	    	// Resize our slides
+	    	$slide.height(winH);
+
+	    
+	    	// Refresh Skrollr after resizing our sections
+	    	s.refresh($('.homeSlide'));
+			
+			//Activate menu plugin
+			skrollr.menu.init(s, {
+    			//skrollr will smoothly animate to the new position using `animateTo`.
+    			animate: true,
+
+    			//The easing function to use.
+    			easing: 'sqrt',
+
+    			//Multiply your data-[offset] values so they match those set in skrollr.init
+    			scale: 2,
+
+    			//How long the animation should take in ms.
+    			duration: function(currentTop, targetTop) {
+        			//By default, the duration is hardcoded at 500ms.
+        			return 800;
+
+        			//But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
+        			//return Math.abs(currentTop - targetTop) * 200;
+    			},
+
+    			//If you pass a handleLink function you'll disable `data-menu-top` and `data-menu-offset`.
+    			//You are in control where skrollr will scroll to. You get the clicked link as a parameter and are expected to return a number.
+    			//handleLink: function(link) {
+    			//    return 400;//Hardcoding 400 doesn't make much sense.
+    			//}
+			});*/
 
 /* ==========================================================================
    Navigation Shrinker
@@ -113,16 +157,13 @@ $('document').ready(function($){
 		if (info.css('display')=='none') {
 			info.show(300);
 			$('html, body').animate({scrollTop: info.offset().top}, 'slow');
-			console.log('LIGHT!');
 		} else {
 			info.hide(300);
-			console.log('DARK!');
 		}
 	});
 	
 	info.click(function() {
 		info.hide(300);
-		console.log('WE CLICKED THE LIGHT OFF');
 	});
 });
 
@@ -140,4 +181,55 @@ $('document').ready(function($){
 		element.animate({marginTop: '-='+distance},speed)
         	.animate({marginTop: '+='+distance},speed);
 	}, 300)
+});
+
+/* ==========================================================================
+   Bounce
+   ========================================================================== */
+
+$(function() {
+	
+	var form = $('#contactform');
+	var formMessage = $('#formmessages');
+
+	$(form).submit(function(e) {
+		e.preventDefault();
+		
+		$(formMessage).addClass('loading');
+		$(formMessage).removeClass('error');
+		$(formMessage).removeClass('success');
+		$(formMessage).text('Loading...');
+		
+		var formData = $(form).serialize();
+	
+		$.ajax({
+			url: $(form).attr('action'),
+			type: 'POST',
+			data: formData		
+		})
+		.done(function(response) {
+			
+			$(formMessage).removeClass('loading');
+			$(formMessage).removeClass('error');
+			$(formMessage).addClass('success');
+			
+			$(formMessage).text(response);
+	
+			$('#name').val('');
+   	 		$('#email').val('');
+    		$('#message').val('');
+		})
+		.fail(function(data) {
+			
+			$(formMessage).removeClass('loading');
+			$(formMessage).removeClass('success');
+    		$(formMessage).addClass('error');
+
+    		if (data.responseText !== '') {
+        		$(formMessage).text(data.responseText);
+    		} else {
+        		$(formMessage).text('Oops! An error occured and your message could not be sent.');
+    		}
+		});
+	});
 });

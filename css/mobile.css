@@ -1,0 +1,7 @@
+@media only screen and (max-width: 720px) {
+	
+	html, body {background-color:green;}
+	header {display:none;}
+	#top {background-color: #f00;}
+	
+}

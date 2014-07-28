@@ -215,11 +215,17 @@ main {
 #contact h2 {margin-bottom: 18px;}
 #contactWrap {
 	width: 500px;
+	height: 360px;
 	margin: auto;
 }
 #contact h2 {
 	color: #3399ff;
 }
+
+#formmessages {-webkit-transition: color 0.4s;transition: color 0.4s;padding-top:10px}
+.loading{color:#3399ff}
+.error {color:#f00}
+.success {color:#060}
 
 /* Slide 6 - Footer */
 #slide-6 {background-color: #3399ff; padding: 10px; height: 40px; top:-40px;}
@@ -324,3 +330,17 @@ button:hover {
     color:    #3399ff;
 	opacity:  0.5;
 }
+
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+   
+@media only screen and (min-width: 768px) {}
+	
+		
+		
+		
+		
+		
+		

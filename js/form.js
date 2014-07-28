@@ -6,6 +6,11 @@ $(function() {
 	$(form).submit(function(e) {
 		e.preventDefault();
 		
+		$(formMessage).addClass('loading');
+		$(formMessage).removeClass('error');
+		$(formMessage).removeClass('success');
+		$(formMessage).text('Loading...');
+		
 		var formData = $(form).serialize();
 	
 		$.ajax({
@@ -15,6 +20,7 @@ $(function() {
 		})
 		.done(function(response) {
 			
+			$(formMessage).removeClass('loading');
 			$(formMessage).removeClass('error');
 			$(formMessage).addClass('success');
 			
@@ -26,6 +32,7 @@ $(function() {
 		})
 		.fail(function(data) {
 			
+			$(formMessage).removeClass('loading');
 			$(formMessage).removeClass('success');
     		$(formMessage).addClass('error');
 
