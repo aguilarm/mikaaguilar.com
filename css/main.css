@@ -138,7 +138,7 @@ main {
 	margin: auto;
 	margin-top: -10%; 
 	width: 200px; 
-	height: 219px;
+	height: 223px;
 	}
 #top h1 {font-family: 'PT Sans', sans-serif; font-size: 80px; color: #3399ff; margin-top: -12px;}
 #slide1text {
@@ -167,8 +167,6 @@ main {
 	#hsLeft h2 {
 		text-align: right;
 		color: #fff;
-		font-size: 45px;
-		line-height: 45px;
 		margin-bottom: 15px;
 	}
 	#hsLeft p {
@@ -248,7 +246,7 @@ main {
 	h2 {
 		color: #888;
 		font-size: 45px;
-		line-height: 48px;
+		line-height: 45px;
 		margin-bottom: 12px;
 		font-family: 'PT Sans', sans-serif;
 	}
@@ -330,17 +328,3 @@ button:hover {
     color:    #3399ff;
 	opacity:  0.5;
 }
-
-
-/* ==========================================================================
-   Mobile
-   ========================================================================== */
-   
-@media only screen and (min-width: 768px) {}
-	
-		
-		
-		
-		
-		
-		

@@ -1,7 +1,97 @@
-@media only screen and (max-width: 720px) {
-	
-	html, body {background-color:green;}
-	header {display:none;}
-	#top {background-color: #f00;}
-	
+/*Any device with a max device width of less than 768px*/
+
+@media only screen and (max-device-width: 768px) {
+/* ==========================================================================
+Header
+========================================================================== */
+
+#hdWrap {
+	width: 90%;
 }
+header #hdName {
+	display: none !important;
+}
+
+/* ==========================================================================
+   Parallax Scroll
+   ========================================================================== */
+
+body, html {
+	height: auto;
+}
+section {
+	min-width: 300px;
+}
+h2 {
+	margin-top: 0;
+}
+/* Slide 1 - Intro/About */
+#top {background-color: #fff; height:550px;}
+#top .hsContent {min-width:60%;}
+#top #logoBig { 
+	display: block;
+	margin: auto;
+	margin-top: 0; 
+	width: 200px; 
+	height: 223px;
+	}
+#top h1 {font-family: 'PT Sans', sans-serif; font-size: 2.9em; color: #3399ff; margin-top: 0; margin-bottom: 0;}
+#slide1text {
+	text-align: justify;
+	line-height: 3em;
+	width: auto; 
+	z-index: 999; 
+	margin-bottom: -20px;   
+	color: #b2b2b2;
+	margin: 1em 0;
+	}
+#scrollDown {display: none;}
+
+
+/* Slide 2 - 3d Austin photo */
+#slide-2 {height:150px};
+#slide-2 .bcg {background-image:url('../img/austinskyline.jpg');}
+
+/* Slide 3 - Skills */
+	#hsLeft{padding: 30px 0;}
+	#hsLeftTxt {margin-right:0}
+	#hsLeft h2 {
+		text-align: center;
+		margin-bottom: 15px;
+		margin-top: 15px;
+	}
+	#hsLeft p {
+		text-align: left;
+		width: auto;
+		margin: 0 2em;
+		margin-bottom: 25px;
+	}
+#separator{display:none;}
+#hsLeftInner{width:auto;display:block;margin:0 auto;}
+#hsRight {display: none;}
+/* Slide 4 - Blurred code */
+#slide-4 {height:150px;}
+#slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
+
+/* Slide 5 - Contact Me */
+#contact {height:600px;}
+#contactWrap {
+	width: 95%;
+	height: 360px;
+	margin: auto;
+}
+/* Slide 6 - Footer */
+#slide-6 {height: 1em !important;}
+#slide-6 div, #slide-6 a {font-size: 0.9em;}
+
+/* Slide Constants */
+	h2 {
+		font-size: 2em;
+		line-height: 2em;
+		margin-bottom: 12px;
+		font-family: 'PT Sans', sans-serif;
+	}
+	.hsContainer p {
+		margin: 0 auto;
+		font-size: 0.7em;
+	}

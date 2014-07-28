@@ -17,13 +17,11 @@
 	$slideTall = $('.homeSlideTall');
 	$slideTall2 = $('.homeSlideTall2');
 	$body = $('body');
+	$section = $('section');
 	
     //FadeIn all sections   
 	function loaded() {
 		setTimeout(function() {
-		      
-		      // Resize sections
-		      adjustWindow();
 		      
 		      // Fade in sections
 			  $body.removeClass('loading').addClass('loaded');
@@ -58,23 +56,34 @@
 	    	$slideTall.height(winH*2);
 	    	$slideTall2.height(winH*3);
 			$slidePhoto.height(winH*0.3);
+			//$section.css({'min-width': winW});
 			
 	        s.refresh($('.homeSlide'));
 
+            skrollr.menu.init(s, {
+    			//skrollr will smoothly animate to the new position using `animateTo`.
+    			animate: true,
+
+    			//The easing function to use.
+    			easing: 'sqrt',
+
+    			//Multiply your data-[offset] values so they match those set in skrollr.init
+    			scale: 2,
+
+    			//How long the animation should take in ms.
+    			duration: function(currentTop, targetTop) {
+        			//By default, the duration is hardcoded at 500ms.
+        			return 800;
+    			}
+        			//But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
+        			//return Math.abs(currentTop - targetTop) * 200;
+    			});
 	    } else {
 
 	        // Init Skrollr
 	        var s = skrollr.init();
 	        s.destroy();
 	    }
-	
-		// Check for touch
-	   	if(Modernizr.touch) {
-
-			// Init Skrollr
-			var s = skrollr.init();
-			s.destroy();
-	   	}
 
 	}
 	
@@ -89,7 +98,7 @@
 	    };
 	}
 
-	enquire.register("screen and (min-width : 768px)", initAdjustWindow(), false);
+	enquire.register("screen and (min-device-width : 768px)", initAdjustWindow(), false);
 		
 } )( jQuery );
 		/*//Init Skrollr for 768+
@@ -169,7 +178,7 @@ $('document').ready(function($){
 
 /* ==========================================================================
    Bounce
-   ========================================================================== */
+   ========================================================================== 
    
 $('document').ready(function($){
 	
@@ -184,7 +193,7 @@ $('document').ready(function($){
 });
 
 /* ==========================================================================
-   Bounce
+   Form
    ========================================================================== */
 
 $(function() {
