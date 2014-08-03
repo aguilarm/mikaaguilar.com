@@ -31,6 +31,10 @@
 	
 	loaded();
 	
+	//ALWAYS resize the height of top
+	winH = $window.height();
+	$('#top').height(winH);
+	
 	function adjustWindow(){
 
 	    // Get window size
@@ -79,10 +83,13 @@
         			//return Math.abs(currentTop - targetTop) * 200;
     			});
 	    } else {
-
+			
+			
 	        // Init Skrollr
 	        var s = skrollr.init();
 	        s.destroy();
+			
+			
 	    }
 
 	}
@@ -145,7 +152,7 @@
 $('document').ready(function($){
 	var header = $('header');
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 600) {
+		if ($(this).scrollTop() > 500) {
 			header.addClass("small");
 		} else {
 			header.removeClass("small");
@@ -178,7 +185,7 @@ $('document').ready(function($){
 
 /* ==========================================================================
    Bounce
-   ========================================================================== 
+   ========================================================================== */
    
 $('document').ready(function($){
 	

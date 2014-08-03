@@ -136,7 +136,7 @@ main {
 #top #logoBig { 
 	display: block;
 	margin: auto;
-	margin-top: -10%; 
+	margin-top: -10%;
 	width: 200px; 
 	height: 223px;
 	}
@@ -145,11 +145,43 @@ main {
 	text-align: justify; 
 	line-height: 35px;
 	width: 499px; 
-	z-index: 999; 
-	margin-bottom: -20px;   
+	z-index: 999;  
 	color: #b2b2b2;
 	margin-top: -52px;
 	}
+#preloadButtons {
+	display:none;
+}
+#linkedin, #github {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	border-radius: 2px;
+	margin: 15px 5px;
+	transition: all 1s;
+	background-size: cover;
+}
+#linkedin {
+	background-image: url('../img/linkedin.png');
+}
+#linkedin:hover {
+	background-image: url('../img/linkedinInvert.png');
+}
+#github {
+	background-image: url('../img/github.png');
+}
+#github:hover {
+	background-image: url('../img/githubInvert.png');
+}
+/*#top a img {
+	width: 60px;
+	height: 60px;
+	border-radius: 2px;
+	margin: 15px 5px;
+	transition: all 1s;
+}*/
+
+	
 #scrollDown {display: block; margin: auto; width: 140px; height: 40px; margin-top: -22px; color: #3399ff; text-align: center; font-family: 'PT sans', sans-serif;}
 #scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
 
@@ -172,10 +204,10 @@ main {
 	#hsLeft p {
 		text-align: right;
 		color: #fff;
-		width: 480px;
+		width: 400px;
 		float:right;
 	}
-#separator{background-color:#fff;float:right;height: 307px;width:3px;margin-left:13px;}
+#separator{background-color:#fff;float:right;height: 327px;width:3px;margin-left:13px;}
 #hsLeftInner{width:500px;display:block;margin-left:auto;}
 #hsRight {
 	display: table-cell;
@@ -188,7 +220,7 @@ main {
 	line-height:45px;
 	margin-bottom:15px;
 	margin-left: 13px;
-	margin-top: -8px;
+	margin-top: -27px;
 }
 .grid {
 	margin-top: 29px;

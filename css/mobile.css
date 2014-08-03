@@ -1,6 +1,7 @@
 /*Any device with a max device width of less than 768px*/
 
 @media only screen and (max-device-width: 768px) {
+	
 /* ==========================================================================
 Header
 ========================================================================== */
@@ -26,39 +27,50 @@ h2 {
 	margin-top: 0;
 }
 /* Slide 1 - Intro/About */
-#top {background-color: #fff; height:550px;}
+#top {background-color: #fff;}
 #top .hsContent {min-width:60%;}
 #top #logoBig { 
 	display: block;
 	margin: auto;
-	margin-top: 0; 
+	margin-top: 1em; 
 	width: 200px; 
 	height: 223px;
 	}
 #top h1 {font-family: 'PT Sans', sans-serif; font-size: 2.9em; color: #3399ff; margin-top: 0; margin-bottom: 0;}
 #slide1text {
 	text-align: justify;
-	line-height: 3em;
+	line-height: 1.5em;
 	width: auto; 
-	z-index: 999; 
-	margin-bottom: -20px;   
+	z-index: 999;   
 	color: #b2b2b2;
 	margin: 1em 0;
-	}
+	margin-bottom: .5em;
+}
+#linkedin, #github {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	border-radius: 2px;
+	margin: 1em .5em;
+	margin-bottom: 1.5em;
+	transition: all 1s;
+	background-size: cover;
+}
+
 #scrollDown {display: none;}
 
 
 /* Slide 2 - 3d Austin photo */
 #slide-2 {height:150px};
-#slide-2 .bcg {background-image:url('../img/austinskyline.jpg');}
+#slide-2 .bcg {background-image:url('../img/austinskylineM.jpg');}
 
 /* Slide 3 - Skills */
 	#hsLeft{padding: 30px 0;}
 	#hsLeftTxt {margin-right:0}
 	#hsLeft h2 {
 		text-align: center;
-		margin-bottom: 15px;
-		margin-top: 15px;
+		margin-bottom: 0;
+		margin-top: .2em;
 	}
 	#hsLeft p {
 		text-align: left;
@@ -71,7 +83,7 @@ h2 {
 #hsRight {display: none;}
 /* Slide 4 - Blurred code */
 #slide-4 {height:150px;}
-#slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
+#slide-4 .bcg {background-image:url('../img/codeblurM.jpg'); background-color: #1c1c1c;}
 
 /* Slide 5 - Contact Me */
 #contact {height:600px;}
@@ -93,5 +105,6 @@ h2 {
 	}
 	.hsContainer p {
 		margin: 0 auto;
-		font-size: 0.7em;
+		font-size: .9em;
 	}
+}
