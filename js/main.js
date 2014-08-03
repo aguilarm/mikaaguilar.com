@@ -34,7 +34,11 @@
 	//ALWAYS resize the height of top
 	winH = $window.height();
 	$('#top').height(winH);
-	
+	//If winH is lower than 600, adjust logo.  Fix for netbooks
+	if(winH <= 600){
+		$('#logoBig').css("margin-top", "-10px");
+		$('#top').css("min-height", "640px");
+	}
 	function adjustWindow(){
 
 	    // Get window size
