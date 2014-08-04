@@ -18,6 +18,8 @@
 	$slideTall2 = $('.homeSlideTall2');
 	$body = $('body');
 	$section = $('section');
+	winH = $window.height();
+	winW = $window.width();
 	
     //FadeIn all sections   
 	function loaded() {
@@ -31,14 +33,23 @@
 	
 	loaded();
 	
+
 	//ALWAYS resize the height of top
-	winH = $window.height();
+
 	$('#top').height(winH);
 	//If winH is lower than 600, adjust logo.  Fix for netbooks
 	if(winH <= 600){
 		$('#logoBig').css("margin-top", "-10px");
 		$('#top').css("min-height", "640px");
 	}
+	//Fix for 320 width devices to show MIKA AGUILAR text on one line
+	//Also make the social icons a bit smaller
+	if(winW<=320){
+		$('#top h1').css("font-size", "2.6em");
+		$('#github, #linkedin').width(45).height(45).css("margin", ".5em");
+		$('#logoBig').css("margin-top","-60px");
+	}
+	
 	function adjustWindow(){
 
 	    // Get window size
