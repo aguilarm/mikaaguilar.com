@@ -46,6 +46,10 @@ h2 {
 	margin: 1em 0;
 	margin-bottom: .5em;
 }
+#socialSeparator {
+	width: 40%;
+	transition: all 0.2s;
+}
 #linkedin, #github {
 	display: inline-block;
 	width: 60px;

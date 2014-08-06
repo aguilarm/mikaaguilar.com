@@ -152,22 +152,34 @@ main {
 #preloadButtons {
 	display:none;
 }
+#socialSeparator{
+	width: 360px;
+}
+.loaded #socialSeparator {
+	transition: all 2s;
+	display: inline-block;
+	width: 0px;
+	height: 60px;
+}
 #linkedin, #github {
 	display: inline-block;
 	width: 60px;
 	height: 60px;
 	border-radius: 2px;
+	background-image: url('../img/none.png');
 	margin: 15px 5px;
 	transition: all 1s;
+	transition: background-image 3s;
 	background-size: cover;
 }
-#linkedin {
+
+.loaded #linkedin {
 	background-image: url('../img/linkedin.png');
 }
-#linkedin:hover {
+ #linkedin:hover {
 	background-image: url('../img/linkedinInvert.png');
 }
-#github {
+.loaded #github {
 	background-image: url('../img/github.png');
 }
 #github:hover {

@@ -10,7 +10,7 @@
 ( function( $ ) {
 	
 	//Setup Variables
-	$window = $(window);
+var $window = $(window);
 	$slide = $('.homeSlide');
 	$slideShort = $('.homeSlideShort');
 	$slidePhoto = $('.homeSlidePhoto');
@@ -20,6 +20,8 @@
 	$section = $('section');
 	winH = $window.height();
 	winW = $window.width();
+	$socialSeparator = $('#socialSeparator');
+
 	
     //FadeIn all sections   
 	function loaded() {
@@ -27,15 +29,20 @@
 		      
 		      // Fade in sections
 			  $body.removeClass('loading').addClass('loaded');
+			  setTimeout(function() {
+				  $('#linkedin, #github').css("transition", "background-image 1s");
+			  }, 300);
 			  
 		}, 800);
 	}
 	
 	loaded();
+
 	
-
+	
+	//Nitpicking targeted restyling:
+	
 	//ALWAYS resize the height of top
-
 	$('#top').height(winH);
 	//If winH is lower than 600, adjust logo.  Fix for netbooks
 	if(winH <= 600){
