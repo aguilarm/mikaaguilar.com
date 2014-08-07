@@ -48,7 +48,7 @@ h2 {
 }
 #socialSeparator {
 	width: 40%;
-	transition: all 0.2s;
+	transition: all 0.4s;
 }
 #linkedin, #github {
 	display: inline-block;

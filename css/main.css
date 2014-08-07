@@ -153,13 +153,13 @@ main {
 	display:none;
 }
 #socialSeparator{
+	display: inline-block;
 	width: 360px;
+	height: 60px;
+	transition: all 1.2s;
 }
 .loaded #socialSeparator {
-	transition: all 2s;
-	display: inline-block;
-	width: 0px;
-	height: 60px;
+	width: 0px;	
 }
 #linkedin, #github {
 	display: inline-block;
@@ -169,30 +169,14 @@ main {
 	background-image: url('../img/none.png');
 	margin: 15px 5px;
 	transition: all 1s;
-	transition: background-image 3s;
+	transition: background-image 2.5s;
 	background-size: cover;
 }
 
-.loaded #linkedin {
-	background-image: url('../img/linkedin.png');
-}
- #linkedin:hover {
-	background-image: url('../img/linkedinInvert.png');
-}
-.loaded #github {
-	background-image: url('../img/github.png');
-}
-#github:hover {
-	background-image: url('../img/githubInvert.png');
-}
-/*#top a img {
-	width: 60px;
-	height: 60px;
-	border-radius: 2px;
-	margin: 15px 5px;
-	transition: all 1s;
-}*/
-
+.loaded #linkedin {background-image: url('../img/linkedin.png')}
+ #linkedin:hover {background-image: url('../img/linkedinInvert.png')}
+.loaded #github {background-image: url('../img/github.png')}
+#github:hover {background-image: url('../img/githubInvert.png')}
 	
 #scrollDown {display: block; margin: auto; width: 140px; height: 40px; margin-top: -22px; color: #3399ff; text-align: center; font-family: 'PT sans', sans-serif;}
 #scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
@@ -263,7 +247,9 @@ main {
 #contact h2 {
 	color: #3399ff;
 }
-
+#name {
+	margin-right:100px;
+}
 #formmessages {-webkit-transition: color 0.4s;transition: color 0.4s;padding-top:10px}
 .loading{color:#3399ff}
 .error {color:#f00}
