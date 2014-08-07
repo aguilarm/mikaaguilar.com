@@ -187,52 +187,22 @@ main {
 
 /* Slide 3 - Skills */
 #skills {background-color: #3399ff;}
-#hsLeft {
-	display: table-cell;
-	vertical-align: middle;
+#skills h2, #skills p {color:#fff;}
+.flexContainer {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content:space-around;
+	text-align: center;
+	height:100%;
+	align-items:stretch;
 }
-	hsLeftTxt {margin-right:10px}
-	#hsLeft h2 {
-		text-align: right;
-		color: #fff;
-		margin-bottom: 15px;
-	}
-	#hsLeft p {
-		text-align: right;
-		color: #fff;
-		width: 400px;
-		float:right;
-	}
-#separator{background-color:#fff;float:right;height: 327px;width:3px;margin-left:13px;}
-#hsLeftInner{width:500px;display:block;margin-left:auto;}
-#hsRight {
-	display: table-cell;
-	vertical-align: middle;
-}
-#hsRight h2 {
-	text-align:left;
-	color:#fff;
-	font-size:45px;
-	line-height:45px;
-	margin-bottom:15px;
-	margin-left: 13px;
-	margin-top: -27px;
-}
-.grid {
-	margin-top: 29px;
-	margin-left:10px;
-}
-	#row1 {
-	}
-	#row3 {
-	}
-	.grid img {
-		display: inline-block;
-		width: 65px;
-		height: 65px;
-		border-radius: 3px;
-		margin: 3px;
-	}
+	 .flexItem{padding: 10px;flex: 1;}
+	.flexHeader {flex:1 100%;height:300px}
+		.flexHeader>div{width:60%;margin:auto;}
+	.flexContent {background:lightgreen;flex: 2;order:2;}
+	.aside1 {background:gold;order:1;flex: 1}
+	.aside2 {background:deepskyblue;order:3;}
+
 	
 /* Slide 4 - Blurred code */
 #slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
