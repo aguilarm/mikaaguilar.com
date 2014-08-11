@@ -190,30 +190,32 @@ main {overflow-x: hidden;}
 /* Slide 2 - 3d Austin photo */
 #slide-2 .bcg {background-image:url('../img/austinskyline.jpg');}
 #skills {margin-top: 145px;}
+
 /* Slide 3 - Skills */
-#skillsSection {background-color: #3399ff;}
+#skillsSection {background-color: #3399ff;min-height:750px;}
 #skillsSection h2 {margin-top: 14px;}
 .skillsContainer {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content:space-around;
 	text-align: center;
-	/* height:100%; */
 	align-items: stretch;
 	margin:auto;
 	overflow: hidden;
+	height:100%;
 }
+	#skillsHeader {flex:1 100%;overflow: hidden; height:20%}
+	#skillsHeader p, #skillsHeader h2 {color:#fff}
+		#skillsHeader>div {margin:auto; padding: 0 2em;}
 	.skillsItem p{color:#3399ff;margin:.8em 0}
 	.skillsContainer h3 {font-family: 'PT Sans', sans-serif; color: #3399ff; ﻿margin-top:0.6em; margin:.8em 0}
-	.skillsItem{flex: 1;/* height: 75%; */min-width:33%;}
-	 	.skillsItem>div{background-color:#fff; margin: 0 1em; box-shadow: .5em .5em 0px 0px #888888;padding: .5% 3%;}
-	#skillsHeader {flex:1 100%;overflow: hidden; padding-top: 30px; padding:.1% 5%;}
-		#skillsHeader>div{min-width: 900px;margin:auto;}
-		#skillsHeader p, #skillsHeader h2 {color:#fff}
+	.skillsItem{flex: 1;min-width:33%; height:60%}
+	 	.skillsItem>div{height:95%;background-color:#fff; margin: 0 1em; box-shadow: .5em .5em 0px 0px #888;padding: .5% 3%;}
 	.skillsContent {order:2;}
 	.aside1 {order:1;}
 	.aside2 {order:3;}
-	#skillsFooter {order:4; flex: 1 100%;}
+	#skillsFooter {order:4; flex: 1 100%;align-self:flex-end;height:20%}
+		#skillsFooter h3 {color:#fff}
 
 	
 /* Slide 4 - Blurred code */
