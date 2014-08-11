@@ -35,7 +35,7 @@
 				<a href="#top">mika aguilar</a>
 			</div>
         	<nav>
-				<a href="#skills" data--50-top="color:rgb(153,153,153)" data-top="color: rgb(51,153,255);" data-bottom="color:rgb(153,153,153)" data-anchor-target="#skills">SKILLS</a>
+				<a href="#skills" data--100-top="color:rgb(153,153,153)" data-center="color: rgb(51,153,255);" data-100-bottom="color:rgb(153,153,153)" data-anchor-target="#skills">SKILLS</a>
 				<a href="#contact" data-bottom-top="color:rgb(153,153,153)" data-center="color: rgb(51,153,255);" data-end="color:rgb(153,153,153)" data-anchor-target="#contact">CONTACT</a>
 			</nav>
 		</div>
@@ -66,6 +66,13 @@
 	<!--end of slide 1-->
 		<section id="slide-2" class="homeSlidePhoto">
 			<div class="bcg" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-2">
+            <div class="hsContainer">
+            	<div class="hsContent">
+                	<div id="skills">
+                		<!--placeholder so the header nav sticks to a better spot-->
+                	</div>
+                </div>
+            </div>
             	<!--Photo by Earl McGehee, shared via the
                 	Creative Commons Attribution 2.0 Generic License
                 	https://creativecommons.org/licenses/by/2.0/
@@ -73,23 +80,40 @@
 		    </div>
 		</section>
 	<!--end of slide 2-->
-        <section id="skills" class="homeSlideShort">
-                	<div class="flexContainer">
-                        <div class="flexItem flexHeader">
+        <section id="skillsSection" class="homeSlideShort">
+                	<div class="skillsContainer">
+                        <div id="skillsHeader">
                         	<div>
             				<h2>What I Do</h2>
-                			<p>I love spending time developing front-end web applications and websites so I'm constantly using or trying out the latest applicable web technologies.  My designs are done in Photoshop or Illustrator and I use HTML5, CSS3, jQuery and Javascript magic to make fully responsive, great looking stuff.  When I write code or use it in a project, it's clean, reusable, and responsive.</p>
+                            <div class="separator white"></div>
+                			<p>I love spending time developing front-end web applications and websites so I'm constantly using or trying out the latest applicable web technologies.  My designs are done in Photoshop or Illustrator and I use HTML5, CSS3, jQuery and Javascript magic to make fully responsive, great looking stuff.  When I write code or use it in a project, I make it clean, reusable, and responsive.</p>
+                            
                             </div>
 						</div>
-                        <div class="flexItem flexContent">
-                        	<p>This is an example of some content</p>
+                        <div class="skillsItem skillsContent" data-bottom-top="margin-top:54%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
+                        	<div>
+                        		<h3>Front End</h3>
+                            	<div class="separator gray"></div>
+                        		<p>Front end development is my bread and butter these days.  I've been using HTML5, CSS3, and Javascript enough to be sure I can make almost anything happen client side, and usually in more than one way which is the cool part of working with the web.  There are so many cool things happening in front end development across the board, and finding cool new ways to do things is really fun for me.  Recently I've been using a lot of javascript, and finding it a very powerful tool.</p>
+                           	</div>
           				</div>
-                        <div class="flexItem aside1">
-                        	<p>Stuff on the left</p>
+                        <div class="skillsItem aside1" data-bottom-top="margin-top:204%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
+                        	<div>
+                        		<h3>Design</h3>
+                                <div class="separator gray"></div>
+                        		<p>I've taken several classes dealing with Photoshop, Illustrator and good old Flash.  With photoshop I'm very confident making some pretty cool, advanced things happen from seamless cropping to photorealistic effects.  I've also used Illustrator quite a bit and I'm far from a beginner with the pen tool.  On top of being great with the required tools, I've spent a lot of time reading up on modern design practices and feel I have a decent grasp of whats going on in the web design world.</p>
+                         	</div>
                   		</div>
-                        <div class="flexItem aside2">
-                        	<p>Things on the right</p>
+                        <div class="skillsItem aside2" data-bottom-top="margin-top:164%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
+                        	<div>
+                        		<h3>Back End</h3>
+                                <div class="separator gray"></div>
+                        		<p>Things on the right</p>
+                         	</div>
                  		</div>
+                        <div id="skillsFooter">
+                        	this is more stuff on the bottom
+                        </div>
 					</div><!--flexContainer-->
         </section>
     <!--end of slide 3-->

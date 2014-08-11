@@ -78,7 +78,7 @@ var $window = $(window);
 
 	        // Resize our slides
 	        $slide.height(winH);
-			$slideShort.height(winH*0.75);
+			$slideShort.height(winH*0.85);
 	    	$slideTall.height(winH*2);
 	    	$slideTall2.height(winH*3);
 			$slidePhoto.height(winH*0.3);
