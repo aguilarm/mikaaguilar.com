@@ -126,7 +126,7 @@ main {overflow-x: hidden;}
 }
 .white {background-color: #fff;}
 .blue {background-color: #3399ff;}
-.gray {background-color: #888;}
+.gray {background-color: #b2b2b2;}
 .bcg {
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -207,17 +207,62 @@ main {overflow-x: hidden;}
 	#skillsHeader {flex:1 100%;overflow: hidden; height:20%}
 	#skillsHeader p, #skillsHeader h2 {color:#fff}
 		#skillsHeader>div {margin:auto; padding: 0 2em;}
-	.skillsItem p{color:#3399ff;margin:.8em 0}
-	.skillsContainer h3 {font-family: 'PT Sans', sans-serif; color: #3399ff; ﻿margin-top:0.6em; margin:.8em 0}
+	.skillsContainer h3 {font-family: 'PT Sans', sans-serif; color: #888; margin:.8em 0; margin-top:0}
 	.skillsItem{flex: 1;min-width:33%; height:60%}
-	 	.skillsItem>div{height:95%;background-color:#fff; margin: 0 1em; box-shadow: .5em .5em 0px 0px #888;padding: .5% 3%;}
+		.skillsItem p{color:#888;margin:.8em 0}
+	 	.skillsItem > div{
+			height:95%;
+			background-color:#fff; 
+			margin: 0 1em; 
+			box-shadow: .5em .5em 0px 0px #888;
+			padding: .5% 3%;
+			transition: box-shadow, 1s;
+			}
+		.skillsItem>div:hover{box-shadow:.2em .2em 0px 0px #CCC;margin-top:.3em}
+		@-webkit-keyframes thump {
+			0% { -webkit-transform: scale(1); }
+			50% { -webkit-transform: scale(0.8); }
+			100% { -webkit-transform: scale(1); }
+		}
+		@keyframes thump {
+			0% { transform: scale(1); }
+			50% { transform: scale(0.8); }
+			100% { transform: scale(1); }
+		}
+		.skillsItem>div:hover div:nth-child(1) {
+			-webkit-animation-name: thump;
+			-webkit-animation-duration: 600ms;
+			-webkit-transform-origin:50% 50%;
+			-webkit-animation-iteration-count: 1;
+			-webkit-animation-timing-function: linear;
+		}
+		div.skillsItem > div > div:nth-child(1){
+			margin:.5em auto;
+			display:block;
+			width:90px;
+			height:90px;
+		}
 	.skillsContent {order:2;}
+		div.skillsContent > div > div:nth-child(1){background: url('../img/responsiveGray.png');background-size: cover;}
+		.skillsContent>div:hover > div:nth-child(1){background: url('../img/responsive.png');background-size: cover;}
 	.aside1 {order:1;}
+		div.aside1 > div > div:nth-child(1){background: url('../img/designGray.png');background-size: cover;}
+		.aside1>div:hover > div:nth-child(1){background: url('../img/design.png');background-size: cover;}
 	.aside2 {order:3;}
+		div.aside2 > div > div:nth-child(1){background: url('../img/databaseGray.png');background-size: cover;width:94px;}
+		.aside2>div:hover > div:nth-child(1){background: url('../img/database.png');background-size: cover;}
 	#skillsFooter {order:4; flex: 1 100%;align-self:flex-end;height:20%}
-		#skillsFooter h3 {color:#fff}
-
-	
+		#skillsFooter h3 {color:#fff; margin-top:.8em}
+		#toolsContainer {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+			.tool {margin:auto}
+			.tool img {
+				width: 50px;
+				height: 50px;
+			}
 /* Slide 4 - Blurred code */
 #slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
 
