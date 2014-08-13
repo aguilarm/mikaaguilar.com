@@ -24,7 +24,7 @@ var $window = $(window);
 
 	
     //FadeIn all sections   
-	function loaded() {
+	$body.imagesLoaded( function() {
 		setTimeout(function() {
 		      
 		      // Fade in sections
@@ -34,9 +34,7 @@ var $window = $(window);
 			  }, 300);
 			  
 		}, 800);
-	}
-	
-	loaded();
+	});
 
 	
 	
@@ -128,22 +126,6 @@ var $window = $(window);
 	}
 
 	enquire.register("screen and (min-device-width : 768px)", initAdjustWindow(), false);
-		
-
-
-/* ==========================================================================
-   Navigation Shrinker
-   ========================================================================== 
-
-	var header = $('#header');
-	
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 500) {
-			header.addClass("small");
-		} else {
-			header.removeClass("small");
-		}
-	});
 
 /* ==========================================================================
    Site Info Pull
@@ -164,20 +146,6 @@ var $window = $(window);
 	info.click(function() {
 		info.hide(300);
 	});
-
-/* ==========================================================================
-   Bounce
-   ========================================================================== */
-   
-	
-	setInterval(function() {
-		var element = $('#scrollDown');
-		var distance = '28px';
-		var speed = 800;
-			
-		element.animate({marginTop: '-='+distance},speed)
-        	.animate({marginTop: '+='+distance},speed);
-	}, 300)
 
 /* ==========================================================================
    Form

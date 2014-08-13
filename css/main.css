@@ -1,7 +1,6 @@
 /* ==========================================================================
    Header
-   ========================================================================== */
-   
+   ========================================================================== */   
 /*placeholder to prevent jumping on position change, and let nav attach nicely*/
 #skills {
 	display:block;
@@ -90,20 +89,6 @@ body, html {
 	font-family: 'Roboto Condensed', sans-serif;
 	font-weight:300;
 }
-h1 {
-	color: #888;
-	font-size: 4em;
-	line-height: 1em;
-	margin: 0;
-	font-weight:300;
-}
-h2 {
-	margin-top: 0;
-}
-section {
-	min-width: 960px;
-	opacity: 0;
-}
 .loaded section,
 .no-js section {
 	opacity: 1;
@@ -111,7 +96,55 @@ section {
 	-moz-transition: opacity 300ms ease-out;
 	transition: opacity 300ms ease-out;
 }
-main {overflow-x: hidden;}
+@keyframes loader {
+	0% {background-size:5%;opacity:0.5;}
+	50%{background-size: 7%;opacity:1;}
+	100%{background-size: 5%;opacity:0.5;}
+}
+@-webkit-keyframes loader {
+	0% {background-size: 5%;opacity:0.5;}
+	50% {background-size: 7%;opacity:1;}
+	100% {background-size: 5%;opacity:0.5;}
+}
+
+#loader {
+	background-image: url('../img/logo.svg');
+	background-position: center;
+	background-repeat:no-repeat;
+	position:absolute;
+	display:block;
+	width:100%;
+	height:100%;
+	animation: loader 800ms linear infinite;
+	-webkit-animation: loader 800ms linear infinite;
+	opacity: 1;
+	visibility: visible;
+}
+.loaded #loader {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity 300ms ease-in,visibility 300ms ease-out;
+	-moz-transition: opacity 300ms ease-in,visibility 300ms ease-out;
+	transition: opacity 300ms ease-in,visibility 300ms ease-out;
+}
+#preloadButtons {
+	display:none;
+}
+h1 {
+	color: #888;
+	font-size: 3.5em;
+	line-height: 1em;
+	font-weight:400;
+}
+h2 {
+	font-weight: 300;
+	letter-spacing:.1em;
+}
+section {
+	min-width: 960px;
+	opacity: 0;
+}
+
 .separator {
 	width: 80px;
 	height: 2px;
@@ -134,64 +167,62 @@ main {overflow-x: hidden;}
 	background-position:center;
 	background-size:contain;
 	background-origin:content-box;
-	margin-bottom:10px;}
-#top .hsContent {background-color: rgba(255, 255, 255, 0.9);}
-#top #logoBig { 
-	margin: auto;
-	width: 5%; 
-	height: 30%;
-	max-height: 450px;
-	max-width: 450px;
-	display: none;
-}
-#top h1 {font-size: 10em; line-height: .8em;color: #3399ff; margin: 0;font-weight:700}
-#slide1text {
-	text-align: center; 
-	line-height: 2.5em;
-	width: 70%; 
-	max-width: 1200px;
-	z-index: 999;  
-	color: #b2b2b2;
-	margin: .2em auto;
+	margin-bottom:10px;
+	animation: loader 1s linear infinite;
 	}
-#preloadButtons {
-	display:none;
-}
-#socialSeparator{
-	display: inline-block;
-	width: 360px;
-	height: 60px;
-	transition: all 1.2s;
-}
-.loaded #socialSeparator {
-	width: 0px;	
-}
-#linkedin, #github {
-	display:inline-block;
-	width: 60px;
-	height: 60px;
-	border-radius: 2px;
-	background-image: url('../img/none.png');
-	margin: 15px 5px;
-	transition: all 1s;
-	transition: background-image 2.5s;
-	background-size: cover;
-}
+	#top .hsContent {background-color: rgba(255, 255, 255, 0.9);border:.5em solid #fff}
+		#top h1 {font-size: 10em; line-height: .8em;color: #3399ff; margin: 0;font-weight:700}
+		#slide1text {
+			text-align: center; 
+			line-height: 2.5em;
+			width: 70%; 
+			max-width: 1200px; 
+			color: #b2b2b2;
+			margin: .2em auto;
+		}
+		#socialSeparator{
+			display: inline-block;
+			width: 360px;
+			height: 60px;
+			transition: all 1.2s;
+		}
+		.loaded #socialSeparator {
+			width: 0px;	
+		}
+		#linkedin, #github {
+			display:inline-block;
+			width: 60px;
+			height: 60px;
+			border-radius: 2px;
+			background-image: url('../img/none.png');
+			margin: 15px 5px;
+			transition: all 1s;
+			transition: background-image 2.5s;
+			background-size: cover;
+		}
 
-.loaded #linkedin {background-image: url('../img/linkedin.png')}
- #linkedin:hover {background-image: url('../img/linkedinInvert.png')}
-.loaded #github {background-image: url('../img/github.png')}
-#github:hover {background-image: url('../img/githubInvert.png')}
+		.loaded #linkedin {background-image: url('../img/linkedin.png')}
+		#linkedin:hover {background-image: url('../img/linkedinInvert.png')}
+		.loaded #github {background-image: url('../img/github.png')}
+		#github:hover {background-image: url('../img/githubInvert.png')}
 	
-#scrollDown {display: block; margin: auto; width: 140px; height: 40px; margin-top: -22px; color: #3399ff; text-align: center;}
+#scrollDown {
+	display: block; 
+	margin: auto; 
+	width: 140px; 
+	height: 40px; 
+	margin-top: -47px; 
+	color: #3399ff; 
+	text-align: center;
+	background-color: #fff;
+	font-weight:400;
+	-webkit-animation: thump 2s infinite;
+	animation: thump 2s infinite;
+	}
 #scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
 
-
-/* Slide 2 - 3d Austin photo */
-#slide-2 .bcg {background-image:url('../img/austinskyline.jpg');}
-
 /* Slide 3 - Skills */
-#skillsSection {background-color: #B2b2b2;min-height:750px;}
+#skillsSection {background-color: #b2b2b2;min-height:750px;}
 #skillsSection h2 {margin-top: 14px;}
 .skillsContainer {
 	display: flex;
@@ -209,7 +240,8 @@ main {overflow-x: hidden;}
 	.skillsContainer h3 {font-family: 'Roboto Condensed', sans-serif; color: #888; margin:.8em 0; margin-top:0}
 	.skillsItem{flex: 1;min-width:33%; height:60%}
 		.skillsItem p{color:#888;margin:.8em 0}
-	 	.skillsItem > div{
+		/*white card with box shadow*/
+	 	.skillsItem > div:nth-child(1){
 			height:95%;
 			background-color:#fff; 
 			margin: 0 1em; 
@@ -217,7 +249,8 @@ main {overflow-x: hidden;}
 			padding: .5% 3%;
 			transition: box-shadow, 1s;
 			}
-		.skillsItem>div:hover{box-shadow:.2em .2em 0px 0px #39f;margin-top:.3em}
+		.skillsItem>div:nth-child(1):hover{box-shadow:.2em .2em 0px 0px #39f;margin-top:.3em}
+		.skillsItemHeader{display:block;width:100%}
 		@-webkit-keyframes thump {
 			0% { -webkit-transform: scale(1); }
 			50% { -webkit-transform: scale(0.8); }
@@ -228,28 +261,41 @@ main {overflow-x: hidden;}
 			50% { transform: scale(0.8); }
 			100% { transform: scale(1); }
 		}
-		.skillsItem>div:hover div:nth-child(1) {
+		.skillsItem>div:nth-child(1):hover .skillsItemHeader>div:nth-child(1) {
 			-webkit-animation-name: thump;
 			-webkit-animation-duration: 600ms;
 			-webkit-transform-origin:50% 50%;
 			-webkit-animation-iteration-count: 1;
 			-webkit-animation-timing-function: linear;
 		}
-		div.skillsItem > div > div:nth-child(1){
+		.skillsItem>div:nth-child(1):hover .skillsItemHeader>div:nth-child(1) {
+			animation-name: thump;
+			animation-duration: 600ms;
+			transform-origin:50% 50%;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+		/*img on top of skills items*/
+		div.skillsItem > div:nth-child(1) > .skillsItemHeader>div:nth-child(1){
 			margin:.5em auto;
 			display:block;
 			width:90px;
 			height:90px;
+			border:3px solid #999;
+			border-radius:48px;
+			background-size: 63px 63px;
+			background-position:center;
+			background-repeat:no-repeat;
 		}
 	.skillsContent {order:2;}
-		div.skillsContent > div > div:nth-child(1){background: url('../img/responsiveGray.png');background-size: cover;}
-		.skillsContent>div:hover > div:nth-child(1){background: url('../img/responsive.png');background-size: cover;}
+		#skillsFront{background-image: url('../img/responsiveYellow.svg');border-color:#A4C639}
+		.skillsContent>div:hover #skillsFront{background-image: url('../img/responsive39f.svg');border-color:#39f;}
 	.aside1 {order:1;}
-		div.aside1 > div > div:nth-child(1){background: url('../img/designGray.png');background-size: cover;}
-		.aside1>div:hover > div:nth-child(1){background: url('../img/design.png');background-size: cover;}
+		div.aside1 #skillsDesign{background-image: url('../img/designOrange.svg');border-color:#FFB333}
+		.aside1>div:hover #skillsDesign{background-image: url('../img/design39f.svg');border-color:#39f}
 	.aside2 {order:3;}
-		div.aside2 > div > div:nth-child(1){background: url('../img/databaseGray.png');background-size: cover;width:94px;}
-		.aside2>div:hover > div:nth-child(1){background: url('../img/database.png');background-size: cover;}
+		div.aside2 #skillsBack{background-image: url('../img/servers.svg');border-color:#FF584C;}
+		.aside2>div:hover #skillsBack{background-image: url('../img/servers39f.svg');border-color:#39f}
 	
 	
 	#skillsFooter {order:4; flex: 1 100%;align-self:flex-end;height:20%}
