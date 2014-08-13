@@ -12,7 +12,7 @@
 	//Setup Variables
 var $window = $(window);
 	$slide = $('.homeSlide');
-	$slideShort = $('.homeSlideShort');
+	$slideSkills = $('.homeSlideSkills');
 	$slidePhoto = $('.homeSlidePhoto');
 	$slideTall = $('.homeSlideTall');
 	$slideTall2 = $('.homeSlideTall2');
@@ -76,7 +76,7 @@ var $window = $(window);
 
 	        // Resize our slides
 	        $slide.height(winH);
-			$slideShort.height(winH*0.85);
+			$slideSkills.height(winH-70);
 	    	$slideTall.height(winH*2);
 	    	$slideTall2.height(winH*3);
 			$slidePhoto.height(winH*0.3);

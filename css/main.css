@@ -204,13 +204,11 @@ section {
 	text-align: center;
 	background-color: #fff;
 	font-weight:400;
-	-webkit-animation: thump 2s infinite;
-	animation: thump 2s infinite;
 	}
 #scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
 
 /* Slide 3 - Skills */
-#skillsSection {background-color: #b2b2b2;min-height:750px;}
+#skillsSection {background-color: #b2b2b2;min-height:790px;}
 #skillsSection h2 {margin-top: 14px;}
 .skillsContainer {
 	display: flex;
@@ -307,24 +305,28 @@ section {
 				.tool:hover {width:200px;}
 				.tool img {
 					float:left;
-					width: 100px;
-					height: 100px;
+					width: 80px;
+					height: 80px;
 					border-radius: 8px;
 				}
 				.tool>div {
+					display:none;
+					z-index:10;
 					color:#39f;
+					padding:14px 20px;
+					margin-top:30px;
+					margin-left:9px;
 					text-align:left;
-					visibility:hidden;
-					width:0;
-					overflow:hidden;
-					transition:visibility, 1s;
+					border:1px solid #39f;
 					background-color:#fff;
 					height:40px;
-					margin-top:5px;
+					box-shadow: 3px 3px 0 0 #999;
+					font-weight:400;
 				}
+				.tool>div .arrow {z-index:20;position:absolute;top:23px;border:0;left:-10px;width:11px;height:22px;}
 				.tool>div p {margin:0;opacity:0;transition:opacity,1s;width:80px;margin:0 .2em}
 					
-					.tool:hover div {visibility:visible;width:80px;}
+					.tool:hover div {display:inline;position:absolute;background:#fff;}
 					.tool:hover div p {opacity:1}
 					
 /* Slide 4 - Blurred code */
