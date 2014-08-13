@@ -129,50 +129,14 @@ var $window = $(window);
 
 	enquire.register("screen and (min-device-width : 768px)", initAdjustWindow(), false);
 		
-} )( jQuery );
-		/*//Init Skrollr for 768+
-		if( winW >= 768) {
 
-	    	// Resize our slides
-	    	$slide.height(winH);
-
-	    
-	    	// Refresh Skrollr after resizing our sections
-	    	s.refresh($('.homeSlide'));
-			
-			//Activate menu plugin
-			skrollr.menu.init(s, {
-    			//skrollr will smoothly animate to the new position using `animateTo`.
-    			animate: true,
-
-    			//The easing function to use.
-    			easing: 'sqrt',
-
-    			//Multiply your data-[offset] values so they match those set in skrollr.init
-    			scale: 2,
-
-    			//How long the animation should take in ms.
-    			duration: function(currentTop, targetTop) {
-        			//By default, the duration is hardcoded at 500ms.
-        			return 800;
-
-        			//But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
-        			//return Math.abs(currentTop - targetTop) * 200;
-    			},
-
-    			//If you pass a handleLink function you'll disable `data-menu-top` and `data-menu-offset`.
-    			//You are in control where skrollr will scroll to. You get the clicked link as a parameter and are expected to return a number.
-    			//handleLink: function(link) {
-    			//    return 400;//Hardcoding 400 doesn't make much sense.
-    			//}
-			});*/
 
 /* ==========================================================================
    Navigation Shrinker
-   ========================================================================== */
+   ========================================================================== 
 
-$('document').ready(function($){
-	var header = $('header');
+	var header = $('#header');
+	
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 500) {
 			header.addClass("small");
@@ -180,13 +144,10 @@ $('document').ready(function($){
 			header.removeClass("small");
 		}
 	});
-});
 
 /* ==========================================================================
    Site Info Pull
    ========================================================================== */
-
-$('document').ready(function($){
 	
 	var info = $('#siteInfo');
 	
@@ -203,13 +164,11 @@ $('document').ready(function($){
 	info.click(function() {
 		info.hide(300);
 	});
-});
 
 /* ==========================================================================
    Bounce
    ========================================================================== */
    
-$('document').ready(function($){
 	
 	setInterval(function() {
 		var element = $('#scrollDown');
@@ -219,14 +178,11 @@ $('document').ready(function($){
 		element.animate({marginTop: '-='+distance},speed)
         	.animate({marginTop: '+='+distance},speed);
 	}, 300)
-});
 
 /* ==========================================================================
    Form
    ========================================================================== */
-
-$(function() {
-	
+   	
 	var form = $('#contactform');
 	var formMessage = $('#formmessages');
 
@@ -270,4 +226,5 @@ $(function() {
     		}
 		});
 	});
-});
+
+} )( jQuery );

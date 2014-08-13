@@ -2,58 +2,66 @@
    Header
    ========================================================================== */
    
-/*static header values*/
-header {
+/*placeholder to prevent jumping on position change, and let nav attach nicely*/
+#skills {
+	display:block;
+	width:100%;
+	height: 70px;
+	background:#fff;
+}
+#header {
 	width: 100%;
-	height: 0px;
+	height: 70px;
 	overflow: hidden;
-	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 998;
 	background-color:#fff;
 	-webkit-transition: height 0.4s;
 	transition: height 0.4s;
+	border-bottom: 1px solid #e2e2e2;
+	box-shadow:0px 0px 20px rgba(0,0,0,0.1);
 }
 #hdWrap {
 	width: 80%;
 	margin: auto;
 }
-header #hdLogo {
+#hdLogo {
 	display: inline-block;
-	width: 100px;
-	height: 106px;
+	width: 67px;
+	height: 70px;
 	float: left;
-	background-image: url(../img/logo200.png);
+	background-image: url(../img/logo.svg);
 	background-repeat:no-repeat;
 	background-size: 100% 100%;
-	margin-left: -50px;
-	margin-top: 15px;
+	margin-left: 0px;
+	margin-top: 0px;
 	z-index: 10;			
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
 }
-header #hdName {
+#hdName {
     display: inline-block;
-	height: 105px;
-	line-height: 105px;
-	font-size: 80px;
+	height: 70px;
+	line-height: 70px;
+	font-size: 38px;
 	width: auto;
 	float: left;
 	color: #3399ff;			
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
+	margin-top:-3px;
 }
-header #hdName a {
+#hdName a {
 	text-decoration: none;
 	color: #3399ff;
 }
-header nav {
+nav {
 	display: inline-block;
 	float: right;
 }
-		header nav a {
-			line-height: 105px;
+		#header nav a {
+			line-height: 70px;
 			margin-left: 20px;
 			color: #999;
 			font-size: 28px;
@@ -70,27 +78,6 @@ header nav {
 			#hdNavActive:hover {
 				color: #999;
 			}
-/* small header values */
-header.small {
-	height: 40px;
-	display: inherit;
-}
-header.small #hdLogo {
-	height: 40px;
-	width: 37px;
-	margin-left: 0px;
-	margin-top: 0px;
-}
-header.small #hdName {
-	height: 40px;
-	line-height: 40px;
-	font-size: 38px;
-	margin-top: -3px;
-}
-header.small nav a {
-	line-height: 40px;
-	font-size: 28px;
-}
 
 /* ==========================================================================
    Parallax Scroll
@@ -100,12 +87,18 @@ body, html {
 	height: 100%;
 	min-height: 100%;
 	background-color: #FFF;
-	font-family: 'PT Sans Narrow', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight:300;
 }
-
+h1 {
+	color: #888;
+	font-size: 4em;
+	line-height: 1em;
+	margin: 0;
+	font-weight:300;
+}
 h2 {
 	margin-top: 0;
-	font-family: 'PT Sans Narrow', sans-serif;
 }
 section {
 	min-width: 960px;
@@ -136,23 +129,30 @@ main {overflow-x: hidden;}
 	width: 100%;
 }
 /* Slide 1 - Intro/About */
-#top {background-color: #fff;}
-#top .hsContent {max-width: 800px;}
+#top .hsContainer {background-image:url('../img/logo.svg');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:contain;
+	background-origin:content-box;
+	margin-bottom:10px;}
+#top .hsContent {background-color: rgba(255, 255, 255, 0.9);}
 #top #logoBig { 
-	display: block;
 	margin: auto;
-	margin-top: -10%;
-	width: 200px; 
-	height: 223px;
-	}
-#top h1 {font-family: 'PT Sans', sans-serif; font-size: 80px; color: #3399ff; margin-top: -12px;}
+	width: 5%; 
+	height: 30%;
+	max-height: 450px;
+	max-width: 450px;
+	display: none;
+}
+#top h1 {font-size: 10em; line-height: .8em;color: #3399ff; margin: 0;font-weight:700}
 #slide1text {
-	text-align: justify; 
-	line-height: 35px;
-	width: 499px; 
+	text-align: center; 
+	line-height: 2.5em;
+	width: 70%; 
+	max-width: 1200px;
 	z-index: 999;  
 	color: #b2b2b2;
-	margin-top: -52px;
+	margin: .2em auto;
 	}
 #preloadButtons {
 	display:none;
@@ -167,7 +167,7 @@ main {overflow-x: hidden;}
 	width: 0px;	
 }
 #linkedin, #github {
-	display: inline-block;
+	display:inline-block;
 	width: 60px;
 	height: 60px;
 	border-radius: 2px;
@@ -183,16 +183,15 @@ main {overflow-x: hidden;}
 .loaded #github {background-image: url('../img/github.png')}
 #github:hover {background-image: url('../img/githubInvert.png')}
 	
-#scrollDown {display: block; margin: auto; width: 140px; height: 40px; margin-top: -22px; color: #3399ff; text-align: center; font-family: 'PT sans', sans-serif;}
+#scrollDown {display: block; margin: auto; width: 140px; height: 40px; margin-top: -22px; color: #3399ff; text-align: center;}
 #scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
 
 
 /* Slide 2 - 3d Austin photo */
 #slide-2 .bcg {background-image:url('../img/austinskyline.jpg');}
-#skills {margin-top: 145px;}
 
 /* Slide 3 - Skills */
-#skillsSection {background-color: #3399ff;min-height:750px;}
+#skillsSection {background-color: #B2b2b2;min-height:750px;}
 #skillsSection h2 {margin-top: 14px;}
 .skillsContainer {
 	display: flex;
@@ -204,10 +203,10 @@ main {overflow-x: hidden;}
 	overflow: hidden;
 	height:100%;
 }
-	#skillsHeader {flex:1 100%;overflow: hidden; height:20%}
+	#skillsHeader {flex:1 100%;overflow: hidden; display: flex;align-items: center;justify-content: center;}
 	#skillsHeader p, #skillsHeader h2 {color:#fff}
 		#skillsHeader>div {margin:auto; padding: 0 2em;}
-	.skillsContainer h3 {font-family: 'PT Sans', sans-serif; color: #888; margin:.8em 0; margin-top:0}
+	.skillsContainer h3 {font-family: 'Roboto Condensed', sans-serif; color: #888; margin:.8em 0; margin-top:0}
 	.skillsItem{flex: 1;min-width:33%; height:60%}
 		.skillsItem p{color:#888;margin:.8em 0}
 	 	.skillsItem > div{
@@ -218,7 +217,7 @@ main {overflow-x: hidden;}
 			padding: .5% 3%;
 			transition: box-shadow, 1s;
 			}
-		.skillsItem>div:hover{box-shadow:.2em .2em 0px 0px #CCC;margin-top:.3em}
+		.skillsItem>div:hover{box-shadow:.2em .2em 0px 0px #39f;margin-top:.3em}
 		@-webkit-keyframes thump {
 			0% { -webkit-transform: scale(1); }
 			50% { -webkit-transform: scale(0.8); }
@@ -251,18 +250,49 @@ main {overflow-x: hidden;}
 	.aside2 {order:3;}
 		div.aside2 > div > div:nth-child(1){background: url('../img/databaseGray.png');background-size: cover;width:94px;}
 		.aside2>div:hover > div:nth-child(1){background: url('../img/database.png');background-size: cover;}
+	
+	
 	#skillsFooter {order:4; flex: 1 100%;align-self:flex-end;height:20%}
 		#skillsFooter h3 {color:#fff; margin-top:.8em}
 		#toolsContainer {
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
+			align-items:center;
+			height:100%;
 		}
-			.tool {margin:auto}
-			.tool img {
-				width: 50px;
-				height: 50px;
+			.tool {
+				display:flex;
+				align-items:center;
+				justify-content:center;
+				margin:0 .5em;
+				height:80%;
+				width:100px;
+				transition:width,1s;
 			}
+				.tool:hover {width:200px;}
+				.tool img {
+					float:left;
+					width: 100px;
+					height: 100px;
+					border-radius: 8px;
+				}
+				.tool>div {
+					color:#39f;
+					text-align:left;
+					visibility:hidden;
+					width:0;
+					overflow:hidden;
+					transition:visibility, 1s;
+					background-color:#fff;
+					height:40px;
+					margin-top:5px;
+				}
+				.tool>div p {margin:0;opacity:0;transition:opacity,1s;width:80px;margin:0 .2em}
+					
+					.tool:hover div {visibility:visible;width:80px;}
+					.tool:hover div p {opacity:1}
+					
 /* Slide 4 - Blurred code */
 #slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
 
@@ -295,20 +325,14 @@ main {overflow-x: hidden;}
 
 /* Slide Constants */
 .hsContainer {
-	display: table;
-	table-layout: fixed;
+	display: flex;
+	justify-content:center;
+	align-items:center;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	position: relative;
 }
-	h2 {
-		color: #888;
-		font-size: 40px;
-		line-height: 40px;
-		margin-bottom: 10px;
-		font-family: 'PT Sans', sans-serif;
-	}
+
 	.hsContainer p {
 		margin: 0 auto;
 		color: #b2b2b2;
@@ -316,15 +340,11 @@ main {overflow-x: hidden;}
 	}
 	.hsContainer a {color: #b2b2b2; text-decoration: underline;}
 	
-.hsContent {
-	max-width: 450px;
-	margin: -150px auto 0 auto;
-	display: table-cell;
-	vertical-align: middle;
-	color: #b2b2b2;
-	padding: 0 8%;
-	text-align: center;
-}
+	.hsContent {
+		flex: 1;
+		color: #b2b2b2;
+		text-align: center;
+	}
 	
 /* ==========================================================================
    Form Rules
@@ -357,7 +377,7 @@ button {
 	width: 100%;
 	background: none;
 	border: 1px solid #3399ff;
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 	color: #3399ff;
 	font-size: 18px;
 	letter-spacing: 2px;

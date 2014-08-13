@@ -19,7 +19,7 @@
     <link href="css/mobile.css" rel="stylesheet">
     
     <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     
@@ -28,18 +28,7 @@
     
 </head>
 <body>
-	<header>
-    	<div id="hdWrap">    
- 	  		<a id="hdLogo" href="#top"></a>
-			<div id="hdName">
-				<a href="#top">mika aguilar</a>
-			</div>
-        	<nav>
-				<a href="#skills" data--100-top="color:rgb(153,153,153)" data-center="color: rgb(51,153,255);" data-100-bottom="color:rgb(153,153,153)" data-anchor-target="#skillsSection">SKILLS</a>
-				<a href="#contact" data-bottom-top="color:rgb(153,153,153)" data-center="color: rgb(51,153,255);" data-end="color:rgb(153,153,153)" data-anchor-target="#contact">CONTACT</a>
-			</nav>
-		</div>
-	</header>
+	
 	<!--end of header-->
 	<main>
     <!--begin body content-->
@@ -53,7 +42,7 @@
 	<section id="top" class="homeSlide">
         	<div class="hsContainer">
             	<div class="hsContent" data-center="opacity: 1;" data-0-top="opacity: 0;" data-anchor-target="#slide1text">
-                	<img id="logoBig" src="img/logo200.png" alt="Logo">
+                	<img id="logoBig" src="img/logo.svg" alt="Logo">
                 	<h1>MIKA AGUILAR</h1>
 					<p id="slide1text">I am a web designer and and front-end developer with full-stack aspirations working near Austin, TX.
                		This June I moved from Michigan to Texas and am now taking on development full-time here. I'm incredibly excited for
@@ -66,86 +55,95 @@
            	<div id="scrollDown" data-100-bottom="opacity: 1;" data-200-top="opacity: 0;"><img id="downarrow" src="img/down.png" alt="down arrow"></div>
 		</section>
 	<!--end of slide 1-->
-		<section id="slide-2" class="homeSlidePhoto">
+		<!--<section id="slide-2" class="homeSlidePhoto">
 			<div class="bcg" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-2">
             <div class="hsContainer">
             	<div class="hsContent">
                 	<div id="skills">
-                		<!--placeholder so the header nav sticks to a better spot-->
+                		<!--placeholder so the header nav sticks to a better spot->
                 	</div>
                 </div>
             </div>
             	<!--Photo by Earl McGehee, shared via the
                 	Creative Commons Attribution 2.0 Generic License
                 	https://creativecommons.org/licenses/by/2.0/
-                    Found at https://www.flickr.com/photos/ejmc/14359786095 7/2/2014 -->
+                    Found at https://www.flickr.com/photos/ejmc/14359786095 7/2/2014 ->
 		    </div>
 		</section>
 	<!--end of slide 2-->
-        <section id="skillsSection" class="homeSlideShort">
+    <div id="skills"><!--the nav will jump to this id rather than the section-->
+    	<div id="header" data-top="position:static" data--1-top="position:fixed" data-anchor-target="#skills">
+    		<div id="hdWrap">    
+ 	  			<a data-top="visibility:hidden;opacity:0;width:0" data--1-top="visibility:visible;opacity:1;width:70px" data-anchor-target="#skills" id="hdLogo" href="#top"></a>
+				<div id="hdName">
+					<a href="#top">mika aguilar</a>
+				</div>
+        		<nav>
+					<a href="#skills" data--100-top="color:rgb(153,153,153)" data-center="color: rgb(51,153,255);" data-100-bottom="color:rgb(153,153,153)" data-anchor-target="#skillsSection">SKILLS</a>
+					<a href="#contact" data-bottom-top="color:rgb(153,153,153)" data-center="color: rgb(51,153,255);" data-end="color:rgb(153,153,153)" data-anchor-target="#contact">CONTACT</a>
+				</nav>
+			</div>
+		</div>
+	</div>
+        <section id="skillsSection" class="homeSlide">
         	<div class="skillsContainer">
         		<div id="skillsHeader">
-                	<div>
-            			<h2 data-center="color: rgb(255,255,255);" data-bottom="color:rgb(51,153,255)">What I Do</h2>
-             			<div data-center="background-color: rgb(255,255,255);" data-bottom="background-color:rgb(51,153,255)" class="separator white"></div>
-               			<p data-center="color: rgb(255,255,255);" data-bottom="color:rgb(51,153,255)">I love spending time developing front-end web applications and websites so I'm constantly using or trying out the latest applicable web technologies.  My designs are done in Photoshop or Illustrator and I use HTML5, CSS3, jQuery and Javascript magic to make fully responsive, great looking stuff.  When I write code or use it in a project, I make it clean, reusable, and responsive.</p>
-              		</div>
+            		<h1 data-center="color: rgb(255,255,255);" data-bottom="color:rgb(29,27,26)">WHAT I DO</h1>
 				</div>
            	
            		<div class="skillsItem skillsContent" data-bottom-top="margin-top:54%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
                 	<div>
                     	<div title="Front End"></div>
-                    	<h3>Front End</h3>
-                        <p>Front end development is my bread and butter these days.  I've been using HTML5, CSS3, and Javascript enough to be confident that I can figure out how to make almost anything for client side.  I've made it over the gap from simple HTML/CSS editing to Javascript wizardry and haven't found much that JS cannot do.  Even though it clearly was not intended to be used like it is today, I can almost say I'm growing fond of it.  <br><br>There are so many cool things happening in front end development across the board at an incredible pace, and being able to continue learning great new ways to do things is really exciting.  </p>
+                        <h3>Front End</h3>
+                    	<div class="separator gray"></div>
+                        <p>Front end development is my bread and butter these days.  I've been using HTML5, CSS3, and Javascript enough to be confident that I can figure out how to make almost anything for client side.  I'm doing a lot of stuff with JS lately, and it's surprisingly enjoyable to use despite its many quirks.<br><br>There are so many cool things happening in front end development across the board at an incredible pace that being a web developer right now is really exciting.  </p>
                 	</div>
           		</div>
               	<div class="skillsItem aside1" data-bottom-top="margin-top:84%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
                		<div>
                     	<div title="Design"></div>
                     	<h3>Design</h3>
-                        <p>I've taken several classes dealing with Photoshop, Illustrator and even one with good old Flash.  With photoshop I'm very confident making some pretty cool, advanced things happen from seamless cropping to photorealistic effects.  I've also used Illustrator quite a bit and I'm far from a beginner with the pen tool.  <br><br>On top of being great with the required tools, I've spent a lot of time reading up on modern design practices and feel I have a decent grasp of whats going on in the web design world.</p>
+                        <p>I've taken several classes dealing with Photoshop, Illustrator and even one with good old Flash.  With photoshop I'm very confident making some pretty cool, fairly advanced things happen from seamless cropping to photorealistic and 3d effects.  I've also used Illustrator quite a bit for classes and I love the pen tool.  <br><br>On top of being great with the required tools, I've spent a lot of time reading up on modern design practices and feel I have a decent grasp of whats going on in the world of web design, and graphic design in general.</p>
                       	</div>
                   	</div>
                  	<div class="skillsItem aside2" data-bottom-top="margin-top:44%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
                     	<div>
                         	<div title="Back End"></div>
                         	<h3>Back End</h3>
-                        	<p>For the back end, I'm just getting started.  I know enough about PHP and SQL from classes I've taken to plug my front end applications in to server data and do things like server-side validation of forms or creating and add/removing data from a simple SQL database with mySQL.<br><br>I'm also experienced with Ubuntu server command line from a VPS I have to mess around with, so I've used simple things like vim, tmux, xorg, ssh, puTTY, and a few other things.</p>
+                        	<p>For the back end, I'm just getting started.  I know enough about PHP and SQL from classes I've taken to plug my front end applications into server data and do things like server-side validation of forms or creating and add/removing data from a simple SQL database with mySQL.<br><br>I'm also experienced with Ubuntu server command line from a VPS I have to mess around with, so I've used simple things like vim, tmux, xorg, ssh, puTTY, and a few other things.  I pick up new software very fast as I've found myself using all kinds of niche applications as I work.</p>
                        	</div>
                  	</div>
        				<div id="skillsFooter">
-                 		<h3>Tools</h3>
                         <div id="toolsContainer">
                         	<div class="tool">
-                            	<img src="img/php.png">
+                            	<img src="img/html5.png" style="border-radius:0">
+                                <div>html5</div>
+                            </div>
+                            <div class="tool">
+                            	<img src="img/css3.png" style="border-radius:0">
                                 <div>this one is about php</div>
+                            </div>
+                            <div class="tool">
+                            	<img src="img/chrome.png">
+                                <div><p>chrome dev tools</p></p></div>
+                          	</div>
+                            <div class="tool">
+                            	<img src="img/adobeil.png">
+                            </div>
+                            <div class="tool">
+                            	<img src="img/flash.png">
+                                <div><p>this one is about php</p></div>
+                            </div>
+                            <div class="tool">
+                            	<img src="img/ps.png">
+                                <div><p>this one is about php</p></div>
                             </div>
                             <div class="tool">
                             	<img src="img/php.png">
                                 <div>this one is about php</div>
                             </div>
                             <div class="tool">
-                            	<img src="img/php.png">
-                                <div>this one is about php</div>
-                            </div>
-                            <div class="tool">
-                            	<img src="img/php.png">
-                                <div>this one is about php</div>
-                            </div>
-                            <div class="tool">
-                            	<img src="img/php.png">
-                                <div>this one is about php</div>
-                            </div>
-                            <div class="tool">
-                            	<img src="img/php.png">
-                                <div>this one is about php</div>
-                            </div>
-                            <div class="tool">
-                            	<img src="img/php.png">
-                                <div>this one is about php</div>
-                            </div>
-                            <div class="tool">
-                            	<img src="img/php.png">
+                            	<img src="img/jquery.png">
                                 <div>this one is about php</div>
                             </div>
             			</div>
@@ -161,7 +159,7 @@
     	<section id="contact" class="homeSlide">
         	<div class="hsContainer">
             	<div class="hsContent">
-                	<h2>CONTACT ME</h2>
+                	<h1>CONTACT ME</h1>
                     <div id="contactWrap">
                     	<form id="contactform" method="post" action="mailer.php" >
 							<input type="text" id="name" name="name" class="shortBox" placeholder="Name">
