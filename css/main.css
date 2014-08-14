@@ -51,6 +51,7 @@
 	transition: all 0.4s;
 	margin-top:-3px;
 }
+@media all and (max-width:620px){#hdName{display:none}}
 #hdName a {
 	text-decoration: none;
 	color: #3399ff;
@@ -59,15 +60,16 @@ nav {
 	display: inline-block;
 	float: right;
 }
-		#header nav a {
-			line-height: 70px;
-			margin-left: 20px;
-			color: #999;
-			font-size: 28px;
-			text-decoration: none;			
-			-webkit-transition: all 0.4s;
-			transition: all 0.4s;
-		}
+	#header nav a {
+		line-height: 70px;
+		margin-left: 20px;
+		color: #999;
+		font-size: 28px;
+		text-decoration: none;			
+		-webkit-transition: all 0.4s;
+		transition: all 0.4s;
+	}
+		@media all and (max-width:385px){#header nav a{font-size:20px}#hdWrap{width:90%}}
 			nav a:hover {
 				color: #3399ff;
 			}
@@ -119,17 +121,16 @@ body, html {
 	display:none;
 }
 h1 {
-	color: #888;
 	font-size: 3.5em;
 	line-height: 1em;
 	font-weight:400;
 }
+@media all and (max-width:768px){h1{font-size:2.5em;}}
 h2 {
 	font-weight: 300;
 	letter-spacing:.1em;
 }
 section {
-	min-width: 960px;
 	opacity: 0;
 }
 
@@ -159,7 +160,12 @@ section {
 	animation: loader 1s linear infinite;
 	}
 	#top .hsContent {background-color: rgba(255, 255, 255, 0.9);border:.5em solid #fff}
+		@media all and (max-width:400px){#top .hsContent{border-top:2em solid #fff;border-bottom:2em solid #fff;border-left:0px;border-right:0px;}}
 		#top h1 {font-size: 10em; line-height: .8em;color: #3399ff; margin: 0;font-weight:700}
+		/*Keep the MIKA AGUILAR on one line*/
+		@media all and (max-width:974px){#top h1{font-size:8em;}}
+		@media all and (max-width:785px){#top h1{font-size:6em;}}
+		@media all and (max-width:595px){#top h1{font-size:3em;}}
 		#slide1text {
 			text-align: center; 
 			line-height: 2.5em;
@@ -168,12 +174,15 @@ section {
 			color: #b2b2b2;
 			margin: .2em auto;
 		}
+		@media all and (max-width:785px){#slide1text{width:85%}}
+		@media all and (max-width:595px){#slide1text{line-height:2em}}
 		#socialSeparator{
 			display: inline-block;
 			width: 360px;
 			height: 60px;
 			transition: all 1.2s;
 		}
+		@media all and (max-width:520px){#socialSeparator{width:150px}}
 		.loaded #socialSeparator {
 			width: 0px;	
 		}
@@ -221,14 +230,14 @@ section {
 	height:100%;
 }
 	#skillsHeader {flex:1 100%;overflow: hidden; display: flex;align-items: center;justify-content: center;}
-	#skillsHeader p, #skillsHeader h2 {color:#fff}
+	#skillsHeader p, #skillsHeader h1 {color:#fff}
 		#skillsHeader>div {margin:auto; padding: 0 2em;}
 	.skillsContainer h3 {font-family: 'Roboto Condensed', sans-serif; color: #888; margin:.8em 0; margin-top:0}
 	.skillsItem{flex: 1;min-width:33%; height:60%}
 		.skillsItem p{color:#888;margin:.8em 0}
 		/*white card with box shadow*/
 	 	.skillsItem > div:nth-child(1){
-			height:95%;
+			height:100%;
 			background-color:#fff; 
 			margin: 0 1em; 
 			box-shadow: .5em .5em 0px 0px #888;
@@ -236,7 +245,7 @@ section {
 			transition: box-shadow, 1s;
 			}
 		.skillsItem>div:nth-child(1):hover{box-shadow:.2em .2em 0px 0px #39f;margin-top:.3em}
-		.skillsItemHeader{display:block;width:100%}
+		.skillsItemHeader{display:block;}
 		@-webkit-keyframes thump {
 			0% { -webkit-transform: scale(1); }
 			50% { -webkit-transform: scale(0.8); }
@@ -283,7 +292,7 @@ section {
 		div.aside2 #skillsBack{background-image: url('../img/servers.svg');border-color:#FF584C;}
 		.aside2>div:hover #skillsBack{background-image: url('../img/servers39f.svg');border-color:#39f}
 	
-	
+	/*Tools Icons*/
 	#skillsFooter {order:4; flex: 1 100%;align-self:flex-end;height:20%}
 		#skillsFooter h3 {color:#fff; margin-top:.8em}
 		#toolsContainer {
@@ -329,6 +338,23 @@ section {
 					.tool:hover div {display:inline;position:absolute;background:#fff;}
 					.tool:hover div p {opacity:1}
 					
+	/*Skills Media Queries*/
+	@media all and (max-width:1130px) {
+		#skillsHeader h1 {margin:0;margin-top:0.25em}
+		.skillsItem {height:auto;flex:3;min-width:80%}
+			.skillsItem>div:nth-child(1){height:auto;margin: .8em 1em;display:flex;flex-direction:row}
+			.skillsItem>div:nth-child(1):hover{margin-top:.8em}
+			.skillsContent{order:1}.aside1{order:3}.aside2{order:2}
+			.skillsItemHeader{margin:auto;flex:1}
+			.skillsItem p {margin:auto;flex:4}
+		#skillsFooter{display:none}
+	}
+	@media all and (max-width:798px) {.skillsItem p{flex:3}}
+	@media all and (max-width:670px) {.skillsItem p{flex:2}}
+	@media all and (max-width:550px) {
+		#skillsFront,#skillsDesign,#skillsBack{display:none}
+		.skillsItem>div:nth-child(1){flex-direction:column}
+	}
 /* Slide 4 - Blurred code */
 #slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
 

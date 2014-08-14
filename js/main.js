@@ -42,17 +42,9 @@ var $window = $(window);
 	
 	//ALWAYS resize the height of top
 	$('#top').height(winH);
-	//If winH is lower than 600, adjust logo.  Fix for netbooks
-	if(winH <= 600){
-		$('#logoBig').css("margin-top", "-10px");
-		$('#top').css("min-height", "640px");
-	}
-	//Fix for 320 width devices to show MIKA AGUILAR text on one line
-	//Also make the social icons a bit smaller
+	//Fix for 320 width devices to make the social icons a bit smaller
 	if(winW<=320){
-		$('#top h1').css("font-size", "2.6em");
 		$('#github, #linkedin').width(45).height(45).css("margin", ".5em");
-		$('#logoBig').css("margin-top","-60px");
 	}
 	
 	function adjustWindow(){
@@ -126,6 +118,21 @@ var $window = $(window);
 	}
 
 	enquire.register("screen and (min-device-width : 768px)", initAdjustWindow(), false);
+
+/* ==========================================================================
+   Navigation Shrinker for Small Screens
+   ========================================================================== */
+
+	var header = document.getElementById('header');
+	
+	$(window).scroll(function () {
+		if (($(this).scrollTop() > winH) && (winW < 768)) {
+			header.style.position='fixed';
+			console.log('move nav');
+		} else if (($(this).scrollTop() < winH) && (winW < 768)) {
+			header.style.position='static';
+		}
+	});
 
 /* ==========================================================================
    Site Info Pull
