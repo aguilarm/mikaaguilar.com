@@ -346,7 +346,7 @@ section {
 			.skillsItem>div:nth-child(1):hover{margin-top:.8em}
 			.skillsContent{order:1}.aside1{order:3}.aside2{order:2}
 			.skillsItemHeader{margin:auto;flex:1}
-			.skillsItem p {margin:auto;flex:4}
+			.skillsItem p {margin:auto;flex:4;padding:1em 0;}
 		#skillsFooter{display:none}
 	}
 	@media all and (max-width:798px) {.skillsItem p{flex:3}}
@@ -354,24 +354,32 @@ section {
 	@media all and (max-width:550px) {
 		#skillsFront,#skillsDesign,#skillsBack{display:none}
 		.skillsItem>div:nth-child(1){flex-direction:column}
+		.skillsItem p {padding-top:0;}
+		div.skillsItem.skillsContent > div:after {
+			content:"";
+			background-image:url('../img/responsiveYellow.svg');
+			background-size:contain;
+			background-position:center;
+			background-repeat:no-repeat;
+			opacity:0.5;
+			top:0;
+			left:0;
+			bottom:0;
+			right:0;
+			position:absolute;
+			z-index:-1;
+		}
+		
 	}
 /* Slide 4 - Blurred code */
 #slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
 
 /* Slide 5 - Contact Me */
-#contact h2 {margin-bottom: 18px;}
-#contactWrap {
-	width: 500px;
-	height: 360px;
-	margin: auto;
-}
-#contact h2 {
-	color: #3399ff;
-}
-#name {
-	margin-right:100px;
-}
-#formmessages {-webkit-transition: color 0.4s;transition: color 0.4s;padding-top:10px}
+#contact h1 {color:#39f}
+#contactWrap {width: 50%;max-width:800px;margin: auto}
+	@media all and (max-width:768px) {#contactWrap{width:80%}}
+#formmessages {-webkit-transition: color 0.4s;transition: color 0.4s;padding-top:10px;height:3em}
+	@media all and (max-width:400px) {#formmessages{height:5em}}
 .loading{color:#3399ff}
 .error {color:#f00}
 .success {color:#060}
