@@ -355,21 +355,6 @@ section {
 		#skillsFront,#skillsDesign,#skillsBack{display:none}
 		.skillsItem>div:nth-child(1){flex-direction:column}
 		.skillsItem p {padding-top:0;}
-		div.skillsItem.skillsContent > div:after {
-			content:"";
-			background-image:url('../img/responsiveYellow.svg');
-			background-size:contain;
-			background-position:center;
-			background-repeat:no-repeat;
-			opacity:0.5;
-			top:0;
-			left:0;
-			bottom:0;
-			right:0;
-			position:absolute;
-			z-index:-1;
-		}
-		
 	}
 /* Slide 4 - Blurred code */
 #slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
