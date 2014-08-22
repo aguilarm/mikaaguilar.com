@@ -23,7 +23,6 @@
     
     <link rel="shortcut icon" href="/favicon.ico"  type="image/x-icon" >
     
-    
 </head>
 <body class="loading">
 	<div id="loader"></div>
@@ -37,7 +36,7 @@
         <img src="img/servers39f.svg" alt="database">
    	</div>
 	<section id="top" class="homeSlide">
-        	<div class="hsContainer">
+        	<div class="hsContainer" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#top">
             	<div class="hsContent" data-center="opacity: 1;" data-0-top="opacity: 0;" data-anchor-target="#slide1text">
                 	<h1>MIKA AGUILAR</h1>
 					<p id="slide1text">I am a web designer and front-end developer with full-stack aspirations working near Austin, TX.
@@ -50,6 +49,7 @@
          	</div>
            	<div id="scrollDown" data-100-bottom="opacity: 1;" data-200-top="opacity: 0;">SCROLL DOWN<img id="downarrow" src="img/down.png" alt="down arrow"></div>
 		</section>
+	<!--end of top slide-->
     	<section id="skills"><!--the nav will jump to this id rather than the section-->
     		<div id="header" data-1-top="position:static" data-top="position:fixed" data-anchor-target="#skills">
     			<div id="hdWrap">    
@@ -64,23 +64,24 @@
 				</div>
 			</div>
 		</section>
-        <section id="skillsSection" class="homeSlideSkills">
-        	<div class="skillsContainer">
-        		<div id="skillsHeader">
-            		<h1 data-center="color: rgb(255,255,255);" data--200-bottom="color:rgb(178,178,178)">WHAT I DO</h1>
+	<!--end of navigation bar-->
+        <section id="skillsSection">
+        	<div class="innerContainer">
+        		<div class="innerHeader" id="skillsHeader">
+            		<h1 data-center="color: rgb(255,255,255);" data--200-bottom="color:rgb(178,178,178)">SKILLS</h1>
 				</div>
-           	
+         	<!--/innerHeader-->
            		<div class="skillsItem skillsContent" data-bottom-top="margin-top:54%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
-                	<div>
+                	<div class="skillsCard">
                     	<div class="skillsItemHeader">
                     		<div title="Front End" id="skillsFront"></div>
                         	<h2>FRONT END</h2>
                     	</div>
-                        <p>Front end development is my bread and butter these days.  I've been using HTML5, CSS3, and Javascript enough to be confident that I can figure out how to make almost anything happen client side.  Much of this site is either entirely coded by me or  has been heavily modified.  I'm doing a lot of stuff with JS lately, and it's surprisingly enjoyable to use despite its many quirks.<br><br>There are so many cool things happening in front end development across the board at an incredible pace that being a web developer right now is really exciting.  </p>
+                        <p>Front end development is my bread and butter these days.  I've been using HTML5, CSS3, and Javascript enough to be confident that I can figure out how to make almost anything happen client side.  Much of this site is either entirely coded by me or  has been heavily modified.  I'm doing a lot of stuff with JavaScript/jQuery lately, and loving it.<br><br>There are so many cool things happening in front end development across the board at an incredible pace that being a web developer right now is really exciting.  </p>
                 	</div>
           		</div>
               	<div class="skillsItem aside1" data-bottom-top="margin-top:84%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
-               		<div>
+               		<div class="skillsCard">
                     	<div class="skillsItemHeader">
                     		<div title="Design" id="skillsDesign"></div>
                     		<h2>DESIGN</h2>
@@ -89,7 +90,7 @@
                       	</div>
                   	</div>
                  	<div class="skillsItem aside2" data-bottom-top="margin-top:44%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
-                    	<div>
+                    	<div class="skillsCard">
                         	<div class="skillsItemHeader">
                         		<div title="Back End" id="skillsBack"></div>
                         		<h2>BACK END</h2>
@@ -97,42 +98,67 @@
                         	<p>For the back end, I'm just getting started.  I know enough about PHP and SQL from classes I've taken to plug my front end applications into server data and do things like server-side validation of forms or creating and add/removing data from a simple SQL database with mySQL.<br><br>I'm also experienced with Ubuntu server command line from a VPS I have to mess around with, so I've used simple things like vim, tmux, xorg, ssh, puTTY, and a few other things.  I pick up new software very fast as I've found myself using all kinds of niche applications as I work.</p>
                        	</div>
                  	</div>
-       				<div id="skillsFooter">
-                        <div id="toolsContainer">
-                        	<div class="tool">
-                            	<img src="img/html5.png" style="border-radius:0" title="HTML5" alt="HTML5"/>
-                            </div>
-                            <div class="tool">
-                            	<img src="img/css3.png" style="border-radius:0" title="CSS3" alt="CSS3"/>
-                            </div>
-                            <div class="tool">
-                            	<img src="img/chrome.png" title="Chrome Developer Tools" alt="Chrome Developer Tools">
-                          	</div>
-                            <div class="tool">
-                            	<img src="img/linux.svg" title="Linux" alt="Linux">
-                          	</div>
-                            <div class="tool">
-                            	<img src="img/adobeDw.svg" title="Dreamweaver" alt="Dreamweaver">
-                          	</div>
-                            <div class="tool">
-                            	<img src="img/adobeIl.svg" title="Illustrator" alt="Illustrator">
-                            </div>
-                            <div class="tool">
-                            	<img src="img/adobePs.svg" title="Photoshop" alt="Photoshop">
-                            </div>
-                            <div class="tool">
-                            	<img src="img/php.png" title="PHP" alt="PHP">
-                            </div>
-            			</div>
-                  	</div>
+       				
+                  	
 				</div><!--flexContainer-->
         </section>
-    <!--end of slide 3-->
-    	<section id="slide-4" class="homeSlidePhoto">
-			<div class="bcg" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-4">
+    <!--end of skills slide-->
+    	<section id="codeBlur" class="homeSlidePhoto">
+			<div class="bcg hsContainer" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#codeBlur">
+            	<div class="innerContainer">
+            		<div class="innerHeader">
+            			<h2>TOOLBOX</h2>
+                	</div>
+               		<div id="toolsContainer">
+                		<div class="tool">
+                    		<img src="img/html5.png" style="border-radius:0" title="HTML5" alt="HTML5"/>
+                   		</div>
+                   		<div class="tool">
+                        	<img src="img/css3.png" style="border-radius:0" title="CSS3" alt="CSS3"/>
+                    	</div>
+                    	<div class="tool">
+                       		<img src="img/chrome.png" title="Chrome Developer Tools" alt="Chrome Developer Tools">
+                    	</div>
+                    	<div class="tool">
+                        	<img src="img/linux.svg" title="Linux" alt="Linux">
+                    	</div>
+                    	<div class="tool">
+                        	<img src="img/adobeDw.svg" title="Dreamweaver" alt="Dreamweaver">
+                    	</div>
+                    	<div class="tool">
+                        	<img src="img/adobeIl.svg" title="Illustrator" alt="Illustrator">
+                    	</div>
+                    	<div class="tool">
+                        	<img src="img/adobePs.svg" title="Photoshop" alt="Photoshop">
+                    	</div>
+                    	<div class="tool">
+                        	<img src="img/php.png" title="PHP" alt="PHP">
+                    	</div>
+            		</div>
+            	</div>
 		    </div>
       	</section>
-  	<!--end of slide 4-->
+  	<!--end of code image slide-->
+    	<section id="blog" class="homeSlide">
+        	<div class="innerContainer">
+            	<div class="innerHeader">
+                	<div>
+                		<h1>PROJECTS</h1>
+                 	</div>
+                    <div>
+                		<h1>BLOG</h1>
+                 	</div>
+                </div>
+                <div class="innerContent">
+                	<div
+                </div>
+            </div>
+        </section>
+  	<!--end of blog slide-->
+    	<section id="oceanFog" class="homeSlidePhoto">
+        	<div class="bcg" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#oceanFog">
+        </section>
+ 	<!--end of ocean image slide-->
     	<section id="contact" class="homeSlide">
         	<div class="hsContainer">
             	<div class="hsContent">
@@ -152,7 +178,7 @@
                 </div>            
             </div>  
        	</section>
-  	<!--end of slide 5-->
+  	<!--end of contact slide-->
     	<section id="slide-6">
         	<div class="hsContainer">
             	<div class="hsContent">
@@ -160,7 +186,7 @@
                 </div>
           	</div>
         </section>
-    <!--end of slide 6-->
+    <!--end of footer-->
     <section id="siteInfo">
         	<div class="hsContainer">
             	<div class="hsContent">

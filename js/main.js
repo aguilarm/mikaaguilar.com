@@ -71,7 +71,7 @@ var $window = $(window);
 			$slideSkills.height(winH-70);
 	    	$slideTall.height(winH*2);
 	    	$slideTall2.height(winH*3);
-			$slidePhoto.height(winH*0.3);
+			$slidePhoto.height(winH*0.4);
 			//$section.css({'min-width': winW});
 			
 	        s.refresh($('.homeSlide'));

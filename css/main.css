@@ -24,6 +24,7 @@
 #hdWrap {
 	width: 80%;
 	margin: auto;
+	max-width:1300px;
 }
 #hdLogo {
 	display: inline-block;
@@ -121,7 +122,7 @@ body, html {
 	display:none;
 }
 h1 {
-	font-size: 3.5em;
+	font-size: 3em;
 	line-height: 1em;
 	font-weight:400;
 }
@@ -150,7 +151,7 @@ section {
 	height: 100%;
 	width: 100%;
 }
-/* Slide 1 - Intro/About */
+/* Intro/About */
 #top .hsContainer {background-image:url('../img/logo.svg');
 	background-repeat:no-repeat;
 	background-position:center;
@@ -216,27 +217,14 @@ section {
 	}
 #scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
 
-/* Slide 3 - Skills */
-#skillsSection {background-color: #b2b2b2;min-height:790px;}
+/* Skills */
+#skillsSection {background-color: #b2b2b2;height:660px}
 #skillsSection h2 {margin-top: 14px;}
-.skillsContainer {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content:space-around;
-	text-align: center;
-	align-items: stretch;
-	margin:auto;
-	overflow: hidden;
-	height:100%;
-}
-	#skillsHeader {flex:1 100%;overflow: hidden; display: flex;align-items: center;justify-content: center;}
 	#skillsHeader p, #skillsHeader h1 {color:#fff}
-		#skillsHeader>div {margin:auto; padding: 0 2em;}
-	.skillsContainer h3 {font-family: 'Roboto Condensed', sans-serif; color: #888; margin:.8em 0; margin-top:0}
-	.skillsItem{flex: 1;min-width:33%; height:60%}
+	.skillsItem{flex: 1;min-width:33%; height:450px}
 		.skillsItem p{color:#888;margin:.8em 0}
 		/*white card with box shadow*/
-	 	.skillsItem > div:nth-child(1){
+	 	.skillsCard{
 			height:100%;
 			background-color:#fff; 
 			margin: 0 1em; 
@@ -244,7 +232,7 @@ section {
 			padding: .5% 3%;
 			transition: box-shadow, 1s;
 			}
-		.skillsItem>div:nth-child(1):hover{box-shadow:.2em .2em 0px 0px #39f;margin-top:.3em}
+		.skillsCard:hover{box-shadow:.2em .2em 0px 0px #39f;margin-top:.3em}
 		.skillsItemHeader{display:block;}
 		@-webkit-keyframes thump {
 			0% { -webkit-transform: scale(1); }
@@ -262,8 +250,6 @@ section {
 			-webkit-transform-origin:50% 50%;
 			-webkit-animation-iteration-count: 1;
 			-webkit-animation-timing-function: linear;
-		}
-		.skillsItem>div:nth-child(1):hover .skillsItemHeader>div:nth-child(1) {
 			animation-name: thump;
 			animation-duration: 600ms;
 			transform-origin:50% 50%;
@@ -271,7 +257,7 @@ section {
 			animation-timing-function: linear;
 		}
 		/*img on top of skills items*/
-		div.skillsItem > div:nth-child(1) > .skillsItemHeader>div:nth-child(1){
+		div.skillsCard > .skillsItemHeader>div:nth-child(1){
 			margin:.5em auto;
 			display:block;
 			width:90px;
@@ -291,85 +277,80 @@ section {
 	.aside2 {order:3;}
 		div.aside2 #skillsBack{background-image: url('../img/servers.svg');border-color:#FF584C;}
 		.aside2>div:hover #skillsBack{background-image: url('../img/servers39f.svg');border-color:#39f}
-	
-	/*Tools Icons*/
-	#skillsFooter {order:4; flex: 1 100%;align-self:flex-end;height:20%}
-		#skillsFooter h3 {color:#fff; margin-top:.8em}
-		#toolsContainer {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items:center;
-			height:100%;
-		}
-			.tool {
-				display:flex;
-				align-items:center;
-				justify-content:center;
-				margin:0 .5em;
-				height:80%;
-				width:100px;
-				transition:width,1s;
-			}
-				.tool:hover {width:200px;}
-				.tool img {
-					float:left;
-					width: 80px;
-					height: 80px;
-					border-radius: 8px;
-				}
-				.tool>div {
-					display:none;
-					z-index:10;
-					color:#39f;
-					padding:14px 20px;
-					margin-top:30px;
-					margin-left:9px;
-					text-align:left;
-					border:1px solid #39f;
-					background-color:#fff;
-					height:40px;
-					box-shadow: 3px 3px 0 0 #999;
-					font-weight:400;
-				}
-				.tool>div .arrow {z-index:20;position:absolute;top:23px;border:0;left:-10px;width:11px;height:22px;}
-				.tool>div p {margin:0;opacity:0;transition:opacity,1s;width:80px;margin:0 .2em}
-					
-					.tool:hover div {display:inline;position:absolute;background:#fff;}
-					.tool:hover div p {opacity:1}
 					
 	/*Skills Media Queries*/
 	@media all and (max-width:1130px) {
+		#skillsSection {height:auto}
 		#skillsHeader h1 {margin:0;margin-top:0.25em}
-		.skillsItem {height:auto;flex:3;min-width:80%}
-			.skillsItem>div:nth-child(1){height:auto;margin: .8em 1em;display:flex;flex-direction:row}
-			.skillsItem>div:nth-child(1):hover{margin-top:.8em}
+		#skillsSection .skillsItem {height:auto;flex:3;min-width:80%}
+			#skillsSection .skillsItem>div:nth-child(1){height:auto;margin: .8em 1em;display:flex;flex-direction:row}
+			#skillsSection .skillsItem>div:nth-child(1):hover{margin-top:.8em}
 			.skillsContent{order:1}.aside1{order:3}.aside2{order:2}
-			.skillsItemHeader{margin:auto;flex:1}
-			.skillsItem p {margin:auto;flex:4;padding:1em 0;}
+			#skillsSection .skillsItemHeader{margin:auto;flex:1}
+			#skillsSection .skillsItem p {margin:auto;flex:4;padding:1em 0;}
 		#skillsFooter{display:none}
 	}
 	@media all and (max-width:798px) {.skillsItem p{flex:3}}
 	@media all and (max-width:670px) {.skillsItem p{flex:2}}
 	@media all and (max-width:550px) {
 		#skillsFront,#skillsDesign,#skillsBack{display:none}
-		.skillsItem>div:nth-child(1){flex-direction:column}
-		.skillsItem p {padding-top:0;}
+		#skillsSection .skillsItem>div:nth-child(1){flex-direction:column}
+		#skillsSection .skillsItem p {padding-top:0;}
 	}
-/* Slide 4 - Blurred code */
-#slide-4 .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
+/* Blurred code Photo */
+#codeBlur .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
+#codeBlur h2 {color:#fff}
+#toolsContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items:center;
+}
+	.tool {
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		margin:0 .5em;
+		height:80%;
+		width:3em;
+	}
+		.tool img {width: 3em;height: 3em;border-radius: 8px;}
+		.tool img:hover {
+			-webkit-animation-name: thump;
+			-webkit-animation-duration: 600ms;
+			-webkit-transform-origin:50% 50%;
+			-webkit-animation-iteration-count: 1;
+			-webkit-animation-timing-function: linear;
+			animation-name: thump;
+			animation-duration: 600ms;
+			transform-origin:50% 50%;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+/* Blog */
+#blog {color:#999;max-height:900px}
 
-/* Slide 5 - Contact Me */
-#contact h1 {color:#39f}
+/* Ocean Fog Photo */
+#oceanFog .bcg {background-image:url('../img/oceanfog.png'); background-color: #1c1c1c;}
+
+/* Contact Me */
+#contact {background-color:#39f;max-height:900px}
+#contact h1 {color:#fff}
 #contactWrap {width: 50%;max-width:800px;margin: auto}
 	@media all and (max-width:768px) {#contactWrap{width:80%}}
-#formmessages {-webkit-transition: color 0.4s;transition: color 0.4s;padding-top:10px;height:3em}
+#formmessages {
+	-webkit-transition: color 0.4s;
+	transition: color 0.4s;
+	padding-top:10px;
+	height:3em;
+	margin-top:1em;
+	}
 	@media all and (max-width:400px) {#formmessages{height:5em}}
-.loading{color:#3399ff}
-.error {color:#f00}
-.success {color:#060}
+.loading{color:#39f;background-color:#fff;box-shadow: .2em .2em 0px 0px #888;}
+.error {color:#f00;background-color:#fff;box-shadow: .2em .2em 0px 0px #888;}
+.success {color:#060;background-color:#fff;box-shadow: .2em .2em 0px 0px #888;}
 
-/* Slide 6 - Footer */
+/* Footer */
 #slide-6 {background-color: #3399ff; padding: 10px; height: 40px; top:-40px;}
 #slide-6 div, #slide-6 a {color: #fff; font-family:'Droid Sans', sans-serif;}
 
@@ -379,6 +360,7 @@ section {
 #siteInfo h2, #siteInfo a {color:#3399ff}
 
 /* Slide Constants */
+.homeSlidePhoto {max-height:350px}
 .hsContainer {
 	display: flex;
 	justify-content:center;
@@ -387,12 +369,18 @@ section {
 	height: 100%;
 	overflow: hidden;
 }
+.innerContainer {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content:space-around;
+	text-align: center;
+	align-items: stretch;
+	margin:auto;
+	max-width:1300px;
+}
+	.innerHeader {flex:1 100%;overflow: hidden; display: flex;align-items: center;justify-content: center;align-self:flex-start}
+		.innerHeader>div {margin:auto; padding: 0 2em;}
 
-	.hsContainer p {
-		margin: 0 auto;
-		color: #b2b2b2;
-		font-family: 'Droid Sans', sans-serif;
-	}
 	.hsContainer a {color: #b2b2b2; text-decoration: underline;}
 	
 	.hsContent {
@@ -431,9 +419,10 @@ textarea {
 button {
 	width: 100%;
 	background: none;
-	border: 1px solid #3399ff;
+	border: 3px solid #fff;
 	font-family: 'Roboto Condensed', sans-serif;
-	color: #3399ff;
+	font-weight: 300;
+	color: #fff;
 	font-size: 18px;
 	letter-spacing: 2px;
 	padding: 8px 0;
@@ -442,23 +431,19 @@ button {
 	transition: background 200ms ease-in, color 200ms ease-out, border 200ms ease-out;
 }
 button:hover {
-	background-color: #3399ff;
-	color: #fff;
+	background-color: #fff;
+	color: #39f;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #3399ff;
-	opacity:  0.5;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
     color:    #3399ff;
-    opacity:  0.5;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
     color:    #3399ff;
-    opacity:  0.5;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    #3399ff;
-	opacity:  0.5;
 }
