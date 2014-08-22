@@ -221,7 +221,9 @@ section {
 #skillsSection {background-color: #b2b2b2;height:660px}
 #skillsSection h2 {margin-top: 14px;}
 	#skillsHeader p, #skillsHeader h1 {color:#fff}
-	.skillsItem{flex: 1;min-width:33%; height:450px}
+	#skillsHeader h1 {margin-bottom:0}
+	#skillsHeader p {margin-bottom:2em}
+	.skillsItem{-webkit-box-flex:1;-moz-box-flex:1;-webkit-flex:1;-ms-flex:1;flex: 1;min-width:33%; height:450px}
 		.skillsItem p{color:#888;margin:.8em 0}
 		/*white card with box shadow*/
 	 	.skillsCard{
@@ -269,36 +271,39 @@ section {
 			background-position:center;
 			background-repeat:no-repeat;
 		}
-	.skillsContent {order:2;}
+	.skillsContent {-webkit-box-ordinal-group:2;-moz-box-ordinal-group:2;-ms-flex-order:2;-webkit-order:2;order:2;}
 		#skillsFront{background-image: url('../img/responsiveYellow.svg');border-color:#A4C639}
 		.skillsContent>div:hover #skillsFront{background-image: url('../img/responsive39f.svg');border-color:#39f;}
-	.aside1 {order:1;}
+	.aside1 {-webkit-box-ordinal-group:1;-moz-box-ordinal-group:1;-ms-flex-order:1;-webkit-order:1;order:1;}
 		div.aside1 #skillsDesign{background-image: url('../img/designOrange.svg');border-color:#FFB333}
 		.aside1>div:hover #skillsDesign{background-image: url('../img/design39f.svg');border-color:#39f}
-	.aside2 {order:3;}
+	.aside2 {-webkit-box-ordinal-group:3;-moz-box-ordinal-group:3;-ms-flex-order:3;-webkit-order:3;order:3;}
 		div.aside2 #skillsBack{background-image: url('../img/servers.svg');border-color:#FF584C;}
 		.aside2>div:hover #skillsBack{background-image: url('../img/servers39f.svg');border-color:#39f}
 	/*skillsTap only shows when width is less than 550px*/
-	.skillsTap {display:none;height:40px;width:100%;}
+	.skillsTap {display:none;height:40px;width:100%;margin-bottom:.6em}
 	#skillsSection .skillsTap p {color:#000;padding-bottom:0}
 	.skillsTap img{height:50%;transition:all 500ms ease;-webkit-transition:all 500ms ease;-moz-transition:all 500ms ease;}
 	/*rotate class will flip the arrows when applied with jQuery.  easiest way with decent support */
 	.rotate {-ms-transform: rotate(180deg); /* IE 9 */
     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
     transform: rotate(180deg)}
+	/*showSkills used for show/hide rather than inline style, so it's responsive*/
+	#skillsSection div.skillsItem p.showSkills{display:block;transition:all 1s;}
 	/*Skills Media Queries*/
 	@media all and (max-width:1130px) {
 		#skillsSection {height:auto}
-		#skillsHeader h1 {margin:0;margin-top:0.25em}
-		#skillsSection .skillsItem {height:auto;flex:3;min-width:80%}
+		#skillsHeader h1 {margin:0;margin-top:0.25em;}
+		#skillsHeader p {margin-bottom:1em}
+		#skillsSection .skillsItem {height:auto;-webkit-box-flex:3;-moz-box-flex:3;-webkit-flex:3;-ms-flex:3;flex:3;min-width:80%}
 			#skillsSection .skillsItem>div:nth-child(1){height:auto;margin: .8em 1em;display:flex;flex-direction:row}
 			#skillsSection .skillsItem>div:nth-child(1):hover{margin-top:.8em}
 			.skillsContent{order:1}.aside1{order:3}.aside2{order:2}
-			#skillsSection .skillsItemHeader{margin:auto;flex:1}
-			#skillsSection .skillsItem p {margin:auto;flex:4;padding:1em 0;}
+			#skillsSection .skillsItemHeader{margin:auto;-webkit-box-flex:1;-moz-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}
+			#skillsSection .skillsItem p {margin:auto;-webkit-box-flex:4;-moz-box-flex:4;-webkit-flex:4;-ms-flex:4;flex:4;padding:1em 0;}
 	}
-	@media all and (max-width:798px) {.skillsItem p{flex:3}}
-	@media all and (max-width:670px) {.skillsItem p{flex:2}}
+	@media all and (max-width:798px) {.skillsItem p{-webkit-box-flex:3;-moz-box-flex:3;-webkit-flex:3;-ms-flex:3;flex:3}}
+	@media all and (max-width:670px) {.skillsItem p{-webkit-box-flex:2;-moz-box-flex:2;-webkit-flex:2;-ms-flex:2;flex:2}}
 	@media all and (max-width:550px) {
 		#skillsSection .skillsItem>div:nth-child(1){flex-direction:column}
 		#skillsSection .skillsItem p {padding-top:0;display:none;}
@@ -306,22 +311,23 @@ section {
 	}
 /* Blurred code Photo */
 #codeBlur .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
+#codeBlur .innerContainer {max-width:none}
 #codeBlur h2 {color:#fff}
 #toolsContainer {
-	display: flex;
-	flex-direction: row;
+	display:-webkit-box;display:-moz-box;display:-ms-flexbox; display:-webkit-flex;display:flex;
+	-webkit-flex-flow:row wrap;-mox-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow: row wrap;
 	justify-content: center;
-	align-items:center;
+	-webkit-align-items:center;align-items:center;
 }
+@media all and (max-width:768px) {#toolsContainer{margin-bottom:2em}}
 	.tool {
 		display:flex;
-		align-items:center;
+		-webkit-align-items:center;align-items:center;
 		justify-content:center;
 		margin:0 .5em;
-		height:80%;
 		width:3em;
 	}
-		.tool img {width: 3em;height: 3em;border-radius: 8px;}
+		.tool img {width: 3em;height: 3em;border-radius: 8px;margin:.5em 0;}
 		.tool img:hover {
 			-webkit-animation-name: thump;
 			-webkit-animation-duration: 600ms;
@@ -335,14 +341,14 @@ section {
 			animation-timing-function: linear;
 		}
 /* Blog */
-#blog {color:#999;max-height:900px}
+#workSection {color:#999;height:900px}
 
 /* Ocean Fog Photo */
 #oceanFog .bcg {background-image:url('../img/oceanfog.png'); background-color: #1c1c1c;}
 
 /* Contact Me */
-#contact {background-color:#39f;max-height:900px}
-#contact h1 {color:#fff}
+#contactSection {background-color:#39f;height:525px}
+#contactSection h1 {color:#fff}
 #contactWrap {width: 50%;max-width:800px;margin: auto}
 	@media all and (max-width:768px) {#contactWrap{width:80%}}
 #formmessages {
@@ -369,29 +375,31 @@ section {
 /* Slide Constants */
 .homeSlidePhoto {max-height:350px}
 .hsContainer {
-	display: flex;
+	display:-webkit-box;display:-moz-box;display:-ms-flexbox; display:-webkit-flex;display:flex;
 	justify-content:center;
-	align-items:center;
+	-webkit-align-items:center;align-items:center;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
 }
+.sectionAnchor {position:relative;bottom:70px}
 .innerContainer {
-	display: flex;
-	flex-flow: row wrap;
+	display:-webkit-box;display:-moz-box;display:-ms-flexbox; display:-webkit-flex;display:flex;
+	-webkit-flex-flow:row wrap;-mox-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow: row wrap;
 	justify-content:space-around;
 	text-align: center;
-	align-items: stretch;
+	-webkit-align-items:stretch;align-items: stretch;
 	margin:auto;
 	max-width:1300px;
+	width:100%;
 }
-	.innerHeader {flex:1 100%;overflow: hidden; display: flex;align-items: center;justify-content: center;align-self:flex-start}
-		.innerHeader>div {margin:auto; padding: 0 2em;}
+	.innerHeader {-webkit-box-flex:1 100%;-moz-box-flex:1 100%;-webkit-flex:1 100%;-ms-flex:1 100%;flex:1 100%;overflow: hidden; display:-webkit-box;display:-moz-box;display:-ms-flexbox; display:-webkit-flex;display:flex;-webkit-align-items:center;align-items: center;justify-content: center;align-self:flex-start}
+		.innerHeader>div {margin:auto; padding: 0 2em;width:100%}
 
 	.hsContainer a {color: #b2b2b2; text-decoration: underline;}
 	
 	.hsContent {
-		flex: 1;
+		-webkit-box-flex:1;-moz-box-flex:1;-webkit-flex:1;-ms-flex:1;flex: 1;
 		color: #b2b2b2;
 		text-align: center;
 	}

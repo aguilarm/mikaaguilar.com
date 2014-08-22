@@ -128,7 +128,6 @@ var $window = $(window);
 	$(window).scroll(function () {
 		if (($(this).scrollTop() > winH) && (winW < 768)) {
 			header.style.position='fixed';
-			console.log('move nav');
 		} else if (($(this).scrollTop() < winH) && (winW < 768)) {
 			header.style.position='static';
 		}
@@ -141,17 +140,15 @@ var $window = $(window);
 	   //update winW each click, and only run on small screen
 	   winW = $(window).width();
 	   if(winW <= 550) {
-	   		console.log('clicked on skillsCard on small window');
 	   		var $skillsP = $(this).children('p');
 	   		var $tapText = $(this).find('div.skillsTap>p');
 	   		var $tapImg = $(this).find('div.skillsTap>img');
-	   		console.log('skillstap? ' + $tapText);
    				if ($skillsP.css('display') == 'none'){
-					$skillsP.show(300);
+					$skillsP.addClass('showSkills');
 					$tapText.text('tap to hide');
 					$tapImg.addClass('rotate');
 					} else {
-						$skillsP.hide(300);
+						$skillsP.removeClass('showSkills');
 						$tapText.text('tap to expand');
 						$tapImg.removeClass('rotate');
 				}
