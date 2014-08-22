@@ -231,6 +231,7 @@ section {
 			box-shadow: .5em .5em 0px 0px #888;
 			padding: .5% 3%;
 			transition: box-shadow, 1s;
+			transition: height, 1s;
 			}
 		.skillsCard:hover{box-shadow:.2em .2em 0px 0px #39f;margin-top:.3em}
 		.skillsItemHeader{display:block;}
@@ -277,7 +278,14 @@ section {
 	.aside2 {order:3;}
 		div.aside2 #skillsBack{background-image: url('../img/servers.svg');border-color:#FF584C;}
 		.aside2>div:hover #skillsBack{background-image: url('../img/servers39f.svg');border-color:#39f}
-					
+	/*skillsTap only shows when width is less than 550px*/
+	.skillsTap {display:none;height:40px;width:100%;}
+	#skillsSection .skillsTap p {color:#000;padding-bottom:0}
+	.skillsTap img{height:50%;transition:all 500ms ease;-webkit-transition:all 500ms ease;-moz-transition:all 500ms ease;}
+	/*rotate class will flip the arrows when applied with jQuery.  easiest way with decent support */
+	.rotate {-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg)}
 	/*Skills Media Queries*/
 	@media all and (max-width:1130px) {
 		#skillsSection {height:auto}
@@ -288,14 +296,13 @@ section {
 			.skillsContent{order:1}.aside1{order:3}.aside2{order:2}
 			#skillsSection .skillsItemHeader{margin:auto;flex:1}
 			#skillsSection .skillsItem p {margin:auto;flex:4;padding:1em 0;}
-		#skillsFooter{display:none}
 	}
 	@media all and (max-width:798px) {.skillsItem p{flex:3}}
 	@media all and (max-width:670px) {.skillsItem p{flex:2}}
 	@media all and (max-width:550px) {
-		#skillsFront,#skillsDesign,#skillsBack{display:none}
 		#skillsSection .skillsItem>div:nth-child(1){flex-direction:column}
-		#skillsSection .skillsItem p {padding-top:0;}
+		#skillsSection .skillsItem p {padding-top:0;display:none;}
+		.skillsTap, #skillsSection .skillsTap p {display:block;padding-bottom:0}
 	}
 /* Blurred code Photo */
 #codeBlur .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}

@@ -135,6 +135,30 @@ var $window = $(window);
 	});
 
 /* ==========================================================================
+   Expanding skill card text on mobile
+   ========================================================================== */
+   $('.skillsCard').click(function (e) {
+	   //update winW each click, and only run on small screen
+	   winW = $(window).width();
+	   if(winW <= 550) {
+	   		console.log('clicked on skillsCard on small window');
+	   		var $skillsP = $(this).children('p');
+	   		var $tapText = $(this).find('div.skillsTap>p');
+	   		var $tapImg = $(this).find('div.skillsTap>img');
+	   		console.log('skillstap? ' + $tapText);
+   				if ($skillsP.css('display') == 'none'){
+					$skillsP.show(300);
+					$tapText.text('tap to hide');
+					$tapImg.addClass('rotate');
+					} else {
+						$skillsP.hide(300);
+						$tapText.text('tap to expand');
+						$tapImg.removeClass('rotate');
+				}
+   		}
+   });
+   
+/* ==========================================================================
    Site Info Pull
    ========================================================================== */
 	
