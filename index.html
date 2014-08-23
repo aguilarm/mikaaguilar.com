@@ -26,7 +26,7 @@
 </head>
 <body class="loading">
 	<div id="loader"></div>
-	<main>
+	<div id="main">
     <!--begin body content-->
 	<div id="preloadButtons">
   		<img src="img/githubInvert.png" alt="gitHub logo">
@@ -35,9 +35,9 @@
         <img src="img/responsive39f.svg" alt="design">
         <img src="img/servers39f.svg" alt="database">
    	</div>
-	<section id="top" class="homeSlide">
+	<div id="top" class="homeSlide slide">
         	<div class="tableContainer" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#top">
-            	<div class="hsContent" >
+            	<div class="tableContent" >
                 	<div data-center="opacity: 1;" data-0-top="opacity: 0;" data-anchor-target="#slide1text">
                 		<h1>MIKA AGUILAR</h1>
 						<p id="slide1text">I am a web designer and front-end developer with full-stack aspirations working near Austin, TX.
@@ -49,10 +49,10 @@
 				</div>
          	</div>
            	<div id="scrollDown" data-100-bottom="opacity: 1;" data-200-top="opacity: 0;">SCROLL DOWN<img id="downarrow" src="img/down.png" alt="down arrow"></div>
-		</section>
+		</div>
 	<!--end of top slide-->
-    	<section id="skills"><!--the nav will jump to this id rather than the section-->
-    		<div id="header" data-1-top="position:static" data-top="position:fixed" data-anchor-target="#skills">
+    	<div id="skills"><!--the nav will jump to this id rather than the div-->
+    		<div id="header" class="slide" data-1-top="position:static" data-top="position:fixed" data-anchor-target="#skills">
     			<div id="hdWrap">    
  	  				<a data-3-top="visibility:hidden;opacity:0;width:0" data-1-top="visibility:visible;opacity:1;width:70px" data-anchor-target="#skills" id="hdLogo" href="#top"></a>
 					<div id="hdName">
@@ -65,25 +65,15 @@
 					</nav>
 				</div>
 			</div>
-		</section>
+		</div>
 	<!--end of navigation bar-->
-        <section id="skillsSection">
+        <div id="skillsSection" class="slide">
         	<div class="blockContainer">
         		<div class="innerHeader" id="skillsHeader">
             		<h1 data-center="color: rgb(255,255,255);" data--200-bottom="color:rgb(178,178,178)">SKILLS</h1>
                     <p data-center="color: rgb(255,255,255);" data--200-bottom="color:rgb(178,178,178)">I'm primarily a front-end guy dealing heavily with advanced HTML, CSS, and JavaScript techniques, but I'm constantly challenging myself and learning new things about the web.</p>
 				</div>
          	<!--/innerHeader-->
-           		<div class="skillsItem skillsContent" data-bottom-top="margin-top:54%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
-                	<div class="skillsCard">
-                    	<div class="skillsItemHeader">
-                    		<div title="Front End" id="skillsFront"></div>
-                        	<h2>FRONT END</h2>
-                    	</div>
-                        <p>Front end development is my bread and butter these days.  I've been using HTML5, CSS3, and JavaScript enough to be confident that I can figure out how to make almost anything happen client side.  Much of this site is either entirely coded by me or  has been heavily modified, and it's fully responsive, clean code.  I'm doing a lot of stuff with JavaScript/jQuery lately, and loving it.<br><br>There are so many cool things happening in front end development across the board at an incredible pace that being a web developer right now is really exciting.  </p>
-                   		<div class="skillsTap"><p>tap to expand</p><img src="img/downarrow.svg"/></div>
-                	</div>
-          		</div>
               	<div class="skillsItem aside1" data-bottom-top="margin-top:84%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
                		<div class="skillsCard">
                     	<div class="skillsItemHeader">
@@ -92,59 +82,52 @@
                       	</div>
                         <p>I've taken several classes dealing with Photoshop, Illustrator and even one with good old Flash.  With photoshop I'm very confident making some pretty cool, fairly advanced things happen from seamless cropping to photorealistic and 3d effects.  I've also used Illustrator quite a bit for classes and I love the pen tool.  <br><br>On top of being great with the required tools, I've spent a lot of time reading up on modern design practices and feel I have a decent grasp of whats going on in the world of web design, and graphic design in general.</p>
                         <div class="skillsTap"><p>tap to expand</p><img src="img/downarrow.svg"/></div>
+                    </div>
+          		</div>
+             	<div class="skillsItem skillsContent" data-bottom-top="margin-top:54%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
+                	<div class="skillsCard">
+                    	<div class="skillsItemHeader">
+                    		<div title="Front End" id="skillsFront"></div>
+                        	<h2>FRONT END</h2>
+                    	</div>
+                        <p>Front end development is my bread and butter these days.  I've been using HTML5, CSS3, and JavaScript enough to be confident that I can figure out how to make almost anything happen client side.  Much of this site is either entirely coded by me or  has been heavily modified, and it's fully responsive, clean code.  I'm doing a lot of stuff with JavaScript/jQuery lately, and loving it.<br><br>There are so many cool things happening in front end development across the board at an incredible pace that being a web developer right now is really exciting.  </p>
+                   		<div class="skillsTap"><p>tap to expand</p><img src="img/downarrow.svg"/></div>
+                		</div>
+          		</div>
+                <div class="skillsItem aside2" data-bottom-top="margin-top:44%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
+                    <div class="skillsCard">
+                    	<div class="skillsItemHeader">
+                        	<div title="Back End" id="skillsBack"></div>
+                        	<h2>BACK END</h2>
                       	</div>
-                  	</div>
-                 	<div class="skillsItem aside2" data-bottom-top="margin-top:44%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
-                    	<div class="skillsCard">
-                        	<div class="skillsItemHeader">
-                        		<div title="Back End" id="skillsBack"></div>
-                        		<h2>BACK END</h2>
-                           	</div>
-                        	<p>For the back end, I'm just getting started.  I know enough about PHP and SQL from classes I've taken to plug my front end applications into server data and do things like server-side validation of forms or creating and add/removing data from a simple SQL database with mySQL.<br><br>I'm also experienced with Ubuntu server command line from a VPS I have to mess around with, so I've used simple things like vim, tmux, xorg, ssh, puTTY, and a few other things.  I pick up new software very fast as I've found myself using all kinds of niche applications as I work.</p>
-                            <div class="skillsTap"><p>tap to expand</p><img src="img/downarrow.svg"/></div>
-                       	</div>
-                 	</div>  	
-				</div><!--/innerContainer-->
-        	</div><!--/hsContainer-->
-        </section>
+                       	<p>For the back end, I'm just getting started.  I know enough about PHP and SQL from classes I've taken to plug my front end applications into server data and do things like server-side validation of forms or creating and add/removing data from a simple SQL database with mySQL.<br><br>I'm also experienced with Ubuntu server command line from a VPS I have to mess around with, so I've used simple things like vim, tmux, xorg, ssh, puTTY, and a few other things.  I pick up new software very fast as I've found myself using all kinds of niche applications as I work.</p>
+                    	<div class="skillsTap"><p>tap to expand</p><img src="img/downarrow.svg"/></div>
+                 	</div>
+                 </div>  	
+        	</div><!--/blockContainer-->
+        </div>
     <!--end of skills slide-->
-    	<section id="codeBlur" class="homeSlidePhoto">
-			<div class="bcg hsContainer" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#codeBlur">
-            	<div class="innerContainer">
+    	<div id="codeBlur" class="homeSlidePhoto slide">
+			<div class="bcg tableContainer" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#codeBlur">
+            	<div class="tableContent">
             		<div class="innerHeader">
             			<h2>TOOLBOX</h2>
                 	</div>
                		<div id="toolsContainer">
-                		<div class="tool">
                     		<img src="img/html5.png" style="border-radius:0" title="HTML5" alt="HTML5"/>
-                   		</div>
-                   		<div class="tool">
                         	<img src="img/css3.png" style="border-radius:0" title="CSS3" alt="CSS3"/>
-                    	</div>
-                    	<div class="tool">
                        		<img src="img/chrome.png" title="Chrome Developer Tools" alt="Chrome Developer Tools">
-                    	</div>
-                    	<div class="tool">
                         	<img src="img/linux.svg" title="Linux" alt="Linux">
-                    	</div>
-                    	<div class="tool">
                         	<img src="img/adobeDw.svg" title="Dreamweaver" alt="Dreamweaver">
-                    	</div>
-                    	<div class="tool">
                         	<img src="img/adobeIl.svg" title="Illustrator" alt="Illustrator">
-                    	</div>
-                    	<div class="tool">
                         	<img src="img/adobePs.svg" title="Photoshop" alt="Photoshop">
-                    	</div>
-                    	<div class="tool">
                         	<img src="img/php.png" title="PHP" alt="PHP">
-                    	</div>
-            		</div>
-            	</div>
-		    </div>
-      	</section>
+            		</div><!--/toolsContainer-->
+            	</div><!--/tablecontent-->
+		    </div><!--/bcg tableContainer-->
+      	</div>
   	<!--end of code image slide-->
-    	<section id="workSection">
+    	<div id="workSection" class="slide">
         	<!--nav will link to this, adjusted for size of nav bar-->
         	<div id="work" class="sectionAnchor"></div>
         	<div class="innerContainer">
@@ -157,13 +140,13 @@
                 
                 </div>
             </div>
-        </section>
+        </div>
   	<!--end of blog slide-->
-    	<section id="oceanFog" class="homeSlidePhoto">
+    	<div id="oceanFog" class="homeSlidePhoto slide">
         	<div class="bcg" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#oceanFog">
-        </section>
+        </div>
  	<!--end of ocean image slide-->
-    	<section id="contactSection">
+    	<div id="contactSection" class="slide">
         	<!--nav will link to this, adjusted for size of nav bar-->
         	<div id="contact" class="sectionAnchor"></div>
         	<div class="hsContainer">
@@ -183,17 +166,17 @@
                     </div>            
                 </div>            
             </div>  
-       	</section>
+       	</div>
   	<!--end of contact slide-->
-    	<section id="slide-6">
+    	<div id="slide-6" class="slide">
         	<div class="hsContainer">
             	<div class="hsContent">
                 	<div>© 2014 Mika Aguilar  |  <a href="#" class="infoTrigger">Site Info</a>  |  <a href="#top">Back to Top</a></div>
                 </div>
           	</div>
-        </section>
+        </div>
     <!--end of footer-->
-    <section id="siteInfo">
+    <div id="siteInfo" class="slide">
         	<div class="hsContainer">
             	<div class="hsContent">
         			<h2>Site Info</h2>
@@ -204,9 +187,9 @@
                         </p>
                 </div>
         	</div>
-        </section>
+        </div>
 	<!--end of site info-->
-	</main>
+	</div><!--/main-->
 
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
