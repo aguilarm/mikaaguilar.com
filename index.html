@@ -25,16 +25,19 @@
     
 </head>
 <body class="loading">
-	<div id="loader"></div>
+	<div id="preloadImages">
+    	<img src="img/loader.gif" alt="loader"/>
+  		<img src="img/githubInvert.png" alt="gitHub logo"/>
+     	<img src="img/linkedinInvert.png" alt="linkedin logo"/>
+        <img src="img/design39f.svg" alt="frontend"/>
+        <img src="img/responsive39f.svg" alt="design"/>
+        <img src="img/servers39f.svg" alt="database"/>
+   	</div>
+	<div id="loader-wrapper">
+    	<div id="loader"></div>
+	</div>
 	<div id="main">
     <!--begin body content-->
-	<div id="preloadButtons">
-  		<img src="img/githubInvert.png" alt="gitHub logo">
-     	<img  src="img/linkedinInvert.png" alt="linkedin logo">
-        <img src="img/design39f.svg" alt="frontend">
-        <img src="img/responsive39f.svg" alt="design">
-        <img src="img/servers39f.svg" alt="database">
-   	</div>
 	<div id="top" class="homeSlide slide">
         	<div class="tableContainer" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#top">
             	<div class="tableContent" >
@@ -82,6 +85,7 @@
                       	</div>
                         <p>I've taken several classes dealing with Photoshop, Illustrator and even one with good old Flash.  With photoshop I'm very confident making some pretty cool, fairly advanced things happen from seamless cropping to photorealistic and 3d effects.  I've also used Illustrator quite a bit for classes and I love the pen tool.  <br><br>On top of being great with the required tools, I've spent a lot of time reading up on modern design practices and feel I have a decent grasp of whats going on in the world of web design, and graphic design in general.</p>
                         <div class="skillsTap"><p>tap to expand</p><img src="img/downarrow.svg"/></div>
+                        <div class="cf"></div>
                     </div>
           		</div>
              	<div class="skillsItem skillsContent" data-bottom-top="margin-top:54%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
@@ -92,6 +96,7 @@
                     	</div>
                         <p>Front end development is my bread and butter these days.  I've been using HTML5, CSS3, and JavaScript enough to be confident that I can figure out how to make almost anything happen client side.  Much of this site is either entirely coded by me or  has been heavily modified, and it's fully responsive, clean code.  I'm doing a lot of stuff with JavaScript/jQuery lately, and loving it.<br><br>There are so many cool things happening in front end development across the board at an incredible pace that being a web developer right now is really exciting.  </p>
                    		<div class="skillsTap"><p>tap to expand</p><img src="img/downarrow.svg"/></div>
+                        <div class="cf"></div>
                 		</div>
           		</div>
                 <div class="skillsItem aside2" data-bottom-top="margin-top:44%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
@@ -102,9 +107,10 @@
                       	</div>
                        	<p>For the back end, I'm just getting started.  I know enough about PHP and SQL from classes I've taken to plug my front end applications into server data and do things like server-side validation of forms or creating and add/removing data from a simple SQL database with mySQL.<br><br>I'm also experienced with Ubuntu server command line from a VPS I have to mess around with, so I've used simple things like vim, tmux, xorg, ssh, puTTY, and a few other things.  I pick up new software very fast as I've found myself using all kinds of niche applications as I work.</p>
                     	<div class="skillsTap"><p>tap to expand</p><img src="img/downarrow.svg"/></div>
+                        <div class="cf"></div>
                  	</div>
                  </div>  	
-        	</div><!--/blockContainer-->
+       		<div class="cf"></div></div><!--/blockContainer-->
         </div>
     <!--end of skills slide-->
     	<div id="codeBlur" class="homeSlidePhoto slide">
@@ -143,42 +149,43 @@
         </div>
   	<!--end of blog slide-->
     	<div id="oceanFog" class="homeSlidePhoto slide">
-        	<div class="bcg" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#oceanFog">
+        	<div class="bcg" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#oceanFog"></div>
         </div>
  	<!--end of ocean image slide-->
     	<div id="contactSection" class="slide">
         	<!--nav will link to this, adjusted for size of nav bar-->
         	<div id="contact" class="sectionAnchor"></div>
-        	<div class="hsContainer">
-            	<div class="hsContent">
+        	<div class="blockContainer">
+            	<div class="innerHeader">
                 	<h1>CONTACT ME</h1>
-                    <div id="contactWrap">
-                    	<form id="contactform" method="post" action="mailer.php" >
-							<input type="text" id="name" name="name" class="shortBox" placeholder="Name">
-                            <br/><br/>
-							<input type="email" id="email" name="email" class="shortBox" placeholder="Email">
-                            <br/><br/>
-                        	<textarea id="message" name="message" class="tallBox" rows="7" placeholder="Message"></textarea>
-                            <br/><br/>
-               				<button type="submit" id="submit">SUBMIT</button>
-						</form>
-                        <div id="formmessages"></div>
-                    </div>            
-                </div>            
+                    <p>Fill out the form below, I'd love to hear from you!</p>
+                </div>
+               	<div id="contactWrap">
+                    <form id="contactform" method="post" action="mailer.php" >
+						<input type="text" id="name" name="name" class="shortBox" placeholder="Name">
+                        <br/><br/>
+						<input type="email" id="email" name="email" class="shortBox" placeholder="Email">
+                       	<br/><br/>
+                       	<textarea id="message" name="message" class="tallBox" rows="7" placeholder="Message"></textarea>
+                        <br/><br/>
+               			<button type="submit" id="submit">SUBMIT</button>
+					</form>
+                	<div id="formmessages"></div>
+            	</div>        
             </div>  
        	</div>
   	<!--end of contact slide-->
     	<div id="slide-6" class="slide">
-        	<div class="hsContainer">
-            	<div class="hsContent">
+        	<div class="tableContainer">
+            	<div class="tableContent">
                 	<div>© 2014 Mika Aguilar  |  <a href="#" class="infoTrigger">Site Info</a>  |  <a href="#top">Back to Top</a></div>
                 </div>
           	</div>
         </div>
     <!--end of footer-->
     <div id="siteInfo" class="slide">
-        	<div class="hsContainer">
-            	<div class="hsContent">
+        	<div class="tableContainer">
+            	<div class="tableContent">
         			<h2>Site Info</h2>
         				<p>Besides what's listed below and a few smaller things, I handmade the entire site design using HTML5 and CSS3 wizardry and a fair chunk of Javascript/jQuery.  These great resources helped me along the way:<br><br>
                 		The icons in the Skills section are from <a href="http://www.flaticon.com" title="Flaticon">Flaticon</a>, by Icomoon and Freepik.<br><br>

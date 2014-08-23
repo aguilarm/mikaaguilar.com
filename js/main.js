@@ -12,10 +12,7 @@
 	//Setup Variables
 var $window = $(window);
 	$slide = $('.homeSlide');
-	$slideSkills = $('.homeSlideSkills');
 	$slidePhoto = $('.homeSlidePhoto');
-	$slideTall = $('.homeSlideTall');
-	$slideTall2 = $('.homeSlideTall2');
 	$body = $('body');
 	$section = $('section');
 	winH = $window.height();
@@ -42,10 +39,6 @@ var $window = $(window);
 	
 	//ALWAYS resize the height of top
 	$('#top').height(winH);
-	//Fix for 320 width devices to make the social icons a bit smaller
-	if(winW<=320){
-		$('#github, #linkedin').width(45).height(45).css("margin", ".5em");
-	}
 	
 	function adjustWindow(){
 
@@ -68,9 +61,6 @@ var $window = $(window);
 
 	        // Resize our slides
 	        $slide.height(winH);
-			$slideSkills.height(winH-70);
-	    	$slideTall.height(winH*2);
-	    	$slideTall2.height(winH*3);
 			$slidePhoto.height(winH*0.4);
 			//$section.css({'min-width': winW});
 			

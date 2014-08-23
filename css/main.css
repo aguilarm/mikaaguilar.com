@@ -99,26 +99,27 @@ body, html {
 	-moz-transition: opacity 300ms ease-out;
 	transition: opacity 300ms ease-out;
 }
-
+#main {
+	opacity: 0;
+}
 #loader {
 	background-image: url('../img/loader.gif');
 	background-position: center;
 	background-repeat:no-repeat;
-	position:absolute;
+	position:fixed;
 	display:block;
 	width:100%;
 	height:100%;
-	opacity: 1;
 	visibility: visible;
 }
 .loaded #loader {
-	opacity: 0;
+	color:white;
 	visibility: hidden;
-	-webkit-transition: opacity 300ms ease-in,visibility 300ms ease-out;
-	-moz-transition: opacity 300ms ease-in,visibility 300ms ease-out;
-	transition: opacity 300ms ease-in,visibility 300ms ease-out;
+	-webkit-transition: visibility 300ms ease-out;
+	-moz-transition: visibility 300ms ease-out;
+	transition: visibility 300ms ease-out;
 }
-#preloadButtons {
+#preloadImages {
 	display:none;
 }
 h1 {
@@ -131,15 +132,12 @@ h2 {
 	font-weight: 300;
 	letter-spacing:.1em;
 }
-#main {
-	opacity: 0;
-}
-
 .separator {
 	width: 80px;
 	height: 2px;
 	margin: 0 auto;
 }
+.cf{clear:both}
 .white {background-color: #fff;}
 .blue {background-color: #3399ff;}
 .gray {background-color: #b2b2b2;}
@@ -292,17 +290,16 @@ h2 {
 	/*Skills Media Queries*/
 	@media all and (max-width:1130px) {
 		#skillsSection {height:auto}
-		#skillsHeader p {margin-bottom:1em}
-		#skillsSection .skillsItem {height:auto;min-width:100%}
-			#skillsSection .skillsItem>div:nth-child(1){height:auto;margin: .8em 1em;}
-			#skillsSection .skillsItem>div:nth-child(1):hover{margin-top:.8em}
-			#skillsSection .skillsItemHeader{margin:auto;}
-			#skillsSection .skillsItem p {margin:auto;}
+		.skillsItem {height:auto;min-width:100%;}
+			.skillsItemHeader{margin:auto;float:left;margin-right:1em;}
+			.skillsItem p {margin:auto;padding:0.5em;}
+			.skillsCard {margin-bottom:1em}
+				.skillsCard:hover{box-shadow:.2em .2em 0px 0px #39f;margin-top:0}
+			.aside2 {margin-bottom:2em}
 	}
-	@media all and (max-width:798px) {.skillsItem p{-webkit-box-flex:3;-moz-box-flex:3;-webkit-flex:3;-ms-flex:3;flex:3}}
-	@media all and (max-width:670px) {.skillsItem p{-webkit-box-flex:2;-moz-box-flex:2;-webkit-flex:2;-ms-flex:2;flex:2}}
+	@media all and (max-width:798px) {}
+	@media all and (max-width:670px) {}
 	@media all and (max-width:550px) {
-		#skillsSection .skillsItem>div:nth-child(1){flex-direction:column}
 		#skillsSection .skillsItem p {padding-top:0;display:none;}
 		.skillsTap, #skillsSection .skillsTap p {display:block;padding-bottom:0}
 	}
@@ -339,8 +336,8 @@ h2 {
 #oceanFog .bcg {background-image:url('../img/oceanfog.png'); background-color: #1c1c1c;}
 
 /* Contact Me */
-#contactSection {background-color:#39f;height:525px}
-#contactSection h1 {color:#fff}
+#contactSection {background-color:#39f;height:525px;color:#fff}
+#contactSection h1 {margin-bottom:0}
 #contactWrap {width: 50%;max-width:800px;margin: auto}
 	@media all and (max-width:768px) {#contactWrap{width:80%}}
 #formmessages {
@@ -388,9 +385,8 @@ h2 {
 }
 .sectionAnchor {position:relative;bottom:70px}
 
-	.innerHeader {text-align:center}
-
-	.hsContainer a {color: #b2b2b2; text-decoration: underline;}
+	.innerHeader {text-align:center;margin-top:0;padding-top:0.67em}
+	.innerHeader p {margin-bottom:2em}
 	
 /* ==========================================================================
    Form Rules
