@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Header
+   Header/Navigation
    ========================================================================== */   
 /*placeholder to prevent jumping on position change, and let nav attach nicely*/
 #skills {
@@ -52,7 +52,7 @@
 	transition: all 0.4s;
 	margin-top:-3px;
 }
-@media all and (max-width:620px){#hdName{display:none}}
+@media all and (max-width:730px){#hdName{display:none}}
 #hdName a {
 	text-decoration: none;
 	color: #3399ff;
@@ -70,7 +70,7 @@ nav {
 		-webkit-transition: all 0.4s;
 		transition: all 0.4s;
 	}
-		@media all and (max-width:385px){#header nav a{font-size:20px}#hdWrap{width:90%}}
+		@media all and (max-width:520px){#header nav a{font-size:20px;margin-left:6px}#hdWrap{width:90%}}
 			nav a:hover {
 				color: #3399ff;
 			}
@@ -99,9 +99,7 @@ body, html {
 	-moz-transition: opacity 300ms ease-out;
 	transition: opacity 300ms ease-out;
 }
-#main {
-	opacity: 0;
-}
+#main {opacity: 0;overflow-y:hidden}
 #loader {
 	background-image: url('../img/loader.gif');
 	background-position: center;
@@ -157,14 +155,13 @@ h2 {
 	background-size:contain;
 	background-origin:content-box;
 	margin-bottom:10px;
-	animation: loader 1s linear infinite;
 	}
 	#top .tableContent>div {background-color: rgba(255, 255, 255, 0.9);border:.5em solid #fff;height:auto;}
 		@media all and (max-width:400px){#top .tableContent{border-top:2em solid #fff;border-bottom:2em solid #fff;border-left:0px;border-right:0px;}}
 		#top h1 {font-size: 10em; line-height: .8em;color: #3399ff; margin: 0;font-weight:700}
 		/*Keep the MIKA AGUILAR on one line*/
 		@media all and (max-width:974px){#top h1{font-size:8em;}}
-		@media all and (max-width:785px){#top h1{font-size:6em;}}
+		@media all and (max-width:785px){#top h1{font-size:6em;} #top .tableContainer{background-size:cover}}
 		@media all and (max-width:595px){#top h1{font-size:3em;}}
 		#slide1text {
 			text-align: center; 
@@ -197,7 +194,7 @@ h2 {
 			transition: background-image 2.5s;
 			background-size: cover;
 		}
-
+		@media all and (max-width:595px){#linkedin, #github{width:45px;height:45px}}
 		.loaded #linkedin {background-image: url('../img/linkedin.png')}
 		#linkedin:hover {background-image: url('../img/linkedinInvert.png')}
 		.loaded #github {background-image: url('../img/github.png')}
@@ -215,13 +212,13 @@ h2 {
 	font-weight:400;
 	}
 #scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
-
+@media all and (max-width:768px) {#scrollDown{display:none}}
 /* Skills */
-#skillsSection {background-color: #b2b2b2;height:660px}
+#skillsSection {background-color: #b2b2b2;height:660px;overflow:hidden}
 	#skillsHeader p, #skillsHeader h1 {color:#fff}
 	#skillsHeader h1 {margin-bottom:0;margin-top:0;padding-top:0.5em}
 	#skillsHeader p {margin-bottom:2em}
-	.skillsItem{max-width:33%; height:450px;float:left;}
+	.skillsItem{max-width:33%; height:455px;float:left;}
 		.skillsItem p{color:#888;margin:.8em 0;text-align:center}
 		/*white card with box shadow*/
 	 	.skillsCard{
@@ -279,8 +276,8 @@ h2 {
 		.aside2>div:hover #skillsBack{background-image: url('../img/servers39f.svg');border-color:#39f}
 	/*skillsTap only shows when width is less than 550px*/
 	.skillsTap {display:none;height:40px;width:100%;margin-bottom:.6em}
-		#skillsSection .skillsTap p {color:#000;padding-bottom:0}
-		.skillsTap img{height:50%;transition:all 500ms ease;-webkit-transition:all 500ms ease;-moz-transition:all 500ms ease;}
+		#skillsSection .skillsTap p {color:#000;display:table-row;text-align:center;}
+		.skillsTap img{height:25px;transition:all 500ms ease;-webkit-transition:all 500ms ease;-moz-transition:all 500ms ease;padding-top:.5em}
 		/*rotate class will flip the arrows when applied with jQuery.  easiest way with decent support */
 		.rotate {-ms-transform: rotate(180deg); /* IE 9 */
     	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
@@ -291,17 +288,20 @@ h2 {
 	@media all and (max-width:1130px) {
 		#skillsSection {height:auto}
 		.skillsItem {height:auto;min-width:100%;}
-			.skillsItemHeader{margin:auto;float:left;margin-right:1em;}
-			.skillsItem p {margin:auto;padding:0.5em;}
-			.skillsCard {margin-bottom:1em}
+			.skillsCard {display:table;margin-bottom:1em}
+			.skillsItemHeader{width:165px;display:table-cell;vertical-align:middle}
+			.skillsItem p {padding:1em;display:table-cell;text-align:left}
 				.skillsCard:hover{box-shadow:.2em .2em 0px 0px #39f;margin-top:0}
 			.aside2 {margin-bottom:2em}
 	}
-	@media all and (max-width:798px) {}
-	@media all and (max-width:670px) {}
 	@media all and (max-width:550px) {
-		#skillsSection .skillsItem p {padding-top:0;display:none;}
-		.skillsTap, #skillsSection .skillsTap p {display:block;padding-bottom:0}
+		#skillsSection .innerHeader {margin-bottom:1em}
+			#skillsHeader h1 {margin-bottom:0.2em}
+			#skillsHeader p {width:90%;margin:auto;}
+		.skillsCard {margin:1.5em auto;width:85%;margin-top:0}
+			.skillsItemHeader{display:table-row}
+			#skillsSection > div > div.skillsItem > div > p{padding-top:0;display:none;text-align:center}
+			.skillsTap {display:table;padding-bottom:1em;text-align:center;margin:auto;}
 	}
 /* Blurred code Photo */
 #codeBlur .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
@@ -314,7 +314,7 @@ h2 {
 	margin:auto;
 }
 @media all and (max-width:768px) {#toolsContainer{margin-bottom:2em}}
-
+@media all and (max-width:530px) {#toolsContainer{text-align:inherit}}
 	#toolsContainer > img {width: 3em;height: 3em;border-radius: 8px;display:inline-block;*display:inline;zoom:1}
 	#toolsContainer:after {content:"";width:100%;display:inline-block}
 	#toolsContainer > img:hover {
