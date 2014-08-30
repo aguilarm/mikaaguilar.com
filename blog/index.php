@@ -9,7 +9,7 @@ require 'app/includes/functions.php';
 config('source', 'app/config.ini');
 
 //front page of the blog
-get('/index', function() {
+on('GET','/index', function() {
     $page = from($_GET, 'page');
     $page = $page ? (int)$page : 1;
     
@@ -28,7 +28,7 @@ get('/index', function() {
 });
 
 //the post page
-get('/:year/:month/:name',function($year, $month, $name){
+on('GET','/:year/:month/:name',function($year, $month, $name){
     $post = find_post($year,$month,$name);
     
     if(!$post){
@@ -42,21 +42,21 @@ get('/:year/:month/:name',function($year, $month, $name){
 });
 
 //the JSON API
-get('/api/json', function() {
+on('GET','/api/json', function() {
     header('Content-type: application/json');
     //print the 10 latest posts as JSON
     echo generate_json(get_posts(1,10));
 });
 
 //show the rss feed
-get('/rss',function() {
+on('GET','/rss',function() {
     header('Content-Type: application/rss+xml');
     //show and rss feed with the 30 latests posts
     echo generate_rss(get_posts(1,30));
 });
 
 //if we get here, nothing has been matched above
-get('.*',function(){
+on('GET','.*',function(){
     not_found();
 });
 
