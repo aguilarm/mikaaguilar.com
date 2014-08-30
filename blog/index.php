@@ -5,6 +5,8 @@ require 'vendor/autoload.php';
 //including custom functions.php
 require 'app/includes/functions.php';
 
+//required base path for dispatch views
+config('dispatch.views', '../views');
 //configuration file for dispatch.php(composer autoloaded)
 config('source', 'app/config.ini');
 
