@@ -1,7 +1,8 @@
-use michelf\php-markdown\MarkdownParser;
-use suin\php-rss-writer\Feed;
-use suin\php-rss-writer\Channel;
-use suin\php-rss-writer\Item;
+<?php
+use \Michelf\Markdown;
+use \Suin\RSSWriter\Feed;
+use \Suin\RSSWriter\Channel;
+use \Suin\RSSWriter\Item;
 
 /*General Blog Functions*/
 function get_post_names(){
@@ -31,7 +32,7 @@ function  get_posts($page = 1, $perpage = 0){
     $tmp = array();
     
     //create a new instance of the markdown parser
-    $md = new MarkdownParser();
+    $md = new Markdown();
     
     foreach($posts as $k=>$v){
         $post = new stdClass;
@@ -44,7 +45,7 @@ function  get_posts($page = 1, $perpage = 0){
         $post->url = site_url().date('Y/m', $post->date).'/'.str_replace('.md','',$arr[1]);
         
         //get the contents and convert it to HTML
-        $content = $md->transformMarkdown(file_get_contents($v));
+        $content = $md->transform(file_get_contents($v));
         
         //extract the title and body 
         $arr = explode('</h1>', $content);
@@ -114,3 +115,4 @@ function generate_rss($posts){
 function generate_json($posts){
     return json_encode($posts);
 }
+?>

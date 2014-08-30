@@ -1,3 +1,4 @@
+<?php
 //composer autoloader
 require 'vendor/autoload.php';
 
@@ -5,7 +6,7 @@ require 'vendor/autoload.php';
 require 'app/includes/functions.php';
 
 //configuration file for dispatch.php(composer autoloaded)
-config('source', app/config.ini');
+config('source', 'app/config.ini');
 
 //front page of the blog
 get('/index', function() {
@@ -22,7 +23,7 @@ get('/index', function() {
     render('main',array(
         'page' => $page,
         'posts' => $posts,
-        'has_pagination = > has_pagination($page)
+        'has_pagination' => has_pagination($page)
     ));
 });
 
@@ -61,3 +62,4 @@ get('.*',function(){
 
 //Serve the blog
 dispatch();
+?>
