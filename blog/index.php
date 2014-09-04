@@ -6,18 +6,20 @@ require 'vendor/autoload.php';
 require 'app/includes/functions.php';
 
 //required base path for dispatch views
-config('dispatch.views', '../views');
+config('dispatch.views', 'app/views');
+//dispatch routing file
+config('dispatch.router', 'index.php');
 //configuration file for dispatch.php(composer autoloaded)
 config('source', 'app/config.ini');
 
 //front page of the blog
-on('GET','/index', function() {
-    $page = from($_GET, 'page');
+on('GET', '/', function() {
+    $page = params($_GET, 'page');
     $page = $page ? (int)$page : 1;
     
     $posts = get_posts($page);
     
-    if(empty(posts) || $page < 1){
+    if(empty($posts) || $page < 1){
         //a non-existing page
         not_found();
     }

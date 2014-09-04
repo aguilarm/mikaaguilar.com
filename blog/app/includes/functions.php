@@ -81,6 +81,12 @@ function has_pagination($page = 1){
         );
 }
 
+//site_url function did not exist, going to have to set this
+function site_url(){
+    //$url = 'http://mikaaguilar.com/blog/';
+    $url = config('site.url');
+    return $url;
+}
 //the not found error
 function not_found(){
     error(404, render('404',null,false));
