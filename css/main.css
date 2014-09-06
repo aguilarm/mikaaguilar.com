@@ -1,3 +1,29 @@
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+h1 {
+	font-size: 3em;
+	line-height: 1.05em;
+	font-weight:400;
+	margin:0;
+}
+@media all and (max-width:768px){h1{font-size:2.5em;line-height:1.125em;}}
+h2 {
+	font-size:2.25em;
+	font-weight: 300;
+	letter-spacing:.1em;
+	line-height:1.25;
+	margin:0;
+}
+h3 {
+	font-size:1.75em;
+	line-height:1.25em;
+	font-weight:300;
+	letter-spacing:.1em;
+	margin:0;
+}
+
 /* ==========================================================================
    Header/Navigation
    ========================================================================== */   
@@ -120,16 +146,6 @@ body, html {
 #preloadImages {
 	display:none;
 }
-h1 {
-	font-size: 3em;
-	line-height: 1em;
-	font-weight:400;
-}
-@media all and (max-width:768px){h1{font-size:2.5em;}}
-h2 {
-	font-weight: 300;
-	letter-spacing:.1em;
-}
 .separator {
 	width: 80px;
 	height: 2px;
@@ -147,7 +163,41 @@ h2 {
 	height: 100%;
 	width: 100%;
 }
-/* Intro/About */
+
+/* ==========================================================================
+   Slide Constants
+   ========================================================================== */
+   
+.homeSlidePhoto {max-height:350px}
+.tableContainer {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.blockContainer {
+	width:100%;
+	height:100%;
+	margin:auto;
+	max-width:1300px;
+}
+.tableContent {
+	margin: 0 auto 0 auto;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center
+}
+.sectionAnchor {position:relative;bottom:70px}
+
+	.innerHeader {text-align:center;margin-top:0;padding-top:0.67em}
+	.innerHeader p {margin-bottom:2em}
+	
+/* ==========================================================================
+   Intro/About
+   ========================================================================== */
+   
 #top .tableContainer {
 	background-image:url('../img/logo.svg');
 	background-repeat:no-repeat;
@@ -213,26 +263,28 @@ h2 {
 	}
 #scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
 @media all and (max-width:768px) {#scrollDown{display:none}}
-/* Skills */
-#skillsSection {background-color: #b2b2b2;height:660px;overflow:hidden}
-	#skillsHeader p, #skillsHeader h1 {color:#fff}
-	#skillsHeader h1 {margin-bottom:0;margin-top:0;padding-top:0.5em}
-	#skillsHeader p {margin-bottom:2em}
+
+/* ==========================================================================
+   Skills Section
+   ========================================================================== */
+   
+#skillsSection {background-color: #1262B2;height:660px;overflow:hidden}
+	#skillsHeader {color:#fff}
+	#skillsHeader h1 {margin-bottom:0;margin-top:0;}
 	.skillsItem{max-width:33%; height:455px;float:left;}
-		.skillsItem p{color:#888;margin:.8em 0;text-align:center}
+		.skillsItem p{color:#666;margin:.8em 0;text-align:center}
 		/*white card with box shadow*/
 	 	.skillsCard{
 			height:100%;
 			background-color:#fff; 
 			margin: 0 1em; 
-			box-shadow: .5em .5em 0px 0px #888;
+			box-shadow: .5em .5em 0px 0px #777;
 			padding: .5% 3%;
 			-webkit-transition: box-shadow 1s, margin 1s;
 			transition: box-shadow 1s, margin 1s;
 			}
 		.skillsCard:hover{box-shadow:.2em .2em 0px 0px #39f;margin-top:.3em}
-		.skillsItemHeader{display:block}
-			.skillsItemHeader h2 {margin-top:14px;text-align:center}
+		.skillsItemHeader{display:block;text-align:center;color:#555;}
 		@-webkit-keyframes thump {
 			0% { -webkit-transform: scale(1); }
 			50% { -webkit-transform: scale(0.8); }
@@ -243,7 +295,8 @@ h2 {
 			50% { transform: scale(0.8); }
 			100% { transform: scale(1); }
 		}
-		.skillsItem>div:nth-child(1):hover .skillsItemHeader>div:nth-child(1) {
+		/*img on top of skills*/
+		.skillsCard:hover .skillsItemHeader>div:nth-child(1) {
 			-webkit-animation-name: thump;
 			-webkit-animation-duration: 600ms;
 			-webkit-transform-origin:50% 50%;
@@ -303,10 +356,14 @@ h2 {
 			#skillsSection > div > div.skillsItem > div > p{padding-top:0;display:none;text-align:center}
 			.skillsTap {display:table;padding-bottom:1em;text-align:center;margin:auto;}
 	}
-/* Blurred code Photo */
+	
+/* ==========================================================================
+   Blurred Code Photo/Toolbox
+   ========================================================================== */
+   
 #codeBlur .bcg {background-image:url('../img/codeblur.jpg'); background-color: #1c1c1c;}
 #codeBlur .innerContainer {max-width:none}
-#codeBlur h2 {color:#fff}
+#codeBlur .innerHeader {color:#fff;padding-top:0;margin-bottom:1em;}
 #toolsContainer {
 	text-align:justify;
 	max-width:900px;
@@ -329,14 +386,24 @@ h2 {
 		animation-iteration-count: 1;
 		animation-timing-function: linear;
 	}
-/* Blog */
+	
+/* ==========================================================================
+   Blog
+   ========================================================================== */
+   
 #workSection {color:#999;height:900px}
 
-/* Ocean Fog Photo */
+/* ==========================================================================
+   Ocean Fog Photo
+   ========================================================================== */
+   
 #oceanFog .bcg {background-image:url('../img/oceanfog.png'); background-color: #1c1c1c;}
 
-/* Contact Me */
-#contactSection {background-color:#39f;height:525px;color:#fff}
+/* ==========================================================================
+   Contact Me
+   ========================================================================== */
+   
+#contactSection {background-color:#1262B2;height:525px;color:#fff}
 #contactSection h1 {margin-bottom:0}
 #contactWrap {width: 50%;max-width:800px;margin: auto}
 	@media all and (max-width:768px) {#contactWrap{width:80%}}
@@ -352,41 +419,20 @@ h2 {
 .error {color:#f00;background-color:#fff;box-shadow: .2em .2em 0px 0px #888;}
 .success {color:#060;background-color:#fff;box-shadow: .2em .2em 0px 0px #888;}
 
-/* Footer */
-#slide-6 {background-color: #3399ff; padding: 10px; height: 40px; top:-40px;}
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+   
+#slide-6 {background-color: #1262B2; padding: 10px; height: 40px; top:-40px;}
 #slide-6 div, #slide-6 a {color: #fff; font-family:'Droid Sans', sans-serif;}
 
-/* Site Info */
+/* ==========================================================================
+   Site Info
+   ========================================================================== */
+   
 #siteInfo {display:none; padding: 20px;padding-bottom: 40px;}
 #siteInfo p {max-width: 800px; text-align:justify;}
 #siteInfo h2, #siteInfo a {color:#3399ff}
-
-/* Slide Constants */
-.homeSlidePhoto {max-height:350px}
-.tableContainer {
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	position: relative;
-}
-.blockContainer {
-	width:100%;
-	height:100%;
-	margin:auto;
-	max-width:1300px;
-}
-.tableContent {
-	margin: 0 auto 0 auto;
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center
-}
-.sectionAnchor {position:relative;bottom:70px}
-
-	.innerHeader {text-align:center;margin-top:0;padding-top:0.67em}
-	.innerHeader p {margin-bottom:2em}
 	
 /* ==========================================================================
    Form Rules

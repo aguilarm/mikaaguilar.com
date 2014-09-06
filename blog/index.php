@@ -15,10 +15,8 @@ config('source', 'app/config.ini');
 //front page of the blog
 on('GET', '/', function() {
     $page = params($_GET, 'page');
-    $page = $page ? (int)$page : 1;
-    echo $page."\n";
     $page = $_GET["page"];
-    echo $page."\n";
+    $page = $page ? (int)$page : 1;
     $posts = get_posts($page);
     
     if(empty($posts) || $page < 1){
