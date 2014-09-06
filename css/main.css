@@ -219,19 +219,19 @@ body, html {
 		@media all and (max-width:595px){#top h1{font-size:3em;}}
 		#slide1text {
 			text-align: center; 
-			line-height: 1.5em;
+			line-height: 2.5em;
 			width: 70%; 
 			max-width: 1200px; 
 			color: #b2b2b2;
-			margin: .2em auto;
-			font-size:1.25em;
+			margin: auto;
+			font-size:1.5em;
 		}
 		@media all and (max-width:785px){#slide1text{width:85%}}
 		@media all and (max-width:595px){#slide1text{line-height:2em}}
 		#socialSeparator{
 			display: inline-block;
 			width: 360px;
-			height: 60px;
+			height: 3em;
 			transition: all 1.2s;
 		}
 		@media all and (max-width:520px){#socialSeparator{width:150px}}
@@ -240,11 +240,11 @@ body, html {
 		}
 		#linkedin, #github {
 			display:inline-block;
-			width: 60px;
-			height: 60px;
+			width: 3em;
+			height: 3em;
 			border-radius: 2px;
 			background-image: url('../img/none.png');
-			margin: 15px 5px;
+			margin: 0 .2em;
 			transition: all 1s;
 			transition: background-image 2.5s;
 			background-size: cover;
