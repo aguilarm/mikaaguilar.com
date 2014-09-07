@@ -55,7 +55,7 @@ h3 {
 }
 #hdLogo {
 	display: inline-block;
-	width: 67px;
+	width: 70px;
 	height: 70px;
 	float: left;
 	background-image: url(../img/logo.svg);
@@ -72,17 +72,18 @@ h3 {
 	height: 70px;
 	line-height: 70px;
 	font-size: 38px;
+	font-weight:500;
 	width: auto;
 	float: left;
 	color: #3399ff;			
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
-	margin-top:-3px;
+	text-transform:uppercase;
 }
 @media all and (max-width:730px){#hdName{display:none}}
 #hdName a {
 	text-decoration: none;
-	color: #3399ff;
+	color: #39f;
 }
 nav {
 	display: inline-block;
@@ -93,7 +94,8 @@ nav {
 		margin-left: 20px;
 		color: #999;
 		font-size: 28px;
-		text-decoration: none;			
+		text-decoration: none;
+		text-transform: uppercase;
 		-webkit-transition: all 0.4s;
 		transition: all 0.4s;
 	}
@@ -205,7 +207,7 @@ body, html {
 	background-image:url('../img/logo.svg');
 	background-repeat:no-repeat;
 	background-position:center;
-	background-size:contain;
+	background-size:cover;
 	background-origin:content-box;
 	margin-bottom:10px;
 	}
@@ -273,7 +275,7 @@ body, html {
    Skills Section
    ========================================================================== */
    
-#skillsSection {background-color: #1262B2;min-height:660px;overflow:hidden;padding-bottom:2em;}
+#skillsSection {background-color: #39f;min-height:660px;overflow:hidden;padding-bottom:.5em;}
 	#skillsHeader {color:#fff}
 	#skillsHeader h1 {margin-bottom:0;margin-top:0;}
 	.skillsItem{max-width:33%; height:455px;float:left;}
@@ -288,7 +290,7 @@ body, html {
 			-webkit-transition: box-shadow 1s, margin 1s;
 			transition: box-shadow 1s, margin 1s;
 			}
-		.skillsCard:hover{box-shadow:.2em .2em 0px 0px #39f;margin-top:.3em}
+		.skillsCard:hover{box-shadow:.2em .2em 0px 0px #7FBFFF;margin-top:.3em}
 		.skillsItemHeader{display:block;text-align:center;color:#555;}
 		@-webkit-keyframes thump {
 			0% { -webkit-transform: scale(1); }
@@ -397,10 +399,10 @@ body, html {
 	}
 	
 /* ==========================================================================
-   Blog
+   Work Section
    ========================================================================== */
    
-#workSection {color:#999;height:900px}
+#workSection {color:#fff;background-color:#FF584C;height:900px}
 
 /* ==========================================================================
    Ocean Fog Photo

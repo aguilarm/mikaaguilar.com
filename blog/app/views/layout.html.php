@@ -10,9 +10,7 @@
 
     <link rel="alternate" type="application/rss+xml" title="<?php echo config('blog.title')?>  Feed" href="<?php echo site_url()?>rss" />
 
-    <link href="/css/normalize.css" rel="stylesheet" />
-    <link href="/css/main.css" rel="stylesheet" />
-    <link href="/css/blog.css" rel="stylesheet" />
+    <link href="css/blog.css" rel="stylesheet" />
     
     
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
@@ -23,28 +21,33 @@
 
 </head>
 <body>
+    <main>
+        <div id="hdWrap">
+            <div id="header">
+                <div>
+                    <h1><a href="<?php echo site_url() ?>">{<?php echo config('blog.title') ?>}</a></h1>
 
-    <aside>
+                    <p class="description"><?php echo config('blog.description')?></p>
+        
+                    <a id="sideLogo" href="http://mikaaguilar.com/"></a>
+        
+                    <nav>
+                        <a href="<?php echo site_url() ?>">front page</a>
+                        <a href="">!!latest post</a>
+                        <p>filter:</p>
+                        <a href="">!!by date:</a>
+                        <a href="">!!by tag:</a>
+                    </ul>
 
-        <h1><a href="<?php echo site_url() ?>"><?php echo config('blog.title') ?></a></h1>
+                    <p class="author"><?php echo config('blog.authorbio') ?></p>
+                </div>
+            </div>
+        </div>
+        <section id="content">
 
-        <p class="description"><?php echo config('blog.description')?></p>
+            <?php echo content()?>
 
-        <ul>
-            <li><a href="<?php echo site_url() ?>">Home</a></li>
-            <li><a href="http://tutorialzine.com/members/">Members area</a></li>
-            <li><a href="http://tutorialzine.com/contact/">Contact Us</a></li>
-        </ul>
-
-        <p class="author"><?php echo config('blog.authorbio') ?></p>
-
-    </aside>
-
-    <section id="content">
-
-        <?php echo content()?>
-
-    </section>
-
+        </section>
+    </main>
 </body>
 </html>
