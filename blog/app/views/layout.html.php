@@ -25,24 +25,29 @@
         <div id="hdWrap">
             <div id="header">
                 <div>
-                    <h1><a href="<?php echo site_url() ?>">{<?php echo config('blog.title') ?>}</a></h1>
+                    <div id="hdLeft">
+                        <img src="img/logo.svg"/>
+                        <h1><a href="<?php echo site_url() ?>">.class::after</a></h1>
+                        <p class="description"><?php echo config('blog.description')?></p>
+                    </div>
+                    <div id="hdRight">
+                        <a id="sideLogo" href="http://mikaaguilar.com/"></a>
+                    </div>
 
-                    <p class="description"><?php echo config('blog.description')?></p>
-        
-                    <a id="sideLogo" href="http://mikaaguilar.com/"></a>
-        
-                    <nav>
-                        <a href="<?php echo site_url() ?>">front page</a>
-                        <a href="">!!latest post</a>
-                        <p>filter:</p>
-                        <a href="">!!by date:</a>
-                        <a href="">!!by tag:</a>
-                    </ul>
 
-                    <p class="author"><?php echo config('blog.authorbio') ?></p>
+                    
                 </div>
             </div>
         </div>
+        
+        <!--<nav>
+            <a href="<?php echo site_url() ?>">front page</a>
+            <a href="">!!latest post</a>
+            <p>filter:</p>
+            <a href="">!!by date:</a>
+            <a href="">!!by tag:</a>
+        </nav>
+        <!--<p class="author"><?php echo config('blog.authorbio') ?></p>-->
         <section id="content">
 
             <?php echo content()?>
