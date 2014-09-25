@@ -149,6 +149,36 @@ body, html {
 #preloadImages {
 	display:none;
 }
+
+#scrollDown {
+	display: block;
+	position:fixed;
+	top:90%;
+	left:48.5%;
+	margin: auto; 
+	width: 48px; 
+	height: 48px;
+	border:2px solid #39f;
+	border-radius:24px; 
+	z-index:997;
+	background-color: #fff;
+	-webkit-transition: all 0.8s ease;
+	transition: all 0.8s ease;
+}
+#scrollDown img {
+	display:block;
+	width:40px;
+	height:40px;
+	margin: auto;
+	margin-top:10px;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+#scrollDown:hover {
+	opacity:1 !important
+}
+@media all and (max-width:768px) {#scrollDown{display:none}}
+
 .separator {
 	width: 80px;
 	height: 2px;
@@ -278,20 +308,6 @@ body, html {
 		#linkedin:hover {background-image: url('../img/linkedinInvert.png')}
 		.loaded #github {background-image: url('../img/github.png')}
 		#github:hover {background-image: url('../img/githubInvert.png')}
-	
-#scrollDown {
-	display: block; 
-	margin: auto; 
-	width: 140px; 
-	height: 40px; 
-	margin-top: -47px; 
-	color: #3399ff; 
-	text-align: center;
-	background-color: #fff;
-	font-weight:400;
-	}
-#scrollDown img {width: 42px; height: 12px; display: block; margin: auto;}
-@media all and (max-width:768px) {#scrollDown{display:none}}
 
 /* ==========================================================================
    Skills Section
@@ -438,7 +454,7 @@ body, html {
    
 #contactSection {background-color:#1262B2;color:#fff}
 #contactSection h1 {margin-bottom:0}
-#contactSection .blockContent {width:70%;margin:4em auto 8em auto;}
+#contactSection .blockContent {width:70%;padding:4em 0 8em 0;}
 	#contactSection .innerRight div a {background-image:url('../img/twitterWhite.svg');}
 		#contactSection .innerRight div a:hover {background-image:url('../img/twitterBlue.svg');}
 	#contactSection .innerLeft div a {background-image:url('../img/emailWhite.svg');}
