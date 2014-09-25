@@ -154,7 +154,18 @@ body, html {
 	height: 2px;
 	margin: 0 auto;
 }
-.cf{clear:both}
+
+.clearfix:after {
+    clear:both;
+    content: ' ';
+    display:block;
+    font-size:0;
+    line-height:0;
+    visibility:hidden;
+    width:0;
+    height:0;
+}
+
 .white {background-color: #fff;}
 .blue {background-color: #3399ff;}
 .gray {background-color: #b2b2b2;}
@@ -180,24 +191,35 @@ body, html {
 	overflow: hidden;
 	position: relative;
 }
-.blockContainer {
-	width:100%;
-	height:100%;
-	margin:auto;
-	max-width:1300px;
-}
 .tableContent {
 	margin: 0 auto 0 auto;
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center
 }
+.blockContainer {
+	width:100%;
+	height:100%;
+	margin:auto;
+	max-width:1300px;
+}
+.blockContent {
+	margin:auto;
+	width:100%;
+}
+
 .sectionAnchor {position:relative;bottom:70px}
 
 	.innerHeader {text-align:center;margin-top:0;padding-top:0.67em}
 	.innerHeader p {font-size:1.5em;margin:auto;max-width:70%;margin-top:.5em;margin-bottom:1em}
 	
 	@media all and (max-width:768px){.innerHeader p {font-size:1em;}}
+	
+	.innerLeft {height:80%;width:50%;float:left;display:table;}
+	.innerRight {height:80%;width:50%;float:right;display:table;}
+		.innerLeft div, .innerRight div {display:table-cell;vertical-align:middle;text-align:center;}
+		.innerLeft div a, .innerRight div a {display:block;width:48px;height:48px;margin:auto;background-repeat:no-repeat;background-position:center;background-size:contain;}
+		
 	
 /* ==========================================================================
    Intro/About
@@ -285,7 +307,7 @@ body, html {
 			height:100%;
 			background-color:#fff; 
 			margin: 0 1em; 
-			box-shadow: .5em .5em 0px 0px #777;
+			box-shadow: .5em .5em 0px 0px #555;
 			padding: .5% 3%;
 			-webkit-transition: box-shadow 1s, margin 1s;
 			transition: box-shadow 1s, margin 1s;
@@ -414,27 +436,20 @@ body, html {
    Contact Me
    ========================================================================== */
    
-#contactSection {background-color:#1262B2;height:525px;color:#fff}
+#contactSection {background-color:#1262B2;color:#fff}
 #contactSection h1 {margin-bottom:0}
-#contactWrap {width: 50%;max-width:800px;margin: auto}
-	@media all and (max-width:768px) {#contactWrap{width:80%}}
-#formmessages {
-	-webkit-transition: color 0.4s;
-	transition: color 0.4s;
-	padding-top:10px;
-	height:3em;
-	margin-top:1em;
-	}
-	@media all and (max-width:400px) {#formmessages{height:5em}}
-.loading{color:#39f;background-color:#fff;box-shadow: .2em .2em 0px 0px #888;}
-.error {color:#f00;background-color:#fff;box-shadow: .2em .2em 0px 0px #888;}
-.success {color:#060;background-color:#fff;box-shadow: .2em .2em 0px 0px #888;}
+#contactSection .blockContent {width:70%;margin:4em auto 8em auto;}
+	#contactSection .innerRight div a {background-image:url('../img/twitterWhite.svg');}
+		#contactSection .innerRight div a:hover {background-image:url('../img/twitterBlue.svg');}
+	#contactSection .innerLeft div a {background-image:url('../img/emailWhite.svg');}
+		#contactSection .innerLeft div a:hover{background-image:url('../img/emailRed.svg');}
+
 
 /* ==========================================================================
    Footer
    ========================================================================== */
    
-#slide-6 {background-color: #1262B2; padding: 10px; height: 40px; top:-40px;}
+#slide-6 {background-color: #1262B2; padding: 10px;}
 #slide-6 div, #slide-6 a {color: #fff; font-family:'Droid Sans', sans-serif;}
 
 /* ==========================================================================
@@ -442,64 +457,5 @@ body, html {
    ========================================================================== */
    
 #siteInfo {display:none; padding: 20px;padding-bottom: 40px;}
-#siteInfo p {max-width: 800px; text-align:justify;}
+#siteInfo p {max-width: 800px; text-align:center;margin:auto;}
 #siteInfo h2, #siteInfo a {color:#3399ff}
-	
-/* ==========================================================================
-   Form Rules
-   ========================================================================== */
-
-input {
-	padding: 8px 0 8px 8px;
-	width: 100%;
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
-}
-
-label {
-	display: none;
-}
-textarea {
-	margin: 0;
-	top: 0;
-	left: 0;
-	padding: 8px;
-	resize: none;
-	width: 100%;
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
-}
-
-button {
-	width: 100%;
-	background: none;
-	border: 3px solid #fff;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 300;
-	color: #fff;
-	font-size: 18px;
-	letter-spacing: 2px;
-	padding: 8px 0;
-	-webkit-transition: background 200ms ease-in, color 200ms ease-in, border 200ms ease-out;
-	-moz-transition: background 200ms ease-in, color 200ms ease-out, border 200ms ease-out;
-	transition: background 200ms ease-in, color 200ms ease-out, border 200ms ease-out;
-}
-button:hover {
-	background-color: #fff;
-	color: #39f;
-}
-
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #3399ff;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #3399ff;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #3399ff;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #3399ff;
-}
