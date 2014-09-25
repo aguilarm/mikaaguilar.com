@@ -110,7 +110,7 @@ var $window = $(window);
 	enquire.register("screen and (min-device-width : 768px)", initAdjustWindow(), false);
 
 /* ==========================================================================
-   Navigation Shrinker for Small Screens
+   Navigation Shrinker for Small Screens - MEA
    ========================================================================== */
 
 	var header = document.getElementById('header');
@@ -124,8 +124,36 @@ var $window = $(window);
 	});
 
 /* ==========================================================================
-   Expanding skill card text on mobile
+   Move the scrollDown button on scroll - MEA
    ========================================================================== */
+   
+   var updownA = $('#scrollDown');
+   var updownImg = $('#scrollDown img');
+   
+   $(window).scroll(function() {
+   	if(($(this).scrollTop() > 5)) {
+   		updownA.attr("href", "#");
+   		updownA.css({
+   			'left': '90%',
+   			'opacity': '0.6',
+   			});
+   		updownImg.addClass('rotate');
+   		updownImg.css('margin-top',"0");
+   	} else if (($(this).scrollTop() < 5)) {
+   		updownA.attr("href", "#skills");
+   		updownA.css({
+   			'left': '48.5%',
+   			'opacity': '1',
+   			});
+   		updownImg.removeClass('rotate');
+   		updownImg.css('margin-top',"10px");
+   	}
+   });
+   
+/* ==========================================================================
+   Expanding skill card text on mobile - MEA
+   ========================================================================== */
+   
    $('.skillsCard').click(function (e) {
 	   //update winW each click, and only run on small screen
 	   winW = $(window).width();
@@ -146,7 +174,7 @@ var $window = $(window);
    });
    
 /* ==========================================================================
-   Site Info Pull
+   Site Info Pull - MEA
    ========================================================================== */
 	
 	var info = $('#siteInfo');
@@ -165,52 +193,5 @@ var $window = $(window);
 		info.hide(300);
 	});
 
-/* ==========================================================================
-   Form
-   ========================================================================== */
-   	
-	var form = $('#contactform');
-	var formMessage = $('#formmessages');
-
-	$(form).submit(function(e) {
-		e.preventDefault();
-		
-		$(formMessage).addClass('loading');
-		$(formMessage).removeClass('error');
-		$(formMessage).removeClass('success');
-		$(formMessage).text('Loading...');
-		
-		var formData = $(form).serialize();
-	
-		$.ajax({
-			url: $(form).attr('action'),
-			type: 'POST',
-			data: formData		
-		})
-		.done(function(response) {
-			
-			$(formMessage).removeClass('loading');
-			$(formMessage).removeClass('error');
-			$(formMessage).addClass('success');
-			
-			$(formMessage).text(response);
-	
-			$('#name').val('');
-   	 		$('#email').val('');
-    		$('#message').val('');
-		})
-		.fail(function(data) {
-			
-			$(formMessage).removeClass('loading');
-			$(formMessage).removeClass('success');
-    		$(formMessage).addClass('error');
-
-    		if (data.responseText !== '') {
-        		$(formMessage).text(data.responseText);
-    		} else {
-        		$(formMessage).text('Oops! An error occured and your message could not be sent.');
-    		}
-		});
-	});
 
 } )( jQuery );
