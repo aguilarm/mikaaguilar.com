@@ -1,7 +1,0 @@
-{
-    "require": {
-    "michelf/php-markdown": "1.4.*",
-    "suin/php-rss-writer": ">=1.0",
-    "dispatch/dispatch": "4.*"
-    }
-}
