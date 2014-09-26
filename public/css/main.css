@@ -459,7 +459,20 @@ body, html {
 		#contactSection .innerRight div a:hover {background-image:url('../img/twitterBlue.svg');}
 	#contactSection .innerLeft div a {background-image:url('../img/emailWhite.svg');}
 		#contactSection .innerLeft div a:hover{background-image:url('../img/emailRed.svg');}
-
+	
+	@media all and (max-width:950px){
+		#contactSection .blockContent {width:80%;}
+		#contactSection .innerRight div h3, #contactSection .innerLeft div h3 {font-size:1.5em;}
+	}
+	
+	@media all and (max-width:730px){
+		#contactSection .innerRight div h3, #contactSection .innerLeft div h3 {font-size:1em;}
+		#contactSection .blockContent {padding:4em 0 4em 0;}
+	}
+	
+	@media all and (max-width:505px){
+		#contactSection .innerLeft, #contactSection .innerRight {float:none;width:100%;padding-bottom:2em;}
+	}
 
 /* ==========================================================================
    Footer
