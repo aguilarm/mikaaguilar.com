@@ -10,4 +10,4 @@ app.use(express.static(__dirname + '/public'));
 //use views there
 //app.use('/blog', express.static(__dirname + '/blog'));
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 80);
