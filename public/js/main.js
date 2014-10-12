@@ -7,17 +7,15 @@
  * URL: www.ihatetomatoes.net
  * Article URL: http://ihatetomatoes.net/how-to-create-a-parallax-scrolling-website/
  */
-( function( $ ) {
+(function ($) {
 	
-	//Setup Variables
-var $window = $(window);
-	$slide = $('.homeSlide');
-	$slidePhoto = $('.homeSlidePhoto');
-	$body = $('body');
-	$section = $('section');
-	winH = $window.height();
+//Setup Variables
+var $window = $(window),
+	$slide = $('.homeSlide'),
+	$slidePhoto = $('.homeSlidePhoto'),
+	$body = $('body'),
+	winH = $window.height(),
 	winW = $window.width();
-	$socialSeparator = $('#socialSeparator');
 
 	
     //FadeIn all sections   
@@ -127,15 +125,15 @@ var $window = $(window);
    Move the scrollDown button on scroll - MEA
    ========================================================================== */
    
-   var updownA = $('#scrollDown');
-   var updownImg = $('#scrollDown img');
+   var updownA = $('#scrollDown'),
+   	updownImg = $('#scrollDown img');
    
    $(window).scroll(function() {
    	if(($(this).scrollTop() > 5)) {
    		updownA.attr("href", "#");
    		updownA.css({
    			'left': '90%',
-   			'opacity': '0.6',
+   			'opacity': '0.6'
    			});
    		updownImg.addClass('rotate');
    		updownImg.css('margin-top',"0");
@@ -143,7 +141,7 @@ var $window = $(window);
    		updownA.attr("href", "#skills");
    		updownA.css({
    			'left': '48.5%',
-   			'opacity': '1',
+   			'opacity': '1'
    			});
    		updownImg.removeClass('rotate');
    		updownImg.css('margin-top',"10px");

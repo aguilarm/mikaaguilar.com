@@ -1,4 +1,4 @@
-var maBlog = angular.module('maBlog', []);
+var maBlog = angular.module('maBlog', ['ui.router']);
 maBlog.factory('Config', function () {
     return {
         title:"Post Title",
