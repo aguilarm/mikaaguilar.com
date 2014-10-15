@@ -6,8 +6,7 @@ var router = express.Router();
 
 var Post = mongoose.model('Post');
 
-// blog index
-router.get('/blogapi', function (req, res) {
+router.get('/api', function (req, res) {
     Post.find(function (err, posts) {
         if (err) {
             console.log(err);
@@ -17,7 +16,7 @@ router.get('/blogapi', function (req, res) {
     });
 });
 
-router.get('/blogapi/posts', function (req, res, next) {
+router.get('/api/posts', function (req, res, next) {
     Post.find(function (err, posts) {
         if (err) {
             return next(err);
@@ -27,7 +26,7 @@ router.get('/blogapi/posts', function (req, res, next) {
     });
 });
 
-router.post('/blogapi/posts', function (req, res, next) {
+router.post('/api/posts', function (req, res, next) {
     var post = new Post(req.body);
     
     post.save(function (err, post) {
@@ -67,7 +66,7 @@ router.param('comment', function (req, res, next, id) {
     });
 });
 
-router.get('/blogapi/posts/:post', function (req, res) {
+router.get('/api/posts/:post', function (req, res) {
     //using the populate() method, all of the comments associated with this post
     //are loaded
     req.post.populate('comments', function (err, post) {
@@ -79,7 +78,7 @@ router.get('/blogapi/posts/:post', function (req, res) {
 });
 
 //route for post upvotes
-router.put('/blogapi/posts/:post/upvote', function (req, res, next) {
+router.put('/api/posts/:post/upvote', function (req, res, next) {
     req.post.upvote(function (err, post) {
         if (err) { return next(err); }
         res.json(post);
@@ -87,7 +86,7 @@ router.put('/blogapi/posts/:post/upvote', function (req, res, next) {
 });
 
 //route for post downvotes
-router.put('/blogapi/posts/:post/downvote', function (req, res, next) {
+router.put('/api/posts/:post/downvote', function (req, res, next) {
     console.log('downvote');
     req.post.downvote(function (err, post) {
         if (err) { return next(err); }
@@ -97,7 +96,7 @@ router.put('/blogapi/posts/:post/downvote', function (req, res, next) {
 
 
 //comments routing, per post
-router.post('/blogapi/posts/:post/comments', function (req, res, next) {
+router.post('/api/posts/:post/comments', function (req, res, next) {
     //pass the request body into a new Comment mongoose model
     console.log('potato');
     var comment = new Comment(req.body);
@@ -116,12 +115,12 @@ router.post('/blogapi/posts/:post/comments', function (req, res, next) {
     });
 });
 
-router.get('/blogapi/posts/:post/comments', function (req, res) {
+router.get('/api/posts/:post/comments', function (req, res) {
     res.json(req.post.comments);
 });
 
 //comment upvotes
-router.put('/blogapi/posts/:post/comments/:comment/upvote', function (req, res, next) {
+router.put('/api/posts/:post/comments/:comment/upvote', function (req, res, next) {
     req.comment.upvote(function (err, comment) {
         if (err) { return next(err); }
         res.json(comment);
@@ -129,7 +128,7 @@ router.put('/blogapi/posts/:post/comments/:comment/upvote', function (req, res, 
 });
 
 //comment downvotes
-router.put('/blogapi/posts/:post/comments/:comment/downvote', function (req, res, next) {
+router.put('/api/posts/:post/comments/:comment/downvote', function (req, res, next) {
     req.comment.downvote(function (err, comment) {
         if (err) { return next(err); }
         res.json(comment);

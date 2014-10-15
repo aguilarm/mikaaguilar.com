@@ -2,13 +2,32 @@
 <html>
     <head>
         <title>Mika Aguilar | Blog</title>
+        
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
-        <script src="js/blog.js"></script>
+        <script src="/blog/js/blog.js"></script>
+        
+        <link href="/css/normalize.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
+        <link href="/blog/css/blog.css" rel="stylesheet">
+        
     </head>
     
     <body ng-app="maBlog">
-    
+        <div id="header">
+            <div id="hdWrap">
+                <a id="hdLogo" href="http://mikaaguilar.com/"></a>
+                <a id="hdName" href="/blog/">mika aguilar / blog</a>
+                <div id="hdSocials">
+                    <a href="https://github.com/aguilarm"><img src="/img/github.png"></a>
+                    <a href="https://www.linkedin.com/pub/mika-aguilar/12/672/616"><img src="/img/linkedinInvert.png"></a>
+                    <a href="https://twitter.com/intent/user?screen_name=aguilarMika"><img src="/img/twitterWhite.svg"></a>
+                </div>
+            </div>
+        </div>
+        
+        <a href="/blog/addpost/">addpost</a>
+        
         <ui-view></ui-view>
         
     </body>

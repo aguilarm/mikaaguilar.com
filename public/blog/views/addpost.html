@@ -1,0 +1,16 @@
+<div class="blockContainer">
+    <form ng-submit="addPost">
+        <h3>Create Post:</h3>
+        <p>Posts can include html tags, they're eventually rendered as such.</p>
+        <input type="text"
+            placeholder="Title"
+            ng-model="title">
+        <input type="text"
+            placeholder="Date"
+            ng-model="date">
+        <textarea rows="20"
+            cols="100"
+            placeholder="body"
+            ng-model="body">
+    </form>
+</div>

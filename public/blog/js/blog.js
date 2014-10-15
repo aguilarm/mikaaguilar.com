@@ -8,13 +8,18 @@ maBlog.config([
         $stateProvider
             .state('blog', {
                 url: '/blog/',
-                templateUrl: 'views/blog.html',
+                templateUrl: '/blog/views/home.html',
                 controller: 'MainCtrl',
                 resolve: {
                     postPromise: ['posts', function (posts) {
                         return posts.getAll();
                     }]
                 }
+            })
+            .state('post', {
+                url:'/post/',
+                templateUrl: '/blog/views/home.html',
+                controller: 'MainCtrl',
             })
             .state('posts', {
                 url: '/posts/:id',
@@ -25,9 +30,14 @@ maBlog.config([
                         return posts.get($stateParams.id);
                     }]
                 }
-            });
+            })
+            .state('addpost', {
+                url: '/blog/addpost/',
+                templateUrl: '/blog/views/addpost.html',
+                controller: 'MainCtrl'
+            })
         
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/blog/');
         
         $locationProvider.html5Mode(true);
         
@@ -38,17 +48,17 @@ maBlog.factory('posts', ['$http', function ($http){
         posts: []
     };
     o.getAll = function() {
-        return $http.get('/blogapi/').success(function (data) {
+        return $http.get('api/').success(function (data) {
             angular.copy(data, o.posts);
         });
     };
     o.create = function(post) {
-        return $http.post('/blogapi/posts', post).success(function (data) {
+        return $http.post('api/posts', post).success(function (data) {
             o.posts.push(data);
         });
     };
     o.get = function (id) {
-        return $http.get('/blogapi/posts/' + id).then(function (res) {
+        return $http.get('api/posts/' + id).then(function (res) {
             return res.data;
         });
     };
@@ -59,5 +69,21 @@ maBlog.controller('MainCtrl', [
     '$scope',
     'posts',
     function ($scope, posts) {
+        
     $scope.posts = posts.posts;
+    $scope.title = '';
+    
+    $scope.addPost = function () {
+        if($scope.title === '') {return;}
+        posts.create({
+            title: $scope.title,
+            date: $scope.link,
+            body: $scope.body
+        });
+        
+        $scope.title = '';
+        $scope.date = '';
+        $scope.body = '';
+    };
+
 }]);
