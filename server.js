@@ -13,12 +13,11 @@ mongoose.connect('mongodb://localhost/blog', function(err,db){
     if (!err){
         console.log('Connected to mongodb://localhost/blog');
     }else{
-        console.dir(err); //failed to connect
+        console.dir(err);
     }
 });
 
-//require('./models/Posts');
-//require('./models/Comments');
+require('./models/Posts');
 
 //Should be called AFTER mongoose schemas are set up
 var blog = require('./routes/blogapi.js');
@@ -27,7 +26,6 @@ var blog = require('./routes/blogapi.js');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'swig');
 
-// uncomment after placing your favicon in /public
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());

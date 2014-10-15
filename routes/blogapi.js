@@ -4,51 +4,39 @@ var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
 
-//these models are found in the /models folder
-//var Post = mongoose.model('Post');
+var Post = mongoose.model('Post');
 
 // blog index
 router.get('/blogapi', function (req, res) {
-    console.log('hello');
-  res.send('hi');
-});
-
-//req=request object from the client
-//res=response object to send back
-router.get('/posts', function (req, res, next) {
-    //grab all of the posts from the mongoose model which === the mongodb schema
     Post.find(function (err, posts) {
-        //if we get an error, throw it to error handler
-        //not sure yet how next works, so also sending to console
         if (err) {
             console.log(err);
             return next(err);
         }
-        
-        //recieved all of the posts, so send them in the response as a json
         res.json(posts);
     });
 });
 
-router.post('/posts', function (req, res, next) {
-    //post is going to be created with the Post mongoose model
-    //this creates a new object in memory before saving it
+router.get('/blogapi/posts', function (req, res, next) {
+    Post.find(function (err, posts) {
+        if (err) {
+            return next(err);
+        }
+        
+        res.json(posts);
+    });
+});
+
+router.post('/blogapi/posts', function (req, res, next) {
     var post = new Post(req.body);
     
     post.save(function (err, post) {
         if (err) { return next(err); }
-        //no error, so respond with the post?
-        //guessing .save adds this to the database,
-        //and this res throws it back to the client confirming the save?
+        
         res.json(post);
     });
 });
 
-//param auto loads an object rather than reloading it every time
-//for this, I need to grab the post ID
-//this allows route URLs with :post in them to use this function to
-//determine the post to use
-//high five
 router.param('post', function (req, res, next, id) {
     var query = Post.findById(id);
     query.exec(function (err, post) {
@@ -79,10 +67,7 @@ router.param('comment', function (req, res, next, id) {
     });
 });
 
-//for handling a single post, as explained above,
-//we use the 'post' param to figure out what post we're using
-//the param handles errors, so this doesn't need to since it wont complete without it
-router.get('/posts/:post', function (req, res) {
+router.get('/blogapi/posts/:post', function (req, res) {
     //using the populate() method, all of the comments associated with this post
     //are loaded
     req.post.populate('comments', function (err, post) {
@@ -94,7 +79,7 @@ router.get('/posts/:post', function (req, res) {
 });
 
 //route for post upvotes
-router.put('/posts/:post/upvote', function (req, res, next) {
+router.put('/blogapi/posts/:post/upvote', function (req, res, next) {
     req.post.upvote(function (err, post) {
         if (err) { return next(err); }
         res.json(post);
@@ -102,7 +87,7 @@ router.put('/posts/:post/upvote', function (req, res, next) {
 });
 
 //route for post downvotes
-router.put('/posts/:post/downvote', function (req, res, next) {
+router.put('/blogapi/posts/:post/downvote', function (req, res, next) {
     console.log('downvote');
     req.post.downvote(function (err, post) {
         if (err) { return next(err); }
@@ -112,7 +97,7 @@ router.put('/posts/:post/downvote', function (req, res, next) {
 
 
 //comments routing, per post
-router.post('/posts/:post/comments', function (req, res, next) {
+router.post('/blogapi/posts/:post/comments', function (req, res, next) {
     //pass the request body into a new Comment mongoose model
     console.log('potato');
     var comment = new Comment(req.body);
@@ -131,12 +116,12 @@ router.post('/posts/:post/comments', function (req, res, next) {
     });
 });
 
-router.get('/posts/:post/comments', function (req, res) {
+router.get('/blogapi/posts/:post/comments', function (req, res) {
     res.json(req.post.comments);
 });
 
 //comment upvotes
-router.put('/posts/:post/comments/:comment/upvote', function (req, res, next) {
+router.put('/blogapi/posts/:post/comments/:comment/upvote', function (req, res, next) {
     req.comment.upvote(function (err, comment) {
         if (err) { return next(err); }
         res.json(comment);
@@ -144,7 +129,7 @@ router.put('/posts/:post/comments/:comment/upvote', function (req, res, next) {
 });
 
 //comment downvotes
-router.put('/posts/:post/comments/:comment/downvote', function (req, res, next) {
+router.put('/blogapi/posts/:post/comments/:comment/downvote', function (req, res, next) {
     req.comment.downvote(function (err, comment) {
         if (err) { return next(err); }
         res.json(comment);

@@ -1,35 +1,15 @@
-<DOCTYPE html>
-<html ng-app="maBlog">
+<!DOCTYPE html>
+<html>
     <head>
         <title>Mika Aguilar | Blog</title>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
-        <script src="../js/blog.js"></script>
+        <script src="js/blog.js"></script>
     </head>
     
-    <body>
+    <body ng-app="maBlog">
     
-        <div>
-        
-            <div ng-controller="addConfig">
-            
-                <h1>{{config.title}}</h1>
-                <p>{{config.body}}</p>
-                
-                <post size="{{config.sizeSmall}}" date="config.date"></post>
-                
-                <br/><br/>
-                
-                <input type="text" ng-model="config.date">
-                <input type="text" ng-model="config.title">
-                <input type="text" ng-model="config.sizeSmall">
-                
-            </div>
-            
-            
-        </div>
-        
-
+        <ui-view></ui-view>
         
     </body>
     
