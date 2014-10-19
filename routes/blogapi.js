@@ -6,10 +6,11 @@ var router = express.Router();
 
 var Post = mongoose.model('Post');
 
+//TODO: make some kind of index page with possible queries as buttons or something
+//For now it's just going to do the same thing /api/posts does...
 router.get('/api', function (req, res) {
     Post.find(function (err, posts) {
         if (err) {
-            console.log(err);
             return next(err);
         }
         res.json(posts);
@@ -36,103 +37,41 @@ router.post('/api/posts', function (req, res, next) {
     });
 });
 
+//get post by id
 router.param('post', function (req, res, next, id) {
     var query = Post.findById(id);
     query.exec(function (err, post) {
-        //first throw an error if found through http
         if (err) { return next(err); }
-        //again throw and error if the post does not exist for this id
         if (!post) { return next(new Error("Cannot find post!")); }
-        //if no errors, toss post to the request object to use later
         req.post = post;
-        //http://stackoverflow.com/questions/8710669/having-a-hard-time-trying-to-understand-next-next-in-express-js
-        //next calls the next middleware in the que
-        //in this case, it is the route handler
-        //at least if used in router.post('/posts:post')
-        //here this param is called first, THEN the router finishes after retrieving the post
         return next();
     });
 });
 
-//for comment upvotes, I also need a comment param
-router.param('comment', function (req, res, next, id) {
-    console.log('comment param');
-    var query = Comment.findById(id);
-    query.exec(function (err, comment) {
-        if (err) {return next(err); }
-        if (!comment) { return next(new Error("Cannot find comment!")); }
-        req.comment = comment;
+//posts by year
+router.param('postYear', function (req, res, next, year) {
+    var start = new Date(year, 0, 1),
+        end = new Date(year, 11, 31);
+    var query = Post.find({date: {$gte: start, $lt: end}});
+    query.exec(function (err, posts) {
+        if (err) { return next(err); }
+        if (!posts) { return next(new Error("Cannot find posts!")); }
+        req.posts = posts;
         return next();
     });
 });
 
-router.get('/api/posts/:post', function (req, res) {
-    //using the populate() method, all of the comments associated with this post
-    //are loaded
-    req.post.populate('comments', function (err, post) {
-    //the post object will be retrieved and added to the req object by
-    //the param middleware, so we just have to send the
-    //json back to the client
-        res.json(req.post);
-    });
+
+router.get('/api/postid/:post', function (req, res) {
+    res.json(req.post);
 });
 
-//route for post upvotes
-router.put('/api/posts/:post/upvote', function (req, res, next) {
-    req.post.upvote(function (err, post) {
-        if (err) { return next(err); }
-        res.json(post);
-    });
+router.get('/api/postdate/:postYear', function (req, res) {
+    res.json(req.posts);
 });
 
-//route for post downvotes
-router.put('/api/posts/:post/downvote', function (req, res, next) {
-    console.log('downvote');
-    req.post.downvote(function (err, post) {
-        if (err) { return next(err); }
-        res.json(post);
-    });
-});
-
-
-//comments routing, per post
-router.post('/api/posts/:post/comments', function (req, res, next) {
-    //pass the request body into a new Comment mongoose model
-    console.log('potato');
-    var comment = new Comment(req.body);
-    console.log('pajama');
-    //check for errors, and save the comment if none
-    comment.save(function (err, comment) {
-        if (err) { return next(err); }
-        //no http errors, add this comment to the comments array
-        req.post.comments.push(comment);
-        
-        req.post.save(function (err, post) {
-            if (err) { return next(err); }
-            
-            res.json(comment);
-        });
-    });
-});
-
-router.get('/api/posts/:post/comments', function (req, res) {
-    res.json(req.post.comments);
-});
-
-//comment upvotes
-router.put('/api/posts/:post/comments/:comment/upvote', function (req, res, next) {
-    req.comment.upvote(function (err, comment) {
-        if (err) { return next(err); }
-        res.json(comment);
-    });
-});
-
-//comment downvotes
-router.put('/api/posts/:post/comments/:comment/downvote', function (req, res, next) {
-    req.comment.downvote(function (err, comment) {
-        if (err) { return next(err); }
-        res.json(comment);
-    });
+router.get('/api/postdate/:postYear/:postMonth', function (req, res) {
+    res.json(req.posts);
 });
 
 module.exports = router;

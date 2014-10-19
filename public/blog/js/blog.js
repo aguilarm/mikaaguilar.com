@@ -16,14 +16,14 @@ maBlog.config([
                     }]
                 }
             })
-            .state('post', {
-                url:'/post/',
-                templateUrl: '/blog/views/home.html',
-                controller: 'MainCtrl',
+            .state('addpost', {
+                url: '/blog/addpost/',
+                templateUrl: '/blog/views/addpost.html',
+                controller: 'MainCtrl'
             })
-            .state('posts', {
-                url: '/posts/:id',
-                templateUrl: '/posts.html',
+            .state('postById', {
+                url: '/blog/post/:id',
+                templateUrl: '/blog/views/post.html',
                 controller: 'PostsCtrl',
                 resolve: {
                     post: ['$stateParams', 'posts', function ($stateParams, posts) {
@@ -31,12 +31,27 @@ maBlog.config([
                     }]
                 }
             })
-            .state('addpost', {
-                url: '/blog/addpost/',
-                templateUrl: '/blog/views/addpost.html',
-                controller: 'MainCtrl'
+            .state('postByDate', {
+                url: '/blog/posts/:year',
+                templateUrl: '/blog/views/home.html',
+                controller: 'PostsCtrl',
+                resolve: {
+                    postsYear: ['$stateParams', 'posts', function ($stateParams, posts) {
+                        return posts.get($stateParams.year);
+                    }]
+                }
             })
-        
+            .state('postByDate.month', {
+                url: '/:month',
+                templateUrl: '/blog/views/home.html',
+                controller: 'PostsCtrl',
+                resolve: {
+                    postsMonth: ['stateParams', 'posts', function ($stateParams, post) {
+                        return posts.get($stateParams.month);
+                    }]
+                }
+            });
+            
         $urlRouterProvider.otherwise('/blog/');
         
         $locationProvider.html5Mode(true);
@@ -48,19 +63,28 @@ maBlog.factory('posts', ['$http', function ($http){
         posts: []
     };
     o.getAll = function() {
-        return $http.get('api/').success(function (data) {
+        return $http.get('/blog/api/').success(function (data) {
             angular.copy(data, o.posts);
         });
     };
     o.create = function(post) {
-        return $http.post('api/posts', post).success(function (data) {
+        return $http.post('/blog/api/posts', post).success(function (data) {
             o.posts.push(data);
         });
     };
-    o.get = function (id) {
-        return $http.get('api/posts/' + id).then(function (res) {
-            return res.data;
-        });
+    o.get = function (post) {
+        //check if we are looking up by id
+        if (post.length === 24) {
+            return $http.get('/blog/api/postid/' + post).then(function (res) {
+                return res.data;
+            });
+        };
+        //check for year
+        if (post.length === 4) {
+            return $http.get('/blog/api/postdate/' + post).then(function (res) {
+                return res.data;
+            });
+        };
     };
     return o;
 }]);
@@ -69,21 +93,34 @@ maBlog.controller('MainCtrl', [
     '$scope',
     'posts',
     function ($scope, posts) {
-        
-    $scope.posts = posts.posts;
-    $scope.title = '';
     
-    $scope.addPost = function () {
-        if($scope.title === '') {return;}
-        posts.create({
-            title: $scope.title,
-            date: $scope.link,
-            body: $scope.body
-        });
-        
+        $scope.posts = posts.posts;
         $scope.title = '';
-        $scope.date = '';
-        $scope.body = '';
-    };
+        $scope.error = '';
+        
+        $scope.addPost = function () {
+            if ($scope.title === '') {
+                $scope.error = "Please enter a title!";
+                return;
+            }
+            posts.create({
+                title: $scope.title,
+                date: $scope.date,
+                body: $scope.body
+            });
+        
+            $scope.title = '';
+            $scope.date = '';
+            $scope.body = '';
+        };
 
+}]);
+
+maBlog.controller('PostsCtrl', [
+    '$scope',
+    'posts',
+    'postsYear',
+    function ($scope, posts, postsYear) {
+        $scope.posts = postsYear;
+        
 }]);

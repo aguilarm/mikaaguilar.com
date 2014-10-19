@@ -1,7 +1,11 @@
-<div class="blockContainer" ng-repeat="post in posts">
+<div class="blockContainer" ng-repeat="post in posts | orderBy: '-date'">
     <h1>{{post.title}}</h1>
-    <p>{{post.body}}</p>
-    <br/><br/>
-    <input type="text" ng-model="post.date">
-    <input type="text" ng-model="post.title">
+    <p>{{post.date | date : longDate}}</p>
+    {{post.body}}
+    <br><br>
+    <a href="/blog/post/{{post._id}}">View More</a>
+    <a href="/blog/posts/{{post.date | date : 'yyyy/MM/dd'}}">View More (Day)</a>
+    <a href="/blog/posts/{{post.date | date : 'yyyy/MM'}}">View More (Month)</a>
+    <a href="/blog/posts/{{post.date | date : 'yyyy'}}">View More (Year)</a>
+    <br><br><br>
 </div>
