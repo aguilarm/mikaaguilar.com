@@ -1,9 +1,15 @@
 <div class="blockContainer">
     <form ng-submit="addPost()">
         <h3>Create Post:</h3>
+        <br>
         <input type="text"
             placeholder="Title"
             ng-model="title">
+        <p>Enter a unique string for the URL address for this post (max 20 chars):</p>
+        <input type="text"
+            placeholder="URL"
+            maxlength="22"
+            ng-model="url">
         <br><br>
         <input type="date"
             ng-model="date">
@@ -13,7 +19,7 @@
             placeholder="Body"
             ng-model="body">
         </textarea>
-        <br><br>
+        <br>
         <p>{{error}}</p>
         <button type="submit">Post</button>
     </form>

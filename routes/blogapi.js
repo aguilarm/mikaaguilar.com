@@ -39,10 +39,22 @@ router.post('/api/posts', function (req, res, next) {
 
 //get post by id
 router.param('post', function (req, res, next, id) {
+    console.log('postparam');
     var query = Post.findById(id);
     query.exec(function (err, post) {
         if (err) { return next(err); }
-        if (!post) { return next(new Error("Cannot find post!")); }
+        if (!post) { return next(new Error("Cannot find post with id!")); }
+        req.post = post;
+        return next();
+    });
+});
+
+router.param('posturl', function (req, res, next, posturl) {
+    console.log('posturl');
+    var query = Post.find({url: posturl});
+    query.exec(function (err, post) {
+        if (err) { return next(err); }
+        if (!post) { return next(new Error("Cannot find post with this URL")); }
         req.post = post;
         return next();
     });
@@ -55,7 +67,7 @@ router.param('postYear', function (req, res, next, year) {
     var query = Post.find({date: {$gte: start, $lt: end}});
     query.exec(function (err, posts) {
         if (err) { return next(err); }
-        if (!posts) { return next(new Error("Cannot find posts!")); }
+        if (!posts) { return next(new Error("Cannot find posts by year!")); }
         req.posts = posts;
         return next();
     });
@@ -63,6 +75,10 @@ router.param('postYear', function (req, res, next, year) {
 
 
 router.get('/api/postid/:post', function (req, res) {
+    res.json(req.post);
+});
+
+router.get('/api/posturl/:posturl', function (req, res) {
     res.json(req.post);
 });
 

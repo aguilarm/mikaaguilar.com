@@ -21,7 +21,7 @@ maBlog.config([
                 templateUrl: '/blog/views/addpost.html',
                 controller: 'MainCtrl'
             })
-            .state('postById', {
+            .state('getPost', {
                 url: '/blog/post/:id',
                 templateUrl: '/blog/views/post.html',
                 controller: 'PostsCtrl',
@@ -32,7 +32,7 @@ maBlog.config([
                 }
             })
             .state('postByDate', {
-                url: '/blog/posts/:year',
+                url: '/blog/date/:year',
                 templateUrl: '/blog/views/home.html',
                 controller: 'PostsCtrl',
                 resolve: {
@@ -73,18 +73,31 @@ maBlog.factory('posts', ['$http', function ($http){
         });
     };
     o.get = function (post) {
-        //check if we are looking up by id
-        if (post.length === 24) {
-            return $http.get('/blog/api/postid/' + post).then(function (res) {
+        if (typeof post === 'number') {
+            //check for year
+            if (post.length === 4) {
+                return $http.get('/blog/api/postdate/' + post).then(function (res) {
+                    return res.data;
+                });
+            };
+        };
+        
+        if (typeof post === 'string') {
+            console.log('postisastring');
+            //TODO: Handle this better
+            //object ids can be strings, right now I just limited the posturl
+            //input to 22 characters, which is actually pretty reasonable
+            if (post.length === 24) {
+                return $http.get('/blog/api/postid/' + post).then(function (res) {
+                    return res.data;
+                });
+            };
+            //otherwise, it's a url id
+            return $http.get('/blog/api/posturl/' + post).then(function (res) {
                 return res.data;
             });
         };
-        //check for year
-        if (post.length === 4) {
-            return $http.get('/blog/api/postdate/' + post).then(function (res) {
-                return res.data;
-            });
-        };
+        //
     };
     return o;
 }]);
@@ -96,20 +109,23 @@ maBlog.controller('MainCtrl', [
     
         $scope.posts = posts.posts;
         $scope.title = '';
+        $scope.url= '';
         $scope.error = '';
         
         $scope.addPost = function () {
-            if ($scope.title === '') {
-                $scope.error = "Please enter a title!";
+            if ($scope.title === '' || $scope.url ==='') {
+                $scope.error = "Title and url fields are required!";
                 return;
             }
             posts.create({
                 title: $scope.title,
+                url: $scope.url,
                 date: $scope.date,
                 body: $scope.body
             });
         
             $scope.title = '';
+            $scope.url = '';
             $scope.date = '';
             $scope.body = '';
         };
@@ -119,8 +135,8 @@ maBlog.controller('MainCtrl', [
 maBlog.controller('PostsCtrl', [
     '$scope',
     'posts',
-    'postsYear',
-    function ($scope, posts, postsYear) {
-        $scope.posts = postsYear;
+    'post',
+    function ($scope, posts, post) {
+        $scope.post = post;
         
 }]);
