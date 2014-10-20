@@ -6,6 +6,16 @@ maBlog.config([
     '$locationProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider) {
         $stateProvider
+            .state('index' , {
+                url: '/',
+                templateUrl: '/index.html',
+                controller: 'MainCtrl',
+                resolve: {
+                    postPromise: ['posts', function (posts) {
+                        return posts.getAll();
+                    }]
+                }
+            })
             .state('blog', {
                 url: '/blog/',
                 templateUrl: '/blog/views/home.html',
@@ -78,6 +88,9 @@ maBlog.controller('MainCtrl', [
     function ($scope, posts) {
     
         $scope.posts = posts.posts;
+        
+        console.log(posts);
+        
         $scope.title = '';
         $scope.url= '';
         $scope.error = '';

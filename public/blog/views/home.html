@@ -1,3 +1,6 @@
+<br>
+<a href="/blog/addpost/">Add a new post</a>
+<br><br>
 <div class="blockContainer posts" ng-repeat="post in posts | orderBy: '-date'">
     <h2 ng-hide="post.url"><a href="/blog/posts/{{post._id}}">{{post.title | uppercase}}</a></h2>
     <h2 ng-show="post.url"><a href="/blog/posts/{{post.url}}">{{post.title | uppercase}}</a></h2>
