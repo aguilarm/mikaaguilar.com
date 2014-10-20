@@ -1,6 +1,10 @@
-<div class="blockContainer">
-    <h1>{{post.title}}</h1>
-    <p>{{post.date | date : longDate}}</p>
+<div class="blockContainer post">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/trianglify/0.1.5/trianglify.min.js"></script>
+    
+    <div class="postHeader">
+        <h1>{{post.title | uppercase}}</h1>
+        <div class="date">{{post.date | date : 'fullDate' | uppercase}}</div>
+    </div>
     {{post.body}}
     <br><br>
 </div>

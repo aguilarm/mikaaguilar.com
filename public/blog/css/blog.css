@@ -1,4 +1,14 @@
-a {text-decoration: none !important;}
+a {text-decoration: none !important; color: #555;}
+h1 {letter-spacing:0; font-weight:700;}
+h2 {letter-spacing:0; line-height: 1em; font-weight:700;}
 #header{background-color:#39f}
 #hdName{color:#fff;}
 #hdLogo{background-image: url('/img/logoWhite.svg'); transition:none;}
+
+.date {color: #CC463D; line-height:2em; font-weight:500;}
+
+.posts:hover {color: #39f;}
+.posts:hover a {color: #1262B2;}
+.posts:hover .date {color: #FF584C;}
+
+.post .postHeader {text-align: center;}

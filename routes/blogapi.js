@@ -49,30 +49,17 @@ router.param('post', function (req, res, next, id) {
     });
 });
 
+//alternatively, get post by url string
 router.param('posturl', function (req, res, next, posturl) {
     console.log('posturl');
-    var query = Post.find({url: posturl});
+    var query = Post.find({ url: posturl });
     query.exec(function (err, post) {
         if (err) { return next(err); }
         if (!post) { return next(new Error("Cannot find post with this URL")); }
-        req.post = post;
+        req.post = post[0];
         return next();
     });
 });
-
-//posts by year
-router.param('postYear', function (req, res, next, year) {
-    var start = new Date(year, 0, 1),
-        end = new Date(year, 11, 31);
-    var query = Post.find({date: {$gte: start, $lt: end}});
-    query.exec(function (err, posts) {
-        if (err) { return next(err); }
-        if (!posts) { return next(new Error("Cannot find posts by year!")); }
-        req.posts = posts;
-        return next();
-    });
-});
-
 
 router.get('/api/postid/:post', function (req, res) {
     res.json(req.post);
@@ -80,14 +67,6 @@ router.get('/api/postid/:post', function (req, res) {
 
 router.get('/api/posturl/:posturl', function (req, res) {
     res.json(req.post);
-});
-
-router.get('/api/postdate/:postYear', function (req, res) {
-    res.json(req.posts);
-});
-
-router.get('/api/postdate/:postYear/:postMonth', function (req, res) {
-    res.json(req.posts);
 });
 
 module.exports = router;

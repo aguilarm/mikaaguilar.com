@@ -1,14 +1,10 @@
-<div class="blockContainer" ng-repeat="post in posts | orderBy: '-date'">
-    <h1>{{post.title}}</h1>
-    <p>{{post.date | date : longDate}}</p>
-    {{post.body}}
+<div class="blockContainer posts" ng-repeat="post in posts | orderBy: '-date'">
+    <h2 ng-hide="post.url"><a href="/blog/posts/{{post._id}}">{{post.title | uppercase}}</a></h2>
+    <h2 ng-show="post.url"><a href="/blog/posts/{{post.url}}">{{post.title | uppercase}}</a></h2>
+    <div class="date">{{post.date | date : longDate | uppercase}}</div>
+    {{post.body | limitTo : 850}}
+    <br>
+    <a ng-hide="post.url" href="/blog/posts/{{post.url}}">Read more</a>
+    <a ng-show="post.url" href="/blog/posts/{{post._id}}">Read more</a>
     <br><br>
-    <p>{{post.url}}</p>
-    <a ng-hide="post.url" href="/blog/post/{{post._id}}">View More</a>
-    <a ng-show="post.url" href="/blog/post/{{post.url}}">View More</a>
-    <br>
-    <a href="/blog/posts/{{post.date | date : 'yyyy/MM'}}">More posts from {{post.date | date : 'MMMM'}}</a>
-    <br>
-    <a href="/blog/posts/{{post.date | date : 'yyyy'}}">More posts from {{post.date | date : 'yyyy'}}</a>
-    <br><br><br>
 </div>

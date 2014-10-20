@@ -22,32 +22,12 @@ maBlog.config([
                 controller: 'MainCtrl'
             })
             .state('getPost', {
-                url: '/blog/post/:id',
+                url: '/blog/posts/:id',
                 templateUrl: '/blog/views/post.html',
                 controller: 'PostsCtrl',
                 resolve: {
                     post: ['$stateParams', 'posts', function ($stateParams, posts) {
                         return posts.get($stateParams.id);
-                    }]
-                }
-            })
-            .state('postByDate', {
-                url: '/blog/date/:year',
-                templateUrl: '/blog/views/home.html',
-                controller: 'PostsCtrl',
-                resolve: {
-                    postsYear: ['$stateParams', 'posts', function ($stateParams, posts) {
-                        return posts.get($stateParams.year);
-                    }]
-                }
-            })
-            .state('postByDate.month', {
-                url: '/:month',
-                templateUrl: '/blog/views/home.html',
-                controller: 'PostsCtrl',
-                resolve: {
-                    postsMonth: ['stateParams', 'posts', function ($stateParams, post) {
-                        return posts.get($stateParams.month);
                     }]
                 }
             });
@@ -73,27 +53,17 @@ maBlog.factory('posts', ['$http', function ($http){
         });
     };
     o.get = function (post) {
-        if (typeof post === 'number') {
-            //check for year
-            if (post.length === 4) {
-                return $http.get('/blog/api/postdate/' + post).then(function (res) {
-                    return res.data;
-                });
-            };
-        };
-        
         if (typeof post === 'string') {
             console.log('postisastring');
-            //TODO: Handle this better
-            //object ids can be strings, right now I just limited the posturl
-            //input to 22 characters, which is actually pretty reasonable
             if (post.length === 24) {
+                console.log('postisanid');
                 return $http.get('/blog/api/postid/' + post).then(function (res) {
                     return res.data;
                 });
             };
             //otherwise, it's a url id
             return $http.get('/blog/api/posturl/' + post).then(function (res) {
+                console.log('postisaurl');
                 return res.data;
             });
         };
@@ -138,5 +108,4 @@ maBlog.controller('PostsCtrl', [
     'post',
     function ($scope, posts, post) {
         $scope.post = post;
-        
 }]);
