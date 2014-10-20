@@ -1,12 +1,10 @@
 <div class="blockContainer post">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/trianglify/0.1.5/trianglify.min.js"></script>
-    
     <div class="postHeader">
         <div>
             <h1>{{post.title | uppercase}}</h1>
             <div class="date">{{post.date | date : 'fullDate' | uppercase}}</div>
         </div>
     </div>
-    {{post.body}}
+    <markdown src="post.body"></markdown>
     <br><br>
 </div>

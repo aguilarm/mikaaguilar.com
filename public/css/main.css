@@ -318,7 +318,7 @@ body, html {
    Skills Section
    ========================================================================== */
    
-#skillsSection {background-color:#BF4239;min-height:660px;overflow:hidden;padding-bottom:.5em;}
+#skillsSection {background-color:#FF584C;min-height:660px;overflow:hidden;padding-bottom:.5em;}
 	#skillsHeader {color:#fff}
 	#skillsHeader h1 {margin-bottom:0;margin-top:0;}
 	.skillsItem{max-width:33%; height:455px;float:left;}

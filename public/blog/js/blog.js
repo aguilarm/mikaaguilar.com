@@ -1,4 +1,4 @@
-var maBlog = angular.module('maBlog', ['ui.router']);
+var maBlog = angular.module('maBlog', ['ui.router', 'ngSanitize']);
 
 maBlog.config([
     '$stateProvider',
@@ -122,3 +122,21 @@ maBlog.controller('PostsCtrl', [
     function ($scope, posts, post) {
         $scope.post = post;
 }]);
+
+maBlog.directive('markdown', function ($sanitize) {
+    return {
+        restrict: 'E',
+        link: function (scope, element, attrs) {
+            console.log(scope.$eval(attrs.src));
+            function renderMarkdown() {
+                var htmlText = markdown.toHTML(scope.$eval(attrs.src) || '');
+                console.log(htmlText);
+                element.html($sanitize(htmlText));
+            }
+            scope.$watch(attrs.src, function () {
+                renderMarkdown();
+            })
+            renderMarkdown();
+        },
+    }
+});
