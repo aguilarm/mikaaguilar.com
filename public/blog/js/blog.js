@@ -104,12 +104,14 @@ maBlog.controller('MainCtrl', [
                 title: $scope.title,
                 url: $scope.url,
                 date: $scope.date,
+                summary: $scope.summary,
                 body: $scope.body
             });
         
             $scope.title = '';
             $scope.url = '';
             $scope.date = '';
+            $scope.summary = '';
             $scope.body = '';
         };
 

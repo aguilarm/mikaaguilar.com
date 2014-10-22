@@ -5,6 +5,7 @@
             <div class="date">{{post.date | date : 'fullDate' | uppercase}}</div>
         </div>
     </div>
-    <markdown src="post.body"></markdown>
-    <br><br>
+    <div class="postBody">
+        <markdown src="post.body"></markdown>
+    </div>
 </div>

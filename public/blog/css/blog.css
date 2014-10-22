@@ -1,7 +1,7 @@
 a {text-decoration: none !important; color: #555;}
 h1 {letter-spacing:0; font-weight:500;}
 h2 {letter-spacing:0; line-height: 1em; font-weight:500;}
-
+h3 {letter-spacing:0; font-weight:500;}
 .blockContainer {max-width:980px;}
 #hdWrap {max-width:980px;}
 
