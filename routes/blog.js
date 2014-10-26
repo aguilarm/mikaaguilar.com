@@ -6,6 +6,7 @@ var router = express.Router();
 
 var Post = mongoose.model('Post');
 
+
 //TODO: make some kind of index page with possible queries as buttons or something
 //For now it's just going to do the same thing /api/posts does...
 router.get('/api', function (req, res) {
@@ -70,4 +71,3 @@ router.get('/api/posturl/:posturl', function (req, res) {
 });
 
 module.exports = router;
-    

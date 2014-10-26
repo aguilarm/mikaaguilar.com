@@ -51,3 +51,7 @@ node_modules
 # Users Environment Variables
 
 .lock-wscript
+
+# Ignore Projects folder, MA
+
+public/projects

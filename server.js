@@ -21,7 +21,7 @@ mongoose.connect('mongodb://localhost/blog', function(err,db){
 require('./models/Posts');
 
 //Should be called AFTER mongoose schemas are set up
-var blog = require('./routes/blogapi.js');
+var blog = require('./routes/blog.js');
 
 // view engine setup
 app.engine('html', swig.renderFile);
@@ -35,11 +35,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/projects')));
 
 app.use('/blog/', blog);
 
 app.use(function (req, res) {
-    res.sendFile(__dirname + '/public/blog/index.html');
+   res.sendFile(__dirname + '/public/blog/index.html');
 });
 
 // catch 404 and forward to error handler

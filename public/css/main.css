@@ -242,20 +242,7 @@ body, html {
 	margin:auto;
 	width:100%;
 }
-.blockLeft {
-	float: left;
-	width: 46%;
-}
-.blockRight {
-	float: right;
-	width: 46%;
-}
-.blockRight h2, .blockLeft h2 {text-align: center;}
-.blockRight, .blockLeft {
-	background-color: white;
-	color: #555;
-	padding: .8em;
-}
+
 .sectionAnchor {position:relative;bottom:70px}
 
 	.innerHeader {text-align:center;margin-top:0;padding-top:0.67em}
@@ -436,6 +423,73 @@ body, html {
 	width:80%;
 	margin:auto;
 }
+
+/* Grabbed the following tooltip code from 
+	http://cbracco.me/a-simple-css-tooltip/ */
+	
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+	position: absolute;
+	bottom: 150%;
+	left: 50%;
+	margin-bottom: 5px;
+	margin-left: -80px;
+	padding: 7px;
+	width: 160px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius:    3px;
+	border-radius:         3px;
+	background-color: #000;
+	background-color: hsla(0, 0%, 20%, 0.9);
+	color: #fff;
+	content: attr(data-tooltip);
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+	position: absolute;
+	bottom: 150%;
+	left: 50%;
+	margin-left: -5px;
+	width: 0;
+	border-top: 5px solid #000;
+	border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	content: " ";
+	font-size: 0;
+	line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+	visibility: visible;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+}
+
 @media all and (max-width:768px) {#toolsContainer{margin-bottom:2em}}
 @media all and (max-width:530px) {#toolsContainer{text-align:inherit}}
 	#toolsContainer > img {width: 3em;height: 3em;border-radius: 8px;display:inline-block;*display:inline;zoom:1}
@@ -457,8 +511,8 @@ body, html {
    Work Section
    ========================================================================== */
    
-#workSection {color:#fff;background-color:#FF584C;padding-bottom:1.5em;}
-#workSection .innerHeader {margin-bottom:1em;}
+#workSection {color:#fff;background-color:#FF584C;padding-bottom:2.4em; height:620px;}
+#workSection .innerHeader {margin-bottom:1.5em;}
 #workSection .blockLeft h2, #workSection .blockRight h2 {
 	background-color: #1262B2;
 	margin: 0 -0.3em;
@@ -467,13 +521,32 @@ body, html {
 	padding: 0.3em;
 	color: #fff;
 }
-#workSection > div > div.blockContent.blockLeft > div {border-bottom: 1px solid #777;margin-bottom:10px;}
-#workSection > div > div.blockContent.blockLeft > div:last-child {border-bottom: none;}
-#workSection .blockLeft h3 {text-align: center;}
-#workSection .blockLeft a {text-decoration: none; text-align: center;}
-#workSection .blockLeft .date {text-align: center; color: #FF584C;}
-#workSection .blockLeft p {text-align:center; margin: 0;}
-#workSection > div > div.blockContent.blockLeft > div > a {text-align:center;display:block;width:auto;margin:auto; margin-bottom:.5em;}
+
+.blockLeft { float: left; }
+.blockRight { float: right; }
+.blockRight h2, .blockLeft h2 { text-align: center; }
+.blockRight, .blockLeft {
+	background-color: white;
+	color: #555;
+	padding: .8em;
+	width: 46%;
+	height: 500px;
+	box-shadow: .5em .5em 0px 0px #555;
+	-webkit-transition: box-shadow 1s, margin 1s;
+	transition: box-shadow 1s, margin 1s;
+	margin: 0;
+	display: table;
+}
+
+.blockRight:hover, .blockLeft:hover {box-shadow:.4em .4em 0px 0px #7FBFFF}
+
+.blockPost {border-bottom: 1px solid #777; margin-bottom:10px;}
+.blockPost:last-child {border-bottom: none;}
+.blockLeft h3, .blockRight h3 {text-align: center;}
+.blockLeft a, .blockRight a {text-decoration: none; text-align: center;}
+.blockLeft .date {text-align: center; color: #FF584C;}
+.blockLeft p, .blockRight p {text-align:center; margin: 0;}
+.blockLeft .blockPostLink, .blockRight .blockPostLink {text-align:center;display:block;width:auto;margin:auto; margin-bottom:.5em;}
 
 /* ==========================================================================
    Ocean Fog Photo
