@@ -53,6 +53,7 @@ maBlog.factory('posts', ['$http', function ($http){
         posts: []
     };
     o.getAll = function() {
+        console.log('getting posts');
         return $http.get('/blog/api/').success(function (data) {
             angular.copy(data, o.posts);
         });
@@ -90,6 +91,7 @@ maBlog.controller('MainCtrl', [
         $scope.posts = posts.posts;
         
         console.log(posts);
+        posts.getAll();
         
         $scope.title = '';
         $scope.url= '';

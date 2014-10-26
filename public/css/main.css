@@ -242,7 +242,20 @@ body, html {
 	margin:auto;
 	width:100%;
 }
-
+.blockLeft {
+	float: left;
+	width: 46%;
+}
+.blockRight {
+	float: right;
+	width: 46%;
+}
+.blockRight h2, .blockLeft h2 {text-align: center;}
+.blockRight, .blockLeft {
+	background-color: white;
+	color: #555;
+	padding: .8em;
+}
 .sectionAnchor {position:relative;bottom:70px}
 
 	.innerHeader {text-align:center;margin-top:0;padding-top:0.67em}
@@ -322,19 +335,18 @@ body, html {
 	#skillsHeader {color:#fff}
 	#skillsHeader h1 {margin-bottom:0;margin-top:0;}
 	.skillsItem{max-width:33%; height:455px;float:left;}
-		.skillsItem p{color:#666;margin:.8em 0;text-align:center}
+		.skillsItem p{color:#666;margin:.6em;text-align:center}
 		/*white card with box shadow*/
 	 	.skillsCard{
 			height:100%;
 			background-color:#fff; 
 			margin: 0 1em; 
 			box-shadow: .5em .5em 0px 0px #555;
-			padding: .5% 3%;
 			-webkit-transition: box-shadow 1s, margin 1s;
 			transition: box-shadow 1s, margin 1s;
 			}
 		.skillsCard:hover{box-shadow:.2em .2em 0px 0px #7FBFFF;margin-top:.3em}
-		.skillsItemHeader{display:block;text-align:center;color:#555;}
+		.skillsItemHeader{display:block;text-align:center;color:#fff;background-color:#1262B2;padding:.5em;}
 		@-webkit-keyframes thump {
 			0% { -webkit-transform: scale(1); }
 			50% { -webkit-transform: scale(0.8); }
@@ -406,7 +418,7 @@ body, html {
 			#skillsHeader h1 {margin-bottom:0.2em}
 			#skillsHeader p {width:90%;margin:auto;}
 		.skillsCard {margin:1.5em auto;width:85%;margin-top:0}
-			.skillsItemHeader{display:table-row}
+			.skillsItemHeader{display:table-row; background-color:white; color:#555;}
 			#skillsSection > div > div.skillsItem > div > p{padding-top:0;display:none;text-align:center}
 			.skillsTap {display:table;padding-bottom:1em;text-align:center;margin:auto;}
 	}
@@ -445,7 +457,23 @@ body, html {
    Work Section
    ========================================================================== */
    
-#workSection {color:#fff;background-color:#FF584C;height:900px}
+#workSection {color:#fff;background-color:#FF584C;padding-bottom:1.5em;}
+#workSection .innerHeader {margin-bottom:1em;}
+#workSection .blockLeft h2, #workSection .blockRight h2 {
+	background-color: #1262B2;
+	margin: 0 -0.3em;
+	margin-top: -0.3em;
+	margin-bottom: 0.2em;
+	padding: 0.3em;
+	color: #fff;
+}
+#workSection > div > div.blockContent.blockLeft > div {border-bottom: 1px solid #777;margin-bottom:10px;}
+#workSection > div > div.blockContent.blockLeft > div:last-child {border-bottom: none;}
+#workSection .blockLeft h3 {text-align: center;}
+#workSection .blockLeft a {text-decoration: none; text-align: center;}
+#workSection .blockLeft .date {text-align: center; color: #FF584C;}
+#workSection .blockLeft p {text-align:center; margin: 0;}
+#workSection > div > div.blockContent.blockLeft > div > a {text-align:center;display:block;width:auto;margin:auto; margin-bottom:.5em;}
 
 /* ==========================================================================
    Ocean Fog Photo
