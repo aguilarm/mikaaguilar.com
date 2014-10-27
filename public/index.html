@@ -17,11 +17,7 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     
-    <!-- Fonts -->
-    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    
-    <link rel="shortcut icon" href="/favicon.ico"  type="image/x-icon" >
+    <link rel="shortcut icon" href="favicon.ico"  type="image/x-icon" >
     
 </head>
 <body class="loading">
@@ -63,6 +59,7 @@
 					</div>
         			<nav>
 						<a href="#skills" data--10-top="color: rgb(51,153,255);" data-top-bottom="color:rgb(153,153,153);" data--10-bottom="color: rgb(51,153,255);" data-bottom-top="color:rgb(153,153,153);" data-anchor-target="#skillsSection">skills</a>
+						<a href="#work" data--10-top="color: rgb(51,153,255);" data-top-bottom="color:rgb(153,153,153);" data--10-bottom="color: rgb(51,153,255);" data-bottom-top="color:rgb(153,153,153);" data-anchor-target="#workSection">work</a>
 						<a href="#contact" data--10-top="color: rgb(51,153,255);" data-top-bottom="color:rgb(153,153,153);" data--10-bottom="color: rgb(51,153,255);" data-bottom-top="color:rgb(153,153,153);" data-anchor-target="#contactSection">contact</a>
 					</nav>
 				</div>
@@ -72,8 +69,8 @@
         <div id="skillsSection" class="slide">
         	<div class="blockContainer">
         		<div class="innerHeader" id="skillsHeader">
-            		<h1 data-center="color: rgb(255,255,255);" data--200-bottom="color:rgb(191,66,57)">SKILLS</h1>
-                    <p data-center="color: rgb(255,255,255);" data--200-bottom="color:rgb(191,66,57)">I'm primarily a developer dealing heavily with advanced HTML5, CSS3, and JavaScript techniques, but I'm constantly challenging myself and learning new things about the web.</p>
+            		<h1 data-center="color: rgb(255,255,255);" data--200-bottom="color:rgb(255,88,76)">SKILLS</h1>
+                    <p data-center="color: rgb(255,255,255);" data--200-bottom="color:rgb(255,88,76)">I'm primarily a developer dealing heavily with advanced HTML5, CSS3, and JavaScript techniques, but I'm constantly challenging myself and learning new things about the web.</p>
 				</div>
          	<!--/innerHeader-->
               	<div class="skillsItem aside1" data-bottom-top="margin-top:84%;" data-center-bottom="margin-top:0" data-anchor-target="#skillsHeader">
@@ -123,12 +120,54 @@
                         	<img src="img/adobeDw.svg" title="Dreamweaver" alt="Dreamweaver">
                         	<img src="img/adobeIl.svg" title="Illustrator" alt="Illustrator">
                         	<img src="img/adobePs.svg" title="Photoshop" alt="Photoshop">
-                        	<img src="img/php.png" title="PHP" alt="PHP">
+                        	<img src="img/php.png" title="PHP" alt="PHP" data-tooltip="HI">
             		</div><!--/toolsContainer-->
             	</div><!--/tablecontent-->
 		    </div><!--/bcg tableContainer-->
       	</div>
   	<!--end of code image slide-->
+  	    <div id="workSection" class="slide">
+  	        <div class="blockContainer clearfix">
+  	            <div class="innerHeader">
+  	                <h1>WHAT I'M DOING</h1>
+  	            </div>
+  	            <div class="blockContent blockRight clearfix">
+  	                 <h2>PROJECTS</h2>
+  	                 <div class="blockPost" id="project-canvasGame">
+  	                     <h3><a href="/projects/canvasgame">CANVAS GAME</a></h3>
+  	                     <p>One of my first large scale javascript projects where I've followed the <a href="https://www.udacity.com/course/cs255">Udacity HTML5 Game Development course</a> to get better at writing JS.  While I had the complete GRITS game for reference, I implemented each major module as I went and have learned a lot about both game engines, javascript, and overall program design patterns.</p>
+  	                     <p class="blockPostLink"><a href="/projects/canvasgame">demo</a> | <a href="https://github.com/aguilarm/canvasGame">view on github</a></p>
+  	                 </div>
+                    <div class="blockPost" id="project-parallaxPhotos">
+                        <h3><a href="/projects/parallaxphotos">PARALLAX PHOTOS</a></h3>
+                        <p>A few photos I've cut up into layers with Photoshop and then created parallax scenes using <a href="http://matthew.wagerfield.com/parallax/">parallax.js</a>.  Mostly done because I thought the concept would be cool, which it totally is, but it might render weird on some screen sizes.</p>
+                        <p class="blockPostLink"><a href="/projects/parallaxphotos">demo</a> | <a href="https://github.com/aguilarm/parallaxPhotos">view on github</a></p>
+  	                 </div>
+  	                 <div class="blockPost" id="project-ytFitWin">
+  	                     <h3><a href="https://github.com/aguilarm/YouTube-FitWindow">YOUTUBE FIT-WINDOW</a></h3>
+  	                     <p>Google Chrome extension that adds a button to YouTube videos which makes the video fill the window rather than the screen.  Also lets user toggle the top search/title bar while watching a video.</p>
+  	                     <a class="blockPostLink" href="https://github.com/aguilarm/YouTube-FitWindow">view on github</a>
+  	                 </div>
+  	            </div>
+  	            <!--<div class="blockContent blockLeft clearfix" ng-app="maBlog" ng-controller="IndexCtrl">
+  	                <a href="/blog/"><h2>BLOG</h2></a>
+  	                <div class="blockPosts">
+  	                    <div class="blockPost" ng-repeat="post in posts | orderBy : '-date' | limitTo : 3 ">
+                            <h3 ng-hide="post.url"><a href="/blog/posts/{{post._id}}">{{post.title | uppercase}}</a></h3>
+                            <h3 ng-show="post.url"><a href="/blog/posts/{{post.url}}">{{post.title | uppercase}}</a></h3>
+                            <p class="date">{{post.date | date : longDate | uppercase}}</p>
+                            <p>{{post.summary}}</p>
+                            <a class="blockPostLink" ng-hide="post.url" href="/blog/posts/{{post.url}}">read more</a>
+                            <a class="blockPostLink" ng-show="post.url" href="/blog/posts/{{post._id}}">read more</a>
+                        </div>
+                    </div>
+  	            </div>-->
+  	        </div>
+  	    </div>
+  	    <div id="oceanFog" class="homeSlidePhoto slide">
+			<div class="bcg tableContainer" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#oceanFog">
+			</div>
+		</div>
     	<div id="contactSection" class="slide">
         	<!--nav will link to this, adjusted for size of nav bar-->
         	<div id="contact" class="sectionAnchor"></div>
@@ -164,9 +203,9 @@
     <div id="siteInfo" class="slide">
         	<div class="tableContainer">
             	<div class="tableContent">
-        			<h2>Site Info</h2>
+        			<h2>SITE INFO</h2>
         				<p>Besides what's listed below and a few smaller things, I handmade the entire site design using HTML5 and CSS3 wizardry and a fair chunk of Javascript/jQuery.  These great resources helped me along the way:<br><br>
-                		The svg icons used throughout the site are from <a href="http://www.flaticon.com" title="Flaticon">Flaticon</a>, by <a href="http://www.icomoon.io" title="Icomoon">Icomoon</a> and <a href="http://www.freepik.com" title="Freepik">Freepik.</a><br>
+                		Many of the icons used throughout the site are from <a href="http://www.flaticon.com" title="Flaticon">Flaticon</a>, by <a href="http://www.icomoon.io" title="Icomoon">Icomoon</a>, <a href="www.google.com">Google</a> and <a href="http://www.freepik.com" title="Freepik">Freepik.</a><br>
                 		They are licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a><br><br>
                 		I also had a lot of help using <a href="https://ihatetomatoes.net/">Petr Tichy's</a> great parallax lessons, and the whole parallax style works because of the <a href="https://github.com/Prinzhorn/skrollr">Skrollr</a> library, which is awesome and pretty easy to use.<br><br>
                 		To them and many others, Thanks!
@@ -179,11 +218,15 @@
 
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-sanitize.js"></script>
 <script src="js/imagesloaded.js"></script>
 <script src="js/enquire.min.js"></script>
 <script src="js/skrollr.js"></script>
 <script src="js/skrollr.menu.min.js"></script>
 <script src="js/main.js"></script>
+<script src="blog/js/blog.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
