@@ -245,7 +245,7 @@ body, html {
 
 .sectionAnchor {position:relative;bottom:70px}
 
-	.innerHeader {text-align:center;margin-top:0;padding-top:0.67em}
+	.innerHeader {text-align:center;margin-top:0;padding-top:0.7em}
 	.innerHeader p {font-size:1.5em;margin:auto;max-width:70%;margin-top:.5em;margin-bottom:1em}
 	
 	@media all and (max-width:768px){.innerHeader p {font-size:1em;}}
@@ -528,7 +528,6 @@ body, html {
 .blockRight, .blockLeft {
 	background-color: white;
 	color: #555;
-	padding: .8em;
 	width: 46%;
 	height: 500px;
 	box-shadow: .5em .5em 0px 0px #555;
@@ -538,11 +537,13 @@ body, html {
 	display: table;
 }
 
+.blockRight { width: 100%; }
+
 .blockRight:hover, .blockLeft:hover {box-shadow:.4em .4em 0px 0px #7FBFFF}
 
-.blockPost {border-bottom: 1px solid #777; margin-bottom:10px;}
+.blockPost {border-bottom: 1px solid #777; margin-bottom:10px; width:70%; margin:auto;}
 .blockPost:last-child {border-bottom: none;}
-.blockLeft h3, .blockRight h3 {text-align: center;}
+.blockLeft h3, .blockRight h3 {text-align: center; margin: .5em;}
 .blockLeft a, .blockRight a {text-decoration: none; text-align: center;}
 .blockLeft .date {text-align: center; color: #FF584C;}
 .blockLeft p, .blockRight p {text-align:center; margin: 0;}
