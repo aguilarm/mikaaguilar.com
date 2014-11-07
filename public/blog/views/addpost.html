@@ -1,0 +1,36 @@
+<div class="blockContainer">
+    <form ng-submit="addPost()">
+        <h1>CREATE A NEW POST</h1>
+        <br>
+        <input type="text"
+            placeholder="Title"
+            ng-model="title">
+        <p>Enter a unique string for the URL address for this post (max 20 chars):<br>
+            If this is not provided, the ugly mongodb _id will be used instead.
+        </p>
+        <input type="text"
+            placeholder="URL"
+            maxlength="22"
+            ng-model="url">
+        <br><br>
+        <input type="date"
+            ng-model="date">
+        <br>
+        <p>Enter a short summary to provide as a preview for your post:</p>
+        <textarea rows="5"
+            cols="100"
+            maxlength="140"
+            placeholder="Summary"
+            ng-model="summary">
+        </textarea>
+        <br><br>
+        <textarea rows="20"
+            cols="100"
+            placeholder="Body"
+            ng-model="body">
+        </textarea>
+        <br>
+        <p>{{error}}</p>
+        <button type="submit">Post</button>
+    </form>
+</div>
