@@ -1,10 +1,11 @@
 {
-    "author": "Mika Aguilar",
-    "name": "mikaaguilar.com",
-    "description": "Basic server",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "express": "4.x"
-    }
+  "author": "Mika Aguilar",
+  "name": "mikaaguilar.com",
+  "description": "Basic server",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.x",
+    "swig": "^1.4.2"
+  }
 }
