@@ -1,59 +1,19 @@
 var express = require('express'),
-    path = require('path'),
-    favicon = require('serve-favicon'),
-    logger = require('morgan'),
-    cookieParser = require('cookie-parser'),
     swig = require('swig'),
-    bodyParser = require('body-parser');
+    app = express();
 
-var app = express();
-
-var mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/blog', function(err,db){
-    if (!err){
-        console.log('Connected to mongodb://localhost/blog');
-    }else{
-        console.dir(err);
-    }
-});
-
-require('./models/Posts');
-
-//Should be called AFTER mongoose schemas are set up
-//var blog = require('./routes/blog.js');
-
-// view engine setup
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', (__dirname, 'views'));
 
+app.use(express.static(__dirname + '/public'));
 
-app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public/projects')));
-
-//app.use('/blog/', blog);
-
-/*app.use(function (req, res) {
-   res.sendFile(__dirname + '/public/blog/index.html');
-});*/
-
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
-// error handlers
-
-// development error handler
-// will print stacktrace
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
@@ -64,8 +24,6 @@ if (app.get('env') === 'development') {
     });
 }
 
-// production error handler
-// no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -74,5 +32,12 @@ app.use(function(err, req, res, next) {
     });
 });
 
+app.set('port', process.env.PORT || 3000);
 
-module.exports = app;
+var server = app.listen(app.get('port'), function() {
+    console.log('Express server listening on port ' + server.address().port);
+    console.log(process.env.IP);
+    if (app.get('env') === 'development') {
+        console.log('RUNNING IN DEV MODE');
+    }
+});
