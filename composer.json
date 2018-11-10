@@ -1,0 +1,28 @@
+{
+    "name": "aguilarm/mika-aguilar",
+    "description": "Personal website for Mika Aguilar",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Mika Aguilar",
+            "email": "mika.aguilar@gmail.com"
+        }
+    ],
+    "require": {
+        "cweagans/composer-patches": "^1.6",
+        "composer/installers": "^1.6",
+        "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/core": "^8.6"
+    },
+    "scripts": {
+      "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+		},
+		"extra" : {
+			"installer-paths": {
+				"public/core": ["type:drupal-core"],
+				"public/libraries/{$name}": ["type:drupal-library"],
+				"public/modules/contrib/{$name}": ["type:drupal-module"],
+				"public/themes/contrib/{$name}": ["type:drupal-theme"]
+			}
+		}
+}
