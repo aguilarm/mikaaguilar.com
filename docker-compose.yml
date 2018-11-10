@@ -1,0 +1,56 @@
+version: '2'
+services:
+  nginx:
+    image: favish/nginx-1.11-drupal-8-local-dev:1.2.0
+    volumes:
+      - .:/var/www
+      - /etc/nginx/ssl
+    ports:
+      - 80:80
+      - 443:443
+    env_file:
+      - ./.docker-compose/.drupal-env
+    links:
+      - php
+    depends_on:
+      - php
+      - xdebug
+  
+  php:
+    build: .docker-compose/php
+    working_dir: /var/www
+    links:
+      - db
+      - redis
+    volumes:
+      - .:/var/www
+      - ./.docker-compose/php/zzz-custom.ini:/usr/local/etc/php/zzz-custom.ini:cached
+    env_file:
+      - ./.docker-compose/.drupal-env
+
+  xdebug:
+    build: .docker-compose/xdebug
+    working_dir: /var/www
+    volumes:
+      - ./.docker-compose/xdebug/zzz-xdebug.ini:/usr/local/etc/php/zzz-xdebug.ini:cached
+    volumes_from:
+      - php
+    links:
+      - db
+      - redis
+    env_file:
+      - ./.docker-compose/.drupal-env
+  db:
+    image: mariadb:10.3
+    volumes:
+      - /var/lib/mysql
+    env_file:
+      - ./.docker-compose/.drupal-env
+
+  theme:
+    image: favish/gulp-sass-compiler-alpine:latest
+    volumes:
+      - ./public/themes/mika-aguilar/sass:/srv/sass:cached
+      - ./public/themes/mika-aguilar/css:/srv/css:delegated
+  redis:
+    image: favish/redis-3.2-drupal-8:2
