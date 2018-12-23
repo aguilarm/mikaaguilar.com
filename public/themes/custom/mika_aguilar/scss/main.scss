@@ -1,0 +1,336 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+@import url(//fonts.googleapis.com/css?family=Droid+Sans);
+
+h1 {
+	font-size: 3.5em;
+	line-height: 1.05em;
+	font-weight:400;
+	margin:0;
+}
+
+@media all and (max-width:768px){h1{font-size:2.5em;line-height:1.125em;}}
+h2 {
+	font-size:2.75em;
+	font-weight: 300;
+	letter-spacing:.1em;
+	line-height:1.25;
+	margin:0;
+}
+@media all and (max-width:768px){h2{font-size:1.75em;line-height:1.2em;}}
+h3 {
+	font-size:1.75em;
+	line-height:1.25em;
+	font-weight:300;
+	letter-spacing:.1em;
+	margin:0;
+}
+
+/* ==========================================================================
+   Header/Navigation
+   ========================================================================== */   
+/*placeholder to prevent jumping on position change, and let nav attach nicely*/
+
+#header {
+	width: 100%;
+	height: 70px;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	z-index: 998;
+	background-color:#fff;
+	-webkit-transition: height 0.4s;
+	transition: height 0.4s;
+	border-bottom: 1px solid #e2e2e2;
+	box-shadow:0px 0px 20px rgba(0,0,0,0.1);
+}
+#hdWrap {
+	margin: auto;
+	max-width:1300px;
+}
+#hdLogo {
+	display: inline-block;
+	width: 70px;
+	height: 70px;
+	float: left;
+	background-image: url(../images/logo.svg);
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	margin-left: 0px;
+	margin-top: 0px;
+	z-index: 10;			
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+}
+#hdName {
+    display: inline-block;
+	height: 70px;
+	line-height: 70px;
+	font-size: 38px;
+	font-weight:500;
+	width: auto;
+	float: left;
+	color: #3399ff;
+	text-transform:uppercase;
+}
+@media all and (max-width:730px){#hdName{display:none}}
+#hdName a {
+	text-decoration: none;
+	color: #39f;
+}
+nav {
+	display: inline-block;
+	float: right;
+}
+	#header nav a {
+		line-height: 70px;
+		margin-left: 20px;
+		color: #999;
+		font-size: 28px;
+		text-decoration: none;
+		text-transform: uppercase;
+		-webkit-transition: all 0.4s;
+		transition: all 0.4s;
+	}
+		@media all and (max-width:520px){#header nav a{font-size:20px;margin-left:6px}#hdWrap{width:90%}}
+			nav a:hover {
+				color: #3399ff;
+			}
+			#hdNavActive {
+				color: #3399ff;
+			}
+			#hdNavActive:hover {
+				color: #999;
+			}
+#hdSocials {
+	float:right;
+}
+	#hdSocials a>img {
+		width:25px;
+		margin-top:25px;
+	}
+/* ==========================================================================
+   Parallax Scroll
+   ========================================================================== */
+   
+body, html {
+	height: 100%;
+	min-height: 100%;
+	background-color: #FFF;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight:300;
+}
+#main {
+	opacity: 1;
+	-webkit-transition: opacity 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out;
+	transition: opacity 300ms ease-out;
+}
+
+#scrollDown {
+	display: block;
+	position:fixed;
+	top:90%;
+	left:48.5%;
+	margin: auto; 
+	width: 48px; 
+	height: 48px;
+	border:3px solid #39f;
+	border-radius:30px; 
+	z-index:997;
+	background-color: #fff;
+	-webkit-transition: all 0.8s ease;
+	transition: all 0.8s ease;
+}
+#scrollDown img {
+	display:block;
+	width:40px;
+	height:40px;
+	margin: auto;
+	margin-top:10px;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+#scrollDown:hover {
+	opacity:1 !important
+}
+@media all and (max-width:768px) {#scrollDown{display:none}}
+
+.separator {
+	width: 80px;
+	height: 2px;
+	margin: 0 auto;
+}
+
+.clearfix:after {
+    clear:both;
+    content: ' ';
+    display:block;
+    font-size:0;
+    line-height:0;
+    visibility:hidden;
+    width:0;
+    height:0;
+}
+
+.white {background-color: #fff;}
+.blue {background-color: #3399ff;}
+.gray {background-color: #b2b2b2;}
+.bcg {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
+/* ==========================================================================
+   Slide Constants
+   ========================================================================== */
+   
+.homeSlidePhoto {max-height:350px}
+.tableContainer {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.tableContent {
+	margin: 0 auto 0 auto;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center
+}
+.blockContainer {
+	width:100%;
+	margin:auto;
+	max-width:1300px;
+}
+.blockContent {
+	margin:auto;
+	width:100%;
+}
+
+.sectionAnchor {position:relative;bottom:70px}
+
+	.innerHeader {text-align:center;margin-top:0;padding-top:0.7em}
+	.innerHeader p {font-size:1.5em;margin:auto;max-width:70%;margin-top:.5em;margin-bottom:1em}
+	
+	@media all and (max-width:768px){.innerHeader p {font-size:1em;}}
+	
+	.innerLeft {height:80%;width:50%;float:left;display:table;}
+	.innerRight {height:80%;width:50%;float:right;display:table;}
+		.innerLeft div, .innerRight div {display:table-cell;vertical-align:middle;text-align:center;}
+		.innerLeft div a, .innerRight div a {display:block;width:48px;height:48px;margin:auto;background-repeat:no-repeat;background-position:center;background-size:contain;}
+		
+	
+/* ==========================================================================
+   Intro/About
+   ========================================================================== */
+   
+#top .tableContainer {
+	background-image:url('../images/logo.svg');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	background-origin:content-box;
+	margin-bottom:10px;
+	}
+	#top .tableContent>div {background-color: rgba(255, 255, 255, 0.9);border:.5em solid #fff;height:auto;}
+		@media all and (max-width:400px){#top .tableContent{border-top:2em solid #fff;border-bottom:2em solid #fff;border-left:0px;border-right:0px;}}
+		#top h1 {font-size: 12em; line-height: .8em;color: #3399ff; margin: 0;font-weight:700}
+		/*Keep the MIKA AGUILAR on one line, adjust description*/
+		@media all and (max-width:1200px){#top h1{font-size:10em;}}
+		@media all and (max-width:974px){#top h1{font-size:8em;}}
+		@media all and (max-width:785px){#top h1{font-size:6em;} #top .tableContainer{background-size:cover}#slide1text{font-size:1em;}}
+		@media all and (max-width:595px){#top h1{font-size:3em;}}
+		#slide1text {
+			text-align: center; 
+			line-height: 2.5em;
+			width: 70%; 
+			max-width: 1200px; 
+			color: #b2b2b2;
+			margin: auto;
+			font-size:1.5em;
+		}
+		@media all and (max-width:785px){#slide1text{width:85%}}
+		@media all and (max-width:595px){#slide1text{line-height:2em}}
+		#socialSeparator{
+			display: inline-block;
+			width: 360px;
+			height: 3em;
+			transition: all 1.2s;
+		}
+		@media all and (max-width:520px){#socialSeparator{width:150px}}
+		.loaded #socialSeparator {
+			width: 0px;	
+		}
+		#linkedin, #github {
+			display:inline-block;
+			width: 3em;
+			height: 3em;
+			border-radius: 2px;
+			background-image: url('../images/none.png');
+			margin: 0 .2em;
+			transition: all 1s;
+			transition: background-image 2.5s;
+			background-size: cover;
+		}
+		@media all and (max-width:595px){#linkedin, #github{width:45px;height:45px}}
+		.loaded #linkedin {background-image: url('../images/logos/linkedin.png')}
+		#linkedin:hover {background-image: url('../images/logos/linkedinInvert.png')}
+		.loaded #github {background-image: url('../images/logos/github.png')}
+		#github:hover {background-image: url('../images/logos/githubInvert.png')}
+
+/* ==========================================================================
+   Ocean Fog Photo
+   ========================================================================== */
+   
+#oceanFog .bcg {background-image:url('../images/slides/oceanfog.jpg'); background-color: #1c1c1c;}
+
+/* ==========================================================================
+   Contact Me
+   ========================================================================== */
+   
+#contactSection {background-color:#1262B2;color:#fff}
+#contactSection h1 {margin-bottom:0}
+#contactSection .blockContent {width:70%;padding:4em 0 8em 0;}
+	#contactSection .innerRight div a {background-image:url('../images/logos/twitterWhite.svg');}
+		#contactSection .innerRight div a:hover {background-image:url('../images/logos/twitterBlue.svg');}
+	#contactSection .innerLeft div a {background-image:url('../images/logos/emailWhite.svg');}
+		#contactSection .innerLeft div a:hover{background-image:url('../images/logos/emailRed.svg');}
+	
+	@media all and (max-width:950px){
+		#contactSection .blockContent {width:80%;}
+		#contactSection .innerRight div h3, #contactSection .innerLeft div h3 {font-size:1.5em;}
+	}
+	
+	@media all and (max-width:730px){
+		#contactSection .innerRight div h3, #contactSection .innerLeft div h3 {font-size:1em;}
+		#contactSection .blockContent {padding:4em 0 4em 0;}
+	}
+	
+	@media all and (max-width:505px){
+		#contactSection .innerLeft, #contactSection .innerRight {float:none;width:100%;padding-bottom:2em;}
+	}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+   
+#slide-6 {background-color: #1262B2; padding: 10px;}
+#slide-6 div, #slide-6 a {color: #fff; font-family:'Droid Sans', sans-serif;}
+
+/* ==========================================================================
+   Site Info
+   ========================================================================== */
+   
+#siteInfo {display:none; padding: 20px;padding-bottom: 40px;}
+#siteInfo p {max-width: 800px; text-align:center;margin:auto;}
+#siteInfo h2, #siteInfo a {color:#3399ff}

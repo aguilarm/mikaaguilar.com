@@ -1,0 +1,8 @@
+name: Mika Aguilar
+type: theme
+core: 8.x
+description: 'Personal site theme for Mika Aguilar.'
+base theme: classy
+
+libraries:
+  - mika_aguilar/global

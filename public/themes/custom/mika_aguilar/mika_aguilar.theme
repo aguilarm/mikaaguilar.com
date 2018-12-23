@@ -1,0 +1,5 @@
+<?php
+
+function mika_aguilar_preprocess_page(&$vars) {
+  $vars['test'] = 'test';
+}

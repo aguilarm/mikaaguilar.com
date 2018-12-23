@@ -1,0 +1,19 @@
+global:
+  js:
+    js/analytics.js: {}
+
+frontpage:
+  css:
+    theme:
+      css/normalize.css: {}
+      css/main.css: {}
+  js:
+    js/libs/enquire.min.js:
+      minified: true
+    js/libs/imagesloaded.js: {}
+    js/libs/skrollr.js: {}
+    js/libs/skrollr.menu.min.js:
+      minified: true
+    js/frontpage/main.js: {}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Theme override for frontpage.
+ * Total snowflake right now.
+ */
+#}
+
+{{ attach_library('mika_aguilar/frontpage') }}
+
+<div id="main">
+  <div id="top" class="homeSlide slide">
+    <div class="tableContainer" data-bottom="background-position: 0 50%;" data-top-bottom="background-position: 0 80%;" data-anchor-target="#top">
+      <div class="tableContent" >
+        <div data-center="opacity: 1;" data-0-top="opacity: 0;" data-anchor-target="#slide1text">
+          <h1>MIKA AGUILAR</h1>
+          <p id="slide1text">Software engineer and system administrator in Austin, TX.</p>
+          <a id="github" title="Visit my GitHub page!" href="https://github.com/aguilarm"></a>
+          <div id="socialSeparator"></div>
+          <a id="linkedin" title="Check out my LinkedIn!" href="https://www.linkedin.com/pub/mika-aguilar/12/672/616"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="oceanFog" class="homeSlidePhoto slide">
+    <div class="bcg tableContainer" data-bottom="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#oceanFog">
+    </div>
+  </div>
+  <div id="contactSection" class="slide">
+    <div id="contact" class="sectionAnchor"></div>
+    <div class="blockContainer">
+      <div class="innerHeader">
+        <h1>CONTACT ME</h1>
+      </div>
+      <div class="blockContent clearfix">
+        <div class="innerLeft clearfix">
+          <div>
+            <h3>mika.aguilar@gmail.com</h2>
+              <a href="mailto:mika.aguilar@gmail.com"></a>
+          </div>
+        </div>
+        <div class="innerRight clearfix">
+          <div>
+            <h3>@aguilarMika</h2>
+              <a href="https://twitter.com/intent/user?screen_name=aguilarMika"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="slide-6" class="slide">
+    <div class="tableContainer">
+      <div class="tableContent">
+        <div>© {{ "now"|date('Y') }} Mika Aguilar  |  <a href="#top">Back to Top</a></div>
+      </div>
+    </div>
+  </div>
+</div>
