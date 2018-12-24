@@ -1,19 +1,20 @@
+font-awesome:
+  css:
+    base:
+      /libraries/font-awesome/css/all.min.css: {}
+
 global:
   js:
     js/analytics.js: {}
+  dependencies:
+    - mika_aguilar/font-awesome
 
 frontpage:
   css:
     theme:
-      css/normalize.css: {}
-      css/main.css: {}
+      css/frontpage.css: {}
   js:
-    js/libs/enquire.min.js:
-      minified: true
     js/libs/imagesloaded.js: {}
-    js/libs/skrollr.js: {}
-    js/libs/skrollr.menu.min.js:
-      minified: true
     js/frontpage/main.js: {}
   dependencies:
     - core/jquery

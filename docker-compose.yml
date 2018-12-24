@@ -26,11 +26,7 @@ services:
       - redis
     volumes:
       - .:/var/www
-<<<<<<< Updated upstream
-      - ./.docker-compose/php/zzz-custom.ini:/usr/local/etc/php/zzz-custom.ini:cached
-=======
       - ./.docker-compose/php/zzz-custom.ini:/usr/local/etc/php/conf.d/zzz-custom.ini:cached
->>>>>>> Stashed changes
     env_file:
       - ./.docker-compose/.drupal-env
 
@@ -38,11 +34,7 @@ services:
     build: .docker-compose/xdebug
     working_dir: /var/www
     volumes:
-<<<<<<< Updated upstream
-      - ./.docker-compose/xdebug/zzz-xdebug.ini:/usr/local/etc/php/zzz-xdebug.ini:cached
-=======
       - ./.docker-compose/xdebug/zzz-xdebug.ini:/usr/local/etc/php/conf.d/zzz-xdebug.ini:cached
->>>>>>> Stashed changes
     volumes_from:
       - php
     links:
@@ -50,13 +42,10 @@ services:
       - redis
     env_file:
       - ./.docker-compose/.drupal-env
-<<<<<<< Updated upstream
-=======
   # Remove when https://github.com/docker/for-linux/issues/264 is fixed
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
 
->>>>>>> Stashed changes
   mysql:
     image: mariadb:10.3
     volumes:
@@ -67,12 +56,8 @@ services:
   theme:
     image: favish/gulp-sass-compiler-alpine:latest
     volumes:
-<<<<<<< Updated upstream
-      - ./public/themes/mika-aguilar/sass:/srv/sass:cached
-      - ./public/themes/mika-aguilar/css:/srv/css:delegated
-=======
       - ./public/themes/custom/mika_aguilar/scss:/srv/scss
       - ./public/themes/custom/mika_aguilar/css:/srv/css
->>>>>>> Stashed changes
+  
   redis:
     image: favish/redis-3.2-drupal-8:2

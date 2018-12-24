@@ -14,12 +14,25 @@
       {
         "type":"composer",
         "url":"https://packages.drupal.org/8"
+      },
+      {
+          "type": "package",
+          "package": {
+              "name": "fortawesome/font-awesome",
+              "version": "5.6.3",
+              "type": "drupal-library",
+              "dist": {
+                  "url": "https://github.com/FortAwesome/Font-Awesome/releases/download/5.6.3/fontawesome-free-5.6.3-web.zip",
+                  "type": "zip"
+              }
+          }
       }
     ],
     "require": {
         "cweagans/composer-patches": "^1.6",
         "composer/installers": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.5",
+        "fortawesome/font-awesome": "^5.6",
         "drupal/core": "^8.6",
         "drush/drush": "^9.5",
         "drupal/health_check": "^1.0",

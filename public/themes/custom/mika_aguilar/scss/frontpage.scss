@@ -1,0 +1,91 @@
+@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+@import url(//fonts.googleapis.com/css?family=Droid+Sans);
+
+main {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.section--top {
+    height: 100vh;
+    min-height: 550px;
+    background-image: url('../images/logo.svg');
+    background-size: cover;
+    background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-container {
+    width: 100%;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    background: rgba(255,255,255,0.85);
+    color: #3399ff;
+    text-align: center;
+    padding: 12px;
+    @media (min-width: 768px) {
+        padding: 24px 0 18px;
+    }
+}
+
+.top-header {
+    margin: 0;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1;
+    @media (min-width: 768px) {
+        font-size: 14vw;
+        line-height: 0.75;
+    }
+}
+
+.top-subheader {
+    color: #b2b2b2;
+    margin: 0;
+    margin-top: 12px;
+    font-weight: 300;
+    font-size: 22px;
+    @media (min-width: 768px) {
+        line-height: 1;
+        font-size: 3vw;
+    }
+}
+
+.main-social-buttons {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    @media (min-width: 1024px) {
+        font-size: 2vw;
+    }
+}
+
+.social-button {
+    background: #3399ff;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    margin: 0 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    height: 3vw;
+    min-width: 34px;
+    min-height: 34px;
+}
+
+.social-button--github {
+    font-size: 1.05em;
+}
+.social-button--linkedin {
+    font-size: 0.95em;
+}
+.social-button--email {
+    font-size: 0.95em;
+}

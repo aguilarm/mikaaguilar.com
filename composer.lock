@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b1c395295aaa4af3a9b5843afa623f3c",
+    "content-hash": "73d40abdcffd23d52ce8d6f5d914f570",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2732,6 +2732,17 @@
                 "validator"
             ],
             "time": "2018-09-25T20:59:41+00:00"
+        },
+        {
+            "name": "fortawesome/font-awesome",
+            "version": "5.6.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/FortAwesome/Font-Awesome/releases/download/5.6.3/fontawesome-free-5.6.3-web.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "drupal-library"
         },
         {
             "name": "grasmash/expander",
