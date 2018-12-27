@@ -6,6 +6,10 @@ font-awesome:
 global:
   js:
     js/analytics.js: {}
+  css:
+    base:
+      css/reset.css: {}
+      css/base.css: {}
   dependencies:
     - mika_aguilar/font-awesome
 

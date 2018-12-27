@@ -1,0 +1,10 @@
+@import './vars';
+
+a {
+    text-decoration: none;
+    color: $base-color;
+    transition: color 250ms ease-out;
+    &:hover {
+        color: complement($base-color);
+    }
+}

@@ -1,0 +1,20 @@
+uuid: 554b4081-bfbb-4777-9b87-69f99a297cf7
+langcode: en
+status: true
+dependencies:
+  theme:
+    - mika_aguilar
+_core:
+  default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
+id: mika_aguilar_local_actions
+theme: mika_aguilar
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

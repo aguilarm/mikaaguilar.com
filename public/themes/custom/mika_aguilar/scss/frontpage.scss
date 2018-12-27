@@ -1,5 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
 @import url(//fonts.googleapis.com/css?family=Droid+Sans);
+@import './vars';
 
 main {
     font-family: 'Roboto Condensed', sans-serif;
@@ -9,6 +10,7 @@ main {
     height: 100vh;
     min-height: 550px;
     background-image: url('../images/logo.svg');
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-origin: content-box;
@@ -24,7 +26,7 @@ main {
     border-top: 4px solid white;
     border-bottom: 4px solid white;
     background: rgba(255,255,255,0.85);
-    color: #3399ff;
+    color: $base-color;
     text-align: center;
     padding: 12px;
     @media (min-width: 768px) {
@@ -44,7 +46,7 @@ main {
 }
 
 .top-subheader {
-    color: #b2b2b2;
+    color: $detail-text-color;
     margin: 0;
     margin-top: 12px;
     font-weight: 300;
@@ -69,8 +71,7 @@ main {
 }
 
 .social-button {
-    border-radius: 50%;
-    color: #3399ff;
+    color: $base-color;
     text-decoration: none;
     margin: 0 6px;
     display: flex;
@@ -80,9 +81,9 @@ main {
     height: 3vw;
     min-width: 34px;
     min-height: 34px;
-    transition: color 800ms, background 340ms;
+    transition: color 250ms ease-out;
     &:hover {
-        color: darken(#3399ff, 10);
+        color: complement($base-color);
     }
 }
 
@@ -92,4 +93,51 @@ main {
 
 .social-button--twitter {
     font-size: 0.93em;
+}
+
+.section--work {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: complement($base-color);
+    background-image: url('../images/logoWhite.svg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    border-top: 8px solid darken(complement($base-color), 20%);
+}
+
+.work {
+    background-color: white;
+    border: 6px solid $base-color;
+    padding: 12px 16px;
+    @media (min-width: 1024px) {
+        width: 45%;
+    }
+}
+
+.header--work {
+    color: $base-color;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    font-size: 2.35em;
+}
+
+.work .views-row {
+    margin: 12px 0;
+}
+
+.work .views-field-title a {
+    font-size: 1.3em;
+}
+
+.work .views-field-body {
+    color: $detail-text-color;
+    p {
+        margin: 0;
+    }
 }
