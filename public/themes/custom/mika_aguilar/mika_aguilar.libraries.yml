@@ -10,6 +10,7 @@ global:
     base:
       css/reset.css: {}
       css/base.css: {}
+      css/header.css: {}
   dependencies:
     - mika_aguilar/font-awesome
 

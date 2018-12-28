@@ -1,6 +1,6 @@
 uuid: 69181086-2350-46e9-b656-68456bb74a09
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: 5MNdk3fpMKx_xxBTcz2T11DL4XEU1H5SgHl8BsYdFsA
 id: mika_aguilar_messages
 theme: mika_aguilar
-region: highlighted
-weight: 0
+region: system
+weight: -1
 provider: null
 plugin: system_messages_block
 settings:

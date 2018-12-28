@@ -1,5 +1,9 @@
 <?php
 
 function mika_aguilar_preprocess_page(&$vars) {
-  $vars['test'] = 'test';
+  if ($vars['is_front']) {
+    $config = \Drupal::config('system.site');
+    $vars['siteName'] = $config->get('name');
+    $vars['siteSlogan'] = $config->get('slogan');
+  }
 }

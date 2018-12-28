@@ -5,7 +5,7 @@
 .section--top {
     height: 100vh;
     min-height: 550px;
-    background-image: url('../images/logo.svg');
+    background-image: url('../logo.svg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -36,6 +36,7 @@
     font-size: 72px;
     line-height: 1;
     font-family: 'Roboto Condensed';
+    text-transform: uppercase;
     @media (min-width: 768px) {
         font-size: 14vw;
         line-height: 0.75;
@@ -130,6 +131,8 @@
 
 .work .views-field-title a {
     font-size: 1.3em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 
 .work .views-field-body {

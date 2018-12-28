@@ -9,7 +9,7 @@ _core:
 id: mika_aguilar_page_title
 theme: mika_aguilar
 region: content
-weight: -30
+weight: -3
 provider: null
 plugin: page_title_block
 settings:

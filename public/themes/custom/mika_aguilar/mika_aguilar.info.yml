@@ -4,5 +4,12 @@ core: 8.x
 description: 'Personal site theme for Mika Aguilar.'
 base theme: classy
 
+regions:
+  header: 'Header'
+  system: 'System'
+  content: 'Content'
+  footer: 'Footer'
+
+
 libraries:
   - mika_aguilar/global
