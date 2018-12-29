@@ -23,3 +23,8 @@ frontpage:
     js/frontpage/main.js: {}
   dependencies:
     - core/jquery
+
+post:
+  css:
+    theme:
+      css/post.css: {}

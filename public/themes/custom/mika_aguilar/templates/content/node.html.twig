@@ -85,19 +85,21 @@
 
   {{ title_prefix }}
   {% if not page %}
-    <h2{{ title_attributes }}>
+    <h2 class="title--post">
+  {% else %}
+    <h1 class="title--post">
+  {% endif %}
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+  {% if not page %}
     </h2>
+  {% else %}
+    </h1>
   {% endif %}
   {{ title_suffix }}
 
   {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
+    <footer class="last-updated last-updated--post">
+        Last updated {{ node.getChangedTime|date('F j, Y') }}
     </footer>
   {% endif %}
 

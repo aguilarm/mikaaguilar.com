@@ -8,7 +8,7 @@ _core:
   default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
 id: mika_aguilar_local_tasks
 theme: mika_aguilar
-region: system
+region: footer
 weight: -2
 provider: null
 plugin: local_tasks_block

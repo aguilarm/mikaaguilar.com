@@ -7,3 +7,9 @@ function mika_aguilar_preprocess_page(&$vars) {
     $vars['siteSlogan'] = $config->get('slogan');
   }
 }
+
+function mika_aguilar_preprocess_node(&$vars) {
+  if ($vars['node']->getType() === 'post') {
+    $vars['#attached']['library'][] = 'mika_aguilar/post';
+  }
+}

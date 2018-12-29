@@ -5,6 +5,7 @@
 
 body {
     font-family: 'PT Sans', sans-serif;
+    color: $base-color;
 }
 
 h1,
@@ -13,14 +14,14 @@ h3,
 h4,
 h5 {
     font-family: 'Roboto', sans-serif;
-    color: $base-color;
 }
 
 a {
     text-decoration: none;
-    color: $base-color;
+    color: $link-color;
     transition: color 250ms ease-out;
-    &:hover {
-        color: complement($base-color);
+    outline: 0;
+    &:hover, &:active, &:focus {
+        color: complement($link-color);
     }
 }

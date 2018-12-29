@@ -8,8 +8,8 @@ _core:
   default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
 id: mika_aguilar_local_actions
 theme: mika_aguilar
-region: system
-weight: -3
+region: footer
+weight: -1
 provider: null
 plugin: local_actions_block
 settings:

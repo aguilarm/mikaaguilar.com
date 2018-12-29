@@ -1,0 +1,19 @@
+@import './vars';
+
+.region-content {
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.title--post {
+    font-size: 46px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.last-updated {
+    color: $detail-text-color;
+    font-size: 0.85em;
+    margin-bottom: 32px;
+    margin-left: 4px;
+}
