@@ -1,12 +1,17 @@
 <?php
 
 function mika_aguilar_preprocess_page(&$vars) {
-  if ($vars['is_front']) {
-    $config = \Drupal::config('system.site');
-    $vars['siteName'] = $config->get('name');
-    $vars['siteSlogan'] = $config->get('slogan');
-  }
+  $config = \Drupal::config('system.site');
+  $vars['siteName'] = $config->get('name');
+  $vars['siteSlogan'] = $config->get('slogan');
 }
+
+function mika_aguilar_preprocess_region(&$vars) {
+  $config = \Drupal::config('system.site');
+  $vars['siteName'] = $config->get('name');
+  $vars['siteSlogan'] = $config->get('slogan');
+}
+
 
 function mika_aguilar_preprocess_node(&$vars) {
   if ($vars['node']->getType() === 'post') {
