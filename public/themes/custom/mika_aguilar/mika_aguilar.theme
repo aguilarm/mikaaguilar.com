@@ -1,15 +1,18 @@
 <?php
 
 function mika_aguilar_preprocess_page(&$vars) {
-  $config = \Drupal::config('system.site');
-  $vars['siteName'] = $config->get('name');
-  $vars['siteSlogan'] = $config->get('slogan');
+  _add_branding($vars);
 }
 
 function mika_aguilar_preprocess_region(&$vars) {
+  _add_branding($vars);
+}
+
+function _add_branding(&$vars) {
   $config = \Drupal::config('system.site');
   $vars['siteName'] = $config->get('name');
   $vars['siteSlogan'] = $config->get('slogan');
+  $vars['siteLogo'] = theme_get_setting('logo.url');
 }
 
 

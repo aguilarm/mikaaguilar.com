@@ -2,7 +2,7 @@
 
 .region-footer {
     text-align: center;
-    margin: 165px 0 24px;
+    margin: 84px 0 24px;
 }
 
 .region-footer .menu {
@@ -26,4 +26,14 @@
 .site-name--footer {
     color: $detail-text-color;
     text-transform: lowercase;
+}
+
+.logo-link--footer {
+    display: inline-block;
+}
+
+.logo--footer {
+    margin-top: 16px;
+    width: 24px;
+    height: auto;
 }
