@@ -2,6 +2,6 @@ $base-color: #424242;
 
 $highlight-color: darken(#3399ff,10%);
 
-$link-color: darken($highlight-color, 5%);
+$link-color: $highlight-color;
 
 $detail-text-color: darken(#b2b2b2, 20%);

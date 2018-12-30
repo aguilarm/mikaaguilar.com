@@ -35,7 +35,7 @@
     font-weight: 700;
     font-size: 72px;
     line-height: 1;
-    font-family: 'Roboto Condensed';
+    font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
     @media (min-width: 768px) {
         font-size: 14vw;
@@ -49,12 +49,10 @@
     margin-top: 12px;
     font-weight: 300;
     font-size: 22px;
+    font-family: 'PT Sans', sans-serif;
     @media (min-width: 768px) {
         line-height: 1;
         font-size: 36px;
-    }
-    @media (min-width: 1200px) {
-        font-size: 42px;
     }
 }
 
@@ -98,6 +96,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    align-content: center;
+    padding: 24px 0;
     justify-content: space-evenly;
     background-color: complement($highlight-color);
     background-image: url('../images/logoWhite.svg');
@@ -106,33 +106,52 @@
     background-position: center;
     background-origin: content-box;
     background-repeat: no-repeat;
-    border-top: 8px solid darken(complement($highlight-color), 20%);
+    border-top: 8px solid darken(complement($highlight-color), 10%);
 }
 
 .work {
-    background-color: white;
-    border: 6px solid $highlight-color;
-    padding: 12px 16px;
+    background-color: rgba(white, 0.95);
+    border-width: 6px;
+    border-color: white;
+    border-style: solid;
+    padding: 12px 16px 12px;
+    margin: 16px 0;
+    width: 100%;
+    max-width: 1060px;
     @media (min-width: 1024px) {
-        width: 45%;
+        &:first-child {
+            margin-top: 65px;
+        }
     }
 }
 
 .header--work {
     color: $highlight-color;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     text-transform: uppercase;
-    font-size: 2.35em;
+    font-size: 42px;
+    font-weight: 700;
+    color: $highlight-color;
+    line-height: 1;
+    @media (min-width: 1024px) {
+        font-size: 62px;
+    }
 }
 
 .work .views-row {
     margin: 12px 0;
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .work .views-field-title a {
     font-size: 1.3em;
     font-family: 'Roboto', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .work .views-field-body {
