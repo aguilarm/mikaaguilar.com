@@ -33,6 +33,7 @@ settings:
           name: Media
           items:
             - Blockquote
+            - CodeSnippet
             - DrupalImage
         -
           name: Tools
@@ -43,6 +44,40 @@ settings:
       language_list: un
     stylescombo:
       styles: "div.code-block|Code Block\r\ndiv.inline-code|Inline Code"
+    codesnippet:
+      highlight_style: github
+      highlight_languages:
+        bash: bash
+        css: css
+        dockerfile: dockerfile
+        go: go
+        haml: haml
+        handlebars: handlebars
+        ini: ini
+        json: json
+        java: java
+        javascript: javascript
+        less: less
+        markdown: markdown
+        nginx: nginx
+        php: php
+        perl: perl
+        powershell: powershell
+        python: python
+        ruby: ruby
+        scss: scss
+        sql: sql
+        twig: twig
+        typescript: typescript
+        xml: xml
+        yaml: yaml
+        apache: 0
+        coffeescript: 0
+        dart: 0
+        dust: 0
+        gherkin: 0
+        makefile: 0
+        puppet: 0
 image_upload:
   status: false
   scheme: public

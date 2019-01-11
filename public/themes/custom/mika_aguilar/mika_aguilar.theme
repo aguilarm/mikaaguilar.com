@@ -1,5 +1,11 @@
 <?php
 
+function mika_aguilar_preprocess_views_view(&$vars) {
+  if ($vars['id'] == 'posts') {
+    $vars['#attached']['library'] = 'mika_aguilar/posts';
+  }
+}
+
 function mika_aguilar_preprocess_page(&$vars) {
   _add_branding($vars);
 }

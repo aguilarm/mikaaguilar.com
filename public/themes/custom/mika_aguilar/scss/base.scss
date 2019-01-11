@@ -29,3 +29,12 @@ a {
 ul {
     list-style: none;
 }
+
+.region-content {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 16px;
+    @media (min-width: 1060px) {
+        padding: 0;
+    }
+}

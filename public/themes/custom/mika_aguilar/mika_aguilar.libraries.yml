@@ -29,3 +29,8 @@ post:
   css:
     theme:
       css/post.css: {}
+
+posts:
+  css:
+    theme:
+      css/posts.css: {}
