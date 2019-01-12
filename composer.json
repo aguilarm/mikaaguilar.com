@@ -62,10 +62,10 @@
 		},
 		"extra" : {
 			"installer-paths": {
-				"public/core": ["type:drupal-core"],
-				"public/libraries/{$name}": ["type:drupal-library"],
-				"public/modules/contrib/{$name}": ["type:drupal-module"],
-				"public/themes/contrib/{$name}": ["type:drupal-theme"]
+				"docroot/core": ["type:drupal-core"],
+				"docroot/libraries/{$name}": ["type:drupal-library"],
+				"docroot/modules/contrib/{$name}": ["type:drupal-module"],
+				"docroot/themes/contrib/{$name}": ["type:drupal-theme"]
 			}
 		}
 }
