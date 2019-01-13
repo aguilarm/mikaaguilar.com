@@ -56,8 +56,8 @@ services:
   theme:
     image: favish/gulp-sass-compiler-alpine:latest
     volumes:
-      - ./public/themes/custom/mika_aguilar/scss:/srv/scss
-      - ./public/themes/custom/mika_aguilar/css:/srv/css
+      - ./docroot/themes/custom/mika_aguilar/scss:/srv/scss
+      - ./docroot/themes/custom/mika_aguilar/css:/srv/css
   
   redis:
     image: favish/redis-3.2-drupal-8:2
