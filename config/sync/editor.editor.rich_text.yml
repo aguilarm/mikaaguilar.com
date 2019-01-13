@@ -43,9 +43,9 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: "div.code-block|Code Block\r\ndiv.inline-code|Inline Code"
+      styles: "div.code-block|Code Block\r\ncode.inline|Inline Code"
     codesnippet:
-      highlight_style: github
+      highlight_style: monokai
       highlight_languages:
         bash: bash
         css: css
