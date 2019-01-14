@@ -97,7 +97,7 @@
   {% endif %}
   {{ title_suffix }}
 
-  {% if display_submitted %}
+  {% if display_submitted and node.bundle != "project" %}
     <footer class="last-updated last-updated--post">
         Last updated {{ node.getChangedTime|date('F j, Y') }}
     </footer>
