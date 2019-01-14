@@ -5,6 +5,10 @@
 .wrapper--header {
     max-width: 1245px;
     margin: 10px auto 55px auto;
+    padding: 0 4px;
+    @media (min-width: 768px) {
+        padding: 0;
+    }
 }
 
 .region-header {
@@ -23,7 +27,10 @@
     overflow: hidden;
     .site-logo {
         display: block;
-        margin-right: 20px;
+        margin-right: 6px;
+        @media (min-width: 768px) {
+            margin-right: 20px;
+        }
         img {
             width: 75px;
             height: auto;

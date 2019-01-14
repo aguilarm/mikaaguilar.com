@@ -30,7 +30,7 @@ post:
     theme:
       css/post.css: {}
 
-posts:
+list_views:
   css:
     theme:
-      css/posts.css: {}
+      css/list-views.css: {}

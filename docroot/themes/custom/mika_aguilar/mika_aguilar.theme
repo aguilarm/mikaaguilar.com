@@ -1,8 +1,8 @@
 <?php
 
 function mika_aguilar_preprocess_views_view(&$vars) {
-  if ($vars['id'] == 'posts') {
-    $vars['#attached']['library'] = 'mika_aguilar/posts';
+  if ($vars['id'] == 'posts' || $vars['id'] == 'projects') {
+    $vars['#attached']['library'] = 'mika_aguilar/list_views';
   }
 }
 
