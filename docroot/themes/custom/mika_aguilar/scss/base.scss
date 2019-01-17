@@ -42,3 +42,10 @@ body ul.menu a.is-active {
         padding: 0;
     }
 }
+
+// Limit max-width of user-uploaded files.
+img[data-entity-type=file] {
+    max-width: 100%;
+    // Important to override inline styling.
+    height: auto !important;
+}
