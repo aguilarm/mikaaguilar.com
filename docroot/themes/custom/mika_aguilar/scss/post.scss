@@ -1,0 +1,15 @@
+@import './vars';
+
+.title--post {
+    font-size: 46px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.last-updated {
+    color: $detail-text-color;
+    font-size: 0.85em;
+    margin-bottom: 48px;
+    margin-left: 4px;
+}

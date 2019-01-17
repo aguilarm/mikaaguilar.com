@@ -1,0 +1,12 @@
+core
+profiles
+modules/contrib
+libraries
+themes/contrib
+
+sites/*/services*.yml
+sites/*/*.local.php
+
+sites/*/files
+sites/*/private
+

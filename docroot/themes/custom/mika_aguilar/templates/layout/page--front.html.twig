@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Theme override for frontpage.
+ * Total snowflake right now.
+ */
+#}
+
+{{ attach_library('mika_aguilar/frontpage') }}
+
+<main id="main">
+  <section class="section--top">
+    <div class="top-container">
+      <h1 class="top-header">
+          {{ siteName }}
+      </h1>
+      <h2 class="top-subheader">
+        {{ siteSlogan }}
+      </h2>
+      <div class="main-social-buttons">
+        <a class="social-button social-button--github" title="Visit my GitHub page!" href="https://github.com/aguilarm">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="social-button social-button--linkedin" title="Check out my LinkedIn!" href="https://www.linkedin.com/pub/mika-aguilar/12/672/616">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a class="social-button social-button--twitter" title="@aguilarMika" href="https://twitter.com/intent/user?screen_name=aguilarMika">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a class="social-button social-button--email" title="mika.aguilar@gmail.com" href="mailto:mika.aguilar@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section--work">
+    <div class="work work--posts">
+      <h1 class="header--work">
+        Posts
+      </h1>
+      {{ drupal_view('frontpage_posts', 'embed_1') }}
+      <div class="work-border"></div>
+    </div>
+    <div class="work work--projects">
+      <h1 class="header--work">
+        Projects
+      </h1>
+      {{ drupal_view('frontpage_projects', 'embed_1') }}
+    </div>
+  </section>
+</main>

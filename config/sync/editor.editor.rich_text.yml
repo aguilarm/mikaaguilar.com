@@ -1,0 +1,88 @@
+uuid: 4c2e2050-4394-450e-ad69-2da2ae1f5eb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.rich_text
+  module:
+    - ckeditor
+format: rich_text
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Format
+            - Styles
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - CodeSnippet
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - Source
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: "div.code-block|Code Block\r\ncode.inline|Inline Code"
+    codesnippet:
+      highlight_style: monokai
+      highlight_languages:
+        bash: bash
+        css: css
+        dockerfile: dockerfile
+        go: go
+        haml: haml
+        handlebars: handlebars
+        ini: ini
+        json: json
+        java: java
+        javascript: javascript
+        less: less
+        markdown: markdown
+        nginx: nginx
+        php: php
+        perl: perl
+        powershell: powershell
+        python: python
+        ruby: ruby
+        scss: scss
+        sql: sql
+        twig: twig
+        typescript: typescript
+        xml: xml
+        yaml: yaml
+        apache: 0
+        coffeescript: 0
+        dart: 0
+        dust: 0
+        gherkin: 0
+        makefile: 0
+        puppet: 0
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

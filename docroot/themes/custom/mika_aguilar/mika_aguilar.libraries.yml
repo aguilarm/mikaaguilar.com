@@ -1,0 +1,36 @@
+font-awesome:
+  css:
+    base:
+      /libraries/font-awesome/css/all.min.css: {}
+
+global:
+  js:
+    js/analytics.js: {}
+  css:
+    base:
+      css/reset.css: {}
+      css/base.css: {}
+      css/header.css: {}
+      css/footer.css: {}
+  dependencies:
+    - mika_aguilar/font-awesome
+
+frontpage:
+  css:
+    theme:
+      css/frontpage.css: {}
+  js:
+    js/libs/imagesloaded.js: {}
+    js/frontpage/main.js: {}
+  dependencies:
+    - core/jquery
+
+post:
+  css:
+    theme:
+      css/post.css: {}
+
+list_views:
+  css:
+    theme:
+      css/list-views.css: {}

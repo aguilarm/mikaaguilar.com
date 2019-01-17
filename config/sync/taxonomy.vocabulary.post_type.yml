@@ -1,0 +1,9 @@
+uuid: 18d41cc8-3932-4e5e-a621-af5d64d6270e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Post Type'
+vid: post_type
+description: 'Type of post (FAQ, Guide, Blog)'
+hierarchy: 0
+weight: 0

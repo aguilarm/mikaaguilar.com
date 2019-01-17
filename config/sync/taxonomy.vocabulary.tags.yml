@@ -1,0 +1,9 @@
+uuid: 65b3ad62-656e-4427-a5a7-f8779aa6792f
+langcode: en
+status: true
+dependencies: {  }
+name: Tags
+vid: tags
+description: 'Common topics associated with content.'
+hierarchy: 0
+weight: 0

@@ -1,0 +1,29 @@
+<?php
+
+function mika_aguilar_preprocess_views_view(&$vars) {
+  if ($vars['id'] == 'posts' || $vars['id'] == 'projects') {
+    $vars['#attached']['library'] = 'mika_aguilar/list_views';
+  }
+}
+
+function mika_aguilar_preprocess_page(&$vars) {
+  _add_branding($vars);
+}
+
+function mika_aguilar_preprocess_region(&$vars) {
+  _add_branding($vars);
+}
+
+function _add_branding(&$vars) {
+  $config = \Drupal::config('system.site');
+  $vars['siteName'] = $config->get('name');
+  $vars['siteSlogan'] = $config->get('slogan');
+  $vars['siteLogo'] = theme_get_setting('logo.url');
+}
+
+
+function mika_aguilar_preprocess_node(&$vars) {
+  if ($vars['node']->getType() === 'post') {
+    $vars['#attached']['library'][] = 'mika_aguilar/post';
+  }
+}
