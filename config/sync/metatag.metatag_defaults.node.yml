@@ -10,3 +10,5 @@ tags:
   title: '[node:title] | [site:name]'
   description: '[node:summary]'
   canonical_url: '[node:url]'
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_title: '[node:title]'
