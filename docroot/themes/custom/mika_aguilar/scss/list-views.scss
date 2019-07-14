@@ -1,17 +1,19 @@
 .view-posts,
 .view-projects {
-    .views-row:not(:last-child) {
-        margin-bottom: 16px;
+  .views-row:not(:last-child) {
+    margin-bottom: 2em;
+  }
+  .views-field-title {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 0.25em 0;
+  }
+  .views-field-body {
+    p {
+      padding: 0;
+      margin: 0;
+      color: #666666;
+      font-size: 0.9em;
     }
-    .views-field-title {
-        font-size: 18px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-    .views-field-body {
-        p {
-            padding: 0;
-            margin: 0;
-        }
-    }
+  }
 }
