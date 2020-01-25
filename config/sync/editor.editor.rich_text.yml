@@ -79,10 +79,10 @@ settings:
         makefile: 0
         puppet: 0
 image_upload:
-  status: false
+  status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
     width: null
-    height: null
+    height: 2080
