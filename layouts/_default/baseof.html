@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        {{ if .Title }}
+        {{ .Title }} |
+        {{ end }}
+        {{ .Site.Title }}
+    </title>
+
+    <link href="/favicons/favicon.ico" rel="icon" type="image/ico"/>
+
+    <link href="/lib/font-awesome/css/all.css" rel="stylesheet"/>
+
+    {{ $cssGlobal := resources.Get "/css/global.css" }}
+    {{ $cssHeader := resources.Get "/css/header.css" }}
+    {{ $cssFooter := resources.Get "/css/footer.css" }}
+    {{ $cssMain := slice $cssGlobal $cssHeader $cssFooter | resources.Concat "css/main.css" | resources.Minify }}
+    <link href="{{ $cssMain.Permalink }}" rel="stylesheet"/>
+
+    {{ block "stylesheets" . }}
+    {{ end }}
+
+</head>
+<body>
+{{ block "header" . }}
+{{ partial "header.html" . }}
+{{ end }}
+{{ block "main" . }}
+{{ end }}
+{{ block "footer" . }}
+{{ partial "footer.html" . }}
+{{ end }}
+</body>
+</html>

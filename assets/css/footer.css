@@ -1,0 +1,22 @@
+.site-footer {
+    text-align: center;
+    margin: 84px 0 24px;
+}
+
+.footer-site-name {
+    color: var(--color-detail-text);
+    text-transform: lowercase;
+}
+
+.footer-logo {
+    display: inline-block;
+}
+
+.footer-logo {
+    margin-top: 16px;
+}
+
+.footer-logo img {
+    width: 24px;
+    height: auto;
+}

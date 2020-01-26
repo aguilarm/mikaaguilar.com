@@ -1,15 +1,16 @@
-@import url(//fonts.googleapis.com/css?family=Roboto|family=PT+Sans&display=swap);
+@import url(//fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700|PT+Sans&display=swap);
 
 :root {
     --color-font-base: #424242;
     --color-brand: #0080ff;
     --color-brand-compliment: #ff8000;
-    --color-highlight: #3381E6;
+    --color-highlight: #1F73E0;
     --color-link: var(--color-highlight);
     --color-link-active: var(--color-brand-compliment);
-    --color-detail-text: #858585;
+    --color-detail-text: #757575;
 
     --font-heading: "Roboto", sans-serif;
+    --font-brand: "Roboto Condensed", sans-serif;
     --font-body-copy: "PT Sans", sans-serif;
 }
 
@@ -20,6 +21,7 @@
 body {
     font-family: var(--font-body-copy);
     color: var(--color-font-base);
+    font-size: 16px;
     margin: 0;
 }
 

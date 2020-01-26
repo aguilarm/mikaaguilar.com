@@ -1,0 +1,56 @@
+
+.site-header {
+    margin: 10px 6px 55px 6px;
+}
+
+@media (min-width: 1245px) {
+    .site-header {
+        max-width: 1245px;
+        margin: 10px auto 55px auto;
+    }
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    display: block;
+    margin-right: 6px;
+    width: 75px;
+    height: auto;
+}
+
+.brand-logo img {
+    width: 75px;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .brand-logo {
+        margin-right: 20px;
+    }
+}
+
+.brand-text {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .brand-text {
+        display: block;
+    }
+}
+
+.brand-text--site-name {
+    font-size: 26px;
+    font-weight: bold;
+    font-family: var(--font-brand);
+    text-transform: uppercase;
+}
+
+.brand-text--site-tag-line {
+    color: var(--color-detail-text);
+    line-height: 1.2;
+}
