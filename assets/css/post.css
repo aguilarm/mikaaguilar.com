@@ -1,0 +1,22 @@
+article {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.post-header {
+    margin-bottom: 2em;
+}
+
+.post-header h1 {
+    font-size: 46px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.post-date {
+    color: var(--color-detail-text);
+    font-size: 0.85em;
+    margin-left: 4px;
+}
+

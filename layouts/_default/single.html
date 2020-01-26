@@ -1,0 +1,25 @@
+{{ define "stylesheets" }}
+{{ $css := resources.Get "/css/post.css" | resources.Minify}}
+<link href="{{ $css.Permalink }}" rel="stylesheet">
+{{ end }}
+
+
+{{ define "main" }}
+
+<article>
+    <header class="post-header">
+        <h1>{{ .Title }}</h1>
+        <div class="post-date post-published">
+            Published <strong>{{ .Date.Format "January 2, 2006" }}</strong>
+        </div>
+        <div class="post-date post-last-updated">
+            Last updated <strong>{{ .Lastmod.Format "January 2, 2006" }}</strong>
+        </div>
+    </header>
+    <div class="article-body">
+        {{ .Content }}
+    </div>
+
+</article>
+
+{{ end }}
