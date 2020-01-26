@@ -1,7 +1,0 @@
-ma_frontpage.frontpage:
-  path: '/frontpage'
-  defaults:
-    _controller: '\Drupal\ma_frontpage\Controller::content'
-    _title: 'Mika Aguilar'
-  requirements:
-    _permission: 'access content'

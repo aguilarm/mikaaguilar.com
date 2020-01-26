@@ -1,5 +1,0 @@
-name: Mika Aguilar's Frontpage
-description: Provide a route handler for / that renders a custom front page without associated content.
-package: Mika Aguilar
-type: module
-core: 8.x

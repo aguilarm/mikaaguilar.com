@@ -1,8 +1,0 @@
-node_modules
-.circleci
-docroot/sites/default/files
-*.sql
-*.key
-.git
-.docker-compose
-.gitignore
