@@ -1,0 +1,5 @@
+baseURL = "http://mikaaguilar.com/"
+languageCode = "en-us"
+title = "Mika Aguilar"
+[params]
+  TagLine = "Curious Web Developer"

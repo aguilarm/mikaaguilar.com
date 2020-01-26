@@ -1,0 +1,50 @@
+{{ define "stylesheets" }}
+{{ $css := resources.Get "/css/frontpage.css" | resources.Minify}}
+<link href="{{ $css.Permalink }}" rel="stylesheet">
+{{ end }}
+
+{{ define "main" }}
+<main id="main">
+    <section class="section--top">
+        <div class="top-container">
+            <h1 class="top-header">
+                Mika Aguilar
+            </h1>
+            <h2 class="top-subheader">
+                {{ .Site.Params.TagLine }}
+            </h2>
+            <div class="main-social-buttons">
+                <a class="social-button social-button--github" href="https://github.com/aguilarm"
+                   title="Visit my GitHub page!">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a class="social-button social-button--linkedin"
+                   href="https://www.linkedin.com/pub/mika-aguilar/12/672/616" title="Check out my LinkedIn!">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="social-button social-button--twitter"
+                   href="https://twitter.com/intent/user?screen_name=aguilarMika" title="@aguilarMika">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="social-button social-button--email" href="mailto:mika.aguilar@gmail.com"
+                   title="mika.aguilar@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="section--work">
+        <div class="work work--posts">
+            <h1 class="header--work">
+                Posts
+            </h1>
+            <div class="work-border"></div>
+        </div>
+        <div class="work work--projects">
+            <h1 class="header--work">
+                Projects
+            </h1>
+        </div>
+    </section>
+</main>
+{{ end }}

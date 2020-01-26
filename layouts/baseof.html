@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ .Site.Title }} {{ .Site.Params.TitleSubSection }}</title>
+
+    <link href="/lib/font-awesome/css/all.css" rel="stylesheet"/>
+
+
+    {{ $css := resources.Get "/css/global.css" | resources.Minify}}
+    <link href="{{ $css.Permalink }}" rel="stylesheet"/>
+
+    {{ block "stylesheets" . }}
+    {{ end }}
+
+</head>
+<body>
+{{ block "main" . }}
+{{ end }}
+</body>
+</html>

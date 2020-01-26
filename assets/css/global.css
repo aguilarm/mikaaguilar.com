@@ -1,0 +1,65 @@
+@import url(//fonts.googleapis.com/css?family=Roboto|family=PT+Sans&display=swap);
+
+:root {
+    --color-font-base: #424242;
+    --color-brand: #0080ff;
+    --color-brand-compliment: #ff8000;
+    --color-highlight: #3381E6;
+    --color-link: var(--color-highlight);
+    --color-link-active: var(--color-brand-compliment);
+    --color-detail-text: #858585;
+
+    --font-heading: "Roboto", sans-serif;
+    --font-body-copy: "PT Sans", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body-copy);
+    color: var(--color-font-base);
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--font-heading);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link);
+    transition: color 250ms ease-out;
+    outline: 0;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: var(--color-link-active)
+}
+
+ul {
+    list-style: none;
+}
+
+body ul.menu a.is-active {
+    color: var(--color-link-active);
+}
+
+.region-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+@media (min-width: 1060px) {
+    .region-content {
+        padding: 0;
+    }
+}
