@@ -1,8 +1,8 @@
 ---
-title: "Bookshelf"
-date: 2019-07-07T17:10:08-06:00
-lastmod: 2019-10-20T17:10:08-06:00
-description: "A list of book recommendations with short summaries."
+title: "2019 Retrospective"
+date: 2019-12-24T17:10:08-06:00
+lastmod: 2019-12-29T17:10:08-06:00
+description: "This past year my tech stack saw some exciting changes. We fully embraced React Hooks, Typescript and GraphQL."
 draft: false
 ---
 

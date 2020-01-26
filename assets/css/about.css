@@ -1,0 +1,25 @@
+article {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+p a {
+    text-decoration: underline dashed;
+}
+
+.about-photo-container {
+    text-align: center;
+}
+
+.about-photo {
+    border-radius: 50%;
+    border: 6px solid var(--color-brand-compliment);
+    width: 240px;
+    height: auto;
+}
+
+.about-last-modified {
+    color: var(--color-detail-text);
+    font-style: italic;
+    font-size: 0.8em;
+}

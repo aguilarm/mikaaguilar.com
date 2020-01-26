@@ -1,0 +1,21 @@
+{{ define "stylesheets" }}
+{{ $css := resources.Get "/css/about.css" | resources.Minify }}
+<link href="{{ $css.Permalink }}" rel="stylesheet">
+{{ end }}
+
+
+{{ define "main" }}
+
+<article>
+    <div class="about-photo-container">
+        <img alt="profile photo" class="about-photo" src="/images/profile.png"/>
+    </div>
+    <div class="article-body">
+        {{ .Content }}
+    </div>
+    <div class="about-last-modified">
+        Last Modified {{ .Lastmod.Format "January 2, 2006" }}
+    </div>
+</article>
+
+{{ end }}

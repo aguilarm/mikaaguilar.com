@@ -1,0 +1,43 @@
+main {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.list-item {
+    margin-bottom: 1.4em;
+}
+
+.list-item-title {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin: 0.25em 0;
+}
+
+.list-item-description {
+    margin: 0.3em 0 0.5em;
+}
+
+.list-item-date {
+    color: var(--color-detail-text);
+    font-size: 0.8em;
+}
+
+/*.view-posts,*/
+/*.view-projects {*/
+/*.views-row:not(:last-child) {*/
+/*    margin-bottom: 2em;*/
+/*}*/
+/*.views-field-title {*/
+/*    font-size: 22px;*/
+/*    text-transform: uppercase;*/
+/*    margin: 0.25em 0;*/
+/*}*/
+/*.views-field-body {*/
+/*p {*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    color: #666666;*/
+/*    font-size: 0.9em;*/
+/*}*/
+/*}*/
+/*}*/

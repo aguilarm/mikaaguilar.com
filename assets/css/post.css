@@ -11,12 +11,19 @@ article {
     font-size: 46px;
     line-height: 1;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 2px;
 }
 
-.post-date {
+.post-published {
     color: var(--color-detail-text);
-    font-size: 0.85em;
-    margin-left: 4px;
+    font-size: 20px;
 }
 
+.post-last-updated {
+    color: var(--color-brand-compliment-dark);
+    font-size: 0.85em;
+}
+
+p a {
+    text-decoration: underline dashed;
+}

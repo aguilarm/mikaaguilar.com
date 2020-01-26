@@ -1,6 +1,9 @@
 
 .site-header {
     margin: 10px 6px 55px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 @media (min-width: 1245px) {
@@ -53,4 +56,25 @@
 .brand-text--site-tag-line {
     color: var(--color-detail-text);
     line-height: 1.2;
+}
+
+.site-header .site-navigation {
+    margin-right: 8px;
+}
+
+.site-header .site-navigation ul li {
+    margin: 0 4px;
+}
+
+@media (min-width: 768px) {
+    .site-header .site-navigation ul li {
+        margin: 0 8px;
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1245px) {
+    .site-header .site-navigation {
+        margin-right: 0;
+    }
 }

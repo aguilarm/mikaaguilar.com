@@ -3,6 +3,10 @@
     margin: 84px 0 24px;
 }
 
+.site-footer .site-navigation li {
+    margin: 0 4px 20px;
+}
+
 .footer-site-name {
     color: var(--color-detail-text);
     text-transform: lowercase;
