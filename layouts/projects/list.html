@@ -1,6 +1,6 @@
 {{ define "stylesheets" }}
 {{ $css := resources.Get "/css/list.css" | resources.Minify}}
-<link href="{{ $css.Permalink }}" rel="stylesheet">
+<link href="{{ $css.RelPermalink }}" rel="stylesheet">
 {{ end }}
 
 
@@ -13,7 +13,7 @@
     <ul class="list">
         {{ range .Pages }}
         <li class="list-item">
-            <a class="list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>
+            <a class="list-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
             <div class="list-item-description">{{ .Description }}</div>
         </li>
         {{ end }}

@@ -19,7 +19,7 @@
     {{ $cssFooter := resources.Get "/css/global/footer.css" }}
     {{ $cssSocialMedia := resources.Get "/css/global/social-media.css" }}
     {{ $cssMain := slice $cssVariables $cssGenerics $cssHeader $cssFooter $cssSocialMedia | resources.Concat "css/main.css" | resources.Minify }}
-    <link href="{{ $cssMain.Permalink }}" rel="stylesheet"/>
+    <link href="{{ $cssMain.RelPermalink }}" rel="stylesheet"/>
 
     {{ block "stylesheets" . }}
     {{ end }}

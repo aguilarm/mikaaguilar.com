@@ -1,6 +1,6 @@
 {{ define "stylesheets" }}
 {{ $css := resources.Get "/css/frontpage.css" | resources.Minify}}
-<link href="{{ $css.Permalink }}" rel="stylesheet">
+<link href="{{ $css.RelPermalink }}" rel="stylesheet">
 {{ end }}
 
 {{ define "header" }}
