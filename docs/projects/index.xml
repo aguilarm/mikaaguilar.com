@@ -20,5 +20,35 @@
       <description>In doing the research that lead to my post about decoupled Drupal, I created a boilerplate project for using Gatsby with Drupal. The project is pretty basic but should have everything you need to get started. It uses docker-compose so you can run it anywhere you have docker installed.</description>
     </item>
     
+    <item>
+      <title>Squarereddit</title>
+      <link>https://www.mikaaguilar.com/projects/squarereddit/</link>
+      <pubDate>Sun, 16 Nov 2014 17:42:31 -0600</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/projects/squarereddit/</guid>
+      <description>I really enjoy having nice desktop backgrounds, and for awhile I was grabbing them from some subreddits for architecture and city-scapes. I decided to try out Angular and the Reddit API to make an easy to browse grid of images sourced from Reddit.
+This project was primarily a way for me to experiment with Angular and as such I have not kept up with it.</description>
+    </item>
+    
+    <item>
+      <title>Parallax Photos</title>
+      <link>https://www.mikaaguilar.com/projects/parallax-photos/</link>
+      <pubDate>Tue, 19 Aug 2014 17:40:14 -0600</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/projects/parallax-photos/</guid>
+      <description>The parrallax.js splash page is pretty awesome, so I decided to play with the library.
+I cut up a few WW2 aircraft scenes and turned them into parrallax.</description>
+    </item>
+    
+    <item>
+      <title>Javascript Game Engine</title>
+      <link>https://www.mikaaguilar.com/projects/javascript-game-engine/</link>
+      <pubDate>Tue, 05 Aug 2014 17:30:03 -0600</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/projects/javascript-game-engine/</guid>
+      <description>Long ago, I found Udacity&amp;rsquo;s cs255 course on building a game engine almost from scratch in JavaScript and had a go at it.
+Everything except the physics engine is built with mostly vanilla javascript and minimal libraries. I did a fair bit of adjusting and fixing the engine to get it to work, which ended up being quite a bit of sort of reverse engineering because the course was mostly abandoned and the original game only sort of worked when I took the class.</description>
+    </item>
+    
   </channel>
 </rss>
