@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>
         
-        Projects |
+        Javascript Game Engine |
         
         Mika Aguilar
     </title>
@@ -24,7 +24,7 @@
 
     
 
-<link href="/css/list.min.css" rel="stylesheet">
+<link href="/css/project.min.css" rel="stylesheet">
 
 
 </head>
@@ -71,35 +71,41 @@
 
 
 
-<main>
-    <header class="list-header">
-        <h1>Projects</h1>
+<article class="project-container">
+    <header class="project-header">
+        <h1><a href="/projects/javascript-game-engine/">Javascript Game Engine</a></h1>
+        <div class="project-date project-published">
+            Began August 5, 2014
+        </div>
+        <div class="project-date project-last-updated">
+            Updated December 28, 2019
+        </div>
+        
+        <div>
+            <a class="project-repository" href="https://github.com/aguilarm/canvasGame">
+                Source Code
+            </a>
+        </div>
+        
+        
+        <div>
+            <a class="project-demo" href="http://aguilarm.github.io/canvasGame/">
+                View Demo
+            </a>
+        </div>
+        
     </header>
-    <ul class="list">
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/decoupled-drupal-gatsby-starter-kit/">Decoupled Drupal with Gatsby Starter Kit</a>
-            <div class="list-item-description">Boilerplate for getting Gatsby hooked up to a Drupal backend.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/squarereddit/">Squarereddit</a>
-            <div class="list-item-description">Used the Reddit API to generate a grid of images.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/parallax-photos/">Parallax Photos</a>
-            <div class="list-item-description">Used parrallax.js to make a few aircraft scenes.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/javascript-game-engine/">Javascript Game Engine</a>
-            <div class="list-item-description">Project from a Udacity course.</div>
-        </li>
-        
-    </ul>
+    <div class="project-body">
+        <p>Long ago, I found <a href="https://eu.udacity.com/course/html5-game-development--cs255">Udacity&rsquo;s cs255 course</a> on building a game engine almost from scratch in JavaScript and had a go at it.</p>
+<p>Everything except the physics engine is built with mostly vanilla javascript and minimal libraries. I did a fair bit of adjusting and fixing the engine to get it to work, which ended up being quite a bit of sort of reverse engineering because the course was mostly abandoned and the original game only sort of worked when I took the class.</p>
+<p>The art here is not my own, I used a few different libraries from <a href="https://opengameart.org/">OpenGameArt</a>. The github repo has specifics on those.</p>
+<p>This project really catapulted my understanding of all kinds of things but probably the most important insight was how the game loop worked.</p>
+<p>Here&rsquo;s what it looks like:</p>
+<p><img src="/images/projects/javascript-game-engine.png" alt="screencap"></p>
 
-</main>
+    </div>
+
+</article>
 
 
 
