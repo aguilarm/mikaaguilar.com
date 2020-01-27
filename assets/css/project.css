@@ -1,34 +1,32 @@
-.post-container {
+.project-container {
     max-width: 780px;
     margin: 0 auto;
 }
 
-.post-header {
+.project-header {
     margin-bottom: 2em;
 }
 
-.post-header h1 {
+.project-header h1 {
     font-size: 46px;
     line-height: 1;
     text-transform: uppercase;
-    margin-bottom: 2px;
+    margin-bottom: 12px;
 }
 
-.post-published {
+.project-published {
     color: var(--color-detail-text);
-    font-size: 20px;
 }
 
-.post-last-updated {
+.project-last-updated {
     color: var(--color-brand-compliment-dark);
-    font-size: 0.85em;
 }
 
-.post-body a {
+.project-body a {
     text-decoration: underline dashed;
 }
 
-.post-body img {
+.project-body img {
     max-width: 100%;
     height: auto;
 }

@@ -6,47 +6,28 @@ description: "This past year my tech stack saw some exciting changes. We fully e
 draft: false
 ---
 
-I've decided to put together a list of books I've read so I can direct folks to this post when asked for something to read. Most of the programming books have free online editions, so get to it!\
-I'm also a huge fan of sci-fi, so I've thrown a couple of my favorites in at the end.
+This past year my tech stack saw some exciting changes. We fully embraced React Hooks, Typescript and GraphQL. We poked around the JAMStack and built a fairly large NextJS application. That was a real pivot from the primarily Drupal based projects we've done before. While we're still using Drupal as a headless CMS, we have ditched the entire front-end of it. Server-wise, Kubernetes and Docker have remained a nice constant this year with a year perhaps defined by stability while the tech reached maturity.
 
-If you're more visual, I've also made [this list of talks](/posts/talks-i-love) I recommend.
+What Did I Do?
+--------------
 
-## Programming Books
+As 2019 dawned on the world, we were starting a new greenfield project. I had the opportunity to jump out of tuning our Kubernetes workloads and try to get a feel for what was going on in the front-end space. The biggest rumblings seemed to be around the 'JAMStack' (Javascript, APIs, and Markup) which promised to allow you to ditch long running server processes. Having spent most of the last two years tweaking such processes, that sounded awesome. Even though I felt I was pretty good at wrangling the little beasts into happily humming along, I was definitely hoping that eventually we could move to something a little simpler to maintain.
 
-### [Eloquent Javascript](https://eloquentjavascript.net/)
+My new project, however, was planned to be providing lots of dynamic content that varied heavily depending on what user was viewing it. So, [while I gave Gatsby a shot](https://www.mikaaguilar.com/posts/building-decoupled-drupal-sites-2019), I moved to NextJS to power this project, with a headless Drupal CMS hooked up to it via GraphQL through [Apollo](https://www.apollographql.com/). We added typescript to this project as well. In the process of adding Typescript, I used [ESLint](https://eslint.org/) and added [Husky](https://github.com/typicode/husky) for pre-commit validation as well as [Prettier](https://prettier.io/) to keep code looking the same. I decided to stick with SASS for CSS.
 
-This is an excellent book that will take you on a journey through all of the different ways you can construct applications in Javascript and beyond. As of this post, the third edition was released in 2018 and it's likely to be fresh enough to remain relevant for some time. Highly recommended.
+It's been quite nice to work in this stack. Typescript and ESLint with Prettifier have enormously improved our code readability and stability. Using React for all of our front-end is a lot more consistent than the half Drupal php/twig templates with a bit of JS sprinkled around. With React everywhere, we have access to a massive library of open source UI component implementations that speed development. It's also generally more accessible to engineers than twig templates in PHP. GraphQL is nice to consume on the front-end and we've moved nearly all of the code-based interaction with Drupal behind it.
 
-### [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+We've had some paper-cuts using this, and I would be remiss not to point some of those out. Firstly, I've not been able to tune Apollo client side caching nicely and the methods for managing it feel a bit clunky. Webpack is powering this and it's _still_ a real awkward abstraction with a large amount of configuration holding us together though it has improved a bit as the year progressed. Overall, however, I would say this setup was a net-positive. So what do I hope to do different in 2020?
 
-Javascript is tricky. The freedom it gives you out of the box costs you a bit of weird behavior. This book series aims to alleviate that problem. The end goal is to help readers understand the _why_ behind the various quirks of JS. Still approachable for beginners, but this is best used to hone some existing JS knowledge.
+Whats Next?
+-----------
 
-### [Game Programming Patterns](https://gameprogrammingpatterns.com/)
+There appears to be a new kid on the block, called [Svelte](https://svelte.dev/). I've done just a bit of poking around with it, and the code you actually write using it is super duper simple. It's wildly efficient computationally as well, double win! I am 100% on the hype train for this one but there is definitely more I need to consider about it. I hope to build something with it this coming year to give it a shot.
 
-Video games are an interesting problem space. From the game loop to asset management, there's a lot to keep track of in even a simple game. Each pattern is presented with a couple of tangible examples making this a great reference for general programming.
+It is also starting to feel like we're going to use something besides Drupal as our CMS this year. Things like [Hasura](https://hasura.io/) and [Graphile](https://www.graphile.org/) are candidates, which introspect a Postgres database to output GraphQL schema from it. Those might be a bit too spartan, but we're toying around with them now. [Netlify CMS](https://www.netlifycms.org/) or [TinaCMS](https://tinacms.org/) and many other JAMStack focused offerings are extra attractive because we can ultimately serve plain old flat files. [Sapper](https://sapper.svelte.dev/) uses Svelte and that's cool.
 
-### [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
+The server side situation this year was really static. Nothing big changed. This next year I expect we'll still be running Kubernetes workloads but we may ascend to flat files and perhaps even short running processes commonly known as 'serverless.'
 
-This is a fun book with which you can learn the basics of Clojure, a very cool functional language. Finally understand all of those parenthesis! You might not be building anything big at work in Clojure, but the concepts of functional programming can help you write more resilient systems no matter what you're working in.
-
-### [Site Reliability Engineering](https://landing.google.com/sre/books/)
-
-Google has literally written the book on reliable systems. A lot of the framework that allows an organization to build and maintain a reliable system has far less to do with actual software than you might think. This is a great resource to dig into if you're interested in what the heck dev-ops is all about.
-
-## Fiction Books
-
-### The Commonwealth Saga - Peter F Hamilton
-
-This is my favorite sci-fi series that I've read so far. It takes place nearly 400 years in the future where humanity has solved aging and harnessed wormhole technology to expand into the galaxy. With almost unhindered advancement for hundreds of years, humanity as a whole is starting to rest on its laurels a bit. The books start with a strange discovery just outside of the wormhole network that slowly wakes a sleeping humanity to meet it. Great world-building coupled with nice character development make this a really great space opera.
-
-### The Culture Series - Ian M Banks
-
-As of writing this post, I'm on book three of this ten book series. The setting is similar to the Commonwealth Saga in that it is set post-scarcity , but each book is a totally self contained story playing with ideas within a shared setting. It's largely exploring how alien societies might react to a society that, as far as it is concerned, has pretty much solved every imaginable problem - or how such a society would view those that have not. I really loved book two and this is definitely worth picking up.
-
-### Humanity's Fire Series - Michael Cobley
-
-While there isn't anything groundbreaking going on in this series, it's a very nice world that puts together all of the right pieces to make a decent space opera. Go into it with those expectations and it's a nice adventure.
-
- 
+I'm excited about how this last year went and even more excited about what could be coming up in 2020.
  
 

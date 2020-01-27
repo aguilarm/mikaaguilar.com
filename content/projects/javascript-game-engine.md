@@ -3,6 +3,8 @@ title: "Javascript Game Engine"
 date: 2014-08-05T17:30:03-06:00
 lastmod: 2019-12-28T17:30:03-06:00
 description: "Project from a Udacity course."
+repository: "https://github.com/aguilarm/canvasGame"
+demo: "http://aguilarm.github.io/canvasGame/"
 draft: true
 ---
 
@@ -13,10 +15,6 @@ Everything except the physics engine is built with mostly vanilla javascript and
 The art here is not my own, I used a few different libraries from [OpenGameArt](https://opengameart.org/). The github repo has specifics on those.
 
 This project really catapulted my understanding of all kinds of things but probably the most important insight was how the game loop worked.
-
-[Try playing now! Use shift to run](http://aguilarm.github.io/canvasGame/)
-
-[View code on github](https://github.com/aguilarm/canvasGame)
 
 Here's what it looks like:
 

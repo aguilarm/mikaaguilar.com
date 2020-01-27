@@ -1,5 +1,5 @@
 .section--top {
-    height: 90vh;
+    height: 100vh;
     min-height: 550px;
     background-image: url('/images/logo.svg');
     background-attachment: fixed;
@@ -40,17 +40,23 @@
 
 @media (min-width: 768px) {
     .top-header {
-        font-size: 8vw;
+        font-size: 10vw;
         line-height: 0.75;
     }
 }
 
 .front-personal-summary {
-    font-weight: bold;
-    font-size: 1.3em;
+    display: none;
+    font-size: 1.2em;
     margin: 0.75em auto;
     max-width: 860px;
     color: var(--color-font-base);
+}
+
+@media (min-width: 480px) {
+    .front-personal-summary {
+        display: block;
+    }
 }
 
 .front-personal-summary strong,
@@ -59,12 +65,12 @@
 }
 
 .site-navigation ul li {
-    font-size: 1.2em;
+    font-size: 1.8em;
     margin: 0 6px;
 }
 
 .social-buttons {
-    margin-top: 14px;
+    margin-top: 8px;
     display: flex;
     justify-content: center;
     font-size: 22px;
@@ -72,70 +78,6 @@
 
 @media (min-width: 1024px) {
     .social-buttons {
-        font-size: 2.25vw;
+        font-size: 30px;
     }
-}
-
-.section--work {
-    min-height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    padding: 24px 0;
-    justify-content: space-evenly;
-    background-color: var(--color-brand-compliment);
-    background-image: url('/images/logoWhite.svg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-origin: content-box;
-    background-repeat: no-repeat;
-    border-top: 8px solid var(--color-brand-compliment-dark);
-}
-
-.work {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-width: 6px;
-    border-color: white;
-    border-style: solid;
-    padding: 12px 16px 12px;
-    margin: 16px 0;
-    width: 100%;
-    max-width: 1060px;
-}
-
-@media (min-width: 1024px) {
-    .work:first-child {
-        margin-top: 65px;
-    }
-}
-
-.header--work {
-    color: var(--color-highlight);
-    margin-bottom: 0.4em;
-    text-transform: uppercase;
-    font-size: 2.25em;
-    font-weight: 700;
-    line-height: 1;
-}
-
-@media (min-width: 1024px) {
-    .header--work {
-        font-size: 2.5em;
-    }
-}
-
-.work-item {
-    margin: 12px 0;
-}
-
-.work-item-title {
-    font-size: 1.3em;
-    font-family: var(--font-heading);
-    font-weight: 500;
-}
-
-.work-item-description {
-    color: var(--color-detail-text);
 }

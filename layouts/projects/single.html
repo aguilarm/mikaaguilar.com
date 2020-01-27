@@ -1,0 +1,39 @@
+{{ define "stylesheets" }}
+{{ $css := resources.Get "/css/project.css" | resources.Minify}}
+<link href="{{ $css.Permalink }}" rel="stylesheet">
+{{ end }}
+
+
+{{ define "main" }}
+
+<article class="project-container">
+    <header class="project-header">
+        <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+        <div class="project-date project-published">
+            Began {{ .Date.Format "January 2, 2006" }}
+        </div>
+        <div class="project-date project-last-updated">
+            Updated {{ .Lastmod.Format "January 2, 2006" }}
+        </div>
+        {{ if .Params.repository }}
+        <div>
+            <a class="project-repository" href="{{ .Params.repository }}">
+                Source Code
+            </a>
+        </div>
+        {{ end }}
+        {{ if .Params.demo }}
+        <div>
+            <a class="project-demo" href="{{ .Params.demo }}">
+                View Demo
+            </a>
+        </div>
+        {{ end }}
+    </header>
+    <div class="project-body">
+        {{ .Content }}
+    </div>
+
+</article>
+
+{{ end }}
