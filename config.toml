@@ -9,15 +9,15 @@ publishDir = "docs"
    [[menu.main]]
      identifier = "about"
      name = "about"
-     url = "/about"
+     url = "/about/"
      weight = 2
    [[menu.main]]
      identifier = "posts"
      name = "posts"
-     url = "/posts"
+     url = "/posts/"
      weight = 3
    [[menu.main]]
      identifier = "projects"
      name = "projects"
-     url = "/projects"
+     url = "/projects/"
      weight = 4
