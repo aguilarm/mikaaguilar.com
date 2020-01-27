@@ -1,6 +1,6 @@
 ---
 title: "Decoupled Drupal with Gatsby Starter Kit"
-date: 2019-04-05T17:10:08-06:00
+date: 2019-01-23T17:10:08-06:00
 lastmod: 2019-07-14T17:10:08-06:00
 description: "Boilerplate for getting Gatsby hooked up to a Drupal backend."
 draft: false

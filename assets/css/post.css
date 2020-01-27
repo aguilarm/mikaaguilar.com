@@ -1,4 +1,4 @@
-article {
+.post-container {
     max-width: 780px;
     margin: 0 auto;
 }
@@ -26,4 +26,9 @@ article {
 
 p a {
     text-decoration: underline dashed;
+}
+
+.article-body img {
+    max-width: 100%;
+    height: auto;
 }

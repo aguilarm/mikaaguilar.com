@@ -1,0 +1,25 @@
+.social-button {
+    color: var(--color-link);
+    text-decoration: none;
+    margin: 0 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    height: 3vw;
+    min-width: 34px;
+    min-height: 34px;
+    transition: color 250ms ease-out;
+}
+
+.social-button:hover {
+    color: var(--color-link-active);
+}
+
+.social-button--email {
+    font-size: 0.95em;
+}
+
+.social-button--twitter {
+    font-size: 0.93em;
+}

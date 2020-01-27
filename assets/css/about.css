@@ -3,6 +3,17 @@ article {
     margin: 0 auto;
 }
 
+.about-personal-summary {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 0.75em 0;
+}
+
+.about-personal-summary strong,
+.about-personal-summary a {
+    color: var(--color-brand-compliment-dark);
+}
+
 p a {
     text-decoration: underline dashed;
 }

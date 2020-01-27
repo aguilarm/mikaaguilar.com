@@ -1,6 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-created: {{ .Date }}
+date: {{ .Date }}
 lastmod: {{ .Date }}
 description: "{{ replace .Name "-" " " | title }}"
 draft: true
