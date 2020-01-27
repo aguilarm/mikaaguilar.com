@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        Easily Patch Contrib Drupal Modules Composer |
+        
+        Mika Aguilar
+    </title>
+
+    <link href="/favicons/favicon.ico" rel="icon" type="image/ico"/>
+
+    <link href="/lib/font-awesome/css/all.css" rel="stylesheet"/>
+
+    
+    
+    
+    
+    
+    
+    <link href="https://www.mikaaguilar.com/css/main.min.css" rel="stylesheet"/>
+
+    
+
+<link href="https://www.mikaaguilar.com/css/post.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+<header class="site-header">
+    <div class="branding">
+        <a class="brand-logo" href="/">
+            <img alt="Mika Aguilar's Logo" src="/images/logo.svg"/>
+        </a>
+        <div class="brand-text">
+            <a class="brand-text--site-name" href="/" rel="home" title="Home">
+                Mika Aguilar
+            </a>
+            <div class="brand-text--site-tag-line">
+                Curious Software Engineer
+            </div>
+        </div>
+    </div>
+    <nav class="site-navigation">
+    <ul>
+        
+        <li>
+            <a href="/about">
+                <span>about</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/posts">
+                <span>posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/projects">
+                <span>projects</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+</header>
+
+
+
+<article class="post-container">
+    <header class="post-header">
+        <h1><a href="https://www.mikaaguilar.com/posts/easily-patch-contrib-drupal-modules-composer/">Easily Patch Contrib Drupal Modules Composer</a></h1>
+        <div class="post-date post-published">
+            January 12, 2019
+        </div>
+        <div class="post-date post-last-updated">
+            Updated December 26, 2018
+        </div>
+    </header>
+    <div class="post-body">
+        <p>The workflow for patching Drupal modules can be a bit obtuse if you do everything by hand, but with composer it&rsquo;s easy!</p>
+<p>I manage all contributed modules with composer, so an example <code>composer.json</code> might look like this:</p>
+<pre><code>{
+    &quot;name&quot;: &quot;example&quot;,
+    &quot;description&quot;: &quot;Drupal 8 Example&quot;,
+    &quot;type&quot;: &quot;project&quot;,
+    &quot;minimum-stability&quot;: &quot;dev&quot;,
+    &quot;prefer-stable&quot;: true,
+    &quot;repositories&quot;: [
+      {
+        &quot;type&quot;:&quot;composer&quot;,
+        &quot;url&quot;:&quot;https://packages.drupal.org/8&quot;
+      }
+    ],
+    &quot;require&quot;: {
+        &quot;cweagans/composer-patches&quot;: &quot;^1.6&quot;,
+        &quot;composer/installers&quot;: &quot;^1.6&quot;,
+        &quot;drupal-composer/drupal-scaffold&quot;: &quot;^2.5&quot;,
+        &quot;drupal/core&quot;: &quot;^8.6&quot;,
+        &quot;drush/drush&quot;: &quot;^9.5&quot;,
+        &quot;drupal/health_check&quot;: &quot;^1.0&quot;,
+        &quot;drupal/redis&quot;: &quot;^1.1&quot;,
+        &quot;drupal/twig_tweak&quot;: &quot;^2.1&quot;
+    },
+    &quot;scripts&quot;: {
+      &quot;drupal-scaffold&quot;: &quot;DrupalComposer\\DrupalScaffold\\Plugin::scaffold&quot;
+        },
+        &quot;extra&quot; : {
+            &quot;installer-paths&quot;: {
+                &quot;docroot/core&quot;: [&quot;type:drupal-core&quot;],
+                &quot;docroot/libraries/{$name}&quot;: [&quot;type:drupal-library&quot;],
+                &quot;docroot/modules/contrib/{$name}&quot;: [&quot;type:drupal-module&quot;],
+                &quot;docroot/themes/contrib/{$name}&quot;: [&quot;type:drupal-theme&quot;]
+            }
+        }
+}
+</code></pre>
+<p>This will put all of my Drupal modules into <code>docroot/modules/contrib</code> (relative to my composer.json).</p>
+<p>But say I need to patch <code>twig_tweak</code>, for example. I would need to clone the git repo and check it out at whatever the most recent dev version is.</p>
+<p>To do that with composer, you can run</p>
+<pre><code>composer require drupal/twig_tweak --prefer-source 
+</code></pre>
+<p>If you&rsquo;ve already installed twig_tweak, you&rsquo;ll have to remove it first (<code>rm -rf docroot/modules/contrib/twig_tweak</code>)</p>
+<p>Now you&rsquo;ll have the module installed with the .git folder so you can track any changes you need to make.  If you go into the module&rsquo;s directory (<code>cd docroot/modules/contrib/twig_tweak</code>) and run git branch -v you can see that it also pulls info for the dev branch, assuming you&rsquo;re on the main branch.</p>
+<p>You can now make your adjustments, and create a patch by running <code>git diff &gt; name-of-patch.patch</code>.</p>
+<p>If for some reason your patch is specific to your use case and you don&rsquo;t need/want to push it upstream somewhere, you can store this .patch file locally and add it to your composer but use a relative path.  I usually put custom patches in <code>./patches</code>, so an example patch would add this to my composer.json inside the &lsquo;extras&rsquo; object:</p>
+<pre><code>&quot;patches&quot;: {
+    &quot;drupal/twig_tweak&quot;: {
+        &quot;Fix something specific to my use case&quot;: &quot;./patches/twig_tweak.patch&quot;
+    }
+}
+</code></pre>
+<p>Patches in composer this way require the <code>cweagans/composer-patches</code> package.</p>
+<p>As a final note, in the near future <a href="https://www.drupal.org/drupalorg/blog/developer-tools-initiative-part-5-gitlab-partnership">Drupal is partnering with Gitlab to revamp contribution workflows</a> and importantly adding merge requests. Most likely this workflow will be a little bit different when patch-based contribution is swapped for merge requests.</p>
+
+    </div>
+
+</article>
+
+
+
+<footer class="site-footer">
+    <nav class="site-navigation">
+    <ul>
+        
+        <li>
+            <a href="/about">
+                <span>about</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/posts">
+                <span>posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/projects">
+                <span>projects</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+    <div class="footer-site-name">Mika Aguilar</div>
+    <a class="footer-logo" href="/">
+        <img alt="Mika Aguilar's logo" src="/images/logo.svg"/>
+    </a>
+</footer>
+
+</body>
+</html>

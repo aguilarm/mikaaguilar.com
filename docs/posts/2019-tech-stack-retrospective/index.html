@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        2019 Retrospective |
+        
+        Mika Aguilar
+    </title>
+
+    <link href="/favicons/favicon.ico" rel="icon" type="image/ico"/>
+
+    <link href="/lib/font-awesome/css/all.css" rel="stylesheet"/>
+
+    
+    
+    
+    
+    
+    
+    <link href="https://www.mikaaguilar.com/css/main.min.css" rel="stylesheet"/>
+
+    
+
+<link href="https://www.mikaaguilar.com/css/post.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+<header class="site-header">
+    <div class="branding">
+        <a class="brand-logo" href="/">
+            <img alt="Mika Aguilar's Logo" src="/images/logo.svg"/>
+        </a>
+        <div class="brand-text">
+            <a class="brand-text--site-name" href="/" rel="home" title="Home">
+                Mika Aguilar
+            </a>
+            <div class="brand-text--site-tag-line">
+                Curious Software Engineer
+            </div>
+        </div>
+    </div>
+    <nav class="site-navigation">
+    <ul>
+        
+        <li>
+            <a href="/about">
+                <span>about</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/posts">
+                <span>posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/projects">
+                <span>projects</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+</header>
+
+
+
+<article class="post-container">
+    <header class="post-header">
+        <h1><a href="https://www.mikaaguilar.com/posts/2019-tech-stack-retrospective/">2019 Retrospective</a></h1>
+        <div class="post-date post-published">
+            December 24, 2019
+        </div>
+        <div class="post-date post-last-updated">
+            Updated December 29, 2019
+        </div>
+    </header>
+    <div class="post-body">
+        <p>This past year my tech stack saw some exciting changes. We fully embraced React Hooks, Typescript and GraphQL. We poked around the JAMStack and built a fairly large NextJS application. That was a real pivot from the primarily Drupal based projects we&rsquo;ve done before. While we&rsquo;re still using Drupal as a headless CMS, we have ditched the entire front-end of it. Server-wise, Kubernetes and Docker have remained a nice constant this year with a year perhaps defined by stability while the tech reached maturity.</p>
+<h2 id="what-did-i-do">What Did I Do?</h2>
+<p>As 2019 dawned on the world, we were starting a new greenfield project. I had the opportunity to jump out of tuning our Kubernetes workloads and try to get a feel for what was going on in the front-end space. The biggest rumblings seemed to be around the &lsquo;JAMStack&rsquo; (Javascript, APIs, and Markup) which promised to allow you to ditch long running server processes. Having spent most of the last two years tweaking such processes, that sounded awesome. Even though I felt I was pretty good at wrangling the little beasts into happily humming along, I was definitely hoping that eventually we could move to something a little simpler to maintain.</p>
+<p>My new project, however, was planned to be providing lots of dynamic content that varied heavily depending on what user was viewing it. So, <a href="https://www.mikaaguilar.com/posts/building-decoupled-drupal-sites-2019">while I gave Gatsby a shot</a>, I moved to NextJS to power this project, with a headless Drupal CMS hooked up to it via GraphQL through <a href="https://www.apollographql.com/">Apollo</a>. We added typescript to this project as well. In the process of adding Typescript, I used <a href="https://eslint.org/">ESLint</a> and added <a href="https://github.com/typicode/husky">Husky</a> for pre-commit validation as well as <a href="https://prettier.io/">Prettier</a> to keep code looking the same. I decided to stick with SASS for CSS.</p>
+<p>It&rsquo;s been quite nice to work in this stack. Typescript and ESLint with Prettifier have enormously improved our code readability and stability. Using React for all of our front-end is a lot more consistent than the half Drupal php/twig templates with a bit of JS sprinkled around. With React everywhere, we have access to a massive library of open source UI component implementations that speed development. It&rsquo;s also generally more accessible to engineers than twig templates in PHP. GraphQL is nice to consume on the front-end and we&rsquo;ve moved nearly all of the code-based interaction with Drupal behind it.</p>
+<p>We&rsquo;ve had some paper-cuts using this, and I would be remiss not to point some of those out. Firstly, I&rsquo;ve not been able to tune Apollo client side caching nicely and the methods for managing it feel a bit clunky. Webpack is powering this and it&rsquo;s <em>still</em> a real awkward abstraction with a large amount of configuration holding us together though it has improved a bit as the year progressed. Overall, however, I would say this setup was a net-positive. So what do I hope to do different in 2020?</p>
+<h2 id="whats-next">Whats Next?</h2>
+<p>There appears to be a new kid on the block, called <a href="https://svelte.dev/">Svelte</a>. I&rsquo;ve done just a bit of poking around with it, and the code you actually write using it is super duper simple. It&rsquo;s wildly efficient computationally as well, double win! I am 100% on the hype train for this one but there is definitely more I need to consider about it. I hope to build something with it this coming year to give it a shot.</p>
+<p>It is also starting to feel like we&rsquo;re going to use something besides Drupal as our CMS this year. Things like <a href="https://hasura.io/">Hasura</a> and <a href="https://www.graphile.org/">Graphile</a> are candidates, which introspect a Postgres database to output GraphQL schema from it. Those might be a bit too spartan, but we&rsquo;re toying around with them now. <a href="https://www.netlifycms.org/">Netlify CMS</a> or <a href="https://tinacms.org/">TinaCMS</a> and many other JAMStack focused offerings are extra attractive because we can ultimately serve plain old flat files. <a href="https://sapper.svelte.dev/">Sapper</a> uses Svelte and that&rsquo;s cool.</p>
+<p>The server side situation this year was really static. Nothing big changed. This next year I expect we&rsquo;ll still be running Kubernetes workloads but we may ascend to flat files and perhaps even short running processes commonly known as &lsquo;serverless.&rsquo;</p>
+<p>I&rsquo;m excited about how this last year went and even more excited about what could be coming up in 2020.</p>
+
+    </div>
+
+</article>
+
+
+
+<footer class="site-footer">
+    <nav class="site-navigation">
+    <ul>
+        
+        <li>
+            <a href="/about">
+                <span>about</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/posts">
+                <span>posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/projects">
+                <span>projects</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+    <div class="footer-site-name">Mika Aguilar</div>
+    <a class="footer-logo" href="/">
+        <img alt="Mika Aguilar's logo" src="/images/logo.svg"/>
+    </a>
+</footer>
+
+</body>
+</html>

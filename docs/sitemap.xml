@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/about/</loc>
+    <lastmod>2020-01-26T17:10:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/</loc>
+    <lastmod>2019-12-29T17:10:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/2019-tech-stack-retrospective/</loc>
+    <lastmod>2019-12-29T17:10:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/</loc>
+    <lastmod>2019-12-29T17:10:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/https-explained-simply/</loc>
+    <lastmod>2019-09-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/tuning-php-fpm/</loc>
+    <lastmod>2019-09-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/bookshelf/</loc>
+    <lastmod>2019-10-20T17:10:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/building-decoupled-drupal-sites-2019/</loc>
+    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/projects/decoupled-drupal-gatsby-starter-kit/</loc>
+    <lastmod>2019-07-14T17:10:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/projects/</loc>
+    <lastmod>2019-07-14T17:10:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/easily-patch-contrib-drupal-modules-composer/</loc>
+    <lastmod>2018-12-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/talks-i-love/</loc>
+    <lastmod>2018-12-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/tags/</loc>
+  </url>
+  
+</urlset>

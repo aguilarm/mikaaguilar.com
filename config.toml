@@ -1,6 +1,7 @@
 baseURL = "https://www.mikaaguilar.com/"
 languageCode = "en-us"
 title = "Mika Aguilar"
+publishDir = "docs"
 [params]
   TagLine = "Curious Software Engineer"
 

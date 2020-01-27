@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mika Aguilar</title>
+    <link>https://www.mikaaguilar.com/</link>
+    <description>Recent content on Mika Aguilar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Dec 2019 17:10:08 -0600</lastBuildDate>
+    
+	<atom:link href="https://www.mikaaguilar.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2019 Retrospective</title>
+      <link>https://www.mikaaguilar.com/posts/2019-tech-stack-retrospective/</link>
+      <pubDate>Tue, 24 Dec 2019 17:10:08 -0600</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/posts/2019-tech-stack-retrospective/</guid>
+      <description>This past year my tech stack saw some exciting changes. We fully embraced React Hooks, Typescript and GraphQL. We poked around the JAMStack and built a fairly large NextJS application. That was a real pivot from the primarily Drupal based projects we&amp;rsquo;ve done before. While we&amp;rsquo;re still using Drupal as a headless CMS, we have ditched the entire front-end of it. Server-wise, Kubernetes and Docker have remained a nice constant this year with a year perhaps defined by stability while the tech reached maturity.</description>
+    </item>
+    
+    <item>
+      <title>Https Explained Simply</title>
+      <link>https://www.mikaaguilar.com/posts/https-explained-simply/</link>
+      <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/posts/https-explained-simply/</guid>
+      <description>At work, we run a lot of different websites. From time to time, we need to renew the HTTPS certs used by some of the unfortunate few not powered by Let&amp;rsquo;s Encrypt yet. Recently, I needed a simple way to describe what was happening through the whole process.
+When I turned to google looking for a simple explanation, what I found was either a bit too simple or way too deep.</description>
+    </item>
+    
+    <item>
+      <title>Tuning Php Fpm</title>
+      <link>https://www.mikaaguilar.com/posts/tuning-php-fpm/</link>
+      <pubDate>Fri, 19 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/posts/tuning-php-fpm/</guid>
+      <description>We&amp;rsquo;ve been running php-fpm at a pretty significant scale for quite some time now and have played around with a bunch of different performance configurations in an attempt to do so efficiently. Our stack is varnish &amp;gt; nginx &amp;gt; php-fpm. Php is running Drupal behind all of that, and the vast majority of a site is hitting varnish cache. Occasionally we&amp;rsquo;ll have to warm up caches or something will leak through and we&amp;rsquo;ll have to deal with a sizeable surge of concurrent requests.</description>
+    </item>
+    
+    <item>
+      <title>Bookshelf</title>
+      <link>https://www.mikaaguilar.com/posts/bookshelf/</link>
+      <pubDate>Sun, 07 Jul 2019 17:10:08 -0600</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/posts/bookshelf/</guid>
+      <description>I&amp;rsquo;ve decided to put together a list of books I&amp;rsquo;ve read so I can direct folks to this post when asked for something to read. Most of the programming books have free online editions, so get to it!
+I&amp;rsquo;m also a huge fan of sci-fi, so I&amp;rsquo;ve thrown a couple of my favorites in at the end.
+If you&amp;rsquo;re more visual, I&amp;rsquo;ve also made this list of talks I recommend.</description>
+    </item>
+    
+    <item>
+      <title>Building Decoupled Drupal Sites 2019</title>
+      <link>https://www.mikaaguilar.com/posts/building-decoupled-drupal-sites-2019/</link>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/posts/building-decoupled-drupal-sites-2019/</guid>
+      <description>Alright, you&amp;rsquo;ve seen it everywhere for the last couple of years - decoupled Drupal. I&amp;rsquo;ve been eyeing the available solutions for some time and finally feel like things are in a good spot to make the jump over. Buckle up and join me on my journey to find a rightful heir to Drupal 8&amp;rsquo;s frontend.
+If you want to skip the journey and get some real decisions, scroll on down to the last section.</description>
+    </item>
+    
+    <item>
+      <title>Decoupled Drupal with Gatsby Starter Kit</title>
+      <link>https://www.mikaaguilar.com/projects/decoupled-drupal-gatsby-starter-kit/</link>
+      <pubDate>Wed, 23 Jan 2019 17:10:08 -0600</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/projects/decoupled-drupal-gatsby-starter-kit/</guid>
+      <description>In doing the research that lead to my post about decoupled Drupal, I created a boilerplate project for using Gatsby with Drupal. The project is pretty basic but should have everything you need to get started. It uses docker-compose so you can run it anywhere you have docker installed.</description>
+    </item>
+    
+    <item>
+      <title>Easily Patch Contrib Drupal Modules Composer</title>
+      <link>https://www.mikaaguilar.com/posts/easily-patch-contrib-drupal-modules-composer/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/posts/easily-patch-contrib-drupal-modules-composer/</guid>
+      <description>The workflow for patching Drupal modules can be a bit obtuse if you do everything by hand, but with composer it&amp;rsquo;s easy!
+I manage all contributed modules with composer, so an example composer.json might look like this:
+{ &amp;quot;name&amp;quot;: &amp;quot;example&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Drupal 8 Example&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;project&amp;quot;, &amp;quot;minimum-stability&amp;quot;: &amp;quot;dev&amp;quot;, &amp;quot;prefer-stable&amp;quot;: true, &amp;quot;repositories&amp;quot;: [ { &amp;quot;type&amp;quot;:&amp;quot;composer&amp;quot;, &amp;quot;url&amp;quot;:&amp;quot;https://packages.drupal.org/8&amp;quot; } ], &amp;quot;require&amp;quot;: { &amp;quot;cweagans/composer-patches&amp;quot;: &amp;quot;^1.6&amp;quot;, &amp;quot;composer/installers&amp;quot;: &amp;quot;^1.6&amp;quot;, &amp;quot;drupal-composer/drupal-scaffold&amp;quot;: &amp;quot;^2.5&amp;quot;, &amp;quot;drupal/core&amp;quot;: &amp;quot;^8.6&amp;quot;, &amp;quot;drush/drush&amp;quot;: &amp;quot;^9.5&amp;quot;, &amp;quot;drupal/health_check&amp;quot;: &amp;quot;^1.</description>
+    </item>
+    
+    <item>
+      <title>Talks I Love</title>
+      <link>https://www.mikaaguilar.com/posts/talks-i-love/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/posts/talks-i-love/</guid>
+      <description>All of these talks have had a large impact on how I approach problems or understand different aspects of the art of programming. If you have the time, I really recommend going through each and every one of these videos.
+If you prefer reading, I&amp;rsquo;ve got you covered with this post listing my book recommendations.
+I&amp;rsquo;ll start off by listing talks that I think are relevant no matter what problem space you&amp;rsquo;re working in, and add some more targeted talks to different sections below.</description>
+    </item>
+    
+  </channel>
+</rss>
