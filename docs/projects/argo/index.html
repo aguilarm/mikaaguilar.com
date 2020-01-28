@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>
         
-        Projects |
+        Argo |
         
         Mika Aguilar
     </title>
@@ -24,7 +24,7 @@
 
     
 
-<link href="/css/list.min.css" rel="stylesheet">
+<link href="/css/project.min.css" rel="stylesheet">
 
 
 </head>
@@ -71,45 +71,39 @@
 
 
 
-<main>
-    <header class="list-header">
-        <h1>Projects</h1>
+<article class="project-container">
+    <header class="project-header">
+        <h1><a href="/projects/argo/">Argo</a></h1>
+        <div class="project-date project-published">
+            Began January 10, 2017
+        </div>
+        <div class="project-date project-last-updated">
+            Updated October 19, 2019
+        </div>
+        
+        <div>
+            <a class="project-repository" href="https://github.com/favish/argo">
+                Source Code
+            </a>
+        </div>
+        
+        
     </header>
-    <ul class="list">
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/decoupled-drupal-gatsby-starter-kit/">Decoupled Drupal with Gatsby Starter Kit</a>
-            <div class="list-item-description">Boilerplate for getting Gatsby hooked up to a Drupal backend.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/coral-talk/">Coral Talk</a>
-            <div class="list-item-description">Open source project I deployed and contributed to.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/argo/">Argo</a>
-            <div class="list-item-description">Golang-based CLI tool for managing Kubernetes workloads.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/squarereddit/">Squarereddit</a>
-            <div class="list-item-description">Used the Reddit API to generate a grid of images.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/parallax-photos/">Parallax Photos</a>
-            <div class="list-item-description">Used parrallax.js to make a few aircraft scenes.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/javascript-game-engine/">Javascript Game Engine</a>
-            <div class="list-item-description">Project from a Udacity course.</div>
-        </li>
-        
-    </ul>
+    <div class="project-body">
+        <p>When we made the switch to Kubernetes as a shop at Favish, we needed a way to ease onboarding everyone to the new stack.</p>
+<p>Coming from the world of Vagrant where a pre-made virtual machine could be downloaded that included everything you needed,
+this tool was created in Golang to automatically install and configure things like Docker and kubectl for use with our
+clusters.</p>
+<p>At the time, there were a few rough edges involved in interacting with the cluster to get things like database
+dumps and files into and out of it. We hoped, and had some success, at sort of hiding these behind a simple abstraction
+everyone could use.</p>
+<p>We also built this a bit before Helm became common practice, and it ultimately evolved into a homebrewed version of helm.<br>
+So once helm gained traction, we switched over to that and this tool was largely replaced.</p>
+<p>A very fun project to build that got pretty well into using Golang for a CLI tool.</p>
 
-</main>
+    </div>
+
+</article>
 
 
 

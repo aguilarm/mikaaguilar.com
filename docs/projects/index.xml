@@ -21,6 +21,28 @@
     </item>
     
     <item>
+      <title>Coral Talk</title>
+      <link>https://www.mikaaguilar.com/projects/coral-talk/</link>
+      <pubDate>Tue, 08 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/projects/coral-talk/</guid>
+      <description>When we moved a very high traffic client onto Kubernetes, we tried to split up their stack a bit.
+The site is largely static, except for comments. So there was definitely an opportunity to save resources if we could spin off comments into a microservice decoupled from our main Drupal application.
+We decided to use Coral Talk, and I spent quite a bit of time working on various custom plugins to fit our use-case.</description>
+    </item>
+    
+    <item>
+      <title>Argo</title>
+      <link>https://www.mikaaguilar.com/projects/argo/</link>
+      <pubDate>Tue, 10 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/projects/argo/</guid>
+      <description>When we made the switch to Kubernetes as a shop at Favish, we needed a way to ease onboarding everyone to the new stack.
+Coming from the world of Vagrant where a pre-made virtual machine could be downloaded that included everything you needed, this tool was created in Golang to automatically install and configure things like Docker and kubectl for use with our clusters.
+At the time, there were a few rough edges involved in interacting with the cluster to get things like database dumps and files into and out of it.</description>
+    </item>
+    
+    <item>
       <title>Squarereddit</title>
       <link>https://www.mikaaguilar.com/projects/squarereddit/</link>
       <pubDate>Sun, 16 Nov 2014 17:42:31 -0600</pubDate>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>
         
-        Projects |
+        Coral Talk |
         
         Mika Aguilar
     </title>
@@ -24,7 +24,7 @@
 
     
 
-<link href="/css/list.min.css" rel="stylesheet">
+<link href="/css/project.min.css" rel="stylesheet">
 
 
 </head>
@@ -71,45 +71,35 @@
 
 
 
-<main>
-    <header class="list-header">
-        <h1>Projects</h1>
+<article class="project-container">
+    <header class="project-header">
+        <h1><a href="/projects/coral-talk/">Coral Talk</a></h1>
+        <div class="project-date project-published">
+            Began May 8, 2018
+        </div>
+        <div class="project-date project-last-updated">
+            Updated October 19, 2019
+        </div>
+        
+        <div>
+            <a class="project-repository" href="https://github.com/favish/talk-plugin-ckeditor">
+                Source Code
+            </a>
+        </div>
+        
+        
     </header>
-    <ul class="list">
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/decoupled-drupal-gatsby-starter-kit/">Decoupled Drupal with Gatsby Starter Kit</a>
-            <div class="list-item-description">Boilerplate for getting Gatsby hooked up to a Drupal backend.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/coral-talk/">Coral Talk</a>
-            <div class="list-item-description">Open source project I deployed and contributed to.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/argo/">Argo</a>
-            <div class="list-item-description">Golang-based CLI tool for managing Kubernetes workloads.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/squarereddit/">Squarereddit</a>
-            <div class="list-item-description">Used the Reddit API to generate a grid of images.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/parallax-photos/">Parallax Photos</a>
-            <div class="list-item-description">Used parrallax.js to make a few aircraft scenes.</div>
-        </li>
-        
-        <li class="list-item">
-            <a class="list-item-title" href="/projects/javascript-game-engine/">Javascript Game Engine</a>
-            <div class="list-item-description">Project from a Udacity course.</div>
-        </li>
-        
-    </ul>
+    <div class="project-body">
+        <p>When we moved a very high traffic client onto Kubernetes, we tried to split up their stack a bit.</p>
+<p>The site is largely static, except for comments. So there was definitely an opportunity to save resources if we could
+spin off comments into a microservice decoupled from our main Drupal application.</p>
+<p>We decided to use <a href="https://coralproject.net/">Coral Talk</a>, and I spent quite a bit of time working on various custom plugins to fit our use-case.</p>
+<p>It was built with a mongodb backend and a React frontend that used GraphQL.</p>
+<p>I made some issues and <a href="https://github.com/coralproject/talk/pull/2038">one accepted PR</a> in the process.</p>
 
-</main>
+    </div>
+
+</article>
 
 
 
