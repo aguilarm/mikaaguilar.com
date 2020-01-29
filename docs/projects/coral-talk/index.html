@@ -8,6 +8,19 @@
         
         Mika Aguilar
     </title>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-53324003-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
     <link href="/favicons/favicon.ico" rel="icon" type="image/ico"/>
 
@@ -78,7 +91,7 @@
             Began May 8, 2018
         </div>
         <div class="project-date project-last-updated">
-            Updated October 19, 2019
+            Updated February 26, 2018
         </div>
         
         <div>
@@ -93,8 +106,10 @@
         <p>When we moved a very high traffic client onto Kubernetes, we tried to split up their stack a bit.</p>
 <p>The site is largely static, except for comments. So there was definitely an opportunity to save resources if we could
 spin off comments into a microservice decoupled from our main Drupal application.</p>
-<p>We decided to use <a href="https://coralproject.net/">Coral Talk</a>, and I spent quite a bit of time working on various custom plugins to fit our use-case.</p>
-<p>It was built with a mongodb backend and a React frontend that used GraphQL.</p>
+<p>We decided to use <a href="https://coralproject.net/">Coral Talk</a>, and I spent quite a bit of time working on various custom plugins to fit our use-case.<br>
+Many of those remain private repos because they were very specific use cases, but the CKEditor plugin is public.</p>
+<p>It was built with a mongodb backend and a React frontend that used GraphQL. It was deployed on a site that regularly has
+around 5-8k active users at any moment, and hummed along quite nicely.</p>
 <p>I made some issues and <a href="https://github.com/coralproject/talk/pull/2038">one accepted PR</a> in the process.</p>
 
     </div>

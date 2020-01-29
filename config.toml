@@ -2,6 +2,7 @@ baseURL = "https://www.mikaaguilar.com/"
 languageCode = "en-us"
 title = "Mika Aguilar"
 publishDir = "docs"
+googleAnalytics = "UA-53324003-1"
 [params]
   TagLine = "Curious Software Engineer"
 
