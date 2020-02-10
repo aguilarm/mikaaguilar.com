@@ -5,7 +5,10 @@ publishDir = "docs"
 googleAnalytics = "UA-53324003-1"
 [params]
   TagLine = "Curious Software Engineer"
-
+[markup]
+  [markup.highlight]
+    lineNos = true
+    tabWidth = 2
 [menu]
    [[menu.main]]
      identifier = "about"

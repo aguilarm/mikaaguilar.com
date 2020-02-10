@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Mika Aguilar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Dec 2019 17:10:08 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.mikaaguilar.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Debouncing and Throttling React Events</title>
+      <link>https://www.mikaaguilar.com/posts/react-event-debounce-throttle/</link>
+      <pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/posts/react-event-debounce-throttle/</guid>
+      <description>Throttling and debouncing events in React is something that is often overlooked and can usually save you from a significant amount of UI lag or jankiness. Doing either one is relatively simple but easy to implement incorrectly.
+I think it may be useful to learn how these work by slowly evolving approaches until we land on a nice simple one.
+What&amp;rsquo;s the Difference? Throttling an event means &amp;lsquo;do this at most once every x milliseconds&amp;rsquo;.</description>
+    </item>
     
     <item>
       <title>2019 Retrospective</title>
@@ -58,15 +69,6 @@ If you&amp;rsquo;re more visual, I&amp;rsquo;ve also made this list of talks I r
       <guid>https://www.mikaaguilar.com/posts/building-decoupled-drupal-sites-2019/</guid>
       <description>Alright, you&amp;rsquo;ve seen it everywhere for the last couple of years - decoupled Drupal. I&amp;rsquo;ve been eyeing the available solutions for some time and finally feel like things are in a good spot to make the jump over. Buckle up and join me on my journey to find a rightful heir to Drupal 8&amp;rsquo;s frontend.
 If you want to skip the journey and get some real decisions, scroll on down to the last section.</description>
-    </item>
-    
-    <item>
-      <title>Debouncing and Throttling React Events</title>
-      <link>https://www.mikaaguilar.com/posts/react-event-debounce-throttle/</link>
-      <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mikaaguilar.com/posts/react-event-debounce-throttle/</guid>
-      <description></description>
     </item>
     
     <item>
