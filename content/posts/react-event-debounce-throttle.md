@@ -54,7 +54,7 @@ Ultimately we'll only call each instance of the throttled function once, because
 
 So, we're going to need to define our throttled function outside of the component body so that the reference remains the same. That might look something like this:
 
-```jsx {linenos=true,hl_lines=["3-5", "13-14"]}
+```jsx {linenos=true,hl_lines=["3-5", "15-17"]}
 import { throttle } from 'lodash';
 
 const handleInputChange = throttle((newValue, setValue) => {
