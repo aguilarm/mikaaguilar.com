@@ -32,3 +32,7 @@
     max-width: 100%;
     height: auto;
 }
+
+.post-comments {
+    margin-top: 2em;
+}
