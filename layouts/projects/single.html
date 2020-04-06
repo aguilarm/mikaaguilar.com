@@ -33,7 +33,9 @@
     <div class="project-body">
         {{ .Content }}
     </div>
-
+    <div class="post-comments comments">
+        {{ template "_internal/disqus.html" . }}
+    </div>
 </article>
 
 {{ end }}
