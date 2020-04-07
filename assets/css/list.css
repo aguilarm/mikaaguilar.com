@@ -42,14 +42,14 @@ main {
 .list-pinned-header h2 {
     text-transform: uppercase;
     font-weight: normal;
-    color: var(--color-brand-compliment);
+    color: var(--color-brand-compliment-dark);
     margin: 0;
 }
 
-.list-pinned {
-    display: flex;
+.list-pinned-item .list-item-title {
+    color: var(--color-brand-compliment);
 }
 
-.list-pinned-item {
-    flex: 1 1 auto;
+.list-pinned-item .list-item-title:hover {
+    color: var(--color-brand);
 }
