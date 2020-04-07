@@ -4,6 +4,7 @@ date: 2019-07-07T17:10:08-06:00
 lastmod: 2019-10-20T17:10:08-06:00
 description: "A list of book recommendations with short summaries."
 draft: false
+pinned: true
 ---
 
 I've decided to put together a list of books I've read so I can direct folks to this post when asked for something to read. Most of the programming books have free online editions, so get to it!\

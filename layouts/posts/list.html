@@ -10,8 +10,25 @@
     <header class="list-header">
         <h1>{{ .Title }}</h1>
     </header>
+    <section class="list-pinned-container">
+        <header class="list-pinned-header">
+            <h2>
+                &#128204 Pinned
+            </h2>
+            <div class="list-pinned-description">
+                If you take a look at anything, have a look at these first! I'm constantly referring to these.
+            </div>
+        </header>
+        <ul class="list-pinned">
+            {{ range where .Pages.ByLastmod ".Params.pinned" "==" true }}
+            <li class="list-pinned-item">
+                <a class="list-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </section>
     <ul class="list">
-        {{ range .Pages }}
+        {{ range where .Pages ".Params.pinned" "!=" true }}
         <li class="list-item">
             <div class="list-item-date">{{ .Date.Format "Jan 2, 2006" }}</div>
             <a class="list-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a>

@@ -4,6 +4,7 @@ date: 2018-12-26
 lastmod: 2019-12-
 description: "A list of developer or conference talks I recommend watching."
 draft: false
+pinned: true
 ---
 
 All of these talks have had a large impact on how I approach problems or understand different aspects of the art of programming. If you have the time, I really recommend going through each and every one of these videos.

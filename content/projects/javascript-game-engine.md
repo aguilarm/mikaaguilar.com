@@ -6,6 +6,7 @@ description: "Project from a Udacity course."
 repository: "https://github.com/aguilarm/canvasGame"
 demo: "http://aguilarm.github.io/canvasGame/"
 draft: false
+pinned: true
 ---
 
 Long ago, I found [Udacity's cs255 course](https://eu.udacity.com/course/html5-game-development--cs255) on building a game engine almost from scratch in JavaScript and had a go at it.
