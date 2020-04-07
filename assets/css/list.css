@@ -37,6 +37,7 @@ main {
 
 .list-pinned-header {
     margin-bottom: 1em;
+    color: var(--color-detail-text);
 }
 
 .list-pinned-header h2 {

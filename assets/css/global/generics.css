@@ -42,7 +42,6 @@ ul {
 
 .site-navigation ul li {
     display: inline-block;
-    font-weight: bold;
     text-transform: uppercase;
     font-family: var(--font-heading);
 }
