@@ -9,6 +9,16 @@ body {
     margin: 0;
 }
 
+main {
+    padding: 0 0.5em;
+}
+
+@media(min-width: 768px) {
+    main {
+        padding: 0;
+    }
+}
+
 h1,
 h2,
 h3,

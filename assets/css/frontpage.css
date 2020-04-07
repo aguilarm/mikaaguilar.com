@@ -65,9 +65,16 @@
 }
 
 .site-navigation ul li {
-    font-size: 1.8em;
+    font-size: 1.6em;
     margin: 0 6px;
 }
+
+@media (min-width: 768px) {
+    .site-navigation ul li {
+        font-size: 1.8em;
+    }
+}
+
 
 .social-buttons {
     margin-top: 8px;

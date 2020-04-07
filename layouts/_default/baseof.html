@@ -28,13 +28,15 @@
 
 </head>
 <body>
-{{ block "header" . }}
-{{ partial "header.html" . }}
-{{ end }}
-{{ block "main" . }}
-{{ end }}
-{{ block "footer" . }}
-{{ partial "footer.html" . }}
-{{ end }}
+<main>
+    {{ block "header" . }}
+    {{ partial "header.html" . }}
+    {{ end }}
+    {{ block "content" . }}
+    {{ end }}
+    {{ block "footer" . }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+</main>
 </body>
 </html>

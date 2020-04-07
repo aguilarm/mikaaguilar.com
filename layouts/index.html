@@ -7,23 +7,21 @@
 <!-- -->
 {{ end }}
 
-{{ define "main" }}
-<main>
-    <section class="section--top">
-        <div class="top-container">
-            <h1 class="top-header">
-                <a href="/about">
-                    Mika Aguilar
-                </a>
-            </h1>
-            <div class="front-personal-summary">
-                {{ .Params.personalSummary | markdownify }}
-            </div>
-            {{ partial "navigation.html" . }}
-            {{ partial "social-media.html" . }}
+{{ define "content" }}
+<section class="section--top">
+    <div class="top-container">
+        <h1 class="top-header">
+            <a href="/about">
+                Mika Aguilar
+            </a>
+        </h1>
+        <div class="front-personal-summary">
+            {{ .Params.personalSummary | markdownify }}
         </div>
-    </section>
-</main>
+        {{ partial "navigation.html" . }}
+        {{ partial "social-media.html" . }}
+    </div>
+</section>
 {{ end }}
 
 {{ define "footer" }}
