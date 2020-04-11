@@ -22,6 +22,16 @@
     color: var(--color-brand-compliment-dark);
 }
 
+.project-resource {
+    display: block;
+    margin: 1em 0;
+    font-size: 1.3em;
+}
+
+.project-resource i {
+    margin-right: 0.25em;
+}
+
 .project-body a {
     text-decoration: underline dashed;
 }

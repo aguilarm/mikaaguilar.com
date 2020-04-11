@@ -16,18 +16,16 @@
             Updated {{ .Lastmod.Format "January 2, 2006" }}
         </div>
         {{ if .Params.repository }}
-        <div>
-            <a class="project-repository" href="{{ .Params.repository }}">
-                Source Code
-            </a>
-        </div>
+        <a class="project-resource project-repository" href="{{ .Params.repository }}">
+            <i class="fas fa-code"></i>
+            View Source Code
+        </a>
         {{ end }}
         {{ if .Params.demo }}
-        <div>
-            <a class="project-demo" href="{{ .Params.demo }}">
-                View Demo
-            </a>
-        </div>
+        <a class="project-resource project-demo" href="{{ .Params.demo }}">
+            <i class="fas fa-external-link-alt"></i>
+            View Demo
+        </a>
         {{ end }}
     </header>
     <div class="project-body">
