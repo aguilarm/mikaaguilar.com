@@ -9,13 +9,20 @@ draft: false
 pinned: true
 ---
 
-Long ago, I found [Udacity's cs255 course](https://eu.udacity.com/course/html5-game-development--cs255) on building a game engine almost from scratch in JavaScript and had a go at it.
+When I was starting to dig in to Javascript on my own, I was having a bit of a hard time getting my hands
+dirty in really large applications. I eventually found a (since removed) Udacity course on HTML5 Game Development
+which was produced by Google and walked students through building a game engine in JS.
 
-Everything except the physics engine is built with mostly vanilla javascript and minimal libraries. I did a fair bit of adjusting and fixing the engine to get it to work, which ended up being quite a bit of sort of reverse engineering because the course was mostly abandoned and the original game only sort of worked when I took the class.
+The course was already quite dated when I found it. As a result, I needed to do quite a bit of self learning
+ to fix up broken dependencies and patch old code bugs. The added challenge made this course
+a lot more interesting and I eventually ended up with a pretty unique version of the engine.
 
-The art here is not my own, I used a few different libraries from [OpenGameArt](https://opengameart.org/). The github repo has specifics on those.
+It consists of a custom game loop, rendering engine, input engine, physics, sprites and a tile map system. The
+first time I managed to get all of that running together to write an animated character to the screen was
+super satisfying.
 
-This project really catapulted my understanding of all kinds of things but probably the most important insight was how the game loop worked.
+I used art from [OpenGameArt](https://opengameart.org/) to build a little game using the engine that you can 
+check out in the demo link above.
 
 Here's what it looks like:
 

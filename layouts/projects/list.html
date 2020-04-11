@@ -6,21 +6,17 @@
 
 {{ define "content" }}
 
-<section>
+<main>
     <header class="list-header">
         <h1>{{ .Title }}</h1>
     </header>
     <ul class="list">
         <section class="list-pinned-container">
-            <header class="list-pinned-header">
-                <h2>
-                    &#128204 Pinned
-                </h2>
-            </header>
             <ul class="list-pinned">
                 {{ range where .Pages.ByLastmod ".Params.pinned" "==" true }}
                 <li class="list-pinned-item">
                     <a class="list-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <div class="list-item-description">{{ .Description }}</div>
                 </li>
                 {{ end }}
             </ul>
@@ -33,6 +29,6 @@
         {{ end }}
     </ul>
 
-</section>
+</main>
 
 {{ end }}

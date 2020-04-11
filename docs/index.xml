@@ -150,8 +150,8 @@ I cut up a few WW2 aircraft scenes and turned them into parrallax.</description>
       <pubDate>Tue, 05 Aug 2014 17:30:03 -0600</pubDate>
       
       <guid>https://www.mikaaguilar.com/projects/javascript-game-engine/</guid>
-      <description>Long ago, I found Udacity&amp;rsquo;s cs255 course on building a game engine almost from scratch in JavaScript and had a go at it.
-Everything except the physics engine is built with mostly vanilla javascript and minimal libraries. I did a fair bit of adjusting and fixing the engine to get it to work, which ended up being quite a bit of sort of reverse engineering because the course was mostly abandoned and the original game only sort of worked when I took the class.</description>
+      <description>When I was starting to dig in to Javascript on my own, I was having a bit of a hard time getting my hands dirty in really large applications. I eventually found a (since removed) Udacity course on HTML5 Game Development which was produced by Google and walked students through building a game engine in JS.
+The course was already quite dated when I found it. As a result, I needed to do quite a bit of self learning to fix up broken dependencies and patch old code bugs.</description>
     </item>
     
   </channel>

@@ -41,18 +41,6 @@ main {
     }
 }
 
-.list-pinned-header {
-    margin-bottom: 1em;
-    color: var(--color-detail-text);
-}
-
-.list-pinned-header h2 {
-    text-transform: uppercase;
-    font-weight: normal;
-    color: var(--color-brand-compliment-dark);
-    margin: 0;
-}
-
 .list-pinned-item .list-item-title {
     color: var(--color-brand-compliment);
 }
