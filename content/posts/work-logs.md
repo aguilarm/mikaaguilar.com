@@ -44,4 +44,5 @@ I've been writing logs like this for a little over a year now, and it's been a h
 3. The act of writing something out - even just figuring out *what* to write - helps me focus and keep things in perspective.
 
 Most of us likely have a notepad handy. Writing down your problem or a solution you've come up with is
-incredibly helpful. I think augmenting your note taking with a work log is super helpful.
+incredibly helpful. I think augmenting your note taking with a work log is huge. Let me know if you do something
+like this!
