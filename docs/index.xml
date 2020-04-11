@@ -154,5 +154,16 @@ I cut up a few WW2 aircraft scenes and turned them into parrallax.</description>
 The course was already quite dated when I found it. As a result, I needed to do quite a bit of self learning to fix up broken dependencies and patch old code bugs.</description>
     </item>
     
+    <item>
+      <title>MikaAguilar.com</title>
+      <link>https://www.mikaaguilar.com/projects/mika-aguilar-com/</link>
+      <pubDate>Mon, 03 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/projects/mika-aguilar-com/</guid>
+      <description>You&amp;rsquo;re lookin at it! I&amp;rsquo;ve been maintaining this site in it&amp;rsquo;s current repo since 2014. Before that, I had a pretty minimal portfolio hosted on my university&amp;rsquo;s website that began it&amp;rsquo;s life in 2006.
+This is my personal playground, and I&amp;rsquo;m constantly iterating on it. It&amp;rsquo;s been on Angular, used a metric ton of Parallax, lived in Drupal, and a couple of other exploratory rewrites.
+As of writing, I am using Hugo and GitHub Pages to build and host the site.</description>
+    </item>
+    
   </channel>
 </rss>
