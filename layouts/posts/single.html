@@ -19,9 +19,22 @@
     <div class="post-body">
         {{ .Content }}
     </div>
-    <div class="post-comments comments">
-        {{ template "_internal/disqus.html" . }}
-    </div>
+    <footer class="post-footer">
+        <div class="post-thanks">
+            Thanks for stopping by!
+        </div>
+        <div class="post-edit-on-github">
+            See something you'd like to correct?
+            <a
+                    href="{{ .Site.Params.SiteRepo }}/tree/master/content/{{ .File.Path }}"
+            >
+                Send me a <i class="fab fa-github"></i> pull request!
+            </a>
+        </div>
+        <div class="post-comments comments">
+            {{ template "_internal/disqus.html" . }}
+        </div>
+    </footer>
 </article>
 
 {{ end }}

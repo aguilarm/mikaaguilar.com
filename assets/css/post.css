@@ -33,6 +33,19 @@
     height: auto;
 }
 
+.post-footer {
+    margin-top: 3em;
+}
+
+.post-thanks {
+    font-size: 1.3em;
+}
+
+.post-edit-on-github {
+    margin: 1em 0;
+    font-size: 1.2em;
+}
+
 .post-comments {
     margin-top: 2em;
 }

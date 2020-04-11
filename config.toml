@@ -6,6 +6,7 @@ googleAnalytics = "UA-53324003-1"
 disqusShortname = "mika-aguilar"
 [params]
   TagLine = "Curious Software Engineer"
+  SiteRepo = "https://github.com/aguilarm/mikaaguilar.com"
 [markup]
   [markup.highlight]
     lineNos = true
