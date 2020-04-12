@@ -8,12 +8,17 @@
   </url>
   
   <url>
-    <loc>https://www.mikaaguilar.com/posts/work-logs/</loc>
-    <lastmod>2020-04-10T00:00:00+00:00</lastmod>
+    <loc>https://www.mikaaguilar.com/posts/blogging-on-hugo/</loc>
+    <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.mikaaguilar.com/posts/</loc>
+    <lastmod>2020-04-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/work-logs/</loc>
     <lastmod>2020-04-10T00:00:00+00:00</lastmod>
   </url>
   
