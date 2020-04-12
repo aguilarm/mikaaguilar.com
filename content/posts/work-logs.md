@@ -7,7 +7,7 @@ pinned: false
 draft: false
 ---
 
-At any moment, I tend to have quite a few things that need my attention in some way. I've found that I'll need to 
+At any moment, I tend to have quite a few things that need my attention. I've found that I'll need to 
 context switch several times during the day - from answering a question to attending a meeting or checking in
 on a long-running process.
 
