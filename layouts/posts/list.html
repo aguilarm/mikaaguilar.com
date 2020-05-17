@@ -10,9 +10,11 @@
     <header class="list-header">
         <h1>{{ .Title }}</h1>
     </header>
+    {{ $pinned := where .Pages.ByLastmod ".Params.pinned" "==" true }}
+    {{ if $pinned }}
     <section class="list-pinned-container">
         <ul class="list-pinned">
-            {{ range where .Pages.ByLastmod ".Params.pinned" "==" true }}
+            {{ range $pinned }}
             <li class="list-pinned-item">
                 <a class="list-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
                 <div class="list-item-description">{{ .Description }}</div>
@@ -20,8 +22,9 @@
             {{ end }}
         </ul>
     </section>
+    {{ end }}
     <ul class="list">
-        {{ range where .Pages ".Params.pinned" "!=" true }}
+        {{ range .Pages | complement $pinned }}
         <li class="list-item">
             <div class="list-item-date">{{ .Date.Format "Jan 2, 2006" }}</div>
             <a class="list-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
@@ -29,7 +32,6 @@
         </li>
         {{ end }}
     </ul>
-
 </main>
 
 {{ end }}

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         
-        Part 2: Setup and Directory Structure |
+        Part 2: Setup, Directories, and Content |
         
         Mika Aguilar
     </title>
@@ -23,20 +23,20 @@ if (!doNotTrack) {
 }
 </script>
 
-    <meta property="og:title" content="Part 2: Setup and Directory Structure" />
-<meta property="og:description" content="Build your site&#39;s basic structure." />
+    <meta property="og:title" content="Part 2: Setup, Directories, and Content" />
+<meta property="og:description" content="Quick setup guide, an overview of the various directories we&#39;ll use and a short intro to creating content." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mikaaguilar.com/posts/blogging-on-hugo/part-2/" />
 <meta property="og:image" content="https://www.mikaaguilar.com/images/logo.png"/>
-<meta property="article:published_time" content="2020-04-11T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-05-16T00:00:00+00:00" />
+<meta property="article:published_time" content="2020-05-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-17T00:00:00+00:00" />
 
 
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.mikaaguilar.com/images/logo.png"/>
 
-<meta name="twitter:title" content="Part 2: Setup and Directory Structure"/>
-<meta name="twitter:description" content="Build your site&#39;s basic structure."/>
+<meta name="twitter:title" content="Part 2: Setup, Directories, and Content"/>
+<meta name="twitter:description" content="Quick setup guide, an overview of the various directories we&#39;ll use and a short intro to creating content."/>
 
     <link href="/favicons/favicon.ico" rel="icon" type="image/ico"/>
 
@@ -99,6 +99,7 @@ if (!doNotTrack) {
 </header>
 
 
+
 <article class="post-container">
     <header class="post-header">
         
@@ -106,23 +107,51 @@ if (!doNotTrack) {
                 <div class="post-series">Series: <a href="#post-series">Blogging on Hugo</div>
             
         
-        <h1><a href="/posts/blogging-on-hugo/part-2/">Part 2: Setup and Directory Structure</a></h1>
+        <h1><a href="/posts/blogging-on-hugo/part-2/">Part 2: Setup, Directories, and Content</a></h1>
         <div class="post-date post-published">
-            April 11, 2020
+            May 16, 2020
         </div>
         <div class="post-date post-last-updated">
-            Updated May 16, 2020
+            Updated May 17, 2020
         </div>
     </header>
     <div class="post-body">
-        <p>We&rsquo;re going to start from zero and arm you with the key points you&rsquo;ll need to get started building a nice blog in Hugo.
-I wrote this site nearly from scratch from the base template on up but it was not a huge lift.</p>
-<p>This guide assumes that you aren&rsquo;t going to read <em>any</em> of the Hugo docs. I&rsquo;m totally ok with that, I&rsquo;ll link you to
-the parts that I&rsquo;d otherwise repeat.</p>
+        <p>This guide assumes that you aren&rsquo;t going to read <em>any</em> of the Hugo docs. I&rsquo;m totally ok with that - I&rsquo;ll link you to
+the parts that I&rsquo;d otherwise repeat. We&rsquo;ll also be sticking with the <em>bare minimum</em> needed to get going with a blog and have a great time. There are plenty of bells and whistles I&rsquo;ll show you in a later section of the guide.</p>
+<h2 id="step-0---installing-hugo">Step 0 - Installing Hugo</h2>
 <p>The very first thing you need to do is install the binary. <a href="https://gohugo.io/getting-started/installing/">The docs for this are fine</a>.
 After that, create a new empty folder to begin your site. You can <code>git init</code> in there if you&rsquo;d like - you do you.</p>
-<p>You need ~4 directories and a configuration file to get Hugo fired up and doing something useful.</p>
-<h2 id="configuration">Configuration</h2>
+<h2 id="directory-overview">Directory Overview</h2>
+<p>Here&rsquo;s what we&rsquo;re going to cook up:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">├── content
+│   └── The raw content files written in Markdown.
+├── layouts
+│   └── Template files to determine your markup.
+├── static
+│   └── Plain assets like images or libraries to be served as-is.
+├── assets
+│   └── Files that will be used and transformed by Hugo, like CSS.
+├── docs
+│   └── The result of your build.
+└── config.toml
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="configuration">Configuration</h2>
 <p>Here is a really minimal configuration file.
 Change the relevant values and you can save this in your new directory as <code>config.toml</code>:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
@@ -143,14 +172,10 @@ There are <em>tons</em> more options if you need them <a href="https://gohugo.io
 You can also have a look at <a href="https://github.com/aguilarm/mikaaguilar.com/blob/master/config.toml">my config on github</a> for more options.<br>
 Anyway, moving on.</p>
 <h2 id="content">Content</h2>
-<p>Next up, I think you should make at least once piece of content so the templates you build later can have things on them.
-So, go ahead and <code>mkdir -p /content/posts</code> and then create a new post in there. Maybe <code>first-post.md</code>?</p>
 <p>The <code>/content</code> directory is where Hugo grabs the raw versions of your stuff that it then inserts into templates.
 You can use <a href="https://gohugo.io/content-management/formats/">quite a few different formats</a>. 
 I use Markdown or <code>.md</code> to quickly write posts.</p>
-<p>Hugo uses a concept called <a href="https://gohugo.io/content-management/front-matter/">front matter</a> 
-to define your content&rsquo;s metadata - the title, date, tags, etc.
-Here is the front matter for this post:</p>
+<p>Each direct child folder of the <code>/content</code> directory denotes a different <em>Type</em> of content. For example, your blog could have <em>Projects</em> and <em>Posts</em>, in which case you would have this directory structure:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -158,31 +183,17 @@ Here is the front matter for this post:</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#66d9ef">title</span>: <span style="color:#e6db74">&#34;Blogging on Hugo&#34;</span>
-<span style="color:#66d9ef">date</span>: <span style="color:#e6db74">2020-04-11</span>
-<span style="color:#66d9ef">lastmod</span>: <span style="color:#e6db74">2020-04-11</span>
-<span style="color:#66d9ef">description</span>: <span style="color:#e6db74">&#34;How to build and host a dead-simple blog using Hugo and GitHub pages.&#34;</span>
-<span style="color:#66d9ef">pinned</span>: <span style="color:#66d9ef">false</span>
-<span style="color:#66d9ef">draft</span>: <span style="color:#66d9ef">false</span>
----
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">└── content
+    ├── projects
+    │   └── personal-website.md
+    └── posts
+        └── first-post.md
 </code></pre></td></tr></table>
 </div>
-</div><p>You can find a full list of the predefined variables <a href="https://gohugo.io/content-management/front-matter/">in the docs</a>.
-Keep in mind that you can add arbitrary values here and access them in templates via the <code>.Params</code> value.
-In this example, I&rsquo;ve defined the additional <code>pinned</code> value. More on that later.</p>
-<p>After the final <code>---</code>, you can add your Markdown content. 
-<a href="https://github.com/aguilarm/mikaaguilar.com/blob/master/content/posts/blogging-on-hugo.md">Check out the markdown for this post as an example</a>.</p>
-<p>Boom! You&rsquo;ve got a post. Awesome.</p>
-<h2 id="layouts">Layouts</h2>
-<p>Next you&rsquo;ll need some templates to render your new content. Hugo templates exist in the <code>/layouts</code> directory. 
-<a href="https://gohugo.io/templates/base/">The docs for the base templates</a> are pretty good, but I&rsquo;ll give a quick rundown from top to bottom here.</p>
-<p>At the very top of your site is the <code>layouts/default/baseof.html</code>. Here is a minimal example I pulled from the docs:</p>
+</div><p>Lets start off by making a post. Add the <code>posts</code> directory to your <code>content</code> folder, and make a new markdown file in it. Perhaps <code>first-post.md</code>?</p>
+<p>Here is an example of what the contents of this post could look like:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -196,38 +207,30 @@ In this example, I&rsquo;ve defined the additional <code>pinned</code> value. Mo
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span>&gt;
-  &lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;{{ block &#34;title&#34; . }}
-      <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> Blocks may include default content. </span><span style="color:#75715e">--&gt;</span>
-      {{ .Site.Title }}
-    {{ end }}&lt;/<span style="color:#f92672">title</span>&gt;
-  &lt;/<span style="color:#f92672">head</span>&gt;
-  &lt;<span style="color:#f92672">body</span>&gt;
-    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> Code that all your templates share, like a header </span><span style="color:#75715e">--&gt;</span>
-    {{ block &#34;main&#34; . }}
-      <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> The part of the page that begins to differ between templates </span><span style="color:#75715e">--&gt;</span>
-    {{ end }}
-    {{ block &#34;footer&#34; . }}
-    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> More shared code, perhaps a footer but that can be overridden if need be  </span><span style="color:#75715e">--&gt;</span>
-    {{ end }}
-  &lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#66d9ef">title</span>: <span style="color:#e6db74">&#34;First Post!&#34;</span>
+<span style="color:#66d9ef">date</span>: <span style="color:#e6db74">2020-05-17</span>
+<span style="color:#66d9ef">lastmod</span>: <span style="color:#e6db74">2020-05-17</span>
+<span style="color:#66d9ef">description</span>: <span style="color:#e6db74">&#34;The very first post in my new blog.&#34;</span>
+<span style="color:#66d9ef">pinned</span>: <span style="color:#66d9ef">false</span>
+---
+
+These days, you have to start somewhere. I&#39;ve decided to start here.
+Everything down here is, in fact, <span style="color:#75715e">*markdown*.</span>
+
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><p>Hugo uses a concept called <a href="https://gohugo.io/content-management/front-matter/">front matter</a> 
+to define your content&rsquo;s metadata - the title, date, tags, etc. In my examle, I&rsquo;ve used
+YAML as the format of my front matter section. You can use JSON or TOML to format your front matter instead if you&rsquo;d like. I don&rsquo;t mind YAML here because it&rsquo;s terse.<br>
+Everything after that is parsed as markdown.</p>
+<p>You can find a full list of the predefined variables you can use in Front Matter definitions <a href="https://gohugo.io/content-management/front-matter/">in the docs</a>.</p>
+<p>Keep in mind that you can add arbitrary values here and access them in templates via the <code>.Params</code> value.
+In this example, I&rsquo;ve defined the additional <code>pinned</code> value. More on that later.</p>
+<p>Boom! You&rsquo;ve got a post. Awesome. Next we&rsquo;ll have to make some templates to display it.</p>
+
     </div>
     <footer class="post-footer">
         
@@ -237,9 +240,11 @@ In this example, I&rsquo;ve defined the additional <code>pinned</code> value. Mo
                 <div class="post-series">More in: Blogging on Hugo</div>
                 <ul class="post-series-other-posts">
                     
-                    <li><a href="/posts/blogging-on-hugo/part-1/">Part 1: Why Hugo</a></li>
+                    <li><a href="/posts/blogging-on-hugo/part-3/">Part 3: Layouts</a></li>
                     
-                    <li><a href="/posts/blogging-on-hugo/part-2/">Part 2: Setup and Directory Structure</a></li>
+                    <li><a href="/posts/blogging-on-hugo/part-2/">Part 2: Setup, Directories, and Content</a></li>
+                    
+                    <li><a href="/posts/blogging-on-hugo/part-1/">Part 1: Why Hugo</a></li>
                     
                 </ul>
                 

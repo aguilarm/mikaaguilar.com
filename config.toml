@@ -4,6 +4,7 @@ title = "Mika Aguilar"
 publishDir = "docs"
 googleAnalytics = "UA-53324003-1"
 disqusShortname = "mika-aguilar"
+enableEmoji = true
 [taxonomies]
   series = "series"
 [params]

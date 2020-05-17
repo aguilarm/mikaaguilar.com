@@ -8,6 +8,11 @@
 
 <article class="post-container">
     <header class="post-header">
+        {{ if .Params.series }}
+            {{ range first 1 .Params.series }}
+                <div class="post-series">Series: <a href="#post-series">{{ . }}</div>
+            {{ end }}
+        {{ end }}
         <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
         <div class="post-date post-published">
             {{ .Date.Format "January 2, 2006" }}
@@ -20,6 +25,19 @@
         {{ .Content }}
     </div>
     <footer class="post-footer">
+        {{ if .Params.series }}
+            <div class="post-footer-series" id="post-series">
+                {{ $series := first 1 .Params.series }}
+                {{ range $series }}
+                <div class="post-series">More in: {{ . }}</div>
+                <ul class="post-series-other-posts">
+                    {{ range where $.Site.RegularPages ".Params.series" "intersect" $series }}
+                    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
+        {{ end }}
         <div class="post-thanks">
             Thanks for stopping by!
         </div>
