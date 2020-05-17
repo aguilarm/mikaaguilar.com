@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         
-        How I Stay Focused with Work Logs |
+        Part 1: Why Hugo |
         
         Mika Aguilar
     </title>
@@ -23,19 +23,20 @@ if (!doNotTrack) {
 }
 </script>
 
-    <meta property="og:title" content="How I Stay Focused with Work Logs" />
-<meta property="og:description" content="Reduce some of the effort when context switching with timestamped work logs." />
+    <meta property="og:title" content="Part 1: Why Hugo" />
+<meta property="og:description" content="Before you get started, make sure you know *why* you&#39;re choosing Hugo." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mikaaguilar.com/posts/work-logs/" />
+<meta property="og:url" content="https://www.mikaaguilar.com/posts/blogging-on-hugo/part-1/" />
 <meta property="og:image" content="https://www.mikaaguilar.com/images/logo.svg"/>
-<meta property="article:published_time" content="2020-04-10T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-04-10T00:00:00+00:00" />
+<meta property="article:published_time" content="2020-04-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-16T00:00:00+00:00" />
+
 
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.mikaaguilar.com/images/logo.svg"/>
 
-<meta name="twitter:title" content="How I Stay Focused with Work Logs"/>
-<meta name="twitter:description" content="Reduce some of the effort when context switching with timestamped work logs."/>
+<meta name="twitter:title" content="Part 1: Why Hugo"/>
+<meta name="twitter:description" content="Before you get started, make sure you know *why* you&#39;re choosing Hugo."/>
 
     <link href="/favicons/favicon.ico" rel="icon" type="image/ico"/>
 
@@ -101,50 +102,65 @@ if (!doNotTrack) {
 <article class="post-container">
     <header class="post-header">
         
-        <h1><a href="/posts/work-logs/">How I Stay Focused with Work Logs</a></h1>
+            
+                <div class="post-series">Series: <a href="#post-series">Blogging on Hugo</div>
+            
+        
+        <h1><a href="/posts/blogging-on-hugo/part-1/">Part 1: Why Hugo</a></h1>
         <div class="post-date post-published">
-            April 10, 2020
+            April 11, 2020
         </div>
         <div class="post-date post-last-updated">
-            Updated April 10, 2020
+            Updated May 16, 2020
         </div>
     </header>
     <div class="post-body">
-        <p>At any moment, I tend to have quite a few things that need my attention. I&rsquo;ve found that I&rsquo;ll need to 
-context switch several times during the day - from answering a question to attending a meeting or checking in
-on a long-running process.</p>
-<p>Jumping in and out of contexts can be pretty difficult and will really cost a lot of time.</p>
-<p>In an effort to be as available as possible for the occasional interruption without spending a ton of time getting
-back into whatever I&rsquo;m working on, I&rsquo;ve been using timestamped work logs. I&rsquo;ve found it helpful for quite a few 
-different reasons that I&rsquo;ll outline later.</p>
-<h2 id="method">Method</h2>
-<p>Every time I come up with a new immediate goal - usually once or twice an hour - I write it out in a notebook
-after the current time. I use a small moleskin to keep each line relatively short.</p>
-<p>Some examples:</p>
-<ul>
-<li><strong>1215</strong> The image element should be null. If the image is null, you cannot save.</li>
-<li><strong>1251</strong> It is definitely the space in the image causing problems, loading spinner fixed.</li>
-<li><strong>155</strong> The ckeditor is conflicting. Ckeditor is on the page twice.</li>
-<li><strong>220</strong> Make renderer for files plugin. It needs to be backwards compatible.</li>
-</ul>
-<p>So, definitely a brain-dump sort of stream of consciousness thing. I use them to set
-way-points throughout my day that I can go back to in order to figure out where I was and how I got there, quickly. 
-Most of the time, I&rsquo;ll jot one of these down before I hop on a call or something so I can get right back to
-what I was doing. Just having that small note makes a big difference - coming back to an open code editor and
-little else hours later is a bit daunting.</p>
-<h2 id="results">Results</h2>
-<p>I&rsquo;ve been writing logs like this for a little over a year now, and it&rsquo;s been a huge help for a couple of reasons:</p>
+        <p>This site is running Hugo with GitHub pages, and I am really happy with the setup.
+There are a <em>lot</em> of options for spinning up a personal blog site, and I really think building with Hugo
+is the best option. I&rsquo;m going to guide you through building a blog in this series of posts. Lets start off with the most important question - why.</p>
+<p>Hugo is a static site generator. Everyone is <strong>really</strong> jumping on the static+serverless/JAMStack hype train these days,
+and there are many good reasons for that. Here are a few:</p>
 <ol>
-<li>With very little effort, I&rsquo;ve got something to refer to when I need to log hours.</li>
-<li>Further, I am hyper aware of the passage of time and my estimates are <em>way</em> more accurate.</li>
-<li>The act of writing something out - even just figuring out <em>what</em> to write - helps me focus and keep things in perspective.</li>
+<li><strong>No server</strong>. In my opinion, the single best reason is that there is no long-running server process to maintain.
+This site will effectively <em>never</em> go down, and I do not have to worry about scaling for traffic spikes.</li>
+<li><strong>Backups are easy</strong>. The site is a collection of normal files that I can save in many different places.</li>
+<li><strong>No database</strong>. This can be a downside if you need to scale <em>content</em> or do relational lookups, but for a simple blog 
+you probably aren&rsquo;t going to need it. One less thing to worry about.</li>
+<li><strong>Composable features</strong>. If you want something dynamic, like comments, you can add a mount point to your static template.
+Your core site will not go down if your comments go down.</li>
 </ol>
-<p>Most of us likely have a notepad handy. Writing down your problem or a solution you&rsquo;ve come up with is
-incredibly helpful. I think augmenting your note taking with a work log is huge. Let me know if you do something
-like this!</p>
+<p>I really think Hugo in particular is <strong>the best choice</strong> for a few additional reasons:</p>
+<ol>
+<li><strong>Authoring is easy</strong>. I can use any editor that outputs Markdown or HTML to write posts and then I add them to Git
+and I&rsquo;m done. If you aren&rsquo;t a developer, you can use <a href="https://forestry.io/">Forestry.io</a> to abstract that entire process.</li>
+<li><strong>No dependencies</strong>. You can include the binary and have everything you need to build your site locally with a <code>git clone</code>. 
+Hugo uses a single binary to build your site. No webpack, no dependencies.</li>
+<li><strong>Simple templates</strong>. You can use plain HTML for nearly everything and simple Golang formatters when things get complicated.</li>
+<li><strong>Built-in functionality catering to blog-style sites</strong>. You will not need to re-invent many wheels using Hugo for a blog.</li>
+<li><strong>Truly static output</strong>. Hugo takes your templates and strings them together in plain HTML/CSS/JS. Everything works at rest, 
+and there is no runtime.</li>
+</ol>
+<p>One downside of Hugo is the documentation. It was difficult for me to see the forest for the trees combing through the
+Hugo docs. I wanted to start at zero and build up into a blog, adding only the bits I would definitely be using and that
+was tough. The Quick Start portion of the docs is fair too quick, and Basic Usage doesn&rsquo;t get you far enough to get going.</p>
+<p>Hopefully this series will make that easier for you 😅.</p>
 
     </div>
     <footer class="post-footer">
+        
+            <div class="post-footer-series" id="post-series">
+                
+                
+                <div class="post-series">More in: Blogging on Hugo</div>
+                <ul class="post-series-other-posts">
+                    
+                    <li><a href="/posts/blogging-on-hugo/part-1/">Part 1: Why Hugo</a></li>
+                    
+                    <li><a href="/posts/blogging-on-hugo/part-2/">Part 2: Setup and Directory Structure</a></li>
+                    
+                </ul>
+                
+            </div>
         
         <div class="post-thanks">
             Thanks for stopping by!
@@ -152,7 +168,7 @@ like this!</p>
         <div class="post-edit-on-github">
             See something you'd like to correct?
             <a
-                    href="https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts%5cwork-logs.md"
+                    href="https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts%5cblogging-on-hugo%5cpart-1.md"
             >
                 Send me a <i class="fab fa-github"></i> pull request!
             </a>

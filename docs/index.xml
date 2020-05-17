@@ -12,13 +12,23 @@
     
     
     <item>
-      <title>Blogging on Hugo</title>
-      <link>https://www.mikaaguilar.com/posts/blogging-on-hugo/</link>
+      <title>Part 1: Why Hugo</title>
+      <link>https://www.mikaaguilar.com/posts/blogging-on-hugo/part-1/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mikaaguilar.com/posts/blogging-on-hugo/</guid>
-      <description>This site is running Hugo with GitHub pages, and I am really happy with the setup. There are a lot of options for spinning up a personal blog site, and I really think building with Hugo is the best option.
-Why Hugo Hugo is a static site generator. Everyone is really jumping on the static+serverless or JAMStack hype train these days, and there are many good reasons for that. Here are a few:</description>
+      <guid>https://www.mikaaguilar.com/posts/blogging-on-hugo/part-1/</guid>
+      <description>This site is running Hugo with GitHub pages, and I am really happy with the setup. There are a lot of options for spinning up a personal blog site, and I really think building with Hugo is the best option. I&amp;rsquo;m going to guide you through building a blog in this series of posts. Lets start off with the most important question - why.
+Hugo is a static site generator. Everyone is really jumping on the static+serverless/JAMStack hype train these days, and there are many good reasons for that.</description>
+    </item>
+    
+    <item>
+      <title>Part 2: Setup and Directory Structure</title>
+      <link>https://www.mikaaguilar.com/posts/blogging-on-hugo/part-2/</link>
+      <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mikaaguilar.com/posts/blogging-on-hugo/part-2/</guid>
+      <description>We&amp;rsquo;re going to start from zero and arm you with the key points you&amp;rsquo;ll need to get started building a nice blog in Hugo. I wrote this site nearly from scratch from the base template on up but it was not a huge lift.
+This guide assumes that you aren&amp;rsquo;t going to read any of the Hugo docs. I&amp;rsquo;m totally ok with that, I&amp;rsquo;ll link you to the parts that I&amp;rsquo;d otherwise repeat.</description>
     </item>
     
     <item>

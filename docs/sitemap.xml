@@ -4,21 +4,41 @@
   
   <url>
     <loc>https://www.mikaaguilar.com/</loc>
-    <lastmod>2020-04-11T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/series/blogging-on-hugo/</loc>
+    <lastmod>2020-05-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.mikaaguilar.com/posts/blogging-on-hugo/</loc>
-    <lastmod>2020-04-11T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.mikaaguilar.com/posts/</loc>
-    <lastmod>2020-04-11T00:00:00+00:00</lastmod>
+    <loc>https://www.mikaaguilar.com/posts/blogging-on-hugo/part-1/</loc>
+    <lastmod>2020-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/blogging-on-hugo/part-2/</loc>
+    <lastmod>2020-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/series/</loc>
+    <lastmod>2020-05-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.mikaaguilar.com/posts/work-logs/</loc>
+    <lastmod>2020-04-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/</loc>
     <lastmod>2020-04-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -105,14 +125,6 @@
   <url>
     <loc>https://www.mikaaguilar.com/projects/mika-aguilar-com/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.mikaaguilar.com/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.mikaaguilar.com/tags/</loc>
   </url>
   
 </urlset>

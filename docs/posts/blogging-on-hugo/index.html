@@ -23,6 +23,19 @@ if (!doNotTrack) {
 }
 </script>
 
+    <meta property="og:title" content="Blogging on Hugo" />
+<meta property="og:description" content="Series of posts about creating a blog using Hugo" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mikaaguilar.com/posts/blogging-on-hugo/" />
+<meta property="og:image" content="https://www.mikaaguilar.com/images/logo.svg"/>
+<meta property="og:updated_time" content="2020-04-11T00:00:00+00:00" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.mikaaguilar.com/images/logo.svg"/>
+
+<meta name="twitter:title" content="Blogging on Hugo"/>
+<meta name="twitter:description" content="Series of posts about creating a blog using Hugo"/>
+
     <link href="/favicons/favicon.ico" rel="icon" type="image/ico"/>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700|Noto+Sans&display=swap" rel="stylesheet" />
@@ -38,7 +51,7 @@ if (!doNotTrack) {
 
     
 
-<link href="/css/post.min.css" rel="stylesheet">
+<link href="/css/list.min.css" rel="stylesheet">
 
 
 </head>
@@ -85,200 +98,29 @@ if (!doNotTrack) {
 
 
 
-<article class="post-container">
-    <header class="post-header">
-        <h1><a href="/posts/blogging-on-hugo/">Blogging on Hugo</a></h1>
-        <div class="post-date post-published">
-            April 11, 2020
-        </div>
-        <div class="post-date post-last-updated">
-            Updated April 11, 2020
-        </div>
+<main>
+    <header class="list-header">
+        <h1>Blogging on Hugo</h1>
     </header>
-    <div class="post-body">
-        <p>This site is running Hugo with GitHub pages, and I am really happy with the setup.
-There are a <em>lot</em> of options for spinning up a personal blog site, and I really think building with Hugo
-is the best option.</p>
-<h2 id="why-hugo">Why Hugo</h2>
-<p>Hugo is a static site generator. Everyone is <strong>really</strong> jumping on the static+serverless or JAMStack hype train these days,
-and there are many good reasons for that. Here are a few:</p>
-<ol>
-<li><strong>No server</strong>. In my opinion, the single best reason is that there is no long-running server process to maintain.
-This site will effectively <em>never</em> go down, and I do not have to worry about scaling for traffic spikes.</li>
-<li><strong>Backups are easy</strong>. The site is a collection of normal files that I can save in many different places.</li>
-<li><strong>No database</strong>. This can be a downside if you need to scale <em>content</em> or do relational lookups, but for a simple blog
-you probably aren&rsquo;t going to need it. One less thing to worry about.</li>
-<li><strong>Composable features</strong>. If you want something dynamic, like comments, you can add a mount point to your static template.
-Your core site will not go down if your comments go down.</li>
-</ol>
-<p>I really think Hugo in particular is <strong>the best choice</strong> for a few additional reasons:</p>
-<ol>
-<li><strong>Authoring is easy</strong>. I can use any editor that outputs Markdown or HTML to write posts and then I add them to Git
-and I&rsquo;m done. If you aren&rsquo;t a developer, you can use <a href="https://forestry.io/">Forestry.io</a> to abstract that entire process.</li>
-<li><strong>No dependencies</strong>. You can include the binary and have everything you need to build your site locally with a <code>git clone</code>.
-Hugo uses a single binary to build your site. No webpack, no dependencies.</li>
-<li><strong>Simple templates</strong>. You can use plain HTML for nearly everything and simple Golang formatters when things get complicated.</li>
-<li><strong>Built-in functionality catering to blog-style sites</strong>. You will not need to re-invent many wheels using Hugo for a blog.</li>
-<li><strong>Truly static output</strong>. Hugo takes your templates and strings them together in plain HTML/CSS/JS. Everything works at rest,
-and there is no runtime.</li>
-</ol>
-<p>One downside of Hugo is the documentation. It was difficult for me to see the forest for the trees combing through the
-Hugo docs. I wanted to start at zero and build up into a blog, adding only the bits I would definitely be using and that
-was tough. The Quick Start portion of the docs is fair too quick, and Basic Usage doesn&rsquo;t get you far enough to get going.
-Hopefully this post will make that easier for you 😅.</p>
-<h2 id="building-a-blog">Building a Blog</h2>
-<p>Ok. I&rsquo;m going to start from zero and arm you with the key points you&rsquo;ll need to get started building a nice blog in Hugo.
-I wrote this site nearly from scratch from the base template on up but it was not a huge lift.</p>
-<p>This guide assumes that you aren&rsquo;t going to read <em>any</em> of the Hugo docs. I&rsquo;m totally ok with that, I&rsquo;ll link you to
-the parts that I&rsquo;d otherwise repeat.</p>
-<h3 id="getting-started">Getting Started</h3>
-<p>Ok. Very first thing you need to do is install the binary. <a href="https://gohugo.io/getting-started/installing/">Docs for this are fine</a>.
-After that, create a new empty folder to begin your site. You can <code>git init</code> in there if you&rsquo;d like - you do you.</p>
-<p>You need ~4 directories and a configuration file to get Hugo fired up and doing something useful.</p>
-<h4 id="configuration">Configuration</h4>
-<p>Here is a really minimal configuration file.
-Change the relevant values and you can save this in your new directory as <code>config.toml</code>:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-TOML" data-lang="TOML"><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://www.example.com/&#34;</span>
-<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Example&#34;</span>
-<span style="color:#a6e22e">publishDir</span> = <span style="color:#e6db74">&#34;docs&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>I recommend changing the publishDir to <code>docs</code> (it&rsquo;s default is <code>public</code>), because later you&rsquo;ll be hooking this up to GitHub pages and that directory
-will be your public dir.
-There are <em>tons</em> more options if you need them <a href="https://gohugo.io/getting-started/configuration/">in the docs</a>.
-You can also have a look at <a href="https://github.com/aguilarm/mikaaguilar.com/blob/master/config.toml">my config on github</a> for more options.<br>
-Anyway, moving on.</p>
-<h4 id="content">Content</h4>
-<p>Next up, I think you should make at least once piece of content so the templates you build later can have things on them.
-So, go ahead and <code>mkdir -p /content/posts</code> and then create a new post in there. Maybe <code>first-post.md</code>?</p>
-<p>The <code>/content</code> directory is where Hugo grabs the raw versions of your stuff that it then inserts into templates.
-You can use <a href="https://gohugo.io/content-management/formats/">quite a few different formats</a>.
-I use Markdown or <code>.md</code> to quickly write posts.</p>
-<p>Hugo uses a concept called <a href="https://gohugo.io/content-management/front-matter/">front matter</a>
-to define your content&rsquo;s metadata - the title, date, tags, etc.
-Here is the front matter for this post:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#66d9ef">title</span>: <span style="color:#e6db74">&#34;Blogging on Hugo&#34;</span>
-<span style="color:#66d9ef">date</span>: <span style="color:#e6db74">2020-04-11</span>
-<span style="color:#66d9ef">lastmod</span>: <span style="color:#e6db74">2020-04-11</span>
-<span style="color:#66d9ef">description</span>: <span style="color:#e6db74">&#34;How to build and host a dead-simple blog using Hugo and GitHub pages.&#34;</span>
-<span style="color:#66d9ef">pinned</span>: <span style="color:#66d9ef">false</span>
-<span style="color:#66d9ef">draft</span>: <span style="color:#66d9ef">false</span>
----
-</code></pre></td></tr></table>
-</div>
-</div><p>You can find a full list of the predefined variables <a href="https://gohugo.io/content-management/front-matter/">in the docs</a>.
-Keep in mind that you can add arbitrary values here and access them in templates via the <code>.Params</code> value.
-In this example, I&rsquo;ve defined the additional <code>pinned</code> value. More on that later.</p>
-<p>After the final <code>---</code>, you can add your Markdown content.
-<a href="https://github.com/aguilarm/mikaaguilar.com/blob/master/content/posts/blogging-on-hugo.md">Check out the markdown for this post as an example</a>.</p>
-<p>Boom! You&rsquo;ve got a post. Awesome.</p>
-<h4 id="layouts">Layouts</h4>
-<p>Next you&rsquo;ll need some templates to render your new content. Hugo templates exist in the <code>/layouts</code> directory.
-<a href="https://gohugo.io/templates/base/">The docs for the base templates</a> are pretty good, but I&rsquo;ll give a quick rundown from top to bottom here.</p>
-<p>At the very top of your site is the <code>layouts/default/baseof.html</code>. Here is a minimal example I pulled from the docs:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span>&gt;
-  &lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;{{ block &#34;title&#34; . }}
-      <span style="color:#75715e">&lt;!-- Blocks may include default content. --&gt;</span>
-      {{ .Site.Title }}
-    {{ end }}&lt;/<span style="color:#f92672">title</span>&gt;
-  &lt;/<span style="color:#f92672">head</span>&gt;
-  &lt;<span style="color:#f92672">body</span>&gt;
-    <span style="color:#75715e">&lt;!-- Code that all your templates share, like a header --&gt;</span>
-    {{ block &#34;main&#34; . }}
-      <span style="color:#75715e">&lt;!-- The part of the page that begins to differ between templates --&gt;</span>
-    {{ end }}
-    {{ block &#34;footer&#34; . }}
-    <span style="color:#75715e">&lt;!-- More shared code, perhaps a footer but that can be overridden if need be  --&gt;</span>
-    {{ end }}
-  &lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>That&rsquo;s all for now. This post is a work in progress. I intend to have more soon!</strong></p>
+    
+    
+    <ul class="list">
+        
+        <li class="list-item">
+            <div class="list-item-date">Apr 11, 2020</div>
+            <a class="list-item-title" href="/posts/blogging-on-hugo/part-1/">Part 1: Why Hugo</a>
+            <div class="list-item-description">Before you get started, make sure you know *why* you&#39;re choosing Hugo.</div>
+        </li>
+        
+        <li class="list-item">
+            <div class="list-item-date">Apr 11, 2020</div>
+            <a class="list-item-title" href="/posts/blogging-on-hugo/part-2/">Part 2: Setup and Directory Structure</a>
+            <div class="list-item-description">Build your site&#39;s basic structure.</div>
+        </li>
+        
+    </ul>
 
-    </div>
-    <footer class="post-footer">
-        <div class="post-thanks">
-            Thanks for stopping by!
-        </div>
-        <div class="post-edit-on-github">
-            See something you'd like to correct?
-            <a
-                    href="https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts/blogging-on-hugo.md"
-            >
-                Send me a <i class="fab fa-github"></i> pull request!
-            </a>
-        </div>
-        <div class="post-comments comments">
-            <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "mika-aguilar" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        </div>
-    </footer>
-</article>
+</main>
 
 
 

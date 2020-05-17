@@ -6,20 +6,10 @@
     <description>Recent content in Posts on Mika Aguilar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.mikaaguilar.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Blogging on Hugo</title>
-      <link>https://www.mikaaguilar.com/posts/blogging-on-hugo/</link>
-      <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mikaaguilar.com/posts/blogging-on-hugo/</guid>
-      <description>This site is running Hugo with GitHub pages, and I am really happy with the setup. There are a lot of options for spinning up a personal blog site, and I really think building with Hugo is the best option.
-Why Hugo Hugo is a static site generator. Everyone is really jumping on the static+serverless or JAMStack hype train these days, and there are many good reasons for that. Here are a few:</description>
-    </item>
     
     <item>
       <title>How I Stay Focused with Work Logs</title>

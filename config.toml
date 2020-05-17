@@ -4,7 +4,11 @@ title = "Mika Aguilar"
 publishDir = "docs"
 googleAnalytics = "UA-53324003-1"
 disqusShortname = "mika-aguilar"
+[taxonomies]
+  series = "series"
 [params]
+  description = "Mika Aguilar's personal website featuring posts about software engineering."
+  images = [ "/images/logo.svg" ]
   TagLine = "Curious Software Engineer"
   SiteRepo = "https://github.com/aguilarm/mikaaguilar.com"
 [markup]
