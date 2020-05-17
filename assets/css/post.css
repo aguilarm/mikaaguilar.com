@@ -4,14 +4,22 @@
 }
 
 .post-header {
-    margin-bottom: 2em;
+    margin: 2em 0;
+}
+
+.post-header .post-series {
+    font-size: 1.15em;
+    margin: 0.45em 0;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .post-header h1 {
     font-size: 46px;
     line-height: 1;
     text-transform: uppercase;
-    margin-bottom: 0.15em;
+    margin: 0 0 0.15em;
 }
 
 .post-published {
@@ -36,6 +44,19 @@
 .post-footer {
     margin-top: 3em;
 }
+
+.post-footer-series {
+    margin: 1em 0;
+}
+
+.post-footer-series .post-series {
+    font-size: 1.15em;
+    margin: 0.45em 0;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 
 .post-thanks {
     font-size: 1.3em;

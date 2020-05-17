@@ -8,7 +8,7 @@ disqusShortname = "mika-aguilar"
   series = "series"
 [params]
   description = "Mika Aguilar's personal website featuring posts about software engineering."
-  images = [ "/images/logo.svg" ]
+  images = [ "/images/logo.png" ]
   TagLine = "Curious Software Engineer"
   SiteRepo = "https://github.com/aguilarm/mikaaguilar.com"
 [markup]
