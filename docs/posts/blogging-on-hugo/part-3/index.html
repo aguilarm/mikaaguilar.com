@@ -29,7 +29,7 @@ if (!doNotTrack) {
 <meta property="og:url" content="https://www.mikaaguilar.com/posts/blogging-on-hugo/part-3/" />
 <meta property="og:image" content="https://www.mikaaguilar.com/images/logo.png"/>
 <meta property="article:published_time" content="2020-05-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-05-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-17T17:36:05-05:00" />
 
 
     <meta name="twitter:card" content="summary_large_image"/>
@@ -116,7 +116,7 @@ if (!doNotTrack) {
         </div>
     </header>
     <div class="post-body">
-        <p>You&rsquo;ll need some templates to render your new content. Hugo templates exist in the <code>/layouts</code> directory. 
+        <p>You&rsquo;ll need some templates to render your new content. Hugo templates exist in the <code>/layouts</code> directory.
 <a href="https://gohugo.io/templates/base/">The docs for the base templates</a> are decent, but I&rsquo;ll give a quick rundown from top to bottom.</p>
 <p>At the very top of your site is the <code>layouts/default/baseof.html</code>. This includes the outer shell of your site starting from the <code>&lt;html&gt;</code> element. Here is a minimal example I pulled from the docs:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
@@ -147,17 +147,17 @@ if (!doNotTrack) {
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
     &lt;<span style="color:#f92672">title</span>&gt;{{ block &#34;title&#34; . }}
-      <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> Blocks may include default content. </span><span style="color:#75715e">--&gt;</span>
+      <span style="color:#75715e">&lt;!-- Blocks may include default content. --&gt;</span>
       {{ .Site.Title }}
     {{ end }}&lt;/<span style="color:#f92672">title</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
-    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> Code that all your templates share, like a header </span><span style="color:#75715e">--&gt;</span>
+    <span style="color:#75715e">&lt;!-- Code that all your templates share, like a header --&gt;</span>
     {{ block &#34;main&#34; . }}
-      <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> The part of the page that begins to differ between templates </span><span style="color:#75715e">--&gt;</span>
+      <span style="color:#75715e">&lt;!-- The part of the page that begins to differ between templates --&gt;</span>
     {{ end }}
     {{ block &#34;footer&#34; . }}
-    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> More shared code, perhaps a footer but that can be overridden if need be  </span><span style="color:#75715e">--&gt;</span>
+    <span style="color:#75715e">&lt;!-- More shared code, perhaps a footer but that can be overridden if need be  --&gt;</span>
     {{ end }}
   &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
@@ -308,7 +308,7 @@ if (!doNotTrack) {
         <div class="post-edit-on-github">
             See something you'd like to correct?
             <a
-                    href="https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts%5cblogging-on-hugo%5cpart-3.md"
+                    href="https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts/blogging-on-hugo/part-3.md"
             >
                 Send me a <i class="fab fa-github"></i> pull request!
             </a>

@@ -5,6 +5,9 @@ publishDir = "docs"
 googleAnalytics = "UA-53324003-1"
 disqusShortname = "mika-aguilar"
 enableEmoji = true
+enableGitInfo = true
+[frontmatter]
+  lastmod = ["lastmod", ":git", "date", "publishDate"]
 [taxonomies]
   series = "series"
 [params]

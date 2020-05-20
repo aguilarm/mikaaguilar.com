@@ -4,22 +4,17 @@
   
   <url>
     <loc>https://www.mikaaguilar.com/series/blogging-on-hugo/</loc>
-    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.mikaaguilar.com/posts/blogging-on-hugo/</loc>
-    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-17T17:36:05-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.mikaaguilar.com/posts/blogging-on-hugo/part-3/</loc>
-    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-17T17:36:05-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.mikaaguilar.com/series/</loc>
-    <lastmod>2020-05-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-17T17:36:05-05:00</lastmod>
   </url>
   
   <url>
@@ -28,8 +23,8 @@
   </url>
   
   <url>
-    <loc>https://www.mikaaguilar.com/</loc>
-    <lastmod>2020-05-16T00:00:00+00:00</lastmod>
+    <loc>https://www.mikaaguilar.com/posts/blogging-on-hugo/</loc>
+    <lastmod>2020-05-16T19:11:13-05:00</lastmod>
   </url>
   
   <url>
@@ -39,11 +34,6 @@
   
   <url>
     <loc>https://www.mikaaguilar.com/posts/work-logs/</loc>
-    <lastmod>2020-04-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.mikaaguilar.com/posts/</loc>
     <lastmod>2020-04-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -88,18 +78,13 @@
   </url>
   
   <url>
-    <loc>https://www.mikaaguilar.com/projects/</loc>
-    <lastmod>2020-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.mikaaguilar.com/posts/easily-patch-contrib-drupal-modules-composer/</loc>
     <lastmod>2018-12-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.mikaaguilar.com/posts/talks-i-love/</loc>
-    <lastmod>2018-12-26T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-06T19:17:42-05:00</lastmod>
   </url>
   
   <url>
@@ -130,6 +115,21 @@
   <url>
     <loc>https://www.mikaaguilar.com/projects/mika-aguilar-com/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/</loc>
+    <lastmod>2020-01-26T20:19:25-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/posts/</loc>
+    <lastmod>2020-01-26T20:19:25-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mikaaguilar.com/projects/</loc>
+    <lastmod>2020-01-26T20:19:25-06:00</lastmod>
   </url>
   
 </urlset>

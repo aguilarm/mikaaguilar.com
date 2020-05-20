@@ -1,7 +1,6 @@
 ---
 title: "Part 3: Layouts"
 date: 2020-05-17
-lastmod: 2020-05-17
 description: "Overview of how layouts and templating work in Hugo."
 pinned: false
 draft: false
