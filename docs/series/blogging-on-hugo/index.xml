@@ -18,7 +18,7 @@
       
       <guid>https://www.mikaaguilar.com/posts/blogging-on-hugo/part-3/</guid>
       <description>You&amp;rsquo;ll need some templates to render your new content. Hugo templates exist in the /layouts directory. The docs for the base templates are decent, but I&amp;rsquo;ll give a quick rundown from top to bottom.
-At the very top of your site is the layouts/default/baseof.html. This includes the outer shell of your site starting from the &amp;lt;html&amp;gt; element. Here is a minimal example I pulled from the docs:
+Baseof At the very top of your site is the layouts/default/baseof.html. This includes the outer shell of your site starting from the &amp;lt;html&amp;gt; element. Here is a minimal example I pulled from the docs:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &amp;lt;!</description>
     </item>
     
