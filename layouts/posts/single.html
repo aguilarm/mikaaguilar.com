@@ -10,7 +10,10 @@
     <header class="post-header">
         {{ if .Params.series }}
             {{ range first 1 .Params.series }}
-                <div class="post-series">Series: <a href="#post-series">{{ . }}</div>
+                <div class="post-series">
+                    Series:
+                    <a href="#post-series">{{ . }}
+                </div>
             {{ end }}
         {{ end }}
         <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>

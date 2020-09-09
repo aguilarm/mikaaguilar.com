@@ -9,6 +9,7 @@
 <article class="project-container">
     <header class="project-header">
         <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        <div class="project-description">{{ .Description }}</div>
         <div class="project-date project-published">
             Began {{ .Date.Format "January 2, 2006" }}
         </div>
