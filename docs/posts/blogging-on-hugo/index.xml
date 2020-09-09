@@ -38,7 +38,9 @@ Step 0 - Installing Hugo The very first thing you need to do is install the bina
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.mikaaguilar.com/posts/blogging-on-hugo/part-1/</guid>
-      <description>This site is running Hugo with GitHub pages, and I am really happy with the setup. There are a lot of options for spinning up a personal blog site, and I really think building with Hugo is the best option. I&amp;rsquo;m going to guide you through building a blog in this series of posts. Lets start off with the most important question - why.
+      <description>This site is running Hugo with GitHub pages, and I am really happy with the setup. There are a lot of options for spinning up a personal blog site, and I really think building with Hugo is the best option.
+I&amp;rsquo;m going to guide you through building a blog with it in this series of posts.
+Lets start off with the most important question - why.
 The JAMStack 🎸 Hugo is a static site generator, which is the Markdown bit of the JAMStack.</description>
     </item>
     
