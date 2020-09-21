@@ -7,8 +7,8 @@
     justify-content: center;
     width: 3vw;
     height: 3vw;
-    min-width: 34px;
-    min-height: 34px;
+    min-width: 40px;
+    min-height: 40px;
     transition: color 250ms ease-out;
 }
 

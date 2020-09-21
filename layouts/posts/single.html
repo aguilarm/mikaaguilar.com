@@ -17,6 +17,7 @@
             {{ end }}
         {{ end }}
         <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        <div class="post-description">{{ .Description }}</div>
         <div class="post-date post-published">
             {{ .Date.Format "January 2, 2006" }}
         </div>

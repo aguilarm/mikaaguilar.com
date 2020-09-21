@@ -108,6 +108,7 @@ if (!doNotTrack) {
             
         
         <h1><a href="/posts/blogging-on-hugo/part-1/">Part 1: Why Hugo</a></h1>
+        <div class="post-description">Before you get started, make sure you know *why* you&#39;re choosing Hugo.</div>
         <div class="post-date post-published">
             April 11, 2020
         </div>
@@ -128,9 +129,9 @@ and there are many good reasons for that. Here are a few:</p>
 <li><strong>No server</strong>. In my opinion, the single best reason is that there is no long-running server process to maintain.
 This site will effectively <em>never</em> go down, and I do not have to worry about scaling for traffic spikes.</li>
 <li><strong>Backups are easy</strong>. The site is a collection of normal files that I can save in many different places.</li>
-<li><strong>No database</strong>. This can be a downside if you need to scale <em>content</em> or do relational lookups, but for a simple blog
+<li><strong>No database</strong>. This can be a downside if you need to scale <em>content</em> or do relational lookups, but for a simple blog 
 with 10s or 100s of posts, you will likely be ok. One less running process.</li>
-<li><strong>Composable features</strong>. If you want something dynamic, like comments, you can add a mount point to your static template, and
+<li><strong>Composable features</strong>. If you want something dynamic, like comments, you can add a mount point to your static template, and 
 use Javascript. Your core site will not go down if your comments (or another add-on service) go down.</li>
 </ol>
 <h1 id="hugos-advantages">Hugo&rsquo;s Advantages</h1>
@@ -138,11 +139,11 @@ use Javascript. Your core site will not go down if your comments (or another add
 <ol>
 <li><strong>Authoring is easy</strong>. I can use any editor that outputs Markdown or HTML to write posts and then I add them to Git
 and I&rsquo;m done. If you aren&rsquo;t a developer, you can use <a href="https://forestry.io/">Forestry.io</a> to abstract that entire process.</li>
-<li><strong>No dependencies</strong>. You can include the hugo binary and have everything you need to build your site locally with a <code>git clone</code>.
+<li><strong>No dependencies</strong>. You can include the hugo binary and have everything you need to build your site locally with a <code>git clone</code>. 
 Hugo uses a single binary to build your site, that&rsquo;s it.</li>
 <li><strong>Simple templates</strong>. You can use plain HTML for nearly everything and simple Golang templating functions when things get complicated.</li>
 <li><strong>Built-in functionality catering to blog-style sites</strong>. You will not need to re-invent many wheels using Hugo for a blog.</li>
-<li><strong>Truly static output</strong>. Hugo takes your templates and strings them together in plain HTML/CSS/JS. Everything works at rest,
+<li><strong>Truly static output</strong>. Hugo takes your templates and strings them together in plain HTML/CSS/JS. Everything works at rest, 
 and there is no runtime.</li>
 <li><strong><em>Really</em> Fast</strong>. You will not have speed problems compiling Hugo. My site builds in between 100 and 200ms. Crazy fast compared to most alternatives. Builds will not slow until you have hundreds of thousands of pieces of content, and even then you&rsquo;ll be looking at a couple of minutes most likely.</li>
 </ol>
@@ -181,7 +182,7 @@ and there is no runtime.</li>
         <div class="post-edit-on-github">
             See something you'd like to correct?
             <a
-                    href="https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts/blogging-on-hugo/part-1.md"
+                    href="https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts%5cblogging-on-hugo%5cpart-1.md"
             >
                 Send me a <i class="fab fa-github"></i> pull request!
             </a>

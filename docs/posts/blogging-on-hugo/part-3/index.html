@@ -108,6 +108,7 @@ if (!doNotTrack) {
             
         
         <h1><a href="/posts/blogging-on-hugo/part-3/">Part 3: Layouts</a></h1>
+        <div class="post-description">Overview of how layouts and templating work in Hugo.</div>
         <div class="post-date post-published">
             May 17, 2020
         </div>
@@ -116,10 +117,10 @@ if (!doNotTrack) {
         </div>
     </header>
     <div class="post-body">
-        <p>You&rsquo;ll need some templates to render your new content. Hugo templates exist in the <code>/layouts</code> directory.
+        <p>You&rsquo;ll need some templates to render your new content. Hugo templates exist in the <code>/layouts</code> directory. 
 <a href="https://gohugo.io/templates/base/">The docs for the base templates</a> are decent, but I&rsquo;ll give a quick rundown from top to bottom.</p>
 <h2 id="baseof">Baseof</h2>
-<p>At the very top of your site is the <code>layouts/default/baseof.html</code>. This includes the outer shell of your site
+<p>At the very top of your site is the <code>layouts/default/baseof.html</code>. This includes the outer shell of your site 
 starting from the <code>&lt;html&gt;</code> element. Here is a minimal example I pulled from the docs:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -168,7 +169,7 @@ starting from the <code>&lt;html&gt;</code> element. Here is a minimal example I
 </div><p>Anything that you need on your entire site, like styles or javascript, should go here.</p>
 <h2 id="blocks">Blocks</h2>
 <p>You may notice the block definitions above - <code>title</code>, <code>main</code>, and <code>footer</code>.
-These are little holes where child layouts can optionally add their own markup.
+These are little holes where child layouts can optionally add their own markup. 
 Lets see that in action by creating a default single content item template.</p>
 <p>Make a new file at <code>layouts/default/single.html</code> and add these contents to it:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
@@ -220,15 +221,15 @@ Lets see that in action by creating a default single content item template.</p>
 </div><p>This template will insert the items wrapped in the <code>define</code> chunks into corresponding blocks.
 So, in the <code>baseof</code> above, the content of <code>single.html</code> will be printed in <code>title</code> and <code>main</code>.</p>
 <h2 id="variables-partials-and-context">Variables, Partials and Context</h2>
-<p>Hugo uses <a href="https://golang.org/pkg/text/template/">golang&rsquo;s template package</a> with some additional
+<p>Hugo uses <a href="https://golang.org/pkg/text/template/">golang&rsquo;s template package</a> with some additional 
 sugar to populate these template files. You can use most of the template functions in Hugo, so the golang
 docs may be useful when you&rsquo;re doing something difficult.</p>
 <p>If you&rsquo;ve not yet encountered it before, there are a couple of things to note.</p>
-<p>First, You&rsquo;ll see that all of the called variables have a <code>.</code> in front of them.
+<p>First, You&rsquo;ll see that all of the called variables have a <code>.</code> in front of them. 
 This represents the current scope object - called context in golang.
 On things like <code>partials</code>, which I&rsquo;ll explain next, you can
 optionally pass a smaller scope in from your parent page. Lets check that out.</p>
-<p>On my site, I&rsquo;ve created a <code>partials/header.html</code> to keep the <code>baseof</code> concise and concerned only with overall page structure.
+<p>On my site, I&rsquo;ve created a <code>partials/header.html</code> to keep the <code>baseof</code> concise and concerned only with overall page structure. 
 It looks like this:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -275,11 +276,11 @@ to grok, so I&rsquo;m passing in the full context.</p>
 <p>You may also notice that I&rsquo;ve used the <code>navigation.html</code> partial inside of the header partial. You can use partials or blocks
 in any template you want! I re-use navigation in the footer. I&rsquo;ve created most of this to play around with
 partials and would probably copy/paste the navigation usages mostly because they&rsquo;re styled a bit differently.</p>
-<p>A final note on scope/context in Hugo: you can always reach back up to the global scope by using a <code>$</code> - ex <code>$.Site.Pages</code>
+<p>A final note on scope/context in Hugo: you can always reach back up to the global scope by using a <code>$</code> - ex <code>$.Site.Pages</code> 
 will work no matter where you place it.</p>
 <h2 id="functions-and-lists">Functions and Lists</h2>
-<p>In Hugo, you can run things through functions which have a kind of lisp-y format of nested calls.
-The syntax is may be pretty unfamiliar but you&rsquo;ll eventually have no trouble making sense of things.
+<p>In Hugo, you can run things through functions which have a kind of lisp-y format of nested calls. 
+The syntax is may be pretty unfamiliar but you&rsquo;ll eventually have no trouble making sense of things. 
 Usually you can keep things pretty simple by combining appropriate functions.</p>
 <p>We&rsquo;ll use a couple on our next page - the list layout.</p>
 <p>Create a new file at <code>/content/layouts/_default/list.html</code> and populate it with this:</p>
@@ -347,7 +348,7 @@ Usually you can keep things pretty simple by combining appropriate functions.</p
 {{ end }}
 </code></pre></td></tr></table>
 </div>
-</div><p>Alright, things are getting a little fancy now. We&rsquo;ve got some <code>range</code> usages and an example of a pipe function call with
+</div><p>Alright, things are getting a little fancy now. We&rsquo;ve got some <code>range</code> usages and an example of a pipe function call with 
 <code>range .Pages | complement $pinned</code>. Complement is an easy way to remove one array&rsquo;s elements from another. In this
 case we&rsquo;ll loop all of the Pages that are not pinned.</p>
 <p>There are lots of handy functions in Hugo like <code>complement</code> and you should give the <a href="https://gohugo.io/categories/functions">functions page</a> a scroll when you&rsquo;re
@@ -375,14 +376,14 @@ go into it more, but it is demonstrably a post in itself 😄.</p>
 with some easy to add little extras. The most important ones that I use are probably the Open Graph and Twitter Card
 meta tag templates which will handle those for you based on your content. There&rsquo;s also Google Analytics and Disqus.</p>
 <h2 id="conclusion-and-next-steps">Conclusion and Next Steps</h2>
-<p>With a few templates, Hugo can get you started with a full site that you can start making content for.
+<p>With a few templates, Hugo can get you started with a full site that you can start making content for. 
 These represent the meat and potatoes of Hugo and the final part of my series.</p>
 <p>You&rsquo;ll need to get your preferred type of CSS added, as well as a bit of Javascript. These can be done with
-<a href="https://gohugo.io/hugo-pipes/">Hugo Pipes</a>. If you add anything sufficiently complicated (like custom React components),
-it may be worth a separate build process that outputs artifacts for Hugo to include as though they were regular files.
+<a href="https://gohugo.io/hugo-pipes/">Hugo Pipes</a>. If you add anything sufficiently complicated (like custom React components), 
+it may be worth a separate build process that outputs artifacts for Hugo to include as though they were regular files. 
 I&rsquo;ve found that pipes are great for simple things but are not really appropriate for scaling anything complicated.</p>
 <p>To get your site hosted, which you can do very easily (and for free) with <a href="https://pages.github.com/">Github Pages</a>.
-Use the <code>docs</code> folder approach and either manually build hugo or give something like <a href="https://github.com/features/actions">Github Actions</a>
+Use the <code>docs</code> folder approach and either manually build hugo or give something like <a href="https://github.com/features/actions">Github Actions</a> 
 to automatically run hugo after you push.</p>
 
     </div>
@@ -410,7 +411,7 @@ to automatically run hugo after you push.</p>
         <div class="post-edit-on-github">
             See something you'd like to correct?
             <a
-                    href="https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts/blogging-on-hugo/part-3.md"
+                    href="https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts%5cblogging-on-hugo%5cpart-3.md"
             >
                 Send me a <i class="fab fa-github"></i> pull request!
             </a>

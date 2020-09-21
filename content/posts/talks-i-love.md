@@ -2,7 +2,7 @@
 title: "Talks I Love"
 date: 2018-12-26
 lastmod: 2019-12-
-description: "A list of developer or conference talks I recommend watching."
+description: "A list of conference talks I recommend watching."
 draft: false
 pinned: true
 ---

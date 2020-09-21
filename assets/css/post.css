@@ -17,6 +17,10 @@
     font-size: 65px;
     line-height: 1;
     text-transform: uppercase;
+}
+
+.post-description {
+    font-size: 26px;
     margin: 0 0 0.3em;
 }
 
