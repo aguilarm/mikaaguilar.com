@@ -11,11 +11,11 @@
     
     
     <item>
-      <title>Using Dynamic Types in TypeScript</title>
-      <link>https://www.mikaaguilar.com/posts/using-dynamic-types-in-typescript/</link>
+      <title>Using Union Types in TypeScript</title>
+      <link>https://www.mikaaguilar.com/posts/using-union-types-in-typescript/</link>
       <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mikaaguilar.com/posts/using-dynamic-types-in-typescript/</guid>
+      <guid>https://www.mikaaguilar.com/posts/using-union-types-in-typescript/</guid>
       <description>In recent projects, my team has been using a relatively strict TypeScript config, and it&amp;rsquo;s been excellent.
 A common scenario for us is a need for a union type that we need to perform different actions at runtime. For example, we often have a CurrentUser object that can either be loading, authenticated, or anonymous.
 Because we&amp;rsquo;re using mostly static pages with a detatched auth system (primarily Firebase), systems that require user information on the frontend need to account for a short period where the user is loading before doing anything.</description>

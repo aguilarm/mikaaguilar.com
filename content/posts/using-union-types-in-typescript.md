@@ -1,5 +1,5 @@
 ---
-title: "Using Dynamic Types in TypeScript"
+title: "Using Union Types in TypeScript"
 date: 2020-09-22
 lastmod: 2020-09-22
 description: "How to effectively use union types in TypeScript."
