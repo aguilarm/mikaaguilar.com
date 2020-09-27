@@ -1,13 +1,20 @@
 ---
 title: "About"
-lastmod: 2020-01-26T17:10:08-06:00
+lastmod: 2020-09-22T17:10:08-06:00
 ---
 
-Throughout my career, I've made it a point to have a varied experience. I believe _every_ stack can offer valuable insights into problem solving with software.
+Throughout my career, I've made it a point to have a varied experience. 
+I believe _every_ stack can offer valuable insights into problem-solving with software.
 
-Simple and elegant solutions really get me excited. This site is primarily built on [Hugo](https://gohugo.io) and I'm really hyped for things like [Svelte](svelte.dev). The [JAMStack](https://jamstack.org/) and the things companies like [Zeit](https://zeit.co/about) are up to are moving writing software for the web in an excellent direction.
+The incredible amount of excellent resources available to our industry is 
+ constantly inspiring, and I spend a lot of time [reading new books](/posts/bookshelf/) and [watching conference talks](/posts/talks-i-love/).
+
+Simple and elegant solutions really get me excited. This site is primarily built on [Hugo](https://gohugo.io) and I'm really hyped for things like [Svelte](svelte.dev). 
+The [JAMStack](https://jamstack.org/) and the things companies like [Vercel](https://vercel.com/about) are up to are moving writing software for the web in an excellent direction.
 
 As I've become more comfortable in my technical abilities I've started moving increasingly towards mentoring others.
+
+Here are a few of the technologies I've worked with:
 
 #### Frameworks & Libraries
 
