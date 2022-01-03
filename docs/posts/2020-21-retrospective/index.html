@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        2020/21 Retrospective |
+        
+        Mika Aguilar
+    </title>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-53324003-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    <meta property="og:title" content="2020/21 Retrospective" />
+<meta property="og:description" content="What did I do and what am I looking forward to next?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.mikaaguilar.com/posts/2020-21-retrospective/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-31T17:10:08-06:00" />
+<meta property="article:modified_time" content="2021-12-31T17:10:08-06:00" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2020/21 Retrospective"/>
+<meta name="twitter:description" content="What did I do and what am I looking forward to next?"/>
+
+    <link href="/favicons/favicon.ico" rel="icon" type="image/ico"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700|Noto+Sans&display=swap" rel="stylesheet" />
+    <link href="/lib/font-awesome/css/all.css" rel="stylesheet"/>
+
+    
+    
+    
+    
+    
+    
+    <link href="/css/main.min.css" rel="stylesheet"/>
+
+    
+
+<link href="/css/post.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+<header class="site-header">
+    <div class="branding">
+        <a class="brand-logo" href="/">
+            <img alt="Mika Aguilar's Logo" src="/images/logo.svg"/>
+        </a>
+        <div class="brand-text">
+            <a class="brand-text--site-name" href="/" rel="home" title="Home">
+                Mika Aguilar
+            </a>
+            <div class="brand-text--site-tag-line">
+                Curious Software Engineer
+            </div>
+        </div>
+    </div>
+    <nav class="site-navigation">
+    <ul>
+        
+        <li>
+            <a href="/about/">
+                <span>about</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/posts/">
+                <span>posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/projects/">
+                <span>projects</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+</header>
+
+
+
+<article class="post-container">
+    <header class="post-header">
+        
+        <h1><a href="/posts/2020-21-retrospective/">2020/21 Retrospective</a></h1>
+        <div class="post-description">What did I do and what am I looking forward to next?</div>
+        <div class="post-date post-published">
+            December 31, 2021
+        </div>
+        <div class="post-date post-last-updated">
+            Updated December 31, 2021
+        </div>
+    </header>
+    <div class="post-body">
+        <p>It is difficult to believe that we&rsquo;re entering 2022 already! I did not do a retrospective in 2020, so I thought I would reflect on the last two years together. This was largely a time of putting the things I planned on doing next in my 2019 post into action and seeing the benefits pan out. Finally, midway through 2021 I decided to resign from my position and begin a ~year long sabbatical to spend time getting some perspective on my life and career up to this point.</p>
+<h2 id="what-did-i-do">What Did I Do?</h2>
+<p>Of course the biggest change for 2020 was the pandemic. Like many, we were suddenly working fully remote amidst some really challenging times outside of work. Remote was isolating but also allowed a big boost in productivity for me and was generally an exciting challenge to work out. We dialed in many of our agile processes, and I enjoyed finding ways to make collaboration as asynchronous as possible while still being inclusive and engaging.</p>
+<p>I migrated some projects from CircleCI to Github Actions and ultimately would call it a pretty even trade with GHA winning on price (free) and slightly better build times with caching. Using <a href="https://www.cypress.io">Cypress</a> to create tests was an absolute joy. Cypress is incredibly simple to add and the videos make it easy to find problems and let a non-technical team member understand them.</p>
+<p>As 2020 rolled on, I had two main projects. One was completing multi-language support for a site powered by Drupal and NextJS and the other was adding a premium subscription model to a very high traffic news platform running on Drupal.</p>
+<h3 id="multi-language-drupal">Multi-Language Drupal</h3>
+<p>For the multi-language site, the CMS side was Drupal and I leaned on Drupal&rsquo;s core language features to get different languages rendering on the NextJS frontend. This was my first multi-lang implementation, and it needed to work for users speaking five languages across the globe.</p>
+<p>Perhaps the most difficult part of the project was modeling the behavior of fallback languages, defaults, etc., before implementing and clearly aligning expectations among many different client stakeholders. To get that going I used a lot of visual aids created in white-boarding tools like <a href="https://excalidraw.com/">excalidraw</a>. Remote work made creating visuals for concepts and system designs more crucial than ever for getting everyone on the same page.</p>
+<h3 id="premium-news-platform">Premium News Platform</h3>
+<p>Intermingled with the language work I was plotting a course for the addition of a premium model to a Drupal-powered news site. This work would add some dynamic in-page content based on the current user, premium-only articles and other features common to news sites around the web that run on this model. Prior to these changes the site was mostly static and served primarily to anonymous users.</p>
+<p>My first task was to identify key feature sets/problem areas and analyze platform alternatives. Drupal would probably work, but I have been unsatisfied with its resource usage and the expected additional load was very likely to make it prohibitively expensive to run. This was also a good opportunity to split apart key systems to make the site more resilient. My key decision points for a new setup were:</p>
+<ol>
+<li>A way to handle many thousands of concurrent authenticated users.</li>
+<li>Serve static content to over ten thousand concurrent anonymous users and handle huge traffic spikes without outages.</li>
+<li>Manage an enormous amount of content - hundreds of thousands of items.</li>
+<li>Quick updates were crucial, so efficient cache invalidation was required.</li>
+<li>Little or no major workflow adjustments for CMS content editors.</li>
+</ol>
+<p>The fact that the site was almost entirely static articles made something like Hugo, Gatsby or NextJS very alluring. Static files are leaps and bounds better than babysitting PHP and Varnish even if Varnish <em>mostly</em> works. So, I dove into #2 first planning on tackling authentication with a detached service via either AJAX or SSR.</p>
+<p>For a previous project, I <a href="https://www.mikaaguilar.com/posts/building-decoupled-drupal-sites-2019/">tried using Gatsby</a> and I didn&rsquo;t love it for a few reasons outlined in that post. So, my first try was hugo, something I had <a href="https://www.mikaaguilar.com/posts/blogging-on-hugo/part-1/">already rewritten this site in</a>. Going in, I first needed to make sure Hugo would be able to handle building 100s of thousands of articles efficiently - which was the major drawback of Gatsby when I tried it.</p>
+<p>My prototype performed decently but build times of even a few minutes were not acceptable. To overcome that I toyed with a split build that would only update critical things like the front page and new articles and another process to later catch up older content. Eventually it was clear that I was both pushing the use-case for Hugo and creating something so custom that on-boarding my team would be difficult, so I had to move on. Hugo is excellent for blogs and mostly static sites, but not as well-equipped as NextJS for dynamic content or fully custom functionality.</p>
+<p>Finally, I started on a prototype in NextJS. The game-changer here was <a href="https://nextjs.org/blog/next-9-5">incremental static regeneration</a> which allowed you to skip building the <em>entire</em> site every build and let less important pages get built on request. Conveniently this feature dropped just as I wrapped up Hugo exploration. Building the rest of the feature set in Next was pure joy - mixing widgets that needed authentication in with static content was simple and efficient both for computation and developers.</p>
+<p>For authentication, we used Firebase. While this allowed us to pretty much entirely ignore handling scaling for users, it was surprisingly cumbersome I found the general design of Firebase felt fragmented with all sorts of slightly different ways of doing basic tasks. When we built this, there was no way to query Firebase for a total user count - you had to keep track yourself! However, nothing came close in terms or pricing with the amount of expected users we had. It ultimately proved fast and reliable so despite the rough edges it was a good choice.</p>
+<p>The content remained managed by Drupal to let us focus on the frontend and allow editors to retain their workflows. NextJS static pages became the primary &lsquo;cache&rsquo; layer and Next requested content from Drupal via a handful of REST endpoints almost exclusively on build or during incremental regeneration. This drastically reduced the resources required for Drupal and even if Drupal went down, the static Next pages would serve without issue.</p>
+<p>This project was the culmination of several years of work, and it was really satisfying to launch. It deployed with practically no downtime and proceeded to run for months without major issues. Splitting the rendering of the site to end users from the admin interface/cms with a relatively durable cache made cms maintenance far less risky. Furthermore, having a separate authentication service meant that the site could at least serve base content even if for some reason auth went down. After years of running everything-or-nothing in Drupal, this setup was really great.</p>
+<h3 id="sabbatical">Sabbatical</h3>
+<p>The last few years were exceptional in many ways. Halfway through 2021 I decided to resign from my position and take around a year off of work. My long-term partner was diagnosed with Fibromyalgia in 2020 and then not much later contracted Covid19 before the vaccines came out despite our best isolation efforts, resulting in long-covid fatigue as well. I took the first few months of this break to support her. Thankfully, while still far from a full recovery, her condition has improved significantly since this began and hopefully will continue to.</p>
+<p>After that, I took a solo van road trip for three months across the western US. My route was north from Austin to Yellowstone, Seattle, down the California coast then back east through AZ and NM. During the pandemic I picked up bird watching and on this trip I hit 300 species! I took <a href="https://www.instagram.com/diagnosisbirder/">bird photos</a> and some <a href="https://www.instagram.com/theohvan/">van shots</a> along the way.</p>
+<p>As of writing this, I&rsquo;ve been back home for a bit. Between making life as easy as possible for my partner, I am getting back into programming after some time away. I have been toying with making a light CMS in NextJS and created <a href="https://www.searchingforbirds.com">Searching for Birds</a> to experiment. It&rsquo;s using some Markdown files in a similar setup as a Hugo site. I&rsquo;ve also been making my way through <a href="https://www.braveclojure.com/clojure-for-the-brave-and-true/">Clojure for the Brave and True</a> again and, of course, watching loads of Rich Hickey talks. Finally, as I&rsquo;ll be back on the job hunt, I&rsquo;ve really enjoyed tackling a few LeetCode questions a week.</p>
+<h2 id="whats-next">What&rsquo;s Next?</h2>
+<p>I am hopeful for 2022. This later half of my break is going to be focused on volunteer work and creating music, art, and code while I start looking for my next work opportunity. After taking up birding and going on my trip, it is clear to me that the climate crisis is very much here, and I want to do what I can as a software engineer to help solve it.</p>
+<p>Tech-wise, I remain excited about NextJS. In 2019, it was the top of my list and in the time since then it&rsquo;s had time to mature into a robust platform. I am a huge fan of what Guillermo Rauch is doing, and to hear that he&rsquo;s hired Rich Harris with the goal of making Svelte better is amazing. I think there is a lot of potential overlap between them and having the two work together to merge these two ideas is great.</p>
+<p>At the end of 2019 I expected to find a replacement for Drupal but did not end up focusing on it enough to build a full site in something new. <a href="https://strapi.io">Strapi</a> is the most robust alternative, and it appears to have significantly improved since I last considered it.</p>
+<p>I&rsquo;m super excited to see what my next role looks like. I&rsquo;m exploring all sorts of different options spanning the stack and excited to learn and grow from a new team wherever I end up.</p>
+<p>Here&rsquo;s to 2022!</p>
+
+    </div>
+    <footer class="post-footer">
+        
+        <div class="post-thanks">
+            Thanks for stopping by!
+        </div>
+        <div class="post-edit-on-github">
+            See something you'd like to correct?
+            <a
+                    href="https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts/2020-21-retrospective.md"
+            >
+                Send me a <i class="fab fa-github"></i> pull request!
+            </a>
+        </div>
+    </footer>
+</article>
+
+
+
+<footer class="site-footer">
+    <nav class="site-navigation">
+    <ul>
+        
+        <li>
+            <a href="/about/">
+                <span>about</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/posts/">
+                <span>posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="/projects/">
+                <span>projects</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+    <div class="footer-site-name">Mika Aguilar</div>
+    <a class="footer-logo" href="/">
+        <img alt="Mika Aguilar's logo" src="/images/logo.svg"/>
+    </a>
+</footer>
+
+</body>
+</html>

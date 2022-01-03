@@ -22,13 +22,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     <meta property="og:title" content="Using Union Types in TypeScript" />
 <meta property="og:description" content="How to effectively use union types in TypeScript." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mikaaguilar.com/posts/using-union-types-in-typescript/" />
+<meta property="og:url" content="https://www.mikaaguilar.com/posts/using-union-types-in-typescript/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-09-22T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-09-22T00:00:00+00:00" />
+
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Union Types in TypeScript"/>
@@ -121,7 +121,7 @@ improved just a little more using an enum to make IDE usage searches easy.</p>
 <p>In the case of the <code>CurrentUser</code>, the full type declaration looks something like this:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -142,25 +142,25 @@ improved just a little more using an enum to make IDE usage searches easy.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">UserTypes</span> {
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">UserTypes</span> {
   <span style="color:#a6e22e">Authenticated</span>,
   <span style="color:#a6e22e">Anonymous</span>,
 }
 
-<span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">AuthenticatedUser</span> <span style="color:#f92672">=</span> {
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">AuthenticatedUser</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">userType</span>: <span style="color:#66d9ef">UserTypes.Authenticated</span>;
   <span style="color:#a6e22e">displayName</span>: <span style="color:#66d9ef">string</span>;
   <span style="color:#a6e22e">email</span>: <span style="color:#66d9ef">string</span>;
-  <span style="color:#a6e22e">logout</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span><span style="color:#f92672">&gt;</span>;
+  <span style="color:#a6e22e">logout</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">void</span>&gt;;
 };
 
-<span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">AnonymousUser</span> <span style="color:#f92672">=</span> {
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">AnonymousUser</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">userType</span>: <span style="color:#66d9ef">UserTypes.Anonymous</span>;
   <span style="color:#a6e22e">isPremium</span>: <span style="color:#66d9ef">false</span>;
-  <span style="color:#a6e22e">login</span>(<span style="color:#a6e22e">userName</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">password</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span><span style="color:#f92672">&gt;</span>;
+  <span style="color:#a6e22e">login</span>(<span style="color:#a6e22e">userName</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">password</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">void</span>&gt;;
 };
 
-<span style="color:#66d9ef">export</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">CurrentUser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AuthenticatedUser</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">AnonymousUser</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">CurrentUser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">AuthenticatedUser</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">AnonymousUser</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">null</span>;
 </code></pre></td></tr></table>
 </div>
 </div><p>This is great for two reasons:</p>
@@ -171,13 +171,13 @@ improved just a little more using an enum to make IDE usage searches easy.</p>
 <p>That means, a possible use of the <code>CurrentUser</code> type would look like</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">currentUser</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">userType</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">UserTypes</span>.<span style="color:#a6e22e">Authenticated</span>) {
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">currentUser</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">userType</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">UserTypes</span>.<span style="color:#a6e22e">Authenticated</span>) {
     <span style="color:#75715e">// Do things an authenticated user can do, like logout
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">currentUser</span>.<span style="color:#a6e22e">logout</span>();
 }

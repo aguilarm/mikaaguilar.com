@@ -22,13 +22,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     <meta property="og:title" content="Part 2: Setup, Directories, and Content" />
 <meta property="og:description" content="Quick setup guide, an overview of the various directories we&#39;ll use and a short intro to creating content." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mikaaguilar.com/posts/blogging-on-hugo/part-2/" />
+<meta property="og:url" content="https://www.mikaaguilar.com/posts/blogging-on-hugo/part-2/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-16T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-05-17T00:00:00+00:00" />
+<meta property="og:see_also" content="https://www.mikaaguilar.com/posts/blogging-on-hugo/part-3/" /><meta property="og:see_also" content="https://www.mikaaguilar.com/posts/blogging-on-hugo/part-1/" />
 
 
     <meta name="twitter:card" content="summary"/>
@@ -126,7 +126,7 @@ After that, create a new empty folder to begin your site. You can <code>git init
 <p>Here&rsquo;s what we&rsquo;re going to cook up:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -139,7 +139,7 @@ After that, create a new empty folder to begin your site. You can <code>git init
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">├── content
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">├── content
 │   └── The raw content files written in Markdown.
 ├── layouts
 │   └── Template files to determine your markup.
@@ -157,12 +157,12 @@ After that, create a new empty folder to begin your site. You can <code>git init
 Change the relevant values and you can save this in your new directory as <code>config.toml</code>:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-TOML" data-lang="TOML"><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://www.example.com/&#34;</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-TOML" data-lang="TOML"><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://www.example.com/&#34;</span>
 <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Example&#34;</span>
 <span style="color:#a6e22e">publishDir</span> = <span style="color:#e6db74">&#34;docs&#34;</span>
 </code></pre></td></tr></table>
@@ -179,14 +179,14 @@ I use Markdown or <code>.md</code> to quickly write posts.</p>
 <p>Each direct child folder of the <code>/content</code> directory denotes a different <em>Type</em> of content. For example, your blog could have <em>Projects</em> and <em>Posts</em>, in which case you would have this directory structure:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">└── content
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">└── content
     ├── projects
     │   └── personal-website.md
     └── posts
@@ -197,7 +197,7 @@ I use Markdown or <code>.md</code> to quickly write posts.</p>
 <p>Here is an example of what the contents of this post could look like:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -210,16 +210,16 @@ I use Markdown or <code>.md</code> to quickly write posts.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#66d9ef">title</span>: <span style="color:#e6db74">&#34;First Post!&#34;</span>
-<span style="color:#66d9ef">date</span>: <span style="color:#e6db74">2020-05-17</span>
-<span style="color:#66d9ef">lastmod</span>: <span style="color:#e6db74">2020-05-17</span>
-<span style="color:#66d9ef">description</span>: <span style="color:#e6db74">&#34;The very first post in my new blog.&#34;</span>
-<span style="color:#66d9ef">pinned</span>: <span style="color:#66d9ef">false</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;First Post!&#34;</span>
+<span style="color:#f92672">date</span>: <span style="color:#e6db74">2020-05-17</span>
+<span style="color:#f92672">lastmod</span>: <span style="color:#e6db74">2020-05-17</span>
+<span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;The very first post in my new blog.&#34;</span>
+<span style="color:#f92672">pinned</span>: <span style="color:#66d9ef">false</span>
 ---
 
-These days, you have to start somewhere. I&#39;ve decided to start here.
-Everything down here is, in fact, <span style="color:#75715e">*markdown*.</span>
+<span style="color:#ae81ff">These days, you have to start somewhere. I&#39;ve decided to start here.</span>
+<span style="color:#ae81ff">Everything down here is, in fact, *markdown*.</span>
 
 </code></pre></td></tr></table>
 </div>

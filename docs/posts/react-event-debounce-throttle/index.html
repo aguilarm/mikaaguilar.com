@@ -22,13 +22,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     <meta property="og:title" content="Debouncing and Throttling React Events" />
 <meta property="og:description" content="Why and how to throttle or debounce events in ReactJS." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mikaaguilar.com/posts/react-event-debounce-throttle/" />
+<meta property="og:url" content="https://www.mikaaguilar.com/posts/react-event-debounce-throttle/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-02-09T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-02-09T00:00:00+00:00" />
+
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Debouncing and Throttling React Events"/>
@@ -120,7 +120,7 @@ The most obvious use case for this is an autocompletion handler for a search inp
 <p>The very first thing we might do when trying to add debouncing or throttling to our components may be something like this:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -140,7 +140,7 @@ The most obvious use case for this is an autocompletion handler for a search inp
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">throttle</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;lodash&#39;</span>;
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">throttle</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;lodash&#39;</span>;
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Input</span>() {
     <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">throttledValue</span>, <span style="color:#a6e22e">setThrottledValue</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#39;&#39;</span>);
@@ -169,7 +169,7 @@ Ultimately we&rsquo;ll only call each instance of the throttled function once, b
 <p>So, we&rsquo;re going to need to define our throttled function outside of the component body so that the reference remains the same. That might look something like this:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -192,7 +192,7 @@ Ultimately we&rsquo;ll only call each instance of the throttled function once, b
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">throttle</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;lodash&#39;</span>;
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">throttle</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;lodash&#39;</span>;
 
 <span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleInputChange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">throttle</span>((<span style="color:#a6e22e">newValue</span>, <span style="color:#a6e22e">setValue</span>) =&gt; {
 </span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#a6e22e">setValue</span>(<span style="color:#a6e22e">newValue</span>);
@@ -220,7 +220,7 @@ Ultimately we&rsquo;ll only call each instance of the throttled function once, b
 <p>It turns out, there already are hooks for this and there have been for quite some time now. Sweet! What&rsquo;s that look like?</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -243,7 +243,7 @@ Ultimately we&rsquo;ll only call each instance of the throttled function once, b
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useDebounce</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;use-debounce&#39;</span>;
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useDebounce</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;use-debounce&#39;</span>;
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useThrottle</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;use-throttle&#39;</span>;
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Input</span>() {
@@ -270,7 +270,7 @@ Ultimately we&rsquo;ll only call each instance of the throttled function once, b
 <p>The entire actual implementation for <code>use-throttle</code> is 24 lines:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -296,7 +296,7 @@ Ultimately we&rsquo;ll only call each instance of the throttled function once, b
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useState</span>, <span style="color:#a6e22e">useEffect</span>, <span style="color:#a6e22e">useRef</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useState</span>, <span style="color:#a6e22e">useEffect</span>, <span style="color:#a6e22e">useRef</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useThrottle</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">limit</span>) =&gt; {
   <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">throttledValue</span>, <span style="color:#a6e22e">setThrottledValue</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#a6e22e">value</span>);

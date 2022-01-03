@@ -22,13 +22,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     <meta property="og:title" content="Easily Patch Contrib Drupal Modules Composer" />
 <meta property="og:description" content="The workflow for patching Drupal modules can be a bit obtuse if you do everything by hand, but with composer it&#39;s easy!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mikaaguilar.com/posts/easily-patch-contrib-drupal-modules-composer/" />
+<meta property="og:url" content="https://www.mikaaguilar.com/posts/easily-patch-contrib-drupal-modules-composer/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-01-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-12-26T00:00:00+00:00" />
+
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Easily Patch Contrib Drupal Modules Composer"/>
@@ -135,15 +135,15 @@ if (!doNotTrack) {
     },
     &quot;scripts&quot;: {
       &quot;drupal-scaffold&quot;: &quot;DrupalComposer\\DrupalScaffold\\Plugin::scaffold&quot;
-        },
-        &quot;extra&quot; : {
-            &quot;installer-paths&quot;: {
-                &quot;docroot/core&quot;: [&quot;type:drupal-core&quot;],
-                &quot;docroot/libraries/{$name}&quot;: [&quot;type:drupal-library&quot;],
-                &quot;docroot/modules/contrib/{$name}&quot;: [&quot;type:drupal-module&quot;],
-                &quot;docroot/themes/contrib/{$name}&quot;: [&quot;type:drupal-theme&quot;]
-            }
-        }
+		},
+		&quot;extra&quot; : {
+			&quot;installer-paths&quot;: {
+				&quot;docroot/core&quot;: [&quot;type:drupal-core&quot;],
+				&quot;docroot/libraries/{$name}&quot;: [&quot;type:drupal-library&quot;],
+				&quot;docroot/modules/contrib/{$name}&quot;: [&quot;type:drupal-module&quot;],
+				&quot;docroot/themes/contrib/{$name}&quot;: [&quot;type:drupal-theme&quot;]
+			}
+		}
 }
 </code></pre>
 <p>This will put all of my Drupal modules into <code>docroot/modules/contrib</code> (relative to my composer.json).</p>

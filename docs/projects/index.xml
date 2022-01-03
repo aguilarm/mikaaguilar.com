@@ -5,11 +5,7 @@
     <link>https://www.mikaaguilar.com/projects/</link>
     <description>Recent content in Projects on Mika Aguilar</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://www.mikaaguilar.com/projects/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://www.mikaaguilar.com/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Decoupled Drupal with Gatsby Starter Kit</title>
       <link>https://www.mikaaguilar.com/projects/decoupled-drupal-gatsby-starter-kit/</link>

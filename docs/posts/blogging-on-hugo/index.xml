@@ -6,11 +6,7 @@
     <description>Recent content in Blogging on Hugo on Mika Aguilar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.mikaaguilar.com/posts/blogging-on-hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 11 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mikaaguilar.com/posts/blogging-on-hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Part 3: Layouts</title>
       <link>https://www.mikaaguilar.com/posts/blogging-on-hugo/part-3/</link>
