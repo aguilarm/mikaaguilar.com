@@ -1,0 +1,146 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>
+Tuning Php Fpm |
+Mika Aguilar
+</title>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-53324003-1','auto'),ga('send','pageview'))</script>
+<meta property="og:title" content="Tuning Php Fpm">
+<meta property="og:description" content="My experience running Drupal sites with php-fpm at scale.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.mikaaguilar.com/posts/tuning-php-fpm/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2019-07-19T00:00:00+00:00">
+<meta property="article:modified_time" content="2019-09-04T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Tuning Php Fpm">
+<meta name=twitter:description content="My experience running Drupal sites with php-fpm at scale.">
+<link href=/favicons/favicon.ico rel=icon type=image/ico>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700|Noto+Sans&display=swap" rel=stylesheet>
+<link href=/lib/font-awesome/css/all.css rel=stylesheet>
+<link href=/css/main.min.css rel=stylesheet>
+<link href=/css/post.min.css rel=stylesheet>
+</head>
+<body>
+<header class=site-header>
+<div class=branding>
+<a class=brand-logo href=/>
+<img alt="Mika Aguilar's Logo" src=/images/logo.svg>
+</a>
+<div class=brand-text>
+<a class=brand-text--site-name href=/ rel=home title=Home>
+Mika Aguilar
+</a>
+<div class=brand-text--site-tag-line>
+Curious Software Engineer
+</div>
+</div>
+</div>
+<nav class=site-navigation>
+<ul>
+<li>
+<a href=/about/>
+<span>about</span>
+</a>
+</li>
+<li>
+<a href=/posts/>
+<span>posts</span>
+</a>
+</li>
+<li>
+<a href=/projects/>
+<span>projects</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<article class=post-container>
+<header class=post-header>
+<h1><a href=/posts/tuning-php-fpm/>Tuning Php Fpm</a></h1>
+<div class=post-description>My experience running Drupal sites with php-fpm at scale.</div>
+<div class="post-date post-published">
+July 19, 2019
+</div>
+<div class="post-date post-last-updated">
+Updated September 4, 2019
+</div>
+</header>
+<div class=post-body>
+<p>We&rsquo;ve been running php-fpm at a pretty significant scale for quite some time now and have played around with a bunch of different performance configurations in an attempt to do so efficiently. Our stack is varnish > nginx > php-fpm. Php is running Drupal behind all of that, and the vast majority of a site is hitting varnish cache. Occasionally we&rsquo;ll have to warm up caches or something will leak through and we&rsquo;ll have to deal with a sizeable surge of concurrent requests.</p>
+<p>Of course, ideally, I&rsquo;m not tuning the stack to handle the very occasionally absolute worst possible scenario - totally un-cached site rebuilds - but it&rsquo;s still a reality I&rsquo;ll need to handle relatively gracefully.</p>
+<p>My current scale is hundreds of concurrent authenticated users, and nearly 10k concurrent total users. Also, when everything is as cached as it realistically can be, I have maybe 20 or 30 requests going through php at any one time.</p>
+<p>The most common advice I&rsquo;ve come across is to allocate a maximum children count following the <em>average memory usage of your scripts / total available memory</em>. Following that with average memory usage generally very low, I could have hundreds of children processes on each master. So that was the first thing I rolled with.</p>
+<p>I&rsquo;ve since done some research on general concurrency handling patterns and how CPUs work to arrive at a new working understanding of this problem. It turns out, there is a lot of subtlety in how a CPU actually, physically, performs work and in which order but you can at least get pretty close with some relatively safe assumptions. Here are some key things to understand when tuning php-fpm:</p>
+<ol>
+<li><strong>One child handles one request at a time.</strong><br>
+This means your total children at any moment represent the maximum number of concurrent requests you can handle.</li>
+<li><strong>One child processing one request is using CPU time that another child will not be able to use*</strong><br>
+Things get really murky here the closer you try to get to real concurrency handling with CPUs. One php request runs in a single, isolated thread. This means that it&rsquo;s far less equipped for massive concurrency than something like NodeJS or Golang where requests are not isolated in threads and many requests run together. It makes php a bit easier to grok because state is not leaking over requests and needs to be built anew each time a request is made, but has the downside of being a bit harder to scale.<br>
+However, modern CPUs are also doing a lot things in an attempt to accomplish many tasks in a short time frame seemingly all at once. This can mean that, depending on your CPU&rsquo;s ability to do so, you may be able to simulate efficiently handling a handful of simple requests roughly concurrently even with something blocking like php. Generally, though, that amounts to the CPU performing a single request faster, meaning more &lsquo;concurrent&rsquo; requests can be pushed through the queue in a smaller time frame.<br>
+Getting a really clear answer to what to expect with CPU usage and children processes, or what is <em>actually</em> happening down to the metal is really tough and you&rsquo;re going to have to tune based on observing your app here.</li>
+<li><strong>Children processing requests take a certain amount of average memory per request, based on the app they&rsquo;re running.</strong><br>
+Well, sort of. Your app probably does have an average memory footprint over many requests. But if you&rsquo;re using something like Drupal or WordPress, the admin interface is likely to take a whole lot more memory than your average page. You&rsquo;ll also likely need a relatively large amount of memory for image uploads and image processing. So this is really dependent on the nature of your php application. Ideally you trim your memory_limit down to the lowest possible expected usage so things that anomalously exceed it will be killed. So, for a CMS, the admin sections should probably be on a separate pool with a higher memory limit. If you do something difficult/memory intensive (like image processing in php), that should be happening in a dedicated pool as well. You should avoid throwing a big limit on <em>all</em> of your children because a very small handful of them occasionally need a lot of memory. Often easier said than done, but said nonetheless.</li>
+</ol>
+<h2 id=finding-the-sweet-spot>Finding the sweet spot</h2>
+<p>I came across the &lsquo;avg memory per request/total memory = children&rsquo; advice in enough different places that I started to hold onto it as definitely-all-I-need-to-know-about-children-processes. That is, however, only half of the story. My average requests in php use a minuscule amount of RAM compared to how much I can chuck on a machine for relatively low cost right now. So, following that advice, I could have hundreds of children. Similarly, my average requests also generally use a tiny portion of CPU percentage. Still seems like I can go to the moon with my total children process count.</p>
+<p>Doing so invariably hits the CPU cap way before it hits a memory issue. So I get a logjam of kind of an f5 storm. If I try to let 100s of concurrent requests run on a machine with 1 or 2 cores, its got to do them 1 or 2 at a time. If one of those requests takes a little bit, even a second or two, I&rsquo;m backing up the others into the listen queue waiting for it to finish. By default, listen queue is set to unlimited (-1) by php but actually limited by your platforms max connections, which could be a few thousand now. After the queue fills up, requests are dropped. I recommend having your listen queue capped at something as low as 5 or 10 to prevent a situation where 100s are waiting and 100s are queuing that you&rsquo;ll never realistically catch up to because your available CPU is going to be jammed trying to continuously process all of these requests. Capping at a smaller number will give the CPU an opportunity to free up work and stop putting users in line, where they invariably just refresh the page over and over.</p>
+<p>This is a bit of a fundamental shortcoming of using php in a high concurrency situation because you cannot get away from scaling hardware to meet concurrency demands at a much higher ratio than something like NodeJS or Go. Because every request in php is going to effectively lock up an entire core while it processes, you need to scale cores to handle concurrent requests. You&rsquo;ll gain potentially quite a bit of concurrency ability if you use really fast cores because requests will be processed faster, but you&rsquo;re not escaping the 1core = 1request problem with php.</p>
+<p>With that in mind, to tune php to handle concurrency as well as it is able to, you need to consider the concurrent users you expect and how many CPU cores you are able to throw at it. Your children processes should really be 1 process per core, but can realistically be around 5 or 10 depending on what kind of CPU you&rsquo;re able to get and how complicated your requests are. It is most likely that memory won&rsquo;t be something to consider, but of course that is going to play a role as well if your requests take a high amount of memory on average.</p>
+<p>I&rsquo;m still experimenting with the best way to handle full cache-rebuilds at high (1000+) concurrency, but so far having a lot of performant CPUs available has been the best setup. I think limiting my listen queue and max execution times considerably will increase possible throughput as well, but have yet to find a nice balance there. We were recently able to upgrade our CPUs and it had a rather dramatic effect on the ability to push concurrency through the system.</p>
+<p>Realistically you <em>need</em> a caching layer to use php in a high concurrency situation. Things like Varnish are purpose built for serving lots of concurrent requests very quickly by looking them up in memory. You are basically building an in-memory version of the JAMStack setup where everything is files that get updated by a build system. You should approach scaling php with this in mind - it doesn&rsquo;t <em>do</em> concurrency and if you want to do lots of concurrency, you need a cache layer on top. It should be considered a build tool that outputs memory artifacts into Varnish. With Drupal 8 and cache tags, we&rsquo;ve been able to do that without the common &lsquo;oh that is cached for an hour, we can&rsquo;t update it immediately&rsquo; troubles and it&rsquo;s a relatively nice experience for developers and end users.</p>
+<p>Hopefully you&rsquo;ve found this helpful. If you see something that needs correcting, you can reach me on twitter or via email (it&rsquo;s definitely all over this very website). I, of course, have assembled this knowledge from many great sources throughout the internet:</p>
+<h3 id=further-reading>Further Reading</h3>
+<p>There is <em>tons</em> of great stuff on Hayden&rsquo;s website, here&rsquo;s two that are super relevant:<br>
+<a href=https://haydenjames.io/understanding-php-memory>https://haydenjames.io/understanding-php-memory</a>_limit/<br>
+<a href=https://haydenjames.io/php-performance-additional-cpu-cores-vs-faster-cpu-cores/>https://haydenjames.io/php-performance-additional-cpu-cores-vs-faster-cpu-cores/</a><br>
+You should also go ahead and search for &lsquo;php&rsquo; there. Really awesome resource.</p>
+<p><a href=https://devcenter.heroku.com/articles/php-concurrency>https://devcenter.heroku.com/articles/php-concurrency</a></p>
+<p><a href=https://carlalexander.ca/php-application/>https://carlalexander.ca/php-application/</a></p>
+<p><a href=https://slack.engineering/taking-php-seriously-cf7a60065329>https://slack.engineering/taking-php-seriously-cf7a60065329</a></p>
+<p><a href=https://forum.nginx.org/read.php?3,222702>https://forum.nginx.org/read.php?3,222702</a></p>
+<p><a href=https://www.linode.com/community/questions/8712/how-many-php-children-is-too-many>https://www.linode.com/community/questions/8712/how-many-php-children-is-too-many</a></p>
+<p>And a Talk about concurrency. This is in Java but will still help CPU concurrency make sense (after making it seem like real life magic):</p>
+<p><a href=https://www.infoq.com/presentations/concurrency-tips/>https://www.infoq.com/presentations/concurrency-tips/</a></p>
+</div>
+<footer class=post-footer>
+<div class=post-thanks>
+Thanks for stopping by!
+</div>
+<div class=post-edit-on-github>
+See something you'd like to correct?
+<a href=https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts/tuning-php-fpm.md>
+Send me a <i class="fab fa-github"></i> pull request!
+</a>
+</div>
+</footer>
+</article>
+<footer class=site-footer>
+<nav class=site-navigation>
+<ul>
+<li>
+<a href=/about/>
+<span>about</span>
+</a>
+</li>
+<li>
+<a href=/posts/>
+<span>posts</span>
+</a>
+</li>
+<li>
+<a href=/projects/>
+<span>projects</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class=footer-site-name>Mika Aguilar</div>
+<a class=footer-logo href=/>
+<img alt="Mika Aguilar's logo" src=/images/logo.svg>
+</a>
+</footer>
+</body>
+</html>

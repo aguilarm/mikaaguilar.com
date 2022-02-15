@@ -1,0 +1,163 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>
+Part 1: Why Hugo |
+Mika Aguilar
+</title>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-53324003-1','auto'),ga('send','pageview'))</script>
+<meta property="og:title" content="Part 1: Why Hugo">
+<meta property="og:description" content="Before you get started, make sure you know *why* you're choosing Hugo.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.mikaaguilar.com/posts/blogging-on-hugo/part-1/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2020-04-11T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-05-17T00:00:00+00:00">
+<meta property="og:see_also" content="https://www.mikaaguilar.com/posts/blogging-on-hugo/part-3/"><meta property="og:see_also" content="https://www.mikaaguilar.com/posts/blogging-on-hugo/part-2/">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Part 1: Why Hugo">
+<meta name=twitter:description content="Before you get started, make sure you know *why* you're choosing Hugo.">
+<link href=/favicons/favicon.ico rel=icon type=image/ico>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700|Noto+Sans&display=swap" rel=stylesheet>
+<link href=/lib/font-awesome/css/all.css rel=stylesheet>
+<link href=/css/main.min.css rel=stylesheet>
+<link href=/css/post.min.css rel=stylesheet>
+</head>
+<body>
+<header class=site-header>
+<div class=branding>
+<a class=brand-logo href=/>
+<img alt="Mika Aguilar's Logo" src=/images/logo.svg>
+</a>
+<div class=brand-text>
+<a class=brand-text--site-name href=/ rel=home title=Home>
+Mika Aguilar
+</a>
+<div class=brand-text--site-tag-line>
+Curious Software Engineer
+</div>
+</div>
+</div>
+<nav class=site-navigation>
+<ul>
+<li>
+<a href=/about/>
+<span>about</span>
+</a>
+</li>
+<li>
+<a href=/posts/>
+<span>posts</span>
+</a>
+</li>
+<li>
+<a href=/projects/>
+<span>projects</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<article class=post-container>
+<header class=post-header>
+<div class=post-series>
+Series:
+<a href=#post-series>Blogging on Hugo
+</div>
+<h1><a href=/posts/blogging-on-hugo/part-1/>Part 1: Why Hugo</a></h1>
+<div class=post-description>Before you get started, make sure you know *why* you're choosing Hugo.</div>
+<div class="post-date post-published">
+April 11, 2020
+</div>
+<div class="post-date post-last-updated">
+Updated May 17, 2020
+</div>
+</header>
+<div class=post-body>
+<p>This site is running Hugo with GitHub pages, and I am really happy with the setup.
+There are a <em>lot</em> of options for spinning up a personal blog site, and I really think building with Hugo
+is the best option.<br>
+I&rsquo;m going to guide you through building a blog with it in this series of posts.<br>
+Lets start off with the most important question - why.</p>
+<h2 id=the-jamstack->The JAMStack 🎸</h2>
+<p>Hugo is a static site generator, which is the <em>M</em>arkdown bit of the JAMStack. Everyone is <em>really</em> jumping on the <a href=https://jamstack.org/>JAMStack</a> hype train these days,
+and there are many good reasons for that. Here are a few:</p>
+<ol>
+<li><strong>No server</strong>. In my opinion, the single best reason is that there is no long-running server process to maintain.
+This site will effectively <em>never</em> go down, and I do not have to worry about scaling for traffic spikes.</li>
+<li><strong>Backups are easy</strong>. The site is a collection of normal files that I can save in many different places.</li>
+<li><strong>No database</strong>. This can be a downside if you need to scale <em>content</em> or do relational lookups, but for a simple blog
+with 10s or 100s of posts, you will likely be ok. One less running process.</li>
+<li><strong>Composable features</strong>. If you want something dynamic, like comments, you can add a mount point to your static template, and
+use Javascript. Your core site will not go down if your comments (or another add-on service) go down.</li>
+</ol>
+<h1 id=hugos-advantages>Hugo&rsquo;s Advantages</h1>
+<p>I really think Hugo in particular is <strong>the best choice</strong> to build a personal blog for a few additional reasons:</p>
+<ol>
+<li><strong>Authoring is easy</strong>. I can use any editor that outputs Markdown or HTML to write posts and then I add them to Git
+and I&rsquo;m done. If you aren&rsquo;t a developer, you can use <a href=https://forestry.io/>Forestry.io</a> to abstract that entire process.</li>
+<li><strong>No dependencies</strong>. You can include the hugo binary and have everything you need to build your site locally with a <code>git clone</code>.
+Hugo uses a single binary to build your site, that&rsquo;s it.</li>
+<li><strong>Simple templates</strong>. You can use plain HTML for nearly everything and simple Golang templating functions when things get complicated.</li>
+<li><strong>Built-in functionality catering to blog-style sites</strong>. You will not need to re-invent many wheels using Hugo for a blog.</li>
+<li><strong>Truly static output</strong>. Hugo takes your templates and strings them together in plain HTML/CSS/JS. Everything works at rest,
+and there is no runtime.</li>
+<li><strong><em>Really</em> Fast</strong>. You will not have speed problems compiling Hugo. My site builds in between 100 and 200ms. Crazy fast compared to most alternatives. Builds will not slow until you have hundreds of thousands of pieces of content, and even then you&rsquo;ll be looking at a couple of minutes most likely.</li>
+</ol>
+<h2 id=why-not-hugo>Why <em>Not</em> Hugo</h2>
+<p>Hugo isn&rsquo;t perfect, of course. Here are some things to expect, and potentially some reasons to choose a different platform.</p>
+<ol>
+<li><strong>Documentation</strong>. The official Hugo docs lay out each component nicely, but don&rsquo;t help you a whole lot with full usage examples. They&rsquo;re complete, but using just the docs is difficult. This was the main reason I decided to write this series.</li>
+<li><strong>Variable Discoverability</strong>. Figuring out what is available in your page&rsquo;s current scope is difficult. You&rsquo;re stuck with effectively <code>printf</code> debugging or being tied to the docs - there is no breakpoint debugging or IDE auto-completion. Largely Hugo is simple enough for this to be fine, but it&rsquo;s certainly more difficult than alternatives.</li>
+<li><strong>Everything is a file</strong>. There is no database. If you want to add content, it needs to be in the content folder. If you want to style it, a template needs to be in a corresponding layout folder. That&rsquo;s it. Coming from dynamic database-backed CMS&rsquo;s this can be a little weird.</li>
+</ol>
+<p>For me, the advantages of Hugo make it very attractive despite these shortcomings.</p>
+<p>With that, let&rsquo;s continue on and build something!</p>
+</div>
+<footer class=post-footer>
+<div class=post-footer-series id=post-series>
+<div class=post-series>More in: Blogging on Hugo</div>
+<ul class=post-series-other-posts>
+<li><a href=/posts/blogging-on-hugo/part-3/>Part 3: Layouts</a></li>
+<li><a href=/posts/blogging-on-hugo/part-2/>Part 2: Setup, Directories, and Content</a></li>
+<li><a href=/posts/blogging-on-hugo/part-1/>Part 1: Why Hugo</a></li>
+</ul>
+</div>
+<div class=post-thanks>
+Thanks for stopping by!
+</div>
+<div class=post-edit-on-github>
+See something you'd like to correct?
+<a href=https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts/blogging-on-hugo/part-1.md>
+Send me a <i class="fab fa-github"></i> pull request!
+</a>
+</div>
+</footer>
+</article>
+<footer class=site-footer>
+<nav class=site-navigation>
+<ul>
+<li>
+<a href=/about/>
+<span>about</span>
+</a>
+</li>
+<li>
+<a href=/posts/>
+<span>posts</span>
+</a>
+</li>
+<li>
+<a href=/projects/>
+<span>projects</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class=footer-site-name>Mika Aguilar</div>
+<a class=footer-logo href=/>
+<img alt="Mika Aguilar's logo" src=/images/logo.svg>
+</a>
+</footer>
+</body>
+</html>

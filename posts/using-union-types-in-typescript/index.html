@@ -1,0 +1,191 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>
+Using Union Types in TypeScript |
+Mika Aguilar
+</title>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-53324003-1','auto'),ga('send','pageview'))</script>
+<meta property="og:title" content="Using Union Types in TypeScript">
+<meta property="og:description" content="How to effectively use union types in TypeScript.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.mikaaguilar.com/posts/using-union-types-in-typescript/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2020-09-22T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-09-22T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Using Union Types in TypeScript">
+<meta name=twitter:description content="How to effectively use union types in TypeScript.">
+<link href=/favicons/favicon.ico rel=icon type=image/ico>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700|Noto+Sans&display=swap" rel=stylesheet>
+<link href=/lib/font-awesome/css/all.css rel=stylesheet>
+<link href=/css/main.min.css rel=stylesheet>
+<link href=/css/post.min.css rel=stylesheet>
+</head>
+<body>
+<header class=site-header>
+<div class=branding>
+<a class=brand-logo href=/>
+<img alt="Mika Aguilar's Logo" src=/images/logo.svg>
+</a>
+<div class=brand-text>
+<a class=brand-text--site-name href=/ rel=home title=Home>
+Mika Aguilar
+</a>
+<div class=brand-text--site-tag-line>
+Curious Software Engineer
+</div>
+</div>
+</div>
+<nav class=site-navigation>
+<ul>
+<li>
+<a href=/about/>
+<span>about</span>
+</a>
+</li>
+<li>
+<a href=/posts/>
+<span>posts</span>
+</a>
+</li>
+<li>
+<a href=/projects/>
+<span>projects</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<article class=post-container>
+<header class=post-header>
+<h1><a href=/posts/using-union-types-in-typescript/>Using Union Types in TypeScript</a></h1>
+<div class=post-description>How to effectively use union types in TypeScript.</div>
+<div class="post-date post-published">
+September 22, 2020
+</div>
+<div class="post-date post-last-updated">
+Updated September 22, 2020
+</div>
+</header>
+<div class=post-body>
+<p>In recent projects, my team has been using a <a href=https://gist.github.com/aguilarm/401309435c119bbeba591aee2f63cd3e>relatively strict TypeScript config</a>,
+and it&rsquo;s been excellent.</p>
+<p>A common scenario for us is a need for a union type that we need to perform different actions at <em>runtime</em>.
+For example, we often have a <code>CurrentUser</code> object that can either be loading, authenticated, or anonymous.</p>
+<p>Because we&rsquo;re using mostly static pages with a detatched auth system (primarily Firebase), systems that
+require user information on the frontend need to account for a short period where the user is loading before doing anything.</p>
+<p>The Typescript handbook has a really nice section about <a href=https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html#discriminating-unions>discriminating unions</a>
+that is definitely worth checking out. I noticed that the example, with a string matched key, could be
+improved just a little more using an enum to make IDE usage searches easy.</p>
+<p>In the case of the <code>CurrentUser</code>, the full type declaration looks something like this:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>enum</span> <span style=color:#a6e22e>UserTypes</span> {
+  <span style=color:#a6e22e>Authenticated</span>,
+  <span style=color:#a6e22e>Anonymous</span>,
+}
+
+<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>type</span> <span style=color:#a6e22e>AuthenticatedUser</span> <span style=color:#f92672>=</span> {
+  <span style=color:#a6e22e>userType</span>: <span style=color:#66d9ef>UserTypes.Authenticated</span>;
+  <span style=color:#a6e22e>displayName</span>: <span style=color:#66d9ef>string</span>;
+  <span style=color:#a6e22e>email</span>: <span style=color:#66d9ef>string</span>;
+  <span style=color:#a6e22e>logout</span>()<span style=color:#f92672>:</span> <span style=color:#a6e22e>Promise</span>&lt;<span style=color:#f92672>void</span>&gt;;
+};
+
+<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>type</span> <span style=color:#a6e22e>AnonymousUser</span> <span style=color:#f92672>=</span> {
+  <span style=color:#a6e22e>userType</span>: <span style=color:#66d9ef>UserTypes.Anonymous</span>;
+  <span style=color:#a6e22e>isPremium</span>: <span style=color:#66d9ef>false</span>;
+  <span style=color:#a6e22e>login</span>(<span style=color:#a6e22e>userName</span>: <span style=color:#66d9ef>string</span>, <span style=color:#a6e22e>password</span>: <span style=color:#66d9ef>string</span>)<span style=color:#f92672>:</span> <span style=color:#a6e22e>Promise</span>&lt;<span style=color:#f92672>void</span>&gt;;
+};
+
+<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>type</span> <span style=color:#a6e22e>CurrentUser</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>AuthenticatedUser</span> <span style=color:#f92672>|</span> <span style=color:#a6e22e>AnonymousUser</span> <span style=color:#f92672>|</span> <span style=color:#66d9ef>null</span>;
+</code></pre></td></tr></table>
+</div>
+</div><p>This is great for two reasons:</p>
+<ol>
+<li>You can easily look for usages of Authenticated or Anonymous users via the enum.</li>
+<li>Usages of the <code>CurrentUser</code> type will need to handle <code>null</code>, which occurs during loading.</li>
+</ol>
+<p>That means, a possible use of the <code>CurrentUser</code> type would look like</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>currentUser</span><span style=color:#f92672>?</span>.<span style=color:#a6e22e>userType</span> <span style=color:#f92672>===</span> <span style=color:#a6e22e>UserTypes</span>.<span style=color:#a6e22e>Authenticated</span>) {
+    <span style=color:#75715e>// Do things an authenticated user can do, like logout
+</span><span style=color:#75715e></span>    <span style=color:#a6e22e>currentUser</span>.<span style=color:#a6e22e>logout</span>();
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>We&rsquo;re passing our CurrentUser around a NextJS (React) app using React context. I think this has made user related
+code super clean and easy to read.</p>
+<p>Perhaps we&rsquo;ll need to handle &lsquo;loading&rsquo; with more information than <code>null</code>, but so far is sufficient in usages
+and seems relatively clear. The possible <code>Error</code> state will be handled by the function that hooks this up to
+our authentication provider which throws the app into an error state early. That may also be a good candidate
+for an addition to the union type should we decide to push that responsibility further into the usages.</p>
+</div>
+<footer class=post-footer>
+<div class=post-thanks>
+Thanks for stopping by!
+</div>
+<div class=post-edit-on-github>
+See something you'd like to correct?
+<a href=https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts/using-union-types-in-typescript.md>
+Send me a <i class="fab fa-github"></i> pull request!
+</a>
+</div>
+</footer>
+</article>
+<footer class=site-footer>
+<nav class=site-navigation>
+<ul>
+<li>
+<a href=/about/>
+<span>about</span>
+</a>
+</li>
+<li>
+<a href=/posts/>
+<span>posts</span>
+</a>
+</li>
+<li>
+<a href=/projects/>
+<span>projects</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class=footer-site-name>Mika Aguilar</div>
+<a class=footer-logo href=/>
+<img alt="Mika Aguilar's logo" src=/images/logo.svg>
+</a>
+</footer>
+</body>
+</html>

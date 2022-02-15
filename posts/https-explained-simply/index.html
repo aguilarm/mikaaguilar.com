@@ -1,0 +1,136 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>
+Https Explained Simply |
+Mika Aguilar
+</title>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-53324003-1','auto'),ga('send','pageview'))</script>
+<meta property="og:title" content="Https Explained Simply">
+<meta property="og:description" content="I found it difficult to find a simple overview of why HTTPS is important, and how it works, so I put this post together.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.mikaaguilar.com/posts/https-explained-simply/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2019-08-21T00:00:00+00:00">
+<meta property="article:modified_time" content="2019-09-08T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Https Explained Simply">
+<meta name=twitter:description content="I found it difficult to find a simple overview of why HTTPS is important, and how it works, so I put this post together.">
+<link href=/favicons/favicon.ico rel=icon type=image/ico>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700|Noto+Sans&display=swap" rel=stylesheet>
+<link href=/lib/font-awesome/css/all.css rel=stylesheet>
+<link href=/css/main.min.css rel=stylesheet>
+<link href=/css/post.min.css rel=stylesheet>
+</head>
+<body>
+<header class=site-header>
+<div class=branding>
+<a class=brand-logo href=/>
+<img alt="Mika Aguilar's Logo" src=/images/logo.svg>
+</a>
+<div class=brand-text>
+<a class=brand-text--site-name href=/ rel=home title=Home>
+Mika Aguilar
+</a>
+<div class=brand-text--site-tag-line>
+Curious Software Engineer
+</div>
+</div>
+</div>
+<nav class=site-navigation>
+<ul>
+<li>
+<a href=/about/>
+<span>about</span>
+</a>
+</li>
+<li>
+<a href=/posts/>
+<span>posts</span>
+</a>
+</li>
+<li>
+<a href=/projects/>
+<span>projects</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<article class=post-container>
+<header class=post-header>
+<h1><a href=/posts/https-explained-simply/>Https Explained Simply</a></h1>
+<div class=post-description>I found it difficult to find a simple overview of why HTTPS is important, and how it works, so I put this post together.</div>
+<div class="post-date post-published">
+August 21, 2019
+</div>
+<div class="post-date post-last-updated">
+Updated September 8, 2019
+</div>
+</header>
+<div class=post-body>
+<p>At work, we run a lot of different websites. From time to time, we need to renew the HTTPS certs used by some of the unfortunate few not powered by Let&rsquo;s Encrypt yet. Recently, I needed a simple way to describe what was happening through the whole process.</p>
+<p>When I turned to google looking for a simple explanation, what I found was either a bit too simple or way too deep. Lots of easy explanations like HTTPS is more secure and therefore you should use it - it&rsquo;s encrypted! Or that it means the server you&rsquo;re communicating with has been verified to definitely be the one you intend to talk to by a third party. These things are true, but how does this all actually happen?</p>
+<h2 id=what-is-https>What is HTTPS?</h2>
+<p>The acronym stands for &lsquo;Hypertext Transfer Protocol Secure&rsquo; - just adding &lsquo;Secure&rsquo; to your HTTP. This secure part is another layer on requests that encrypts the data going over the wire such that only the server you are talking to and yourself can read the data. That way, should a request be intercepted enroute to it&rsquo;s destination, it will be unreadable by a third party. With regular HTTP each request is sent over the internet as plaintext and when intercepted can be easily read. You and the server will also decide, in the open, what key and encryption to use and, even with all of that information, a third party will not be able to decrypt your requests. Pretty cool.</p>
+<h2 id=ssl-tls-what-gives>SSL, TLS, what gives?</h2>
+<p>The encryption for HTTPS is using protocols commonly referred to as SSL, but is actually widely implemented as TLS. <em>Secure Socket Layer</em> - or SSL - is an early protocol that allowed services to communicate over the internet via encrypted messages. SSL can be cracked and officially reached it&rsquo;s end of life in 2015, so it has been largely replaced by <em>Transport Layer Security</em> or TLS. TLS is an evolution of SSL that is a means to the same end but rebranded and rewritten. So you should be using and referring to the encryption employed by HTTPS as TLS and not SSL. SSL these days is sort of a <em>confusion</em> layer more than anything - but I wanted to put some light on what the heck the difference is here. Use TLS, and <em>turn off</em> SSL.</p>
+<p>Actually <em>disabling</em> SSL is important because part of the spec for HTTPS allows the client and server to negotiate which protocol they will use to encrypt the information they send between them. So older clients that do not support TLS can request that your server sends them information using SSL instead and if your sever is configured for it, your sever will go ahead and do that. However, since SSL is known to be decrypt-able, it is nearly the same as sending plaintext over the wire. So even for old clients SSL is a bit of a moot point - it is not, in fact, secure.</p>
+<h2 id=how-does-the-encryption-layer-work>How does the encryption layer work?</h2>
+<p>Now that you&rsquo;re definitely using TLS, what the heck is TLS anyway? Encryption? Is that like magic?</p>
+<p>No, it&rsquo;s math. If you&rsquo;re totally new to encryption, I think Digital Ocean did a nice job in <a href=https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process>this post</a> about SSH.</p>
+<p>Shortly, here&rsquo;s what happens:</p>
+<p>1. Your computer will say Hello to the server you&rsquo;re asking for and in that message include the range of encryption algos you are able to speak in (most likely TLS - but I believe that as long as you and the server both support it, you can use any algo you want here). Server responds with which version it can use that you also support.</p>
+<p>2. The Server offers a cryptographically signed certificate that lets the client know &lsquo;Hey, I am representing this domain for this person from x until y dates, here&rsquo;s my public key&rsquo; (and a bit more info but that&rsquo;s the gist). It&rsquo;s then up to your computer (the client) to verify that the server is really who it says it is. For most websites, that means you&rsquo;re going to go ask a Certificate Authority if they agree and recognize the public key the server offered.</p>
+<p>3. Your computer makes a random key and sends it to the server after encrypting it using the server&rsquo;s public key. The server is able to decrypt this key and you&rsquo;ll both use it to encrypt/decrypt your ensuing conversation symmetrically (with this singular key on both ends).</p>
+<p>So now you and the server are talking by generating regular HTTP plaintext and then encrypting it before sending it off to one another. So while the messages are in transit no one will be able to read them. This is the reason you should always be using HTTPS instead of HTTP - not even your ISP can figure out exactly what the two machines are saying to one another when you&rsquo;re communicating through HTTPS connections (they can probably glean some of it with DNS lookups or through other means, but that&rsquo;s a different topic).</p>
+<h2 id=certificates-authority>&mldr;Certificates? Authority?</h2>
+<p>A key part of HTTPS is that you trust the server is actually controlled by who you expect it to be. Otherwise you could potentially be sending data - still safely over the wire - directly to a compromised server. Certificates are quite easy to generate, so this could be a real problem.</p>
+<p>This is generally avoided by having your browser verify the supplied certificate with one of several Certificate Authorities (CAs) such as Comodo, Symantec, GlobalSign, etc.</p>
+<p>The verification is done with a digitally signed certification process. So signed certificate is actually an artifact that includes a public key and the encrypted certificate that can be easily decrypted by anyone with this public key. However, this artifact can only be <em>created</em> by using the associated private key which only the CA has.</p>
+<p>This is what you&rsquo;re doing when you send a certificate request over to a CA like Comodo - you&rsquo;re supplying them the base certificate that they will later send back to you -&lsquo;signed&rsquo; by their private key - once they verify that you own the server you&rsquo;re requesting a cert for.<br>
+In this way, there is demonstrable proof that the CA granted this certificate to this domain and that it is very likely who you expect it to be.</p>
+<h2 id=wrapping-up>Wrapping up</h2>
+<p>You may not have noticed, but there is another great security layer here. Not only is the server&rsquo;s cert signed by the public key of a CA so it cannot be created by anyone else, actually using the key requires that the server actually holds it&rsquo;s own private key. So while anyone can copy your public HTTPS key and then claim to be the server behind google.com, only Google will be able to decrypt the original key that your client generates and <em>encrypts with the server&rsquo;s public key</em>. Assuming all of the algos used to generate the encryption remain secure (and they might not, like SSL), it is pretty difficult to spoof an HTTPS cert that has been properly signed by a CA unless you compromise the DNS records or server - at which point the cert is moot anyway.</p>
+<p>This has been a light, surface-level overview of HTTPS that is rather specific to it&rsquo;s use on web sites. You should know that the HTTPS protocol can and should be used to transfer data between two computers over the internet, including when you&rsquo;ve got two servers exchanging some data. It&rsquo;s not limited to websites, and there are ways to create self-signed keys or use keys without consulting a CA if you have a trusted party to communicate with. Check around for some other great posts going a bit deeper into things should you be interested.</p>
+<p>Thanks for reading!</p>
+</div>
+<footer class=post-footer>
+<div class=post-thanks>
+Thanks for stopping by!
+</div>
+<div class=post-edit-on-github>
+See something you'd like to correct?
+<a href=https://github.com/aguilarm/mikaaguilar.com/tree/master/content/posts/https-explained-simply.md>
+Send me a <i class="fab fa-github"></i> pull request!
+</a>
+</div>
+</footer>
+</article>
+<footer class=site-footer>
+<nav class=site-navigation>
+<ul>
+<li>
+<a href=/about/>
+<span>about</span>
+</a>
+</li>
+<li>
+<a href=/posts/>
+<span>posts</span>
+</a>
+</li>
+<li>
+<a href=/projects/>
+<span>projects</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class=footer-site-name>Mika Aguilar</div>
+<a class=footer-logo href=/>
+<img alt="Mika Aguilar's logo" src=/images/logo.svg>
+</a>
+</footer>
+</body>
+</html>
