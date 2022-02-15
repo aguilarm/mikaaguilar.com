@@ -2,7 +2,7 @@
 title: "Procedural Galaxy"
 date: 2020-10-12T17:40:14-06:00
 lastmod: 2022-02-15T17:40:14-06:00
-description: "Experiment with using procedural generation to build a galaxy map."
+description: "Experiment using procedural generation to build a galaxy map."
 repository: "https://github.com/aguilarm/procedural-galaxy"
 demo: "https://aguilarm.github.io/procedural-galaxy/"
 draft: false
