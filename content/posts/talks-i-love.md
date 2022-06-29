@@ -29,6 +29,11 @@ Rich is back. This time he elaborates on the process of an individual programmer
 A bit of a cure to impostor syndrome perhaps. Really great talk outlining a way to learn things 
 faster by breaking concepts into smaller chunks.
 
+### [Why Latency Matters](https://www.youtube.com/watch?v=ak4EZQB4Ylg)
+While not a conference talk, this start to a series of videos is an awesome primer on the implications
+of latency and how even small files become very slow if they aren't near your users. Must watch for anyone
+building user facing web software.
+
 ### [F\*ck You, Pay Me - Mike Monteiro](https://www.youtube.com/watch?v=jVkLVRt6c1U)  
 Fair warning, language here. This talk is specifically targeting designers and dealing 
 with clients but in my opinion is relevant to almost anyone spanning really any discipline. 
@@ -51,6 +56,11 @@ Ditching servers is pretty attractive, and this is a nice overview.
 ### [Microservices + Events + Docker = A Perfect Trio](https://www.youtube.com/watch?v=sSm2dRarhPo)
 While this has Docker in the title, this is primarily a very general talk about system architecture.
 Very good insight into the why and how of Microservices.
+
+### [Compressor Head](https://www.youtube.com/watch?v=Eb7rzMxHyOk&list=PLOU2XLYxmsIJGErt5rrCqaSGTMyyqNt2H)
+Another series of videos rather than talks, Compressor Head presents the fundamentals of compression in
+a very approachable way. If you're transferring data, it is often critical to do so with as much compression
+as possible. This series will outline what your options are and how they work.
 
 JavaScript
 ----------
