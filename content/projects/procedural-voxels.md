@@ -1,6 +1,6 @@
 ---
 title: "Procedural Voxels"
-date: 2020-06-18T17:40:14-06:00
+date: 2022-06-18T17:40:14-06:00
 lastmod: 2022-07-19T17:40:14-06:00
 description: "Building a Minecraft clone in React Three Fiber."
 repository: "https://github.com/aguilarm/procedural-voxels"
