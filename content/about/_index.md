@@ -8,8 +8,8 @@ grandparent's house, the emerging complexity hidden behind seemingly tidy layers
 
 I have been incredibly fortunate to make a career of tinkering with the wonderfully complex world of software. I spent the
 first six and a half years of my career working at a small web agency where I had the opportunity to work on all sorts
-of different systems at every layer of the stack. Right now, I work at a small but growing startup helping aquaculture 
-grow responsibly and sustainably. It is really awesome to work alongside data scientists and oceanographers every day.
+of different systems at every layer of the stack. Most recently, I've been at a small but growing startup helping aquaculture 
+grow responsibly and sustainably. It has been really neat to work alongside data scientists and oceanographers every day.
 
 I love how accessible Javascript is and, despite it's quirks, I've really enjoyed building things in it for the better part
 of the last decade. Most recently, the functional approach of React has been really exciting to watch evolve. I've gone

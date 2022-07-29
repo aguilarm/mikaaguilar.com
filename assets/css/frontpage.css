@@ -48,8 +48,9 @@
 
 .front-personal-summary {
     display: none;
+    line-height: 1;
     font-size: 1.25em;
-    margin: 0 auto;
+    margin: 1.25rem auto 0;
     max-width: 860px;
     color: var(--color-font-base);
 }
@@ -67,12 +68,12 @@
 
 .site-navigation {
     display: inline-block;
-    margin: 0.25em 0;
+    margin: 0.25rem 0;
 }
 
 @media (min-width: 768px) {
     .site-navigation {
-        margin: 0.5em 0;
+        margin: 1.25rem 0 0.35rem;
     }
 }
 
