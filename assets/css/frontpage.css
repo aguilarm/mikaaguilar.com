@@ -50,7 +50,7 @@
     display: none;
     line-height: 1.4;
     font-size: 1.25em;
-    margin: 1.15rem auto 0;
+    margin: 0.75rem auto 0;
     max-width: 860px;
     color: var(--color-font-base);
 }
@@ -73,7 +73,7 @@
 
 @media (min-width: 768px) {
     .site-navigation {
-        margin: 1.25rem 0 0.35rem;
+        margin: 0.65rem 0 0.35rem;
     }
 }
 
