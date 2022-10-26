@@ -48,9 +48,9 @@
 
 .front-personal-summary {
     display: none;
-    line-height: 1;
+    line-height: 1.4;
     font-size: 1.25em;
-    margin: 1.25rem auto 0;
+    margin: 1.15rem auto 0;
     max-width: 860px;
     color: var(--color-font-base);
 }
